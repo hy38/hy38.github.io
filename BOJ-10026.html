@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>BOJ 10026 - 적록색약</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="b Ha p" />
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/BOJ-10026" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="HY38's IT Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 10026 - 적록색약" />
+    <meta property="og:description" content="DFS를 이용한 문제해결 문제링크 이 문제는 완전탐색 DFS / BFS 문제이다. 일반인의 경우와 적록색약의 경우 둘 다 찾아야하므로, DFS를 2번 돌리는 것을 생각하고 시작하자. 구역이 몇 개인지 묻는 문제이므로, DFS할 때 카운팅만 잘 해주면 되는 문제이다. 여러 방법이 존재하는, 다양한 코딩스타일이 출현할 수 있는 문제인 것 같다. 두 번의 DFS를" />
+    <meta property="og:url" content="http://localhost:4000/BOJ-10026" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/algorithm/RGB.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2020-02-12T01:00:00+09:00" />
+    <meta property="article:modified_time" content="2020-02-12T01:00:00+09:00" />
+    <meta property="article:tag" content="Dfs" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 10026 - 적록색약" />
+    <meta name="twitter:description" content="DFS를 이용한 문제해결 문제링크 이 문제는 완전탐색 DFS / BFS 문제이다. 일반인의 경우와 적록색약의 경우 둘 다 찾아야하므로, DFS를 2번 돌리는 것을 생각하고 시작하자. 구역이 몇 개인지 묻는 문제이므로, DFS할 때 카운팅만 잘 해주면 되는 문제이다. 여러 방법이 존재하는, 다양한 코딩스타일이 출현할 수 있는 문제인 것 같다. 두 번의 DFS를" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/algorithm/RGB.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="HY38's IT Blog" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Dfs" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "HY38's IT Blog",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
+    },
+    "url": "http://localhost:4000/BOJ-10026",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/algorithm/RGB.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/BOJ-10026"
+    },
+    "description": "DFS를 이용한 문제해결 문제링크 이 문제는 완전탐색 DFS / BFS 문제이다. 일반인의 경우와 적록색약의 경우 둘 다 찾아야하므로, DFS를 2번 돌리는 것을 생각하고 시작하자. 구역이 몇 개인지 묻는 문제이므로, DFS할 때 카운팅만 잘 해주면 되는 문제이다. 여러 방법이 존재하는, 다양한 코딩스타일이 출현할 수 있는 문제인 것 같다. 두 번의 DFS를"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="BOJ 10026 - 적록색약" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="HY38's IT Blog" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
+    <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-getting-started ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="12 February 2020">12 February 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/dfs/'>DFS</a>,
+                            
+                        
+                            
+                               <a href='/tag/bfs/'>BFS</a>,
+                            
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">BOJ 10026 - 적록색약</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/RGB.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <blockquote>
+  <p>DFS를 이용한 문제해결</p>
+</blockquote>
+
+<h1 id="문제링크"><a href="https://www.acmicpc.net/problem/10026">문제링크</a></h1>
+
+<ul>
+  <li>이 문제는 완전탐색 DFS / BFS 문제이다.</li>
+  <li>일반인의 경우와 적록색약의 경우 둘 다 찾아야하므로, DFS를 2번 돌리는 것을 생각하고 시작하자.</li>
+  <li>구역이 몇 개인지 묻는 문제이므로, DFS할 때 카운팅만 잘 해주면 되는 문제이다.</li>
+  <li>여러 방법이 존재하는, 다양한 코딩스타일이 출현할 수 있는 문제인 것 같다.</li>
+  <li>두 번의 DFS를 돌리게 되므로 DFS를 2개를 구현할지, 인자를 추가할지 등의 선택지가 생긴다.</li>
+  <li>알고리즘적으로는 쉬운 문제이지만, 어떤식으로 구현해나갈지가 의외로 큰 비중을 차지하는 문제이다.</li>
+</ul>
+
+<h1 id="알고리즘-세우기">알고리즘 세우기</h1>
+
+<p>1) 입력을 받아 map에 저장한다.</p>
+
+<p>2) 정상인의 경우 몇 개의 RGB 구역이 나오는지를 DFS를 이용하여 구한 뒤, 출력까지 해준다.</p>
+
+<p>3) 적록색약인의 경우 몇몇 개의 RGB 구역이 나오는지를 DFS를 이용하여 구한 뒤, 출력을 해준다.</p>
+
+<h2 id="1-입력을-받아-map에-저장한다">1. 입력을 받아 map에 저장한다.</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">input</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">map</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>기존에는 cin, cout을 애용했지만, 간만에 C의 입력을 사용해보았다.</li>
+</ul>
+
+<h2 id="1-1-dfs를-진행하기-전에-내가-선택한-dfs함수에-대해-살펴보겠다">1-1. DFS를 진행하기 전에, 내가 선택한 DFS함수에 대해 살펴보겠다.</h2>
+
+<ul>
+  <li>전형적인 DFS함수이지만, 매개변수가 2개 추가되었다.</li>
+  <li>c1은 첫번째 색깔, c2는 두번째 색깔을 의미하는데, 이는 DFS 재귀 조건문에 사용된다.</li>
+  <li>R과 G를 모두 받아들여 DFS하기 위해, 그리고 하나의 DFS함수를 만들기 위해 이렇게 코드를 짰다.</li>
+  <li>물론, OR 연산이기 때문에 일반인의 경우에도 상관없이 작동한다.</li>
+  <li>다만, 코드에서는 직관성을 위해 일반인의 경우 OR연산을 활용하지는 않았다.</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">_row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_col</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">_row</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">_col</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">_row</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="o">||</span> <span class="n">_col</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">isVisited</span><span class="p">[</span><span class="n">_row</span><span class="p">][</span><span class="n">_col</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">nxtR</span> <span class="o">=</span> <span class="n">_row</span> <span class="o">+</span> <span class="n">dr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">nxtC</span> <span class="o">=</span> <span class="n">_col</span> <span class="o">+</span> <span class="n">dc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="n">map</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">]</span> <span class="o">==</span> <span class="n">c1</span> <span class="o">||</span> <span class="n">map</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">]</span> <span class="o">==</span> <span class="n">c2</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">nxtR</span><span class="p">,</span> <span class="n">nxtC</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">);</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-정상인의-경우-몇-개의-rgb-구역이-나오는지를-dfs를-이용하여-구한-뒤-출력까지-해준다">2. 정상인의 경우 몇 개의 RGB 구역이 나오는지를 DFS를 이용하여 구한 뒤, 출력까지 해준다.</h2>
+
+<ul>
+  <li>정상인의 경우, 각각의 RGB에 대해 DFS를 이용하였다. RGB를 나타내는 변수 R, G, B를 이용하였으며, 매우 전형적인 완전탐색 DFS 코드이다. DFSAll()이라고 말하기도 하는 것 같다.</li>
+</ul>
+
+<blockquote>
+  <p>출력을 하나 찍어주었다. 그리고 R과 G를 0으로 초기화해주었다. B를 초기화하지 않은 이유는, 적록색약인의 경우에도 B는 변하지 않을것이기 때문이다. <strong>R과 G의 구분이 없더라도, B가 몇개의 요소로 이루어져있는지는 변하지 않는다.</strong></p>
+</blockquote>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">go1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'R'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">);</span>
+                <span class="n">R</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'G'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span>
+                <span class="n">G</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'B'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'B'</span><span class="p">,</span> <span class="sc">'B'</span><span class="p">);</span>
+                <span class="n">B</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">R</span> <span class="o">+</span> <span class="n">G</span> <span class="o">+</span> <span class="n">B</span><span class="p">);</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-적록색약인의-경우-몇몇-개의-rgb-구역이-나오는지를-dfs를-이용하여-구한-뒤-출력을-해준다">3. 적록색약인의 경우 몇몇 개의 RGB 구역이 나오는지를 DFS를 이용하여 구한 뒤, 출력을 해준다.</h2>
+
+<ul>
+  <li>go1() 함수와 비슷하게 짜는데, DFS의 인자에 R과 G가 들어간다.</li>
+  <li>또한, DFS를 ‘map[r][c]가 R이거나 G일 때’ 진입하게된다.</li>
+  <li>B는 불변이기 때문에 따로 구하지 않아도 된다.</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">go2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'R'</span> <span class="o">||</span> <span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'G'</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span>
+                    <span class="n">R</span><span class="o">++</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">B</span> <span class="o">+</span> <span class="n">R</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="코드-개선을-위한-노력">코드 개선을 위한 노력</h1>
+
+<ul>
+  <li>나는 문제해결을 위해 map과 vis배열을 만들어서 결과를 출력했다. 이게 가장 익숙하기도 하고 손에 익기도 했기 때문이다.</li>
+  <li>다른 사람들의 코드를 보고 어떻게 해야 더 최적화된 코드가 될 수 있을지 고민을 해보았다.</li>
+</ul>
+
+<h2 id="map을-2개-만드는-풀이">map을 2개 만드는 풀이</h2>
+
+<ul>
+  <li>내 풀이와 다르게 map을 2개 만들어서 map1, map2를 각각 정상인의 경우와 적록색약인의 경우로 나누어서 사용하는 방법이다.</li>
+  <li>이 방법은 얼핏 불필요한 메모리를 사용하게되는것처럼 보일 수 있으나, map을 재사용하지 않아도 되므로 map을 방문했을 때 색칠을 해줌으로써(0 등으로 표시) vis배열의 역할을 수행하는 것이다.</li>
+  <li>map2는 G를 R로 치환해준 map이라고 보면 될것같다. 이렇게 되면 결과적으로 2차원배열 2개를 사용하므로, 내가 사용한 방법과 메모리를 똑같게 사용하게된다.</li>
+</ul>
+
+<h2 id="rgb의-구별을-하지-않는-풀이">RGB의 구별을 하지 않는 풀이</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">refactoredGo1</span><span class="p">(){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]){</span>
+                <span class="kt">char</span> <span class="n">color</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">];</span>
+                <span class="n">notDisabled</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">notDisabled</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>refactoredGo() 코드를 보면, RGB 각각을 구할필요없이 영역이 몇개인지만 구별하면 되기때문에 저런식으로 변수하나만을 사용할 수 있다.</li>
+  <li>다만, 이렇게 하려면, go2()함수가 go1()함수의 B를 받아쓰고있기 때문에 go2()함수 또한 바꾸어주어야한다.</li>
+  <li><strong>아니면 go2를 바꾸는대신 map2개를 만들면 된다.</strong> 이게 제일 좋은 방법인 것 같다.</li>
+</ul>
+
+<h2 id="최적화된-코드-및-노력">최적화된 코드 및 노력</h2>
+
+<ul>
+  <li>
+    <p>따라서 최적화된 코드는 map을 2개 만들고, 각각의 영역만 세는 방법인 것 같다. 그렇게 하면 최소 변수 1~2개의 사용을 줄일수있다.</p>
+  </li>
+  <li>
+    <p>또한, 입력에서 G를 R로 바꾸는것도 가능하지만, DFS도중에 G를 ‘r’로 바꾸는 방법도 있다. 이 때 ‘R’이 아닌 ‘r’로 바꾸는 이유는 DFS가 무한루프를 돌 수 있기 때문이다.</p>
+  </li>
+</ul>
+
+<h2 id="결론">결론</h2>
+
+<ul>
+  <li>
+    <p>….그냥 편한걸로하자 ㅋㅋ 어차피 코드는 직관적으로 알기 쉬운게 좋은것이니깐 보기편한걸로 짜자.</p>
+  </li>
+  <li>
+    <p><a href="https://www.acmicpc.net/source/3290644">개인적으로 가장 깔끔했던 풀이</a></p>
+  </li>
+</ul>
+
+<h1 id="알게된-것들">알게된 것들</h1>
+
+<ul>
+  <li>코딩스타일이 사람마다 천차만별인것 같다. 그 중에서 효율적으로 코딩하는 습관을 들이자.</li>
+</ul>
+
+<h1 id="전체-소스코드">전체 소스코드</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">map</span><span class="p">[</span><span class="mi">103</span><span class="p">][</span><span class="mi">103</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">isVisited</span><span class="p">[</span><span class="mi">103</span><span class="p">][</span><span class="mi">103</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">dc</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">input</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">map</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">_row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_col</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">_row</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">_col</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">_row</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="o">||</span> <span class="n">_col</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">isVisited</span><span class="p">[</span><span class="n">_row</span><span class="p">][</span><span class="n">_col</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">nxtR</span> <span class="o">=</span> <span class="n">_row</span> <span class="o">+</span> <span class="n">dr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">nxtC</span> <span class="o">=</span> <span class="n">_col</span> <span class="o">+</span> <span class="n">dc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="n">map</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">]</span> <span class="o">==</span> <span class="n">c1</span> <span class="o">||</span> <span class="n">map</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">]</span> <span class="o">==</span> <span class="n">c2</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">nxtR</span><span class="p">][</span><span class="n">nxtC</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">nxtR</span><span class="p">,</span> <span class="n">nxtC</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">);</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">go1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'R'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">);</span>
+                <span class="n">R</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'G'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span>
+                <span class="n">G</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'B'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'B'</span><span class="p">,</span> <span class="sc">'B'</span><span class="p">);</span>
+                <span class="n">B</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">R</span> <span class="o">+</span> <span class="n">G</span> <span class="o">+</span> <span class="n">B</span><span class="p">);</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">go2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isVisited</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">])</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'R'</span> <span class="o">||</span> <span class="n">map</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'G'</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">DFS</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="sc">'R'</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span>
+                    <span class="n">R</span><span class="o">++</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">B</span> <span class="o">+</span> <span class="n">R</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">input</span><span class="p">();</span>
+    <span class="n">go1</span><span class="p">();</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">isVisited</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">isVisited</span><span class="p">));</span>
+    <span class="n">go2</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/ghost.png" alt="hy38" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/hy38">SangHyun Park</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/hy38">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'http://localhost:4000/';
+                            this.page.identifier = 'HY38's IT Blog';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://hy38.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/dfs/">Dfs</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/BOJ-2468">BOJ 2468 - 안전 영역</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/BOJ-2583">BOJ 2583 - 영역 구하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/BOJ-14502">BOJ 14502 - 연구소</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/dfs/">
+                                
+                                    See all 3 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/BOJ-2468">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/flood.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/BOJ-2468">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Dfs</span>
+                            
+                        
+                            
+                               <span class="post-card-tags">Bfs</span>
+                            
+                        
+                            
+                               <span class="post-card-tags">Simulation</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">BOJ 2468 - 안전 영역</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="SangHyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">SangHyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000/">
+            
+                <img src="/assets/images/favicon.png" alt="HY38's IT Blog icon" />
+            
+            <span>HY38's IT Blog</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">BOJ 10026 - 적록색약</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=BOJ+10026+-+%EC%A0%81%EB%A1%9D%EC%83%89%EC%95%BD&amp;url=https://hy38.github.io/BOJ-10026"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.io/BOJ-10026"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000/">HY38's IT Blog</a> &copy; 2020</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="HY38's IT Blog" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to HY38's IT Blog</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

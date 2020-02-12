@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>ML Coursera 2-1 Linear Regression with Multiple Variables</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="b Ha p" />
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/MLcoursera-2-1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="HY38's IT Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ML Coursera 2-1 Linear Regression with Multiple Variables" />
+    <meta property="og:description" content="Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Linear Regression with Multiple Variables Intro 안녕하세요. 이번 포스트에서는 multiple variables(features)를 가진 선형회귀에 대해 알아보겠습니다. 지난 포스트에서 하나의 variable을 가지는 선형회귀를 공부했는데, 그 연장선이라고 보시면 됩니다. 우리는 지도학습에서 선형회귀, 분류를 공부한 다음 비지도학습 등 더욱 다양한 것들을 공부할 것입니다. 따라서 이 포스트" />
+    <meta property="og:url" content="http://localhost:4000/MLcoursera-2-1" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/ml.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2019-05-31T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-05-31T19:00:00+09:00" />
+    <meta property="article:tag" content="Machine Learning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ML Coursera 2-1 Linear Regression with Multiple Variables" />
+    <meta name="twitter:description" content="Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Linear Regression with Multiple Variables Intro 안녕하세요. 이번 포스트에서는 multiple variables(features)를 가진 선형회귀에 대해 알아보겠습니다. 지난 포스트에서 하나의 variable을 가지는 선형회귀를 공부했는데, 그 연장선이라고 보시면 됩니다. 우리는 지도학습에서 선형회귀, 분류를 공부한 다음 비지도학습 등 더욱 다양한 것들을 공부할 것입니다. 따라서 이 포스트" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/ml.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="HY38's IT Blog" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Machine Learning" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "HY38's IT Blog",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
+    },
+    "url": "http://localhost:4000/MLcoursera-2-1",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/ml.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/MLcoursera-2-1"
+    },
+    "description": "Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Linear Regression with Multiple Variables Intro 안녕하세요. 이번 포스트에서는 multiple variables(features)를 가진 선형회귀에 대해 알아보겠습니다. 지난 포스트에서 하나의 variable을 가지는 선형회귀를 공부했는데, 그 연장선이라고 보시면 됩니다. 우리는 지도학습에서 선형회귀, 분류를 공부한 다음 비지도학습 등 더욱 다양한 것들을 공부할 것입니다. 따라서 이 포스트"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="ML Coursera 2-1 Linear Regression with Multiple Variables" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="HY38's IT Blog" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
+    <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-getting-started ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="31 May 2019">31 May 2019</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/machine-learning/'>MACHINE LEARNING</a>,
+                            
+                        
+                            
+                               <a href='/tag/coursera/'>COURSERA</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">ML Coursera 2-1 Linear Regression with Multiple Variables</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/ml.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <blockquote>
+  <p>Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.</p>
+</blockquote>
+
+<h1 id="linear-regression-with-multiple-variables">Linear Regression with Multiple Variables</h1>
+
+<h2 id="intro">Intro</h2>
+<p>안녕하세요. 이번 포스트에서는 multiple variables(features)를 가진 선형회귀에 대해 알아보겠습니다.
+지난 포스트에서 하나의 variable을 가지는 선형회귀를 공부했는데, 그 연장선이라고 보시면 됩니다.
+우리는 지도학습에서 선형회귀, 분류를 공부한 다음 비지도학습 등 더욱 다양한 것들을 공부할 것입니다. 따라서 이 포스트 다음으로는 기본적인 Octave 설명을 다루고, 곧바로 분류(Classification)을 공부하게 되겠습니다.</p>
+
+<h2 id="notation">Notation</h2>
+
+<p><img src="/assets/images/ml/coursera/week2/multiple-features-data.png" alt="multiple_features_data" /></p>
+
+<p>먼저, 위와 같은 데이터를 봐주세요. 이전의 포스트에서는 단순히 집의 크기에 대한 가격을 예상하는 선형회귀를 배웠다면, 이번에는 더욱 구체적으로 들어가서 다양한 features를 기반으로 집가격을 예상하게 됩니다. 그에 앞서서 표기법에 대해 정리하겠습니다.</p>
+
+<ul>
+  <li>x의 밑첨자는 각각의 feature들을 의미합니다. 예를들어 침실의 개수에 관한 데이터는 $x_2$입니다.</li>
+  <li>y는 이전과 같이 output variable, 즉 집가격을 의미합니다.</li>
+  <li>m : 이전에 설명한것과 같이 example의 갯수를 말합니다. 위의 테이블에서는 각각의 row들이 각 집들의 데이터이기 때문에, 총 4개의 집 example이 있어 m은 4입니다.</li>
+  <li>n : features의 갯수들입니다. 위 테이블에서는 크기, 침실갯수, 몇층인지, 몇년되었는지 해서 총 4개의 feature가 있네요.</li>
+  <li><strong>$x^i$</strong> : 하나의 example에 대한 vector입니다. 쉽게 말해서 하나의 row를 뜻합니다. $x^3$은 세번째 row인 [1534 3 2 30] 벡터를 가리키게 됩니다.</li>
+  <li><strong>$x_j^i$</strong> : i번째 row data의 j번째 feature의 값 을 가리킵니다. 이를테면 $x_4^3$은 30을 가리키겠죠?</li>
+</ul>
+
+<h2 id="changed-hypothesis">Changed Hypothesis</h2>
+<p>기존의 단일변수 선형회귀에서는 다음과 같은 가설함수를 이용했습니다.
+<script type="math/tex">h_\theta(x) = \theta_0 + \theta_1x</script>
+그러나, 더 많은 features들이 생겨남에 따라 이 식을 변경시킬 필요성이 생깁니다.
+결과적으로 우리는 다음과 같은 가설함수를 세우게 됩니다.
+<script type="math/tex">h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4</script></p>
+
+<p>여기서 $x_0$을 1로 설정하게 된다면, <script type="math/tex">h_\theta(x) = \theta_0x_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4</script> 가 위의 식과 동일해 보이게 될 것입니다. 다만, $x_0$라는 feature가 추가로 생겨나게 되면서, <strong>feature vector</strong>의 <strong>dimension</strong>은 n에서 n+1 로 커집니다. <strong>parameter</strong>인 $\theta$의 <strong>dimension</strong>은 기존과 같은 n+1이 됩니다. 이로써 두 <strong>column vector</strong>들의 <strong>dimension</strong>이 동일해졌습니다.</p>
+
+<p>다시 이 가설함수를 볼까요?
+<script type="math/tex">h_\theta(x) = \theta_0x_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4</script>
+이것을 선형대수를 이용하여 간단하게 표현하면,
+<script type="math/tex">h_\theta(x) = \theta^TX</script>
+로 표현할 수 있습니다..!! 엄청난 식의 간소화를 진행한 셈이죠!
+이 때 $h_\theta(x)$의 <strong>dimension</strong>은 [1 x n+1] * [n+1 x 1] = [1 x 1]이 됩니다.</p>
+
+<h2 id="gradient-descent-for-multiple-variables">Gradient Descent for Multiple Variables</h2>
+<p>가설함수 설정을 마친 우리는, 이제 경사하강법(Gradient Descent)를 적용해볼 것입니다. 이에 앞서 다음과 같이 개별적인 $\theta$들로 이루어진 우리의 cost function J함수 <script type="math/tex">J(\theta_0, \theta_1, ... , \theta_n)</script> 의 parameter을 dimension이 n+1인 $\theta$ <strong>벡터</strong>로 바꾸어주도록 합니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/multiple-features-cost-function.png" alt="multiple_features_cost_function" /></p>
+
+<p>마찬가지로 우리의 gradient descent algorithm또한 parameter을 변경해주도록 합시다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/multiple-features-gradient-descent.png" alt="multiple_features_gradient_descent" /></p>
+
+<p>이제 이 알고리즘은 다음과 같이 표기될 수 있습니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/multiple-features-gradient-descent-new.png" alt="multiple_features_gradient_descent_new" /></p>
+
+<p>위 식의 끝에 $x^{(j)}_i$가 붙은것은 편미분의 결과로 해석됩니다.</p>
+
+<p>이로써 gradient descent가 multiple variables에 대하여 어떻게 달라지는지에 대해 간단하게 살펴보았습니다.</p>
+
+<p>아래의 식은 굉장히 중요한 역할을 함을 기억하면 좋을것 같습니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/gradient-descent-partial-derivative.png" alt="gradient_descent_partial_derivative" /></p>
+
+<h2 id="feature-scaling">Feature Scaling</h2>
+<p>하나가 아닌 multiple variable를 갖는 문제에서는 이 variable들이 너무나 큰 <strong>range</strong> 차이가 나게되면 gradient descent를 진행할 경우 다음과 같이 진행하게 됩니다. 이렇게 진행하게 될 경우에는 궁극적인 global minimum에 도달하기까지 오랜 시간이 걸리게 됩니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/gradient-descent-bad.png" alt="gradient_descent_bad" /></p>
+
+<p>따라서 우리는 빠른 global minimum으로의 수렴을 위해 variables / features 들이 비슷한 range를 갖도록 다듬어주는 feature scaling이라는 작업을 진행하게 됩니다.</p>
+
+<p>feature scaling의 결과는 놀랍습니다. 타원이었던 $J(\theta)$ 그래프의 이심율이 점차 작아지면서 원의 형태를 띄게 됩니다.</p>
+
+<p>가장 좋은 범주는 $ -1 \leq x_(i) \leq 1 $ 혹은 $ -0.5 \leq x_(i) \leq 0.5 $ 라고 합니다.</p>
+
+<h3 id="mean-normalization">Mean Normalization</h3>
+<p>feature scaling의 technique 중 하나인 mean normalization을 이용하여 range들을 일정하게 통일시키는 방법을 보여드리겠습니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/mean-normalization.png" alt="mean_normalization" /></p>
+
+<p>위 식을 이용하여 mean normalization을 진행하게 됩니다. 그렇다면 우리가 <a href="https://stats.stackexchange.com/questions/157923/feature-scaling-and-mean-normalization">다음과 같은 문제</a>에서 normalized된 $x_2^{(4)}$를 구하는 것을 보여드리겠습니다. 위 식의 $x_i$에 $x_2^{(4)}$를 대입하고, $\mu_i$에 <strong>mean</strong> 즉 평균을 대입하고, $s_i$에는 최댓값에서 최솟값을 뺀 <strong>range</strong>값을 대입하거나 표준편차를 대입하여 진행합니다.(분명 range 대입시와 표준편차 대입시의 결과는 다릅니다.)</p>
+
+<p>위 링크의 문제에서 $s_i = 8836 − 4761 = 4075$이고, $x_i = 4761$, $\mu_i = 6675.5$이므로, 정답 $x_2^{(4)}$는 -0.47입니다.
+이 때에는 $s_i$를 구하기 위하여 <strong>range</strong>를 채택하였습니다.</p>
+
+<h2 id="gradient-descent-tips">Gradient Descent Tips</h2>
+<p>다음은 경사하강법을 진행할 때의 팁입니다.
+learning rate $\alpha$를 채택하는</p>
+
+<h3 id="plot-debugging">Plot Debugging</h3>
+<p>x축에 iteration의 횟수, y축에 $J(\theta)$를 plot으로 그려보면, 다음 그림과 같이 더이상 감소하지 않는 구간이 생깁니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/plot-debugging.png" alt="plot_debugging" /></p>
+
+<p>물론 y축인 $J(\theta)$가 항상 감소하게끔 너무 큰 $\alpha$를 잡지 않도록 주의해야합니다. $\alpha$가 너무 큰 경우에는 overshooting이 발생할 수 있습니다. 따라서 적당한 $\alpha$를 설정해야합니다. 이때의 팁은 알파를 3배씩 증감시켜주면서 조절하는 것입니다. 예를들어 0.01, 0.03, 0.003 등과 같이 말입니다. 이들 0.01, 0.03, 0.003 등의 alpha에 대한 plot들을 비교해보면서 적절한 alpha를 찾아내는 과정이 중요하겠습니다.</p>
+
+<h3 id="automatic-convergence-test">Automatic Convergence Test</h3>
+<p>iteration이 유의미한 차이를 더이상 만들어내지 못할 때에 iteration을 중지시키고 최소가 되는 $J(\theta)$를 구하는 방법 또한 존재합니다. 다만, 이 방법의 아쉬운 점은 유의미한 차이인 threshold를 찾아내는것이 쉽지 않다는 것입니다. 이 threshold가 적절하지 않으면, 한참 내려가고 있을 때에 iteration을 중지시키게 될 수도 있습니다.
+따라서 plot을 활용하여 x값이 일직선이 이루어지는 $J(\theta)$를 찾아내는 방법이 보편적입니다.</p>
+
+<h2 id="choice-of-features-and-polynomial-regression">Choice of Features and Polynomial Regression</h2>
+
+<h3 id="choosing-the-most-appropriate-feature">Choosing the most appropriate Feature</h3>
+<p>우리가 집값을 예측함에 있어서 불필요한 feature를 사용하고 있을지도 모릅니다. 예를들어 집의 넓이를 중요한 feature로 생각하며 집을 구하고있는데, 주어진 feature이 고작 가로($x_1$)와 세로($x_2$) 길이(length)라면, <strong>새로운 feature을 만들어서 사용할 수도 있습니다.</strong> 새로운 feature는 $x_1 * x_2$(가로 * 세로)이겠죠. 이렇게 하면 2개의 feature을 1개로 줄일 수 있게됩니다. 그리고 이는 다음과 같은 가설함수를 설정할 수 있어보입니다.
+<script type="math/tex">h_\theta(x) = \theta_0 + \theta_1x_3</script>
+이를 통해 알 수 있듯이, 새로운 feature을 만들어서 사용하게되면 좋은 모델을 만들어 낼 수 있습니다.</p>
+
+<h3 id="polynomial-regression">Polynomial Regression</h3>
+<p>처음에 polynomial regression을 linear regression에서 접하였을 때에 문득 무언가가 이상하다는 생각이 들었습니다. 선형회귀를 하는데, polynomial regression이 갑자기 튀어나와 당황했었습니다. 아래 링크는 linear regression이 parameter에 있어 linear함을 설명해줍니다. 참고해주세요.</p>
+
+<p>++ <a href="https://www.quora.com/Why-is-linear-regression-called-linear-if-we-can-use-quadratic-equations-in-our-model-which-gives-a-curved-line">why polynomial regression is in the category of linear regression</a></p>
+
+<p>우리가 linear regression으로 데이터를 fitting하는데에 한계를 느낄때에는 polynomial regression을 이용할 수 있습니다. 이 때 우리의 가설함수 <script type="math/tex">h_\theta(x) = \theta_0x_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3</script>에서의  $x_1$은 $x$, $x_2$는 $x^2$, $x_3$은 $x^3$로 매핑시켜주면 됩니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/polynomial-regression.png" alt="polynomial_regression" /></p>
+
+<p>위와 같은 데이터의 경우에는 꼭지점 이후에 내려가는 오목한 2차 다항식보다는 3차 다항식이 더 잘 들어맞는것같죠?
+3차다항식 이외에도 제곱근 함수 $\sqrt{x}$($x^{1\over2}$)를 이용하면 더 적절한 데이터 피팅이 될 것 같습니다.</p>
+
+<h2 id="normal-equation">Normal Equation</h2>
+<p>여태까지 우리는 linear regression문제들을 해결하기 위해 gradient descent를 이용하여 데이터에 가장 잘 들어맞는 가설함수를 찾아나갔습니다.
+하지만, gradient descent 외에도 <strong>normal equation</strong>을 이용하여 데이터를 피팅할 수 있습니다. 살짝 복잡하긴 하지만, 많지 않은 데이터를 다룰때에는 gradient descent보다 빠르게 산술적으로 $\theta$값들을 구하게 됩니다.</p>
+
+<p>정규방정식을 이용한 해를 구하는 식은 다음과 같습니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/normal-equation.png" alt="normal_equation" /></p>
+
+<p>위 식에 대한 자세한 풀이는 좋은 강의영상으로 대체하겠습니다.</p>
+
+<p>++ <a href="https://www.edwith.org/linearalgebra4ai/lecture/24131/">정규방정식을 이용한 해 구하기</a></p>
+
+<p>그렇다면 이제 정규방정식을 이용하여 주어진 데이터에 맞는 $\theta$값을 구해보도록 하겠습니다. 우선, 데이터는 이번 포스트 시작할 때 사용되었던 multiple features가 있는 집값예측 데이터입니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/multiple-features-data.png" alt="multiple_features_data" /></p>
+
+<p>정규방정식에서의 X는 design matrix로써, 모든 feature정보를 [m x n+1] matrix에 담습니다. n+1은 $x_0$ feature의 column을 추가한 것 입니다.마찬가지로, 정규방정식에서의 y는 [m x 1] matrix의 column vector로 정의됩니다.</p>
+
+<p>위의 데이터를 이용하여 정규방정식에 대입하게 되면 다음과 같습니다.</p>
+
+<p><img src="/assets/images/ml/coursera/week2/normal-equation-2.png" alt="normal_equation_2" /></p>
+
+<p>위 식을 계산하면 cost function을 최소화하는, 즉 데이터에 가장 적합한 $\theta$값을 구하게 됩니다.
+한번 계산해볼까요?</p>
+
+<p><img src="/assets/images/ml/coursera/week2/normal-equation-result.png" alt="normal_equation_result" /></p>
+
+<p>그렇다면, 언제 어떤 경우에 <strong>gradient descent</strong>를 쓰고, 어떨때 <strong>normal equation</strong>을 써야할까요?
+먼저 <strong>Gradient Descent</strong>의 장단점을 나열해보겠습니다.</p>
+
+<ul>
+  <li>장점
+    <ul>
+      <li>엄청난 양의 데이터를 다룰 때 빠르다.
+        <ul>
+          <li>엄청난 양이라 함은 n이 10000보다 큰 경우를 뜻한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>단점
+    <ul>
+      <li>learning rate $\alpha$를 정해야한다.</li>
+      <li>iteration을 사용하기 때문에 속도가 느리다.($O(kn^2)$)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>반면에, <strong>Normal Equation</strong>의 장단점은 다음과 같습니다.</p>
+
+<ul>
+  <li>장점
+    <ul>
+      <li>learning rate $\alpha$를 정할 필요가 없으며, convergence를 체크할 필요가 없다.</li>
+      <li>iteration을 사용하지 않기 때문에 속도가 빠른 편이다.</li>
+    </ul>
+  </li>
+  <li>단점
+    <ul>
+      <li>역행렬을 연산할 필요가 있으며, 이는 $O(n^3)$의 시간복잡도를 갖는다.</li>
+      <li>n이 커질수록 연산속도가 느려진다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>따라서, 보통 n이 10000을 넘지 않는 경우에는 간단하게 normal equation을 이용하여 cost function을 최소화하는 $\theta$값을 구하고,
+n이 10000보다 큰 엄청난 양의 데이터의 경우에는 gradient descent를 이용하여 적절한 $\theta$값을 구합니다.</strong></p>
+
+<h3 id="normal-equation-and-non-invertibility">Normal Equation and non-invertibility</h3>
+<p>선형대수를 공부하셨기 때문에 정규방정식에서 쓰이는 역행렬이 <strong>존재하지 않으면</strong> 어쩌지라는 생각을 하셨을 수도 있습니다.
+다행이도, MATLAB이나 octave의 경우 <strong>pinv</strong> 라는 pseudo inverse function이 존재하여 non-invertible한 matrix에 대해서도 올바른 값을 계산해줍니다.</p>
+
+<p>그렇다면 마지막으로 $X^TX$가 non-invertible하다는 것이 갖는 의미에 대해 알아보겠습니다. 일반적으로는 두 가지 원인이 있습니다.</p>
+
+<p>첫째는 불필요한 feature들이 존재할 경우입니다.
+두번째는 너무 많은 feature들이 존재할 경우입니다. 예를들어, feature의 개수 n이 m보다 훨씬 많은 경우에 $X^TX$가 가끔 비가역성인 경우가 생기게됩니다. 너무 많은 feature들은 추후에 배울 <strong><a href="https://hy38.github.io/ml/MLcoursera-3-2/">regularization</a></strong>을 이용하여 문제를 해결하거나, feature들을 지워나가면서 해결할 수 있습니다.</p>
+
+<p>또한, linearly dependent한 feature을 지우는 방법도 있다고 합니다.</p>
+
+<p>지금까지 Linear Regression with Multiple Variables 에 대해 알아보았습니다. 다음 시간에는 Octave / Matlab Tutorial을 건너뛰고 <strong>Logistic Regression</strong>에 대해 포스팅하겠습니다.
+오탈자 / 오류 / 궁금사항 댓글로 남겨주시면 적극 반영하여 더욱 발전된 모습을 보여드리겠습니다. 궁금하신 것이 있으시면 언제든지 댓글을 남겨주시기 바랍니다. 감사합니다.</p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/ghost.png" alt="hy38" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/hy38">SangHyun Park</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/hy38">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'http://localhost:4000/';
+                            this.page.identifier = 'HY38's IT Blog';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://hy38.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/machine-learning/">Machine learning</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/MLcoursera-6-1">ML Coursera 6-1 Advice for Applying Machine Learning</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/MLcoursera-5-1">ML Coursera 5-1 Neural Networks - Learning</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/MLcoursera-4-1">ML Coursera 4-1 Neural Networks - Representation</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/machine-learning/">
+                                
+                                    See all 7 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/MLcoursera-3-1">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/MLcoursera-3-1">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Machine learning</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Coursera</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">ML Coursera 3-1 Logistic Regression</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="SangHyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">SangHyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/MLcoursera-1-2">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/MLcoursera-1-2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Machine learning</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Coursera</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">ML Coursera 1-2 Linear Regression with One Variable</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="SangHyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">SangHyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000/">
+            
+                <img src="/assets/images/favicon.png" alt="HY38's IT Blog icon" />
+            
+            <span>HY38's IT Blog</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">ML Coursera 2-1 Linear Regression with Multiple Variables</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=ML+Coursera+2-1+Linear+Regression+with+Multiple+Variables&amp;url=https://hy38.github.io/MLcoursera-2-1"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.io/MLcoursera-2-1"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000/">HY38's IT Blog</a> &copy; 2020</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="HY38's IT Blog" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to HY38's IT Blog</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
