@@ -8,6 +8,40 @@
     
       
       <item>
+        <title>위상정렬의 구현 - Topological Sort</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Feb 2020 04:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/topological-sort</link>
+        <guid isPermaLink="true">https://hy38.github.io/topological-sort</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1325 - 효율적인 해킹</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;DFS를 이용한 문제해결&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Wed, 19 Feb 2020 19:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/BOJ-1325</link>
+        <guid isPermaLink="true">https://hy38.github.io/BOJ-1325</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>BOJ 1389 - 케빈 베이컨의 6단계 법칙</title>
         
           <description>&lt;blockquote&gt;
