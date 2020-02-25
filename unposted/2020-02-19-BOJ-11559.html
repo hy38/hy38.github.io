@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="BOJ 11559 - Puyo Puyo" />
-    <meta property="og:description" content="> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/14502) - 이 문제는 단순한 완전탐색 시뮬레이션 DFS / BFS 문제이다. 모든 경우에 대해 벽을 세우고, 각각의 지도에 대해 바이러스 표시된 곳을 상하좌우로 BFS 혹은 DFS 돌리면 된다. - 이 문제의 복병은 다름아닌 벽을 세우는 것이라고 생각한다. 벽 3개를 어떻게 세울지가 가장 큰 고민이" />
+    <meta property="og:description" content="> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/11559) - 이 문제는 4개 이상의 연속된 정점들을 찾아 후속작업을 해주는 문제이다. - 연속된 정점들을 찾는 방법에는 DFS, BFS가 있다. - 방문하지 않은 정점들에 대해 완전탐색을 통해 연속된 정점들을 찾는다. - 그 후 큐에 해당 좌표들을 저장하여 후속작업을 처리하였다. - 후속작업이라 함은 그 정점들을" />
     <meta property="og:url" content="https://hy38.github.io/unposted/2020-02-19-BOJ-11559" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/tetris.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Dfs" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="BOJ 11559 - Puyo Puyo" />
-    <meta name="twitter:description" content="> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/14502) - 이 문제는 단순한 완전탐색 시뮬레이션 DFS / BFS 문제이다. 모든 경우에 대해 벽을 세우고, 각각의 지도에 대해 바이러스 표시된 곳을 상하좌우로 BFS 혹은 DFS 돌리면 된다. - 이 문제의 복병은 다름아닌 벽을 세우는 것이라고 생각한다. 벽 3개를 어떻게 세울지가 가장 큰 고민이" />
+    <meta name="twitter:description" content="> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/11559) - 이 문제는 4개 이상의 연속된 정점들을 찾아 후속작업을 해주는 문제이다. - 연속된 정점들을 찾는 방법에는 DFS, BFS가 있다. - 방문하지 않은 정점들에 대해 완전탐색을 통해 연속된 정점들을 찾는다. - 그 후 큐에 해당 좌표들을 저장하여 후속작업을 처리하였다. - 후속작업이라 함은 그 정점들을" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/tetris.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/unposted/2020-02-19-BOJ-11559"
     },
-    "description": "> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/14502) - 이 문제는 단순한 완전탐색 시뮬레이션 DFS / BFS 문제이다. 모든 경우에 대해 벽을 세우고, 각각의 지도에 대해 바이러스 표시된 곳을 상하좌우로 BFS 혹은 DFS 돌리면 된다. - 이 문제의 복병은 다름아닌 벽을 세우는 것이라고 생각한다. 벽 3개를 어떻게 세울지가 가장 큰 고민이"
+    "description": "> DFS와 BFS를 이용한 문제해결 # [문제링크](https://www.acmicpc.net/problem/11559) - 이 문제는 4개 이상의 연속된 정점들을 찾아 후속작업을 해주는 문제이다. - 연속된 정점들을 찾는 방법에는 DFS, BFS가 있다. - 방문하지 않은 정점들에 대해 완전탐색을 통해 연속된 정점들을 찾는다. - 그 후 큐에 해당 좌표들을 저장하여 후속작업을 처리하였다. - 후속작업이라 함은 그 정점들을"
 }
     </script>
 
@@ -191,14 +191,15 @@ into the {body} of the default.hbs template -->
   <p>DFS와 BFS를 이용한 문제해결</p>
 </blockquote>
 
-<h1 id="문제링크"><a href="https://www.acmicpc.net/problem/14502">문제링크</a></h1>
+<h1 id="문제링크"><a href="https://www.acmicpc.net/problem/11559">문제링크</a></h1>
 
 <ul>
-  <li>이 문제는 단순한 완전탐색 시뮬레이션 DFS / BFS 문제이다.
-모든 경우에 대해 벽을 세우고, 각각의 지도에 대해 바이러스 표시된 곳을
-상하좌우로 BFS 혹은 DFS 돌리면 된다.</li>
-  <li>이 문제의 복병은 다름아닌 벽을 세우는 것이라고 생각한다. 벽 3개를 어떻게 세울지가
-가장 큰 고민이 되는 문제가 아닐까 싶다.</li>
+  <li>이 문제는 4개 이상의 연속된 정점들을 찾아 후속작업을 해주는 문제이다.</li>
+  <li>연속된 정점들을 찾는 방법에는 DFS, BFS가 있다.</li>
+  <li>방문하지 않은 정점들에 대해 완전탐색을 통해 연속된 정점들을 찾는다.</li>
+  <li>그 후 큐에 해당 좌표들을 저장하여 후속작업을 처리하였다.</li>
+  <li>후속작업이라 함은 그 정점들을 ‘.’으로 지워주는 것과 그 정점들의 해당 column의 인덱스배열에 카운팅을 해주는 것이다.</li>
+  <li>각 column별 몇 개의 정점이 사라지는지 카운팅해주는 이유는, 이후에 있는 ‘중력’을 편하게 적용하기 위해서이다.</li>
 </ul>
 
 <h1 id="알고리즘-세우기">알고리즘 세우기</h1>
@@ -566,6 +567,8 @@ for (int r = 0; r &lt; row; ++r) {
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                  
                                 
                                   
                                 
