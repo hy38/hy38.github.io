@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hy38.github.io/sitemap.xml
