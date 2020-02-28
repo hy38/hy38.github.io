@@ -50,8 +50,8 @@
     <meta property="og:description" content="오일러 서킷과 트레일 오일러 서킷이란? 트레일이란? 사전적 정의 오일러 서킷 : 그래프의 모든 간선을 정확히 한 번씩 지나서 시작점으로 돌아오는 경로를 말한다. 반드시 시작점으로 돌아와야하며, 한 번 지나간 선으로는 지나가지 않고 모든 선을 이어 그림을 완성하는 것 이와 유사하지만, 미묘한 차이가 있는 오일러 트레일의 사전적 정의는 다음과 같다. 오일러 트레일" />
     <meta property="og:url" content="https://hy38.github.io/euilerian-circuit-and-trail" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/bood.jpg" />
-    <meta property="article:publisher" content="https://www.facebook.com/" />
-    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:publisher" content="https://www.facebook.com/hy387" />
+    <meta property="article:author" content="https://www.facebook.com/hy387" />
     <meta property="article:published_time" content="2020-02-22T04:00:00+09:00" />
     <meta property="article:modified_time" content="2020-02-22T04:00:00+09:00" />
     <meta property="article:tag" content="Algorithm" />
@@ -138,6 +138,9 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-right">
         <div class="social-links">
             
+                <a class="social-link social-link-fb" href="https://facebook.com/hy387" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
             
         </div>
         
@@ -208,6 +211,8 @@ into the {body} of the default.hbs template -->
   <li>DFS를 이용한 오일러 서킷을 찾는 시간복잡도는 O(V * E)를 갖는다.</li>
 </ul>
 
+<hr />
+
 <h2 id="오일러-서킷의-존재-조건">오일러 서킷의 존재 조건</h2>
 
 <ol>
@@ -236,6 +241,8 @@ into the {body} of the default.hbs template -->
   </li>
 </ul>
 
+<hr />
+
 <h3 id="오일러-서킷의-존재-여부-확인-코드">오일러 서킷의 존재 여부 확인 코드</h3>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">checkEuler</span><span class="p">()</span>
@@ -254,11 +261,13 @@ into the {body} of the default.hbs template -->
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="오일러-서킷의-구현dfs">오일러 서킷의 구현(DFS)</h2>
+<hr />
+
+<h2 id="오일러-서킷의-구현dfs-응용">오일러 서킷의 구현(DFS 응용)</h2>
 
 <ul>
   <li>
-    <p>우선 기존 DFS와 달리 방문 배열이 존재하지 않음에 유의하자.</p>
+    <p>우선 기존 DFS와 달리 방문 배열(vis)이 존재하지 않음에 유의하자.</p>
   </li>
   <li>
     <p><strong>정말 신기한 방식</strong>으로 오일러 서킷을 만들어낸다.</p>
@@ -298,6 +307,8 @@ into the {body} of the default.hbs template -->
   </li>
 </ul>
 
+<hr />
+
 <h2 id="오일러-트레일의-존재-조건">오일러 트레일의 존재 조건</h2>
 
 <ul>
@@ -315,11 +326,15 @@ into the {body} of the default.hbs template -->
   </li>
 </ul>
 
+<hr />
+
 <h3 id="오일러-트레일의-존재-여부-확인-코드">오일러 트레일의 존재 여부 확인 코드</h3>
 
 <ul>
   <li>오일러 서킷의 존재 여부 확인 코드와 동일하다.</li>
 </ul>
+
+<hr />
 
 <h2 id="오일러-트레일이나-서킷을-찾는-코드">오일러 트레일이나 서킷을 찾는 코드</h2>
 
@@ -372,6 +387,8 @@ into the {body} of the default.hbs template -->
 <span class="p">}</span>
 </code></pre></div></div>
 
+<hr />
+
 <h3 id="참고-사항">참고 사항</h3>
 
 <ul>
@@ -386,6 +403,8 @@ into the {body} of the default.hbs template -->
   </li>
 </ul>
 
+<hr />
+
 <h2 id="references">References</h2>
 
 <ul>
@@ -396,22 +415,22 @@ into the {body} of the default.hbs template -->
     <p>알고리즘 문제 해결 전략 2</p>
   </li>
   <li>
-    <p>https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0</p>
+    <p><a href="https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0" target="_blank">https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0</a></p>
   </li>
   <li>
-    <p>https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit</p>
+    <p><a href="https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit" target="_blank">https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit</a></p>
   </li>
   <li>
-    <p>https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC</p>
+    <p><a href="https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC" target="_blank">https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC</a></p>
   </li>
   <li>
-    <p>https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7</p>
+    <p><a href="https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7" target="_blank">https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7</a></p>
   </li>
   <li>
-    <p>https://coloredrabbit.tistory.com/36</p>
+    <p><a href="https://coloredrabbit.tistory.com/36" target="_blank">https://coloredrabbit.tistory.com/36</a></p>
   </li>
   <li>
-    <p>https://100100e.tistory.com/118</p>
+    <p><a href="https://100100e.tistory.com/118" target="_blank">https://100100e.tistory.com/118</a></p>
   </li>
 </ul>
 
@@ -539,6 +558,15 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
+                                            <li><a href="/find-if-path-exists-between-vertices">두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/BOJ-1325">BOJ 1325 - 효율적인 해킹</a></li>
                                         
                                     
@@ -548,7 +576,19 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                            <li><a href="/BOJ-1389">BOJ 1389 - 케빈 베이컨의 6단계 법칙</a></li>
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
                                         
                                     
                                   
@@ -602,7 +642,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 7 posts  →
+                                    See all 10 posts  →
                                 
                             </a>
                         </footer>
@@ -726,7 +766,7 @@ into the {body} of the default.hbs template -->
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
                     <a href="/">Latest Posts</a>
-                    
+                    <a href="https://facebook.com/hy387" target="_blank" rel="noopener">Facebook</a>
                     
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
                 </nav>

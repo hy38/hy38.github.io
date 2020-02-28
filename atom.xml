@@ -42,6 +42,23 @@
     
       
       <item>
+        <title>두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;DFS를 이용하여 그래프에서의 두 정점이 연결되어 있는지 간단하게 확인하기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Wed, 19 Feb 2020 19:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/find-if-path-exists-between-vertices</link>
+        <guid isPermaLink="true">https://hy38.github.io/find-if-path-exists-between-vertices</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>BOJ 1325 - 효율적인 해킹</title>
         
           <description>&lt;blockquote&gt;
@@ -54,6 +71,40 @@
         <link>
         https://hy38.github.io/BOJ-1325</link>
         <guid isPermaLink="true">https://hy38.github.io/BOJ-1325</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;연결 요소(컴포넌트) 세기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Tue, 18 Feb 2020 23:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/counting-the-components-of-graph</link>
+        <guid isPermaLink="true">https://hy38.github.io/counting-the-components-of-graph</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;DFS의 목적과 시간복잡도&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Mon, 17 Feb 2020 19:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/about-DFS</link>
+        <guid isPermaLink="true">https://hy38.github.io/about-DFS</guid>
       </item>
       
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-02-25T15:56:22+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title><link href="https://hy38.github.io/euilerian-circuit-and-trail" rel="alternate" type="text/html" title="오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail" /><published>2020-02-22T04:00:00+09:00</published><updated>2020-02-22T04:00:00+09:00</updated><id>https://hy38.github.io/euilerian-circuit-and-trail</id><content type="html" xml:base="https://hy38.github.io/euilerian-circuit-and-trail">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-02-28T16:51:45+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title><link href="https://hy38.github.io/euilerian-circuit-and-trail" rel="alternate" type="text/html" title="오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail" /><published>2020-02-22T04:00:00+09:00</published><updated>2020-02-22T04:00:00+09:00</updated><id>https://hy38.github.io/euilerian-circuit-and-trail</id><content type="html" xml:base="https://hy38.github.io/euilerian-circuit-and-trail">&lt;blockquote&gt;
   &lt;p&gt;오일러 서킷과 트레일&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -22,6 +22,8 @@
 &lt;ul&gt;
   &lt;li&gt;DFS를 이용한 오일러 서킷을 찾는 시간복잡도는 O(V * E)를 갖는다.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;오일러-서킷의-존재-조건&quot;&gt;오일러 서킷의 존재 조건&lt;/h2&gt;
 
@@ -51,6 +53,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;오일러-서킷의-존재-여부-확인-코드&quot;&gt;오일러 서킷의 존재 여부 확인 코드&lt;/h3&gt;
 
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkEuler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -69,11 +73,13 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;오일러-서킷의-구현dfs&quot;&gt;오일러 서킷의 구현(DFS)&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;오일러-서킷의-구현dfs-응용&quot;&gt;오일러 서킷의 구현(DFS 응용)&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;우선 기존 DFS와 달리 방문 배열이 존재하지 않음에 유의하자.&lt;/p&gt;
+    &lt;p&gt;우선 기존 DFS와 달리 방문 배열(vis)이 존재하지 않음에 유의하자.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;정말 신기한 방식&lt;/strong&gt;으로 오일러 서킷을 만들어낸다.&lt;/p&gt;
@@ -113,6 +119,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;오일러-트레일의-존재-조건&quot;&gt;오일러 트레일의 존재 조건&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -130,11 +138,15 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;오일러-트레일의-존재-여부-확인-코드&quot;&gt;오일러 트레일의 존재 여부 확인 코드&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;오일러 서킷의 존재 여부 확인 코드와 동일하다.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;오일러-트레일이나-서킷을-찾는-코드&quot;&gt;오일러 트레일이나 서킷을 찾는 코드&lt;/h2&gt;
 
@@ -187,6 +199,8 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h3&gt;
 
 &lt;ul&gt;
@@ -201,6 +215,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -211,22 +227,22 @@
     &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0&quot; target=&quot;_blank&quot;&gt;https://namu.wiki/w/%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit&quot; target=&quot;_blank&quot;&gt;https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%804-%ED%95%9C%EB%B6%93%EA%B7%B8%EB%A6%AC%EA%B8%B0Eulerian-circuit&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC&quot; target=&quot;_blank&quot;&gt;https://velog.io/@doontagi/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7%EA%B3%BC-%ED%8A%B8%EB%A0%88%EC%9D%BC&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7&quot; target=&quot;_blank&quot;&gt;https://projooni.tistory.com/entry/%EC%98%A4%EC%9D%BC%EB%9F%AC-%EC%84%9C%ED%82%B7&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://coloredrabbit.tistory.com/36&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://coloredrabbit.tistory.com/36&quot; target=&quot;_blank&quot;&gt;https://coloredrabbit.tistory.com/36&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;https://100100e.tistory.com/118&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://100100e.tistory.com/118&quot; target=&quot;_blank&quot;&gt;https://100100e.tistory.com/118&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">오일러 서킷과 트레일</summary></entry><entry><title type="html">위상정렬의 구현 - Topological Sort</title><link href="https://hy38.github.io/topological-sort" rel="alternate" type="text/html" title="위상정렬의 구현 - Topological Sort" /><published>2020-02-21T04:00:00+09:00</published><updated>2020-02-21T04:00:00+09:00</updated><id>https://hy38.github.io/topological-sort</id><content type="html" xml:base="https://hy38.github.io/topological-sort">&lt;blockquote&gt;
   &lt;p&gt;위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.&lt;/p&gt;
@@ -336,10 +352,10 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;관련문제 - &lt;a href=&quot;https://www.acmicpc.net/problem/2252&quot;&gt;BOJ 2252 - 줄 세우기&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;관련문제 - &lt;a href=&quot;https://www.acmicpc.net/problem/2252&quot; target=&quot;_blank&quot;&gt;BOJ 2252 - 줄 세우기&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://hy38.github.io/BOJ-2252&quot;&gt;풀이&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://hy38.github.io/BOJ-2252&quot; target=&quot;_blank&quot;&gt;풀이&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -435,10 +451,10 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;관련-문제들&quot;&gt;관련 문제들&lt;/h2&gt;
+&lt;h2 id=&quot;더-많은-위상-정렬-문제들&quot;&gt;더 많은 위상 정렬 문제들&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;BOJ - &lt;a href=&quot;https://www.acmicpc.net/problem/tag/%EC%9C%84%EC%83%81%20%EC%A0%95%EB%A0%AC&quot;&gt;위상 정렬 카테고리&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;BOJ - &lt;a href=&quot;https://www.acmicpc.net/problem/tag/%EC%9C%84%EC%83%81%20%EC%A0%95%EB%A0%AC&quot; target=&quot;_blank&quot;&gt;위상 정렬 카테고리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -453,18 +469,60 @@
     &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html&quot;&gt;https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html&quot; target=&quot;_blank&quot;&gt;https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC&quot;&gt;https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC&quot; target=&quot;_blank&quot;&gt;https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;amp;logNo=221236874984&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;amp;logNo=221236874984&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;amp;logNo=221236874984&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot; target=&quot;_blank&quot;&gt;https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;amp;logNo=221236874984&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://jason9319.tistory.com/93&quot;&gt;https://jason9319.tistory.com/93&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jason9319.tistory.com/93&quot; target=&quot;_blank&quot;&gt;https://jason9319.tistory.com/93&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.</summary></entry><entry><title type="html">BOJ 1325 - 효율적인 해킹</title><link href="https://hy38.github.io/BOJ-1325" rel="alternate" type="text/html" title="BOJ 1325 - 효율적인 해킹" /><published>2020-02-19T19:00:00+09:00</published><updated>2020-02-19T19:00:00+09:00</updated><id>https://hy38.github.io/BOJ-1325</id><content type="html" xml:base="https://hy38.github.io/BOJ-1325">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.</summary></entry><entry><title type="html">두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices</title><link href="https://hy38.github.io/find-if-path-exists-between-vertices" rel="alternate" type="text/html" title="두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices" /><published>2020-02-19T19:00:00+09:00</published><updated>2020-02-19T19:00:00+09:00</updated><id>https://hy38.github.io/find-if-path-exists-between-vertices</id><content type="html" xml:base="https://hy38.github.io/find-if-path-exists-between-vertices">&lt;blockquote&gt;
+  &lt;p&gt;DFS를 이용하여 그래프에서의 두 정점이 연결되어 있는지 간단하게 확인하기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;두-정점의-연결성-확인&quot;&gt;두 정점의 연결성 확인&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이는 두 정점이 같은 컴포넌트에 존재하는지와 같은 문제이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;정점 u와 v가 같은 컴포넌트에 존재한다면, u에서 DFS를 돌렸을 때 v가 방문된다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;정점 u에서 DFS를 할 때에는, u에서 갈 수 있는 모든 정점들을 방문하게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;따라서, u에서 DFS를 돌려 v가 방문되는지를 확인하면 두 정점이 연결되어있는지를 확인할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;코드&quot;&gt;코드&lt;/h2&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Connected!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Not Connected..&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">DFS를 이용하여 그래프에서의 두 정점이 연결되어 있는지 간단하게 확인하기</summary></entry><entry><title type="html">BOJ 1325 - 효율적인 해킹</title><link href="https://hy38.github.io/BOJ-1325" rel="alternate" type="text/html" title="BOJ 1325 - 효율적인 해킹" /><published>2020-02-19T19:00:00+09:00</published><updated>2020-02-19T19:00:00+09:00</updated><id>https://hy38.github.io/BOJ-1325</id><content type="html" xml:base="https://hy38.github.io/BOJ-1325">&lt;blockquote&gt;
   &lt;p&gt;DFS를 이용한 문제해결&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -637,7 +695,311 @@
 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sanghyun Park</name></author><category term="DFS" /><category term="algorithm" /><summary type="html">DFS를 이용한 문제해결</summary></entry><entry><title type="html">BOJ 1389 - 케빈 베이컨의 6단계 법칙</title><link href="https://hy38.github.io/BOJ-1389" rel="alternate" type="text/html" title="BOJ 1389 - 케빈 베이컨의 6단계 법칙" /><published>2020-02-12T23:00:00+09:00</published><updated>2020-02-12T23:00:00+09:00</updated><id>https://hy38.github.io/BOJ-1389</id><content type="html" xml:base="https://hy38.github.io/BOJ-1389">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sanghyun Park</name></author><category term="DFS" /><category term="algorithm" /><summary type="html">DFS를 이용한 문제해결</summary></entry><entry><title type="html">그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph</title><link href="https://hy38.github.io/counting-the-components-of-graph" rel="alternate" type="text/html" title="그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph" /><published>2020-02-18T23:00:00+09:00</published><updated>2020-02-18T23:00:00+09:00</updated><id>https://hy38.github.io/counting-the-components-of-graph</id><content type="html" xml:base="https://hy38.github.io/counting-the-components-of-graph">&lt;blockquote&gt;
+  &lt;p&gt;연결 요소(컴포넌트) 세기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;그래프의-연결-요소&quot;&gt;그래프의 연결 요소&lt;/h2&gt;
+
+&lt;h3 id=&quot;사전적-정의&quot;&gt;사전적 정의&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;컴포넌트 : 무향 그래프가 간선으로 서로 연결되지 않은 몇 개의 조각으로 쪼개져 있는 경우, 각 연결된 정점들의 부분집합을 컴포넌트라고 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“연결 요소”, “연결된 부분집합”, “컴포넌트” 등으로 불린다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DFS를 이용하여 연결요소의 개수를 찾기 때문에, 시간복잡도는 O(V + E)를 갖는다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;연결-요소를-찾는-간단한-방법&quot;&gt;연결 요소를 찾는 간단한 방법&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DFS를 이용하여 연결 요소를, 혹은 개수를 찾는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 정점 V에 대해 DFS를 할때, DFS가 몇번 호출되는지를 세면 된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;같은 컴포넌트로 이루어져 있다면, 한 정점에서의 DFS만으로 모든 컴포넌트의 정점들이 방문되었을 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;관련-문제들&quot;&gt;관련 문제들&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11724&quot; target=&quot;_blank&quot;&gt;BOJ 11724 - 연결 요소의 개수&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2667&quot; target=&quot;_blank&quot;&gt;BOJ 2667 - 단지 번호 붙이기&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/4963&quot; target=&quot;_blank&quot;&gt;BOJ 4963 - 섬의 개수&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">연결 요소(컴포넌트) 세기</summary></entry><entry><title type="html">DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity</title><link href="https://hy38.github.io/about-DFS" rel="alternate" type="text/html" title="DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity" /><published>2020-02-17T19:00:00+09:00</published><updated>2020-02-17T19:00:00+09:00</updated><id>https://hy38.github.io/about-DFS</id><content type="html" xml:base="https://hy38.github.io/about-DFS">&lt;blockquote&gt;
+  &lt;p&gt;DFS의 목적과 시간복잡도&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;그래프의-탐색&quot;&gt;그래프의 탐색&lt;/h1&gt;
+
+&lt;h2 id=&quot;깊이-우선-탐색depth-first-search&quot;&gt;깊이 우선 탐색(Depth First Search)&lt;/h2&gt;
+
+&lt;h3 id=&quot;사전적-정의&quot;&gt;사전적 정의&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;DFS : 그래프의 탐색 방법 중 하나로, 현재 정점과 인접한 간선들 중 아직 방문하지 않은 정점으로 향하는 간선을 무조건 따라간다. 더이상 방문할 곳이 없는 정점에 도달하면, 마지막으로 따라왔던 간선을 따라 뒤로 돌아간다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;가능한 한 그래프에서 “더 깊이” 검색하는 알고리즘으로, 가장 최근에 발견되고 아직 조사하지 않은 간선을 가진 정점 v로부터 나오는 간선을 조사한다. v의 모든 간선이 조사되면 그 검색은 v를 발견하게 해준 정점으로부터 나오는 간선을 조사하기 위해 “뒤로 되돌아간다”. 발견되지 않은 정점이 하나라도 남아있으면, 깊이 우선 탐색은 그 중 하나를 새 출발점으로 선택하고 해당 출발점으로부터의 검색을 반복한다. 이 전체 과정을 &lt;strong&gt;모든 정점을 발견&lt;/strong&gt;할 때까지 반복한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DFS를 한번만 사용하여 모든 정점을 발견하지 못할 경우가 존재한다. 그래프가 두 개 이상의 컴포넌트로 이루어져있을 경우이다. 따라서, 모든 정점들을 발견하기 위해서는 모든 정점들을 시작점으로 DFS를 해주어야 한다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이를 저격한 문제가 &lt;a href=&quot;https://www.acmicpc.net/problem/1707&quot; target=&quot;_blank&quot;&gt;이분 그래프&lt;/a&gt; 문제이다. 그래프가 하나의 컴포넌트로 이루어졌다고 착각하기 쉬운 문제이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;깊이-우선-탐색의-목적과-쓰임&quot;&gt;깊이 우선 탐색의 목적과 쓰임&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;모든 정점을 (순서대로) 발견&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그래프 전체의 &lt;strong&gt;구조 파악&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다른 알고리즘의 &lt;strong&gt;서브 루틴&lt;/strong&gt;으로 자주 사용됨.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;/find-if-path-exists-between-vertices&quot; target=&quot;_blank&quot;&gt;그래프에서 두 정점이 연결되어있는지를 확인하기&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;/counting-the-components-of-graph&quot; target=&quot;_blank&quot;&gt;그래프의 연결 요소(Component)의 개수를 세기&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;/topological-sort&quot; target=&quot;_blank&quot;&gt;위상 정렬(Topological Sort)&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;/euilerian-circuit-and-trail&quot; target=&quot;_blank&quot;&gt;오일러 서킷/트레일 찾기(Eulerian Circuit &amp;amp; Trail)&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;/is-graph-cyclic&quot; target=&quot;_blank&quot;&gt;사이클(Cycle)이 존재하는지 확인하기&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;절단점(Cut Vertex / Articulation Point) 찾기&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;다리(Bridge) 찾기&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;강결합 컴포넌트(Strongly Connected Components, SCC)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;2 - SAT&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;dfs의-시간복잡도&quot;&gt;DFS의 시간복잡도&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;인접 리스트(Adjacency List) : O(V + E)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;인접 리스트의 경우, 모든 정점에 대해 DFS를 실행하므로 V, 각 간선을 모두 지나므로 E의 시간복잡도를 갖는다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;구체적으로는, 방향있는 그래프의 경우 모든 간선을 한 번씩 확인하여 E, 무방향 그래프의 경우 모든 간선을 두 번씩 확인하여 2E를 갖는다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이를 빅 O 표기법을 사용하면 모두 O(V + E)를 갖게된다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;인접 행렬(Adjacency Matrix) : O(V * V)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;각 정점 V에 대해, 다른 정점들과 연결되어있는 간선이 있는지 모두 탐색하기 때문에 V를 갖는다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;따라서 이 경우 시간복잡도는 O(V * V)이다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;dfs의-구현방법&quot;&gt;DFS의 구현방법&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DFS를 구현하는 방법으로는 스택을 이용한 방법이 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;방문하는 정점 v를 스택에 넣고, v와 인접한 방문하지 않은 한 정점을 스택에 넣는것을 반복한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;더 이상 방문할 수 있는 정점이 존재하지 않은 경우에는, 스택에서 빼준다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;스택을 만들어 사용하는 방법과, 함수 호출 스택(재귀)를 이용하는 방법이 존재한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;스택-구현-vs-재귀-함수-이용&quot;&gt;스택 구현 vs 재귀 함수 이용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;개인적으로 재귀함수를 이용하여 DFS를 구현하는 것을 선호한다. 코딩이 간편하기도 하고, 코드가 직관적이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다만, 재귀함수를 이용할 경우에 함수를 호출하고 메모리에 올리는데 드는 오버헤드가 존재하는 단점이 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;구체적으로는, 컨텍스트 스위칭(Context Switching)이 일어나 수행시간이 느려진다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;참조 링크 : &lt;a href=&quot;https://itance.tistory.com/entry/%EC%9E%AC%EA%B7%80%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;dfs의-구현코드&quot;&gt;DFS의 구현(코드)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pseudo Code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DFS_All&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GRAY&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mark as visited
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BALCK&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mark as finished
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ Code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS_All&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;DFS visits &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://velog.io/@pa324/%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-5fk1upw4e3&quot; target=&quot;_blank&quot;&gt;https://velog.io/@pa324/%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-5fk1upw4e3&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://namu.wiki/w/DFS&quot; target=&quot;_blank&quot;&gt;https://namu.wiki/w/DFS&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0kaHIfrB3T4&amp;amp;feature=youtu.&quot; target=&quot;_blank&quot;&gt;https://www.youtube.com/watch?v=0kaHIfrB3T4&amp;amp;feature=youtu.&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://twpower.github.io/151-bfs-dfs-basic-problem&quot; target=&quot;_blank&quot;&gt;https://twpower.github.io/151-bfs-dfs-basic-problem&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html&quot; target=&quot;_blank&quot;&gt;https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">DFS의 목적과 시간복잡도</summary></entry><entry><title type="html">BOJ 1389 - 케빈 베이컨의 6단계 법칙</title><link href="https://hy38.github.io/BOJ-1389" rel="alternate" type="text/html" title="BOJ 1389 - 케빈 베이컨의 6단계 법칙" /><published>2020-02-12T23:00:00+09:00</published><updated>2020-02-12T23:00:00+09:00</updated><id>https://hy38.github.io/BOJ-1389</id><content type="html" xml:base="https://hy38.github.io/BOJ-1389">&lt;blockquote&gt;
   &lt;p&gt;DFS를 이용한 문제해결&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1547,518 +1909,4 @@ vis배열을 임의로 초기화하지 않아도됨. DFS함수 내에서 진행�
 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sanghyun Park</name></author><category term="DFS" /><category term="BFS" /><category term="algorithm" /><summary type="html">DFS를 이용한 문제해결</summary></entry><entry><title type="html">BOJ 14502 - 연구소</title><link href="https://hy38.github.io/BOJ-14502" rel="alternate" type="text/html" title="BOJ 14502 - 연구소" /><published>2020-02-01T19:00:00+09:00</published><updated>2020-02-01T19:00:00+09:00</updated><id>https://hy38.github.io/BOJ-14502</id><content type="html" xml:base="https://hy38.github.io/BOJ-14502">&lt;blockquote&gt;
-  &lt;p&gt;BFS를 이용한 문제해결&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;문제링크&quot;&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/14502&quot;&gt;문제링크&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;이 문제는 단순한 완전탐색 시뮬레이션 DFS / BFS 문제이다.
-모든 경우에 대해 벽을 세우고, 각각의 지도에 대해 바이러스 표시된 곳을
-상하좌우로 BFS 혹은 DFS 돌리면 된다.&lt;/li&gt;
-  &lt;li&gt;이 문제의 복병은 다름아닌 벽을 세우는 것이라고 생각한다. 벽 3개를 어떻게 세울지가
-가장 큰 고민이 되는 문제가 아닐까 싶다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;알고리즘-세우기&quot;&gt;알고리즘 세우기&lt;/h1&gt;
-
-&lt;p&gt;1) 입력받으면서 바이러스의 좌표를 저장한다.&lt;/p&gt;
-
-&lt;p&gt;2) 모든 가능한 경우의 벽들을 세운다.&lt;/p&gt;
-
-&lt;p&gt;3) 모든 가능한 경우마다 BFS(혹은 DFS)를 이용하여 바이러스를 퍼뜨린다.&lt;/p&gt;
-
-&lt;p&gt;3-1) 각 경우마다 안전 영역의 크기를 구한 후, 최대 영역인지 판단하여 update한다.&lt;/p&gt;
-
-&lt;p&gt;3-2) 다시 바이러스를 퍼뜨려야하므로, 지도와 방문배열을 초기화한다.&lt;/p&gt;
-
-&lt;p&gt;4) 정답을 출력한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-입력받으면서-바이러스의-좌표를-저장한다&quot;&gt;1. 입력받으면서 바이러스의 좌표를 저장한다.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;    cin.sync_with_stdio(false);
-    cin.tie(NULL);
-
-    //  INPUT
-    cin &amp;gt;&amp;gt; row &amp;gt;&amp;gt; col;
-    for (int r = 0; r &amp;lt; row; ++r){
-        for (int c = 0; c &amp;lt; col; ++c) {
-            cin &amp;gt;&amp;gt; map[r][c];
-            mapClone[r][c] = map[r][c];
-            if (map[r][c] == 2)
-                q.push(make_pair(r, c));
-        }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-  &lt;li&gt;바이러스의 좌표를 저장하는 queue를 만들어 넣어준다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-모든-가능한-경우의-벽들을-세운다&quot;&gt;2. 모든 가능한 경우의 벽들을 세운다.&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사실 이 문제에서 가장 애먹었던 부분이자 난감한 사항이었다.
-다양한 방법이 있는데, 우선 나는 이렇게 했다.
-    &lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;  for (int i = 0; i &amp;lt; row * col; i++)
-      for (int j = 0; j &amp;lt; row * col; j++)
-          for (int k = 0; k &amp;lt; row * col; k++) {
-              solve(i / col, i % col, j / col, j % col, k / col, k % col);
-          }
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;p&gt;3중 for문을 만들어 /와 %연산을 이용하여 모든 경우의 좌표들에 벽을 세웠다.
-이 때, solve()함수 안에서 중복되는 좌표와 벽을 세우는 조건들을 추가하였다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 방법 외에도 다음과 같은 방법이 있다. 개인적으로 &lt;strong&gt;정말&lt;/strong&gt; 깔끔한 코드라고 생각한다.&lt;/p&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;explore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_nodes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;simulate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;lab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 출처 : https://www.acmicpc.net/source/6417565
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 분의 코드는 node배열에 빈 공간인 ‘0’들의 좌표를 저장한다.
-그러면서 각각의 좌표들에 대해 완전탐색을 하는데, 다시 원상태로 복구해주는 코드까지 들어가있다.
-정말 부럽다.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-모든-가능한-경우마다-bfs혹은-dfs를-이용하여-바이러스를-퍼뜨린다&quot;&gt;3. 모든 가능한 경우마다 BFS(혹은 DFS)를 이용하여 바이러스를 퍼뜨린다.&lt;/h2&gt;
-
-&lt;p&gt;나는 BFS를 이용하였지만, DFS를 이용해도 상관없어보인다.
-어차피 목적은 바이러스를 퍼뜨리는것이니깐.&lt;/p&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;BFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//  바이러스가 퍼졌음을 표시해준다.
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//  상하좌우 BFS
-&lt;/span&gt;            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;//  check index error
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//  방문표시
-&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;qClone이라는 큐를 사용하였으며, 이는 큐를 초기바이러스가 들어있는 처음상태로 복구해주어야하기 때문이다.
-비슷한 이유로 mapClone이라는 2차원 배열을 사용하였다.
-DFS를 사용했으면 임시 큐에 사용되는 불필요한 메모리와 임시 큐를 초기화하는 비용을 줄였을것 같다.
-전형적인 BFS를 구현하였다.&lt;/p&gt;
-
-&lt;h3 id=&quot;3-1-각-경우마다-안전-영역의-크기를-구한-후-최대-영역인지-판단하여-update한다&quot;&gt;3-1. 각 경우마다 안전 영역의 크기를 구한 후, 최대 영역인지 판단하여 update한다.&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;area = max(area, checkArea());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;3-2-다시-바이러스를-퍼뜨려야하므로-지도와-방문배열을-초기화한다&quot;&gt;3-2. 다시 바이러스를 퍼뜨려야하므로, 지도와 방문배열을 초기화한다.&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;restoreMap();
-for (int r = 0; r &amp;lt; row; ++r) {
-    memset(isVisited[r], false, sizeof(bool) * col);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;추후에 알게되었는데, isVisited배열은 반복문을 이용한 2차원배열의 초기화 이외에도
-다음과 같이 초기화 할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;memset(isVisited, false, sizeof(isVisited);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;물론 memset()을 사용하기 위해 &lt;string.h&gt; 헤더를 포함해야한다.&lt;/string.h&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-정답을-출력한다&quot;&gt;4. 정답을 출력한다.&lt;/h2&gt;
-&lt;p&gt;가장 큰 값으로 update되어있는 변수 area를 출력한다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;cout &amp;lt;&amp;lt; area &amp;lt;&amp;lt; &quot;\n&quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;알게된-것들&quot;&gt;알게된 것들&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;C++ STL의 queue에서 = 연산자로 queue를 복사할 수 있다.
-예 : q1 = q2 // q2의 원소들을 q1에 덮어씌움&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;벽을 세우는데 다양한 방법이 존재하지만, 깔끔하게 짜려는 습관을 들이자.&lt;/li&gt;
-  &lt;li&gt;좋은 코드를 많이 보고 배우자.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;전체-소스코드&quot;&gt;전체 소스코드&lt;/h1&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;queue&amp;gt;
-#include &amp;lt;string.h&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*
-    1. 입력
-    2. 완전탐색 이용하여 벽을 설치
-    3. 각각의 케이스마다 BFS 진행 후 안전 area를 검사
-        4. area의 최대를 구함
-        5. isVisited를 초기화
-    6. 최대 area 출력
-*/&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;BFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;//  check index error
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nextCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restoreMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//  중복 좌표 검증의 필요성? 벽이 많을수록 공간도 많음이 보장되는가?
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//  필요해보임.. 반례도 있지만 문제조건에도 명시되어있음.
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//  벽을 설치할 공간이 이미 벽이거나 바이러스인 경우를 차단.
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//  벽 설치
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;qClone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//  초기 입력할때의 2들을 넣어주어야함.
-&lt;/span&gt;    
-    &lt;span class=&quot;n&quot;&gt;BFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;area&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//  변수 area를 최대로 update
-&lt;/span&gt;    
-    &lt;span class=&quot;n&quot;&gt;restoreMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//  isVisited 초기화
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;memset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isVisited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sync_with_stdio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//  INPUT
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mapClone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make_pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//  완전탐색을 이용하여 벽을 설치
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;area&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sanghyun Park</name></author><category term="DFS" /><category term="BFS" /><category term="algorithm" /><summary type="html">BFS를 이용한 문제해결</summary></entry><entry><title type="html">ML Coursera 6-1 Advice for Applying Machine Learning</title><link href="https://hy38.github.io/MLcoursera-6-1" rel="alternate" type="text/html" title="ML Coursera 6-1 Advice for Applying Machine Learning" /><published>2019-07-31T19:00:00+09:00</published><updated>2019-07-31T19:00:00+09:00</updated><id>https://hy38.github.io/MLcoursera-6-1</id><content type="html" xml:base="https://hy38.github.io/MLcoursera-6-1">&lt;blockquote&gt;
-  &lt;p&gt;Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;advice-for-applying-machine-learning&quot;&gt;Advice for Applying Machine Learning&lt;/h1&gt;
-
-&lt;p&gt;지금까지 선형회귀와 분류, 신경망에 대해 알아보았습니다. 이제 이것들을 구현하여 나온 결과값들을 &lt;strong&gt;분석&lt;/strong&gt;하여 어떤 문제점들이 있는지, 어떻게 개선해나가야 할지에 대해 살펴보겠습니다.
-또한, 모델을 선택하는데에 있어 몇차식(d)을 사용할지와, 정규화 매개변수인 $\lambda$를 어떻게 정할지를 알아보겠습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;deciding-what-to-try-next&quot;&gt;Deciding what to try next&lt;/h2&gt;
-
-&lt;p&gt;시작은 집값을 예측하는 linear regression으로 시작하겠습니다.
-현재 상황은 이렇습니다 : 
-cost function J를 minimize하는 theta를 구하여(train) 그 theta들을 가지고 새로운 데이터에 적용시켜보았더니(test) 예측결과가 영 꽝인 상황입니다.
-이 때 어떤것들을 시도해봐야할까요? 아래는 우리가 시도해볼 수 있는 작업들입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;더 많은 데이터를 사용한다.&lt;/li&gt;
-  &lt;li&gt;feature의 수를 줄인다.&lt;/li&gt;
-  &lt;li&gt;feature의 수를 늘린다.&lt;/li&gt;
-  &lt;li&gt;polynomial feature을 추가한다.&lt;/li&gt;
-  &lt;li&gt;regularization parameter $\lambda$를 줄이거나 키워본다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;machine-learning-diagnostics&quot;&gt;Machine Learning Diagnostics&lt;/h3&gt;
-
-&lt;p&gt;위 작업들 중에서 어떤 경우에 사용해야하며, 어떤 경우에는 효과가 미미한지를 구별해나갈 것입니다.
-예를들어, 데이터를 수집하는데에 소요되는 시간이 6개월이지만, 정작 더 많은 데이터가 있어도 모델이 개선되지 않는다면 6개월의 시간낭비를 한 셈일것입니다.
-우리는 &lt;strong&gt;진단&lt;/strong&gt;하는 법을 배움으로써 &lt;strong&gt;Time saving&lt;/strong&gt;을 할 수 있게 될것입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;evaluation-a-hypothesis&quot;&gt;Evaluation a Hypothesis&lt;/h2&gt;
-
-&lt;p&gt;우리가 학습을 통해 cost function을 minimize하는 $\theta$를 구할때, 과연 이 cost function의 작은 &lt;strong&gt;error&lt;/strong&gt;가 좋은것일지 생각해볼 필요가 있습니다.
-너무 적은 error을 갖는 parameter는 &lt;strong&gt;오버피팅&lt;/strong&gt;을 의심하게 만듭니다.
-이는 곧 parameter가 &lt;strong&gt;generalize&lt;/strong&gt;를 잘 하지 못함을 의미하며, &lt;strong&gt;새로운 데이터&lt;/strong&gt;에 좋지 않은 결과를 보일것입니다.
-$h(\theta)x$를 그려보면 overfitting을 눈대중으로 파악할 수 있겠지만, feature의 개수가 많아질수록 $h(\theta)x$를 그리기가 힘들어지고, 불가능해집니다.&lt;/p&gt;
-
-&lt;p&gt;결국 우리의 가설함수 $h(\theta)x$를 &lt;strong&gt;다른 방법으로 Evaluate&lt;/strong&gt;할 필요성이 생기게 되는데요, 우리가 가진 데이터셋을 70:30의 비율로 쪼개 training set(70%)과 test set(30%)을 만듭니다. 물론 데이터가 섞이도록 shuffle을 해줘야합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/train-test-split.png&quot; alt=&quot;train_test_split&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;train-and-test-scheme&quot;&gt;Train and Test Scheme&lt;/h3&gt;
-
-&lt;p&gt;데이터셋의 분할 이후에는 다음과 같은 순서로 가설함수 $h(\theta)x$를 평가합니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;training set(70%)의 데이터를 이용하여 parameter $\theta$를 학습시킨다.&lt;/li&gt;
-  &lt;li&gt;30%의 남은 데이터를 이용하여 &lt;strong&gt;Test Error&lt;/strong&gt;을 구한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이 때 Test Error $J_test(\theta)$ 은 다음과 같이 구합니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;linear regression:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/J-test-linear-regression.png&quot; alt=&quot;J_test_linear_regression&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;logistic regression:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/J-test-logistic-regression.png&quot; alt=&quot;J_test_logistic_regression&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이때 logistic regression에서는 더욱 간소화된 test error을 사용합니다. 이것을 &lt;strong&gt;misclassification error&lt;/strong&gt;라고 부르며, 
-이는 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/J-test-new-error.png&quot; alt=&quot;J_test_new_error&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/J-test-new-full-function.png&quot; alt=&quot;J_test_new_full_function&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이것들이 hypothesis의 학습정도를 평가하는 &lt;strong&gt;일반적인&lt;/strong&gt; 방법입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;model-selection-and-training-validation-test-sets&quot;&gt;Model Selection and training Validation Test Sets&lt;/h2&gt;
-
-&lt;p&gt;다음은 모델 선택시 몇차다항식이 가장 효과적인지 비교하고 가장 효과적인 차수의 다항식을 사용하는 방법을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;이 때 가설함수가 몇차다항식이냐를 d 로 표현합니다. 3차다항식의 가설함수의 경우에 d는 3이 되겠죠?&lt;/p&gt;
-
-&lt;p&gt;우선, 다음과 같이 d=1 ~ d=10의 총 10개의 가설함수를 만듭니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/ten-hypothesis-function.png&quot; alt=&quot;ten_hypothesis_function&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그리고 각각의 가설함수에 대해 cost function을 minimize하는 $\theta$를 구합니다. 총 10개의 $\theta$가 나옵니다. 
-&lt;strong&gt;이 때 주의할 점은 $\theta$를 구하는 과정에서 training set의 데이터를 이용해야합니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;training set을 이용하여 구한 10개의 $\theta$를 이제는 $J_test(\theta)$에 넣어줍니다.&lt;/p&gt;
-
-&lt;p&gt;이 error function 중 가장 적은 error을 갖는 d를 채택하면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;그러나, 이렇게 하면 모델이 training data를 memorise하게된다고 합니다. 실제로도 많이 발생한다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;그래서 더 좋은 방법이 있습니다. 바로 Cross Validation set을 이용하는것인데요,
-train, cross validation, test set의 비율을 60 : 20 : 20으로 분할하는 방법입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/split-into-three-sets.png&quot; alt=&quot;split_into_three_sets&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;기존과 같이 training set을 이용하여 학습을 시키고, 학습된 $\theta$들을 이용하여 각각의 &lt;strong&gt;Cross Validation Error&lt;/strong&gt;를 구한 후
-가장 낮은 &lt;strong&gt;Cross Validation Error&lt;/strong&gt;을 갖는 d를 채택하는 방식입니다.&lt;/p&gt;
-
-&lt;p&gt;달라진 것이라면, test set은 전혀 건들지 않고, test error가 아닌 &lt;strong&gt;cross validation error&lt;/strong&gt;을 이용하여 d를 구한다는 것입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;diagnosis---bias-vs-variance&quot;&gt;Diagnosis - Bias vs Variance&lt;/h2&gt;
-
-&lt;p&gt;다음으로, 집값을 예측했을 때 예측결과가 High Bias(underfitting)을 겪는지 High Variance(Overfitting)을 겪는지를 판별하는 법을 알아보겠습니다.
-이 그래프는 d(다항식의 차수)에 따른 error을 나타내주는 그래프인데요, 이를 통해 성능이 잘 나오지 않는 모델이 underfitting을 겪는지, 혹은 overfitting겪는지 구별할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/Jcv-Jtrain-graph.png&quot; alt=&quot;Jcv_Jtrain_graph&quot; /&gt;
-image&lt;/p&gt;
-
-&lt;p&gt;먼저, High Bias인 경우에는 $J_train$과 $J_cv$가 비슷한 높은 error을 갖습니다. 이 경우 underfit을 의심할 수 있습니다.
-다음으로, High Variance인 경우에는 $J_cv$가 크고 $J_train$이 작은 error을 갖습니다. 이 경우 overfit이 의심되며, 충분히 자명해보입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;이 그래프는 매우 중요한 그래프이며, overfit과 underfit의 차이를 드러냅니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;regularization-and-biasvariance&quot;&gt;Regularization and Bias/Variance&lt;/h2&gt;
-
-&lt;p&gt;이제 $\lambda$를 고르는 방법에 대해 알아봅시다.
-정규화 매개변수인 $\lambda$는 너무 높게 설정하면 underfit(high bias)이, 너무 작게 설정하면 overfit(high variance)이 발생합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;따라서, 적정한 값의 $\lambda$를 설정하는 것은 좋은 결과를 내는데에 중요한 역할을 합니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;다음은 좋은 람다값을 찾는 방법입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다양한 $\lambda$를 설정한다. (보통 10개)&lt;/li&gt;
-  &lt;li&gt;각각의 $\lambda$들의 cost function J($\theta$)를 최소화하는 각각의 $\theta$들을 구한다.&lt;/li&gt;
-  &lt;li&gt;이 $\lambda$들에 매칭되는 $\theta$들을 $J_cv(\theta)$에 넣는다.&lt;/li&gt;
-  &lt;li&gt;최소의 $J_cv(\theta)$를 갖는 $\theta$를 찾아 $J_test(\theta)$에 넣는다.&lt;/li&gt;
-  &lt;li&gt;그 $\lambda$가 잘 골라졌는지 확인한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/lambda-selection.png&quot; alt=&quot;lambda_selection&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;이 때의 $J_train, J_cv, J_test$는 모두 regularization term이 삭제된 식임을 주의해주세요.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Regularization Term : + {\lambda \over 2m} \sum_{j=1}^{m}\theta_j^2&lt;/script&gt;
-
-&lt;p&gt;추가로, 다음 그래프는 $\lambda$에 따른 $J_cv$, $J_train$을 나타낸 것입니다. 위에서 본 그래프와 비교하면 좌우로 대칭이 된것을 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/lambda-graph.png&quot; alt=&quot;lambda_graph&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;learning-curves&quot;&gt;Learning Curves&lt;/h2&gt;
-
-&lt;h3 id=&quot;learning-curve란&quot;&gt;Learning Curve란?&lt;/h3&gt;
-
-&lt;p&gt;learning curve란 성능 향상을, 혹은 알고리즘이 적합한지를 체크(algorithmic sanity check)할 때 주로 사용되는 그래프로,
-$J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.&lt;/p&gt;
-
-&lt;p&gt;이 그래프 또한 &lt;strong&gt;high bias와 high variance를 구별하기 위해&lt;/strong&gt;, 또한 &lt;strong&gt;데이터를 추가해야할지 여부&lt;/strong&gt;에 대해 자주 쓰이므로 잘 알아둘 필요가 있어보입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/learning-curve-general.png&quot; alt=&quot;learning_curve_general&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적으로 $J_train$은 m이 작으면 fitting이 쉽지만, m이 커질수록 모든 data를 fitting하지 못하는 경우가 생기고, 이로인해 $J_train$ error가 증가합니다.&lt;/p&gt;
-
-&lt;p&gt;반면, $J_cv$는 m들이 추가될수록 generalize되기 쉬워지며, 그에 따라 $J_cv$ error가 감소합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;learning-curve---high-bias&quot;&gt;Learning Curve - High Bias&lt;/h3&gt;
-
-&lt;p&gt;우선, High bias problem 즉 언더피팅의 경우를 살펴봅시다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/learning-curve-underfit.png&quot; alt=&quot;learning_curve_underfit&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 경우 그래프의 특징은 &lt;strong&gt;높은 error에서의 수렴&lt;/strong&gt;입니다. 따라서 m의 증가가 error 감소에 아주 미미한 영향을 주게되며, &lt;strong&gt;결과적으로 데이터양의 증가가 결과값 개선에 큰 도움을 주지 못합니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;이는 낮은 degree의 가설함수를 갖는 $J_cv$가 데이터수에 따른 영향을 적게받기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;다음 그림을 참고하시면 도움이 될 것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/learning-curve-underfit-m.png&quot; alt=&quot;learning_curve_underfit_m&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;learning-curve---high-variance&quot;&gt;Learning Curve - High Variance&lt;/h3&gt;
-
-&lt;p&gt;다음은 High variance problem 즉 오버피팅의 경우입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/learning-curve-overrfit.png&quot; alt=&quot;learning_curve_overfit&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오버피팅 러닝커브의 특징은 &lt;strong&gt;일반적인 m에 대해 아주 높은 $J_cv$를 갖는다는 것&lt;/strong&gt;인데요, 이 때 x축(m)을 연장시켜주면 &lt;strong&gt;낮은 error로 이동&lt;/strong&gt;하는것을 보실수 있습니다. 이와같이 m이 커질수록 $J_cv$가 점점 작아지는것을 확인할 수 있는데요, &lt;strong&gt;결과적으로 많은 데이터가 결과값 개선에 도움을 줍니다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;이는 높은 degree의 가설함수를 갖는 $J_cv$가 데이터를 잘 fitting하기 때문입니다. 오버피팅의 힘일까요?&lt;/p&gt;
-
-&lt;p&gt;역시 다음 그림을 참고해주세요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ml/coursera/week6/learning-curve-overfit-m.png&quot; alt=&quot;learning_curve_overfit_m&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 그래프는 $J_cv$와 $J_train$간의 &lt;strong&gt;Gap&lt;/strong&gt;이 또다른 특징입니다. 이를 통해 쉽게 오버피팅을 파악할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;** 이 그래프들은 이상적인 경우의 그래프이며, 실제 데이터를 사용하다보면 훨씬 지저분한 그래프들을 만나게 될 것입니다. **&lt;/p&gt;
-
-&lt;h2 id=&quot;what-to-do-next-revisited&quot;&gt;What to do next (revisited)&lt;/h2&gt;
-
-&lt;p&gt;이번 포스트의 처음에 우리의 결과값이 좋지 않을때 시도해볼 수 있는것들에 대해 나열했었습니다.
-이제 그것들을 케이스별로 분류하면서 정리하겠습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;더 많은 데이터를 사용한다.  =&amp;gt; fixes high variance&lt;/li&gt;
-  &lt;li&gt;feature의 수를 줄인다.  =&amp;gt; fixes high variance&lt;/li&gt;
-  &lt;li&gt;feature의 수를 늘린다.  =&amp;gt; fixes high bias&lt;/li&gt;
-  &lt;li&gt;polynomial feature을 추가한다.  =&amp;gt; fixes high bias&lt;/li&gt;
-  &lt;li&gt;regularization parameter $\lambda$를 줄인다.  =&amp;gt; fixes high bias&lt;/li&gt;
-  &lt;li&gt;regularization parameter $\lambda$를 키운다.  =&amp;gt; fixes high variance&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;selecting-a-network-architecture&quot;&gt;Selecting a Network Architecture&lt;/h3&gt;
-
-&lt;p&gt;뉴럴넷의 크기를 결정할 때 참고하면 좋을 상황들입니다. 각각 장단점이 존재합니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Small neural network&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;장점 : 연산량이 적다&lt;/li&gt;
-  &lt;li&gt;단점 : parameter가 충분하지 않기 때문에 underfitting에 취약하다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Larger nueral network&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;장점 : 아무래도 좋은 결과값이 나온다.&lt;/li&gt;
-  &lt;li&gt;단점 : 연산량이 많아지며, overfitting에 취약하다&lt;/li&gt;
-  &lt;li&gt;특이사항 : overfitting은 regularization을 통해 해결할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;종합&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;시작은 하나의 hidden layer로 시작하는 것이 좋다.&lt;/li&gt;
-  &lt;li&gt;주로 큰 nueral network를 고른 후 overfitting을 regularization을 통해 해결하는것이 더 좋다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이상으로 6주차의 첫번째 섹션을 알아보았습니다. 결과값이 우리가 원한대로 나오지 않은 경우의 해결법에 대해 알아보았고,
-다음 포스트에는 &lt;a href=&quot;/ml/MLcoursera-6-2/&quot;&gt;Machine Learning System Design&lt;/a&gt; 에 대해 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;감사합니다.&lt;/p&gt;</content><author><name>Sanghyun Park</name></author><category term="machine learning" /><category term="Coursera" /><summary type="html">Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.</summary></entry><entry><title type="html">ML Coursera 5-1 Neural Networks - Learning</title><link href="https://hy38.github.io/MLcoursera-5-1" rel="alternate" type="text/html" title="ML Coursera 5-1 Neural Networks - Learning" /><published>2019-07-31T19:00:00+09:00</published><updated>2019-07-31T19:00:00+09:00</updated><id>https://hy38.github.io/MLcoursera-5-1</id><content type="html" xml:base="https://hy38.github.io/MLcoursera-5-1">&lt;blockquote&gt;
-  &lt;p&gt;Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;neural-networks-learning&quot;&gt;Neural Networks: Learning&lt;/h1&gt;
-
-&lt;p&gt;test2&lt;/p&gt;</content><author><name>Sanghyun Park</name></author><category term="machine learning" /><category term="Coursera" /><summary type="html">Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sanghyun Park</name></author><category term="DFS" /><category term="BFS" /><category term="algorithm" /><summary type="html">DFS를 이용한 문제해결</summary></entry></feed>
