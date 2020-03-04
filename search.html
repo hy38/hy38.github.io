@@ -123,6 +123,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-Algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li>
+    <li class="nav-Theory" role="menuitem"><a href="/tag/theory/">Theory</a></li>
     <li class="nav-ML" role="menuitem"><a href="/tag/machine-learning/">ML</a></li>
     <!-- <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li> -->
 </ul>
@@ -177,6 +178,15 @@ into the {body} of the default.hbs template -->
                 "category": "",
                     "content": { { post.content | strip_html | strip_newlines | jsonify } },
         "url": "/euilerian-circuit-and-trail"
+    }
+    , 
+    
+    "about-edges-in-graph": {
+        "title": "DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges",
+            "author": "hy38",
+                "category": "",
+                    "content": { { post.content | strip_html | strip_newlines | jsonify } },
+        "url": "/about-edges-in-graph"
     }
     , 
     
