@@ -8,6 +8,23 @@
     
       
       <item>
+        <title>그래프의 사이클 유무 확인 - Finding Cycles in Graph</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;그래프의 사이클 찾기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Mon, 24 Feb 2020 04:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/is-graph-cyclic</link>
+        <guid isPermaLink="true">https://hy38.github.io/is-graph-cyclic</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title>
         
           <description>&lt;blockquote&gt;
