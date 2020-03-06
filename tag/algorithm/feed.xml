@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/algorithm/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-03-06T17:16:26+09:00</updated>
+  <updated>2020-03-06T17:21:51+09:00</updated>
   <id>https://hy38.github.io/tag/algorithm/feed.xml</id>
 
   
@@ -105,9 +105,11 @@
     &lt;p&gt;부모를 제외한 정점들 중 이미 방문했고, 방문순서가 더 빠른 정점이 존재하게 되면 사이클이 있다고 판단할 수 있다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;자세한-내용은-여기를-참조하면-될것같다&quot;&gt;자세한 내용은 &lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;amp;logNo=221248815321&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 참조하면 될것같다.&lt;/h2&gt;
+    &lt;p&gt;자세한 내용은 &lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;amp;logNo=221248815321&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 참조하면 될것같다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;사이클이-있는-정점들-찾기&quot;&gt;사이클이 있는 정점들 찾기&lt;/h2&gt;
 
@@ -169,9 +171,9 @@
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
         &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;isGraphCyclic&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;denoteCycle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;isGraphCyclic&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//  그래프가 사이클을 갖는지 체크해준다.
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;denoteCycle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//  사이클에 포함된 정점들을 표시해준다.
+&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;

@@ -257,9 +257,11 @@ into the {body} of the default.hbs template -->
     <p>부모를 제외한 정점들 중 이미 방문했고, 방문순서가 더 빠른 정점이 존재하게 되면 사이클이 있다고 판단할 수 있다.</p>
   </li>
   <li>
-    <h2 id="자세한-내용은-여기를-참조하면-될것같다">자세한 내용은 <a href="https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;logNo=221248815321&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank">여기</a>를 참조하면 될것같다.</h2>
+    <p>자세한 내용은 <a href="https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;logNo=221248815321&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank">여기</a>를 참조하면 될것같다.</p>
   </li>
 </ul>
+
+<hr />
 
 <h2 id="사이클이-있는-정점들-찾기">사이클이 있는 정점들 찾기</h2>
 
@@ -321,9 +323,9 @@ into the {body} of the default.hbs template -->
         <span class="p">}</span>
 
         <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">finished</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">isGraphCyclic</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">denoteCycle</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>
-        <span class="p">}</span>
+            <span class="n">isGraphCyclic</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>   <span class="c1">//  그래프가 사이클을 갖는지 체크해준다.
+</span>            <span class="n">denoteCycle</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>    <span class="c1">//  사이클에 포함된 정점들을 표시해준다.
+</span>        <span class="p">}</span>
     <span class="p">}</span>
     <span class="n">finished</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span>
