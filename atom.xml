@@ -25,6 +25,23 @@
     
       
       <item>
+        <title>DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;DFS 스패닝 트리&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Sat, 22 Feb 2020 20:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/about-edges-in-graph</link>
+        <guid isPermaLink="true">https://hy38.github.io/about-edges-in-graph</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title>
         
           <description>&lt;blockquote&gt;
@@ -37,23 +54,6 @@
         <link>
         https://hy38.github.io/euilerian-circuit-and-trail</link>
         <guid isPermaLink="true">https://hy38.github.io/euilerian-circuit-and-trail</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;DFS 스패닝 트리&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Fri, 21 Feb 2020 20:00:00 +0900</pubDate>
-        <link>
-        https://hy38.github.io/about-edges-in-graph</link>
-        <guid isPermaLink="true">https://hy38.github.io/about-edges-in-graph</guid>
       </item>
       
     

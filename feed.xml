@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-03-06T16:50:57+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">그래프의 사이클 유무 확인 - Finding Cycles in Graph</title><link href="https://hy38.github.io/is-graph-cyclic" rel="alternate" type="text/html" title="그래프의 사이클 유무 확인 - Finding Cycles in Graph" /><published>2020-02-24T04:00:00+09:00</published><updated>2020-02-24T04:00:00+09:00</updated><id>https://hy38.github.io/is-graph-cyclic</id><content type="html" xml:base="https://hy38.github.io/is-graph-cyclic">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-03-06T17:16:26+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">그래프의 사이클 유무 확인 - Finding Cycles in Graph</title><link href="https://hy38.github.io/is-graph-cyclic" rel="alternate" type="text/html" title="그래프의 사이클 유무 확인 - Finding Cycles in Graph" /><published>2020-02-24T04:00:00+09:00</published><updated>2020-02-24T04:00:00+09:00</updated><id>https://hy38.github.io/is-graph-cyclic</id><content type="html" xml:base="https://hy38.github.io/is-graph-cyclic">&lt;blockquote&gt;
   &lt;p&gt;그래프의 사이클 찾기&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -29,8 +29,6 @@
   &lt;/li&gt;
   &lt;li&gt;이 경우 일반적인 DFS의 시간복잡도인 O(V + E)가 나온다.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
 
 &lt;h3 id=&quot;방향-그래프에서의-사이클-존재-여부-확인-코드&quot;&gt;방향 그래프에서의 사이클 존재 여부 확인 코드&lt;/h3&gt;
 
@@ -68,7 +66,7 @@
     &lt;p&gt;부모를 제외한 정점들 중 이미 방문했고, 방문순서가 더 빠른 정점이 존재하게 되면 사이클이 있다고 판단할 수 있다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;자세한-내용은-여기httpsmblognavercompostviewnhnblogidjh20slogno221248815321proxyrefererhttps3a2f2fwwwgooglecom2f-target_blank를-참조하면-될것같다&quot;&gt;자세한 내용은 [여기]](https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;amp;logNo=221248815321&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F){: target=”_blank”}를 참조하면 될것같다.&lt;/h2&gt;
+    &lt;h2 id=&quot;자세한-내용은-여기를-참조하면-될것같다&quot;&gt;자세한 내용은 &lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;amp;logNo=221248815321&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 참조하면 될것같다.&lt;/h2&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -86,20 +84,18 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
 &lt;h2 id=&quot;사이클-내의-정점들을-표시하는-코드&quot;&gt;사이클 내의 정점들을 표시하는 코드&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;구현을 하려고하다보니, 사이클임을 확인한 시점에는 부모로 올라갈 수 있는 방법을 찾아야 했다. 이를 위해 parents라는 부모 배열을 만들어 정점의 부모를 저장했다. 예를 들어 parents[node]는 node정점의 부모를 담는다.&lt;/p&gt;
+  &lt;li&gt;구현을 하려고하다보니, 사이클임을 확인한 시점에는 부모로 올라갈 수 있는 방법을 찾아야 했다. 이를 위해 parents라는 부모 배열을 만들어 정점의 부모를 저장했다.
+    &lt;ul&gt;
+      &lt;li&gt;예를 들어 parents[node]는 node정점의 부모를 담는다.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;부모를 찾다가 부모와 사이클의 시작점(역방향 간선이 가리키는 정점)에 도달하게 되면 멈춘다.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;사이클에 속한 정점들은 isCycle 배열에 표시해준다.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;사이클에 속한 정점들은 isCycle 배열에 표시해준다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
@@ -140,18 +136,19 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;관련문제 - &lt;a href=&quot;https://www.acmicpc.net/problem/9466&quot; target=&quot;_blank&quot;&gt;BOJ 9466 - 텀 프로젝트&lt;/a&gt;
+  &lt;li&gt;
+    &lt;p&gt;관련문제 - &lt;a href=&quot;https://www.acmicpc.net/problem/9466&quot; target=&quot;_blank&quot;&gt;BOJ 9466 - 텀 프로젝트&lt;/a&gt;&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;h2 id=&quot;풀이&quot;&gt;&lt;a href=&quot;/BOJ-9466&quot; target=&quot;_blank&quot;&gt;풀이&lt;/a&gt;&lt;/h2&gt;
-      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/BOJ-9466&quot; target=&quot;_blank&quot;&gt;풀이&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h3&gt;
 
@@ -196,7 +193,192 @@
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://beenlife.tistory.com/54&quot; target=&quot;_blank&quot;&gt;https://beenlife.tistory.com/54&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">그래프의 사이클 찾기</summary></entry><entry><title type="html">오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title><link href="https://hy38.github.io/euilerian-circuit-and-trail" rel="alternate" type="text/html" title="오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail" /><published>2020-02-22T04:00:00+09:00</published><updated>2020-02-22T04:00:00+09:00</updated><id>https://hy38.github.io/euilerian-circuit-and-trail</id><content type="html" xml:base="https://hy38.github.io/euilerian-circuit-and-trail">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">그래프의 사이클 찾기</summary></entry><entry><title type="html">DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges</title><link href="https://hy38.github.io/about-edges-in-graph" rel="alternate" type="text/html" title="DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges" /><published>2020-02-22T20:00:00+09:00</published><updated>2020-02-22T20:00:00+09:00</updated><id>https://hy38.github.io/about-edges-in-graph</id><content type="html" xml:base="https://hy38.github.io/about-edges-in-graph">&lt;blockquote&gt;
+  &lt;p&gt;DFS 스패닝 트리&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;dfs-스패닝-트리란&quot;&gt;DFS 스패닝 트리란?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DFS 스패닝 트리는 그래프에서 DFS를 어느 정점 u에 대해 실행하였을 때, u를 루트로 하는 트리를 말한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;간선-분류의-이용&quot;&gt;간선 분류의 이용&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;그래프에서 간선을 분류하게되면 다양한 알고리즘에 응용할 수 있게된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;간선 분류를 통해 그래프 알고리즘을 이해하고 증명하기 위한 도구로 유용하게 쓰인다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예를 들어, DFS가 역행 간선을 만들지 않으면 그래프는 사이클이 존재하지 않고, 역도 성립한다. 즉, 사이클의 존재 여부는 역방향 간선의 존재 여부와 동치이다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/is-graph-cyclic&quot; target=&quot;_blank&quot;&gt;사이클 존재 여부 확인하기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;그래프의-간선의-종류&quot;&gt;그래프의 간선의 종류&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;간선은 트리 간선, 역행 간선, 순행 간선, 교차 간선 총 4개로 분류된다. 역행 간선과 순행 간선은 개인마다 역방향, 순방향 간선으로 부르기도 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;트리 간선(Tree edge)
+    &lt;ul&gt;
+      &lt;li&gt;정점 v가 간선 (u, v)를 통해 처음 발견되었다면, (u, v)는 트리간선이다.&lt;/li&gt;
+      &lt;li&gt;간단하게는, 스패닝 트리에 포함된 간선을 말한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;역행 간선(Back edge)
+    &lt;ul&gt;
+      &lt;li&gt;스패닝 트리의 자손에서 선조로 연결되는 간선을 말한다.&lt;/li&gt;
+      &lt;li&gt;방향 그래프에서의 자기 순환 간선들은 역행 간선으로 간주한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;순행 간선(Forward edge)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;트리간선이 아닌&lt;/strong&gt; 선조에서 자손으로 연결되는 간선을 말한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;교차 간선(Cross edge)
+    &lt;ul&gt;
+      &lt;li&gt;위 세 분류를 제외한 나머지 간선이다.&lt;/li&gt;
+      &lt;li&gt;선조와 자손 관계가 아닌(&lt;strong&gt;위계 관계가 없는&lt;/strong&gt;) 정점들 간에 연결된 간선들을 말한다.&lt;/li&gt;
+      &lt;li&gt;하나의 정점이 다른 정점의 조상이 아니어야 한다.&lt;/li&gt;
+      &lt;li&gt;서로 다른 스패닝트리에 있는 두 정점 사이에 있을수도 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;그래프의 간선은 DFS를 어떤 정점에서 시작하는지, 어떤 순서로 방문할것인지에 따라 다른 트리가 생성되고, 따라서 간선의 구분이 달라질 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;무향-그래프에서의-간선의-분류&quot;&gt;무향 그래프에서의 간선의 분류&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;교차 간선(Cross edge)가 존재하지 않는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;순방향 간선과 역방향 간선의 구분이 없다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;즉, 무방향 그래프의 DFS 스패닝 트리에서 모든 간선은 트리 간선이거나 역행 간선이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;간선을-구분하는-dfs-코드&quot;&gt;간선을 구분하는 DFS 코드&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(u, v)가 순방향 간선이라면 v는 u의 자손이어야 하고, 따라서 v가 u보다 &lt;strong&gt;더 늦게 발견되어야&lt;/strong&gt; 한다. 또한, (u, v)가 트리 간선이 아니어야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(u, v)가 역방향 간선이라면, v는 u의 선조이어야 한다. 따라서 v가 u보다 &lt;strong&gt;먼저 발견되어야&lt;/strong&gt; 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(u, v)가 교차 간선이라면, DFS(v)가 종료된 후 DFS(u)가 호출되어야 한다. 따라서 v는 u보다 &lt;strong&gt;일찍 발견되어야&lt;/strong&gt; 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 이용하여 코드를 작성하면 다음과 같다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;(&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;) : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//  아직 방문하지 않았다면
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tree edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//  next를 방문했지만 순서가 node보다 늦다면
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;forward edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//  next를 방문했지만 순서가 node보다 빠르다면
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//  next가 종료하지 않았다면 =&amp;gt; next는 node의 선조가 됨.
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;back edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//  이 외에는 모두 교차 간선
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cross edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;간선의 정의는 간단명료하지만, 이것을 코드로 직접적으로 구현하기는 까다롭다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그래서 &lt;strong&gt;discovered&lt;/strong&gt;라는 배열에 counter변수를 이용하여 발견 순서를 저장한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이 배열은 정점이 방문되었는지 여부도 한번에 알려준다. 기존 DFS에서의 &lt;strong&gt;visited 배열과 유사&lt;/strong&gt;하다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이 배열을 통해 선조와 자손, 혹은 아무것도 아닌 관계를 밝혀낼 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;또한, 정점 u에서의 인접한 모든 정점으로의 DFS가 종료되었는지를 저장하는 배열 finished를 이용한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;사람들에 따라 다음과 같이 간선을 색깔로 분류하는 경우도 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;WHITE&lt;/em&gt;는 트리 간선, &lt;em&gt;GRAY&lt;/em&gt;는 역행 간선, &lt;em&gt;BLACK&lt;/em&gt;은 순행 또는 교차 간선으로 분류하기도 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">DFS 스패닝 트리</summary></entry><entry><title type="html">오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</title><link href="https://hy38.github.io/euilerian-circuit-and-trail" rel="alternate" type="text/html" title="오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail" /><published>2020-02-22T04:00:00+09:00</published><updated>2020-02-22T04:00:00+09:00</updated><id>https://hy38.github.io/euilerian-circuit-and-trail</id><content type="html" xml:base="https://hy38.github.io/euilerian-circuit-and-trail">&lt;blockquote&gt;
   &lt;p&gt;오일러 서킷과 트레일&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -442,192 +624,7 @@
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://100100e.tistory.com/118&quot; target=&quot;_blank&quot;&gt;https://100100e.tistory.com/118&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">오일러 서킷과 트레일</summary></entry><entry><title type="html">DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges</title><link href="https://hy38.github.io/about-edges-in-graph" rel="alternate" type="text/html" title="DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges" /><published>2020-02-21T20:00:00+09:00</published><updated>2020-02-21T20:00:00+09:00</updated><id>https://hy38.github.io/about-edges-in-graph</id><content type="html" xml:base="https://hy38.github.io/about-edges-in-graph">&lt;blockquote&gt;
-  &lt;p&gt;DFS 스패닝 트리&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;dfs-스패닝-트리란&quot;&gt;DFS 스패닝 트리란?&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DFS 스패닝 트리는 그래프에서 DFS를 어느 정점 u에 대해 실행하였을 때, u를 루트로 하는 트리를 말한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;간선-분류의-이용&quot;&gt;간선 분류의 이용&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;그래프에서 간선을 분류하게되면 다양한 알고리즘에 응용할 수 있게된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;간선 분류를 통해 그래프 알고리즘을 이해하고 증명하기 위한 도구로 유용하게 쓰인다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예를 들어, DFS가 역행 간선을 만들지 않으면 그래프는 사이클이 존재하지 않고, 역도 성립한다. 즉, 사이클의 존재 여부는 역방향 간선의 존재 여부와 동치이다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/is-graph-cyclic&quot; target=&quot;_blank&quot;&gt;사이클 존재 여부 확인하기&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;그래프의-간선의-종류&quot;&gt;그래프의 간선의 종류&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;간선은 트리 간선, 역행 간선, 순행 간선, 교차 간선 총 4개로 분류된다. 역행 간선과 순행 간선은 개인마다 역방향, 순방향 간선으로 부르기도 한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;트리 간선(Tree edge)
-    &lt;ul&gt;
-      &lt;li&gt;정점 v가 간선 (u, v)를 통해 처음 발견되었다면, (u, v)는 트리간선이다.&lt;/li&gt;
-      &lt;li&gt;간단하게는, 스패닝 트리에 포함된 간선을 말한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;역행 간선(Back edge)
-    &lt;ul&gt;
-      &lt;li&gt;스패닝 트리의 자손에서 선조로 연결되는 간선을 말한다.&lt;/li&gt;
-      &lt;li&gt;방향 그래프에서의 자기 순환 간선들은 역행 간선으로 간주한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;순행 간선(Forward edge)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;트리간선이 아닌&lt;/strong&gt; 선조에서 자손으로 연결되는 간선을 말한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;교차 간선(Cross edge)
-    &lt;ul&gt;
-      &lt;li&gt;위 세 분류를 제외한 나머지 간선이다.&lt;/li&gt;
-      &lt;li&gt;선조와 자손 관계가 아닌(&lt;strong&gt;위계 관계가 없는&lt;/strong&gt;) 정점들 간에 연결된 간선들을 말한다.&lt;/li&gt;
-      &lt;li&gt;하나의 정점이 다른 정점의 조상이 아니어야 한다.&lt;/li&gt;
-      &lt;li&gt;서로 다른 스패닝트리에 있는 두 정점 사이에 있을수도 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;그래프의 간선은 DFS를 어떤 정점에서 시작하는지, 어떤 순서로 방문할것인지에 따라 다른 트리가 생성되고, 따라서 간선의 구분이 달라질 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;무향-그래프에서의-간선의-분류&quot;&gt;무향 그래프에서의 간선의 분류&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;교차 간선(Cross edge)가 존재하지 않는다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;순방향 간선과 역방향 간선의 구분이 없다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;즉, 무방향 그래프의 DFS 스패닝 트리에서 모든 간선은 트리 간선이거나 역행 간선이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;간선을-구분하는-dfs-코드&quot;&gt;간선을 구분하는 DFS 코드&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;(u, v)가 순방향 간선이라면 v는 u의 자손이어야 하고, 따라서 v가 u보다 &lt;strong&gt;더 늦게 발견되어야&lt;/strong&gt; 한다. 또한, (u, v)가 트리 간선이 아니어야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(u, v)가 역방향 간선이라면, v는 u의 선조이어야 한다. 따라서 v가 u보다 &lt;strong&gt;먼저 발견되어야&lt;/strong&gt; 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(u, v)가 교차 간선이라면, DFS(v)가 종료된 후 DFS(u)가 호출되어야 한다. 따라서 v는 u보다 &lt;strong&gt;일찍 발견되어야&lt;/strong&gt; 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이를 이용하여 코드를 작성하면 다음과 같다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;(&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;) : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//  아직 방문하지 않았다면
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tree edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//  next를 방문했지만 순서가 node보다 늦다면
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discovered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;forward edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//  next를 방문했지만 순서가 node보다 빠르다면
-&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//  next가 종료하지 않았다면 =&amp;gt; next는 node의 선조가 됨.
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;back edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//  이 외에는 모두 교차 간선
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cross edge&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;간선의 정의는 간단명료하지만, 이것을 코드로 직접적으로 구현하기는 까다롭다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그래서 &lt;strong&gt;discovered&lt;/strong&gt;라는 배열에 counter변수를 이용하여 발견 순서를 저장한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이 배열은 정점이 방문되었는지 여부도 한번에 알려준다. 기존 DFS에서의 &lt;strong&gt;visited 배열과 유사&lt;/strong&gt;하다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이 배열을 통해 선조와 자손, 혹은 아무것도 아닌 관계를 밝혀낼 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;또한, 정점 u에서의 인접한 모든 정점으로의 DFS가 종료되었는지를 저장하는 배열 finished를 이용한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;사람들에 따라 다음과 같이 간선을 색깔로 분류하는 경우도 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;WHITE&lt;/em&gt;는 트리 간선, &lt;em&gt;GRAY&lt;/em&gt;는 역행 간선, &lt;em&gt;BLACK&lt;/em&gt;은 순행 또는 교차 간선으로 분류하기도 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">DFS 스패닝 트리</summary></entry><entry><title type="html">위상정렬의 구현 - Topological Sort</title><link href="https://hy38.github.io/topological-sort" rel="alternate" type="text/html" title="위상정렬의 구현 - Topological Sort" /><published>2020-02-21T04:00:00+09:00</published><updated>2020-02-21T04:00:00+09:00</updated><id>https://hy38.github.io/topological-sort</id><content type="html" xml:base="https://hy38.github.io/topological-sort">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">오일러 서킷과 트레일</summary></entry><entry><title type="html">위상정렬의 구현 - Topological Sort</title><link href="https://hy38.github.io/topological-sort" rel="alternate" type="text/html" title="위상정렬의 구현 - Topological Sort" /><published>2020-02-21T04:00:00+09:00</published><updated>2020-02-21T04:00:00+09:00</updated><id>https://hy38.github.io/topological-sort</id><content type="html" xml:base="https://hy38.github.io/topological-sort">&lt;blockquote&gt;
   &lt;p&gt;위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.&lt;/p&gt;
 &lt;/blockquote&gt;
 
