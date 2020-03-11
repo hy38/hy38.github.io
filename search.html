@@ -157,7 +157,7 @@ into the {body} of the default.hbs template -->
         </div>
         
             <!-- <a class="subscribe-button" href="https://hy38.github.io/search.html">Search</a> -->
-            <a class="subscribe-button" href="https://hy38.github.io//search.html">Search</a>
+            <a class="subscribe-button" href="https://hy38.github.io/search.html">Search</a>
             <!-- <a class="subscribe-button" href="#subscribe">Search</a> -->
         
     </div>
@@ -184,7 +184,6 @@ into the {body} of the default.hbs template -->
                 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
 </head>
 
 <!-- get query from URL -->
@@ -204,14 +203,11 @@ into the {body} of the default.hbs template -->
 
 <body onload="getUrlParams()"></body>
 
-    <!-- HTML elements for search -->
-<!-- <input type="text" id="search-input" placeholder="Search blog posts.." autofocus> -->
-<!-- <input type="text" id="search-input" placeholder="Search blog posts.." onclick=this.value=this.value+" " autofocus> -->
-
+<!-- HTML elements for search -->
 Press ctrl to search!
 <br>
 
-<input type="text" id="search-input" placeholder="Search by title / tag.." onclick=this.value=''; autofocus>
+<input type="text" id="search-input" placeholder="Search by title / tag .." onclick=this.value=''; autofocus>
 <input type="button" value="clear" onclick="javascript:eraseText();" >
 
 <script>
@@ -220,7 +216,9 @@ function eraseText() {
     // resultsContainer.value = ''; // doesn't work..
 }
 </script>
+
 <ul id="results-container"></ul>
+
 <a href="#">Back To Top</a>
 
 <script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
@@ -237,7 +235,6 @@ function eraseText() {
     </script>
 
 <script src="assets/js/lunr.js"></script>
-<!-- <script src="assets/js/search.js"></script> -->
 <script src="assets/js/search-script.js"></script>
 
             </section>
@@ -296,7 +293,7 @@ $(function() {
     <div class="form-group">
         <input class="subscribe-email" onkeyup="myFunc()"
                id="searchtext" type="text" name="searchtext"
-               placeholder="Search..." />
+               placeholder="Search by title / tag .." />
     </div>
     
     <script type="text/javascript">
