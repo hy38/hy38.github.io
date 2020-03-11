@@ -1,0 +1,179 @@
+[
+  
+    {
+      "title"    : "BOJ 11559 - Puyo Puyo",
+      "category" : "",
+      "tags"     : "DFS, BFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-11559",
+      "date"     : "2020-03-10 20:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "그래프의 사이클 유무 확인 - Finding Cycles in Graph",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/is-graph-cyclic",
+      "date"     : "2020-02-24 04:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/about-edges-in-graph",
+      "date"     : "2020-02-22 20:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/euilerian-circuit-and-trail",
+      "date"     : "2020-02-22 04:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "위상정렬의 구현 - Topological Sort",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/topological-sort",
+      "date"     : "2020-02-21 04:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/find-if-path-exists-between-vertices",
+      "date"     : "2020-02-19 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 1325 - 효율적인 해킹",
+      "category" : "",
+      "tags"     : "DFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-1325",
+      "date"     : "2020-02-19 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/counting-the-components-of-graph",
+      "date"     : "2020-02-18 23:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/about-DFS",
+      "date"     : "2020-02-17 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 1389 - 케빈 베이컨의 6단계 법칙",
+      "category" : "",
+      "tags"     : "DFS, BFS, floyd-warshall, simulation, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-1389",
+      "date"     : "2020-02-12 23:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 10026 - 적록색약",
+      "category" : "",
+      "tags"     : "DFS, BFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-10026",
+      "date"     : "2020-02-12 01:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 2468 - 안전 영역",
+      "category" : "",
+      "tags"     : "DFS, BFS, simulation, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-2468",
+      "date"     : "2020-02-08 01:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 2583 - 영역 구하기",
+      "category" : "",
+      "tags"     : "DFS, BFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-2583",
+      "date"     : "2020-02-07 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "BOJ 14502 - 연구소",
+      "category" : "",
+      "tags"     : "DFS, BFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-14502",
+      "date"     : "2020-02-01 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 6-1 Advice for Applying Machine Learning",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-6-1",
+      "date"     : "2019-07-31 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 5-1 Neural Networks - Learning",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-5-1",
+      "date"     : "2019-07-31 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 4-1 Neural Networks - Representation",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-4-1",
+      "date"     : "2019-07-31 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 3-2 Regularization",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-3-2",
+      "date"     : "2019-07-12 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 3-1 Logistic Regression",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-3-1",
+      "date"     : "2019-06-08 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 2-1 Linear Regression with Multiple Variables",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-2-1",
+      "date"     : "2019-05-31 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 1-2 Linear Regression with One Variable",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-1-2",
+      "date"     : "2019-05-28 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "ML Coursera 1-1 Introduction",
+      "category" : "",
+      "tags"     : "machine learning, Coursera",
+      "url"      : "https://hy38.github.io/MLcoursera-1-1",
+      "date"     : "2019-05-27 19:00:00 +0900"
+    } 
+  
+]

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/bfs/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-03-10T17:32:28+09:00</updated>
+  <updated>2020-03-11T22:05:56+09:00</updated>
   <id>https://hy38.github.io/tag/bfs/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">BOJ 11559 - Puyo Puyo</title>
       <link href="https://hy38.github.io/BOJ-11559" rel="alternate" type="text/html" title="BOJ 11559 - Puyo Puyo" />
-      <published>2020-02-19T20:00:00+09:00</published>
-      <updated>2020-02-19T20:00:00+09:00</updated>
+      <published>2020-03-10T20:00:00+09:00</published>
+      <updated>2020-03-10T20:00:00+09:00</updated>
       <id>https://hy38.github.io/BOJ-11559</id>
       <content type="html" xml:base="https://hy38.github.io/BOJ-11559">&lt;blockquote&gt;
   &lt;p&gt;DFS와 BFS를 이용한 문제해결&lt;/p&gt;
