@@ -229,12 +229,13 @@ function eraseText() {
     //   searchResultTemplate: '<div><a href="{url}"><h1>{title}</h1></a><span>{date}</span></div>',
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
-      json: '/search.json'
+      json: '/search.json',
+      noResultsText: 'No result found :(',  //  message when no results extants
+      limit: 999    //  limit of how many search items to be shown
     })
-    // noResultsText ("No result found!")
     </script>
 
-<script src="assets/js/lunr.js"></script>
+<!-- <script src="assets/js/lunr.js"></script> -->
 <script src="assets/js/search-script.js"></script>
 
             </section>
