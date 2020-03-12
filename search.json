@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "BOJ 2252 - 줄 세우기",
+      "category" : "",
+      "tags"     : "DFS, algorithm",
+      "url"      : "https://hy38.github.io/BOJ-2252",
+      "date"     : "2020-03-12 02:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "BOJ 11559 - Puyo Puyo",
       "category" : "",
       "tags"     : "DFS, BFS, algorithm",
