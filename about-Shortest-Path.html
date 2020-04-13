@@ -11,7 +11,7 @@
 
 
 
-    <title>위상정렬의 구현 - Topological Sort</title>
+    <title>그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,26 +40,26 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/topological-sort" />
+    <link rel="canonical" href="https://hy38.github.io/about-Shortest-Path" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="위상정렬의 구현 - Topological Sort" />
-    <meta property="og:description" content="위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것. 사건들 사이의 우선순위를 나타내기 위해 사용되며, 정렬 결과는 우선순위에 따른 사건의 진행 순서를 나타낸다. 이 때, 모든 간선이 왼쪽에서 오른쪽으로 향하도록 수평선을 따라 나열한 정점의 순서로 보여진다. 의존성이 있는 작업들이 주어질 때, 이들이 어떤 순서로 진행되어야하는지 계산해준다." />
-    <meta property="og:url" content="https://hy38.github.io/topological-sort" />
-    <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/order.jpg" />
+    <meta property="og:title" content="그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph" />
+    <meta property="og:description" content="그래프의 최단경로 알고리즘 최단 경로(Shortest Path) 사전적 정의 최단 경로 : 그래프에서 두 정점을 연결하는 가장 짧은 경로의 길이를 찾는 문제 가중치가 없는 그래프에서는 보통 두 정점을 잇는 가장 적은 간선의 개수를 뜻함. 가중치가 존재하는 그래프에서는 두 정점을 잇는 간선들의 가중치의 합 중 최소 가중치 합을 의미함. 가중치가 없는 그래프에서의" />
+    <meta property="og:url" content="https://hy38.github.io/about-Shortest-Path" />
+    <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/wormhole.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2020-02-21T04:00:00+09:00" />
-    <meta property="article:modified_time" content="2020-02-21T04:00:00+09:00" />
+    <meta property="article:published_time" content="2020-04-06T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2020-04-06T19:00:00+09:00" />
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="위상정렬의 구현 - Topological Sort" />
-    <meta name="twitter:description" content="위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것. 사건들 사이의 우선순위를 나타내기 위해 사용되며, 정렬 결과는 우선순위에 따른 사건의 진행 순서를 나타낸다. 이 때, 모든 간선이 왼쪽에서 오른쪽으로 향하도록 수평선을 따라 나열한 정점의 순서로 보여진다. 의존성이 있는 작업들이 주어질 때, 이들이 어떤 순서로 진행되어야하는지 계산해준다." />
+    <meta name="twitter:title" content="그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph" />
+    <meta name="twitter:description" content="그래프의 최단경로 알고리즘 최단 경로(Shortest Path) 사전적 정의 최단 경로 : 그래프에서 두 정점을 연결하는 가장 짧은 경로의 길이를 찾는 문제 가중치가 없는 그래프에서는 보통 두 정점을 잇는 가장 적은 간선의 개수를 뜻함. 가중치가 존재하는 그래프에서는 두 정점을 잇는 간선들의 가중치의 합 중 최소 가중치 합을 의미함. 가중치가 없는 그래프에서의" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
-    <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/order.jpg" />
+    <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/wormhole.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="HY38's IT Blog" />
     <meta name="twitter:label2" content="Filed under" />
@@ -78,18 +78,18 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/topological-sort",
+    "url": "https://hy38.github.io/about-Shortest-Path",
     "image": {
         "@type": "ImageObject",
-        "url": "https://hy38.github.io/assets/images/algorithm/order.jpg",
+        "url": "https://hy38.github.io/assets/images/algorithm/wormhole.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/topological-sort"
+        "@id": "https://hy38.github.io/about-Shortest-Path"
     },
-    "description": "위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것. 사건들 사이의 우선순위를 나타내기 위해 사용되며, 정렬 결과는 우선순위에 따른 사건의 진행 순서를 나타낸다. 이 때, 모든 간선이 왼쪽에서 오른쪽으로 향하도록 수평선을 따라 나열한 정점의 순서로 보여진다. 의존성이 있는 작업들이 주어질 때, 이들이 어떤 순서로 진행되어야하는지 계산해준다."
+    "description": "그래프의 최단경로 알고리즘 최단 경로(Shortest Path) 사전적 정의 최단 경로 : 그래프에서 두 정점을 연결하는 가장 짧은 경로의 길이를 찾는 문제 가중치가 없는 그래프에서는 보통 두 정점을 잇는 가장 적은 간선의 개수를 뜻함. 가중치가 존재하는 그래프에서는 두 정점을 잇는 간선들의 가중치의 합 중 최소 가중치 합을 의미함. 가중치가 없는 그래프에서의"
 }
     </script>
 
@@ -104,7 +104,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="위상정렬의 구현 - Topological Sort" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph" href="/feed.xml" />
 
 
 </head>
@@ -179,7 +179,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="21 February 2020">21 February 2020</time>
+                    <time class="post-full-meta-date" datetime=" 6 April 2020"> 6 April 2020</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -193,233 +193,169 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">위상정렬의 구현 - Topological Sort</h1>
+                <h1 class="post-full-title">그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/order.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/wormhole.jpg)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.</p>
+  <p>그래프의 최단경로 알고리즘</p>
 </blockquote>
+
+<h3 id="최단-경로shortest-path">최단 경로(Shortest Path)</h3>
+
+<h4 id="사전적-정의">사전적 정의</h4>
 
 <blockquote>
-  <p>사건들 사이의 우선순위를 나타내기 위해 사용되며, 정렬 결과는 우선순위에 따른 사건의 진행 순서를 나타낸다. 이 때, 모든 간선이 왼쪽에서 오른쪽으로 향하도록 수평선을 따라 나열한 정점의 순서로 보여진다.</p>
+  <p>최단 경로 : 그래프에서 두 정점을 연결하는 가장 짧은 경로의 길이를 찾는 문제</p>
 </blockquote>
 
-<blockquote>
-  <p>의존성이 있는 작업들이 주어질 때, 이들이 어떤 순서로 진행되어야하는지 계산해준다.</p>
-</blockquote>
-
-<h1 id="위상정렬">위상정렬</h1>
-
 <ul>
   <li>
-    <p>위상 정렬이 성립하기 위해서는 <strong>반드시</strong> 비순환 유향 그래프(DAG, Directed Acyclic Graph)이어야 한다.</p>
+    <p><strong>가중치가 없는 그래프</strong>에서는 보통 두 정점을 잇는 가장 적은 간선의 개수를 뜻함.</p>
   </li>
   <li>
-    <p>정렬의 순서는 그래프의 구조와 정점을 선택하는 방법에 따라 여러 종류가 나올 수 있다.</p>
-  </li>
-  <li>
-    <p>간선중에 back edge, 즉 사이클이 존재할 경우 순환 유향 그래프(DCG, Directed Cyclic Graph)가 되기 때문에, 위상정렬을 진행할 수 없다.</p>
-  </li>
-  <li>
-    <p>구현에는 스택(Stack)을 이용한 구현과 큐(Queue)를 이용한 구현이 있다.</p>
-  </li>
-  <li>
-    <p>위상정렬의 시간복잡도는 O(V + E)를 갖는다.</p>
+    <p><strong>가중치가 존재하는 그래프</strong>에서는 두 정점을 잇는 간선들의 가중치의 합 중 최소 가중치 합을 의미함.</p>
   </li>
 </ul>
 
-<hr />
-
-<h2 id="위상정렬의-구현stack">위상정렬의 구현(Stack)</h2>
+<h4 id="가중치가-없는-그래프에서의-최단-경로">가중치가 없는 그래프에서의 최단 경로</h4>
 
 <ul>
-  <li>
-    <p>먼저, 위상정렬은 DFS와 스택을 이용하여 쉽게 할 수 있다.</p>
-  </li>
-  <li>
-    <p>DFS의 종료 순서를 거꾸로 뒤집으면 위상정렬이 완료된다.</p>
-  </li>
-  <li>
-    <p>이를 이용하여 DFS가 끝날때마다 스택에 쌓아두고, 마지막에 전체를 pop해주면 위상정렬된 결과를 얻을 수 있다.</p>
-  </li>
-  <li>
-    <p>다음의 코드를 보자.</p>
-  </li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">adj</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">vis</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">vis</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">next</span><span class="p">])</span>
-            <span class="n">DFS</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">makeGraph</span><span class="p">();</span>
-    <span class="n">DFS</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>위 코드를 살짝 수정하여 아래와 같이 사이클(Cycle)의 존재 유무를 파악할 수 있다.</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="p">...</span>
-
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">finished</span><span class="p">;</span>
-<span class="kt">bool</span> <span class="n">hasCycle</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">vis</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">next</span><span class="p">])</span>
-            <span class="n">DFS</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">finished</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">hasCycle</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">finished</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="p">...</span>
-
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>관련문제 - <a href="https://www.acmicpc.net/problem/2252" target="_blank">BOJ 2252 - 줄 세우기</a></p>
-
+  <li><strong><a href="/about-BFS" target="_blank">BFS(Breadth First Search)</a></strong>
     <ul>
-      <li><a href="/BOJ-2252" target="_blank">풀이</a></li>
+      <li>
+        <p>그래프를 탐색하는 기법 중 하나이다.</p>
+      </li>
+      <li>
+        <p><strong><a href="/about-DFS" target="_blank">DFS</a>와 다르게</strong> 주변 정점들을 먼저 탐색하는 방식의 탐색법이다.</p>
+      </li>
     </ul>
   </li>
 </ul>
 
-<hr />
-
-<h2 id="위상정렬의-구현queue">위상정렬의 구현(Queue)</h2>
+<h4 id="가중치가-존재하는-그래프에서의-최단-경로의-분류">가중치가 존재하는 그래프에서의 최단 경로의 분류</h4>
 
 <ul>
-  <li>
-    <p>큐를 이용한 구현은 진입차수(indegree)를 이용하게 된다.</p>
+  <li>Single Source / One-to-All
+    <ul>
+      <li>
+        <p>하나의 출발점에서 다른 모든 정점까지의 최단 경로를 찾음.</p>
+      </li>
+      <li>
+        <p>예시 : <strong><a href="/dijkstra-algorithm" target="_blank">다익스트라(Dijkstra)</a></strong> 알고리즘</p>
+      </li>
+    </ul>
   </li>
-  <li>
-    <p>한 정점의 진입차수라 함은, 다른 모든 정점에서 그 정점으로 들어오는 방향있는 간선의 갯수 이다.</p>
+  <li>Single Destination
+    <ul>
+      <li>
+        <p>모든 정점으로부터 하나의 도착점까지의 최단 경로를 찾음.</p>
+      </li>
+      <li>
+        <p><strong>다익스트라</strong>로 대체 가능함</p>
+      </li>
+    </ul>
+  </li>
+  <li>Single Pair
+    <ul>
+      <li>
+        <p>하나의 출발점으로부터 하나의 도착점까지의 최단 경로를 찾음.</p>
+      </li>
+      <li>
+        <p>시간복잡도를 고려하면 최악의 경우 <strong>다익스트라가 가장 빠름</strong></p>
+      </li>
+    </ul>
+  </li>
+  <li>All-Pairs
+    <ul>
+      <li>
+        <p>모든 쌍에 대해 최단 경로를 찾음.</p>
+      </li>
+      <li>
+        <p>예시 : <strong><a href="/floyd-warshall-algorithm" target="_blank">플로이드-워셜(Floyd-Warshall)</a></strong> 알고리즘, 존슨 알고리즘</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="알고리즘">알고리즘</h3>
-
-<ol>
-  <li>
-    <p>진입차수가 0인 정점 u를 큐에 삽입한다.</p>
-  </li>
-  <li>
-    <p>u를 꺼내어 그 정점에서 나가는 outdegree들을 모두 지워준다.</p>
-  </li>
-</ol>
-
-<ul>
-  <li>실제 구현에서는 u의 인접 정점들의 indegree를 하나씩 차감하는 것으로 대체한다.</li>
-</ul>
-
-<ol>
-  <li>
-    <p>위 작업으로 인해 indegree가 0이 된 정점들을 큐에 삽입한다.</p>
-  </li>
-  <li>
-    <p>큐가 빌때까지 2 ~ 3의 과정을 반복한다.</p>
-  </li>
-  <li>
-    <p>이 때, n개의 정점들을 모두 방문하기 전에 큐가 비어버리면 사이클이 존재한다는 것이다.</p>
-  </li>
-</ol>
-
-<ul>
-  <li>다음과 같이 코드를 구현할 수 있다.</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="p">...</span>
-
-<span class="kt">void</span> <span class="n">makeGraph</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
-    <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="n">indegree</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">topologicalSort</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">//  return : list of sorted vertices
-</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">indegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">hasCycle</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="k">return</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="kt">int</span> <span class="n">node</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-        <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
-            <span class="n">indegree</span><span class="p">[</span><span class="n">next</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">indegree</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">...</span>
-
-</code></pre></div></div>
+<blockquote>
+  <p>이와 같이 <strong>다익스트라</strong> 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 <strong><a href="/bellman-ford-algorithm" target="_blank">벨만-포드(Bellman-Ford)</a></strong> 알고리즘을 사용한다. 자세한 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank">여기</a>를 통해 알아볼 수 있다.</p>
+</blockquote>
 
 <hr />
 
-<h2 id="더-많은-위상-정렬-문제들">더 많은 위상 정렬 문제들</h2>
+<h4 id="edge-relaxation이란">Edge Relaxation이란?</h4>
 
 <ul>
-  <li>BOJ - <a href="https://www.acmicpc.net/problem/tag/%EC%9C%84%EC%83%81%20%EC%A0%95%EB%A0%AC" target="_blank">위상 정렬 카테고리</a></li>
+  <li>흔히 relax 라고도 일컫는 이것은 초기 정점들 간의 거리값을 지정해둔 상태에서 더 나은 경로를 발견하였을 때 <strong>개선</strong>시켜준다는 의미가 강하다.</li>
 </ul>
+
+<h6 id="초기값의-설정">초기값의 설정</h6>
+
+<ul>
+  <li><strong>시작정점 S로부터 다른 모든 정점 v들까지의 초기값을 어떻게 설정해야할까?</strong></li>
+</ul>
+
+<p>기본적으로 떠오르는 아이디어는 0, 음의 무한대, 양의 무한대가 있다. 결론부터 말하자면, 가장 좋은 선택지는 <strong>양의 무한대</strong>가 된다.</p>
+
+<p>첫번째 이유로는, 시작정점 S로부터 닿을수 없는 정점이 존재하기 때문이다. 이러한 정점들을 양의 무한대로 처리하는 것이 합리적일 것이다.</p>
+
+<p>두번째 이유로는, 우리가 relax라는 작업을 할 때 가중치가 큰 경로가 더 작은 경로를 만나면 작은 경로로 <strong>업데이트</strong> 시켜주는데, 이와 잘 맞아떨어지기 때문이다.</p>
+
+<p>다른 이유로는, 다른 대안이 딱히 없기 때문이다. 0으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, 무한대와 0은 역수를 취하면 성질이 거의 비슷할 것이다.) 음의 무한대 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 음의 무한대를 사용할것인지는 고민해봐야 할 문제인 것 같다.</p>
+
+<ul>
+  <li><strong>그렇다면 양의 무한대를 어떻게 표기해야 하는가?</strong></li>
+</ul>
+
+<p>컴퓨터에서 무한대를 표현하는 것은 쉽지 않은 일이다. 사실 불가능하다고 생각한다. 무한이라는 수학적 개념을 적용해보면, 어떤 엄청나게 큰 값을 지정하게되면, 그보다 큰 값이 반드시 존재하기 때문에 심지어 컴퓨터에서의 표기는 더더욱 어려워보인다.</p>
+
+<ul>
+  <li><strong>그렇다면, 무한대를 표기할 다른 대안이 있을까?</strong></li>
+</ul>
+
+<p>수학적으로는 무한대가 아니지만, 적당히 큰 수를 지정하면 무한대와 비슷한 효과를 볼 수 있을것이다. PS에서 자주 사용되는 다음과 같은 수들이 대표적이다.</p>
+
+<pre><code class="language-C++">#define INF 987654321
+#define INF2 1e9
+#define INF3 0x7fffffff
+#define INF4 0x3f3f3f3f
+</code></pre>
+
+<p>나는 개인적으로 <code class="highlighter-rouge">987654321</code>를 주로 사용하는 편이다. 다만, 가끔 INF와 INF를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 INF를 표현한다. 상황에 맞게 적절하게 INF값을 설정해주면 좋을것같다.</p>
 
 <hr />
 
-<h2 id="references">References</h2>
+<h4 id="최단-경로-알고리즘의-시간복잡도">최단 경로 알고리즘의 시간복잡도</h4>
+
+<ul>
+  <li><a href="/dijkstra-algorithm" target="_blank">다익스트라</a> :
+    <ul>
+      <li><strong>우선순위큐 사용 : O(ElogV)</strong></li>
+      <li>반복문 사용 : O(V*V + E)</li>
+      <li>피보나치힙 사용 : O(E + VlogV)</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="/bellman-ford-algorithm" target="_blank">벨만-포드</a> : O()</p>
+  </li>
+  <li>
+    <p><a href="/floyd-warshall-algorithm" target="_blank">플로이드-워셜</a> : O()</p>
+  </li>
+  <li>존슨 : O()</li>
+</ul>
+
+<p>각각의 알고리즘은 위의 링크들을 통해 더 자세히 다루도록 할것이다.</p>
+
+<hr />
+
+<h3 id="references">References</h3>
 
 <ul>
   <li>
@@ -429,16 +365,7 @@ into the {body} of the default.hbs template -->
     <p>알고리즘 문제 해결 전략 2</p>
   </li>
   <li>
-    <p><a href="https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html" target="_blank">https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html</a></p>
-  </li>
-  <li>
-    <p><a href="https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC" target="_blank">https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC</a></p>
-  </li>
-  <li>
-    <p><a href="https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;logNo=221236874984&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank">https://m.blog.naver.com/PostView.nhn?blogId=ndb796&amp;logNo=221236874984&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</a></p>
-  </li>
-  <li>
-    <p><a href="https://jason9319.tistory.com/93" target="_blank">https://jason9319.tistory.com/93</a></p>
+    <p><a href="https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769" target="_blank">https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769</a></p>
   </li>
 </ul>
 
@@ -567,11 +494,6 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/about-Shortest-Path">그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</a></li>
-                                        
-                                    
                                   
                                 
                                   
@@ -587,12 +509,7 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
+                                            <li><a href="/BOJ-11559">BOJ 11559 - Puyo Puyo</a></li>
                                         
                                     
                                   
@@ -612,6 +529,16 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                     
                                   
                                 
@@ -713,12 +640,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/euilerian-circuit-and-trail">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/bood.jpg)"></div>
+            <a class="post-card-image-link" href="/why-dijkstra-fail-on-a-negative-weighted-edge">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/infinite.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/euilerian-circuit-and-trail">
+            <a class="post-card-content-link" href="/why-dijkstra-fail-on-a-negative-weighted-edge">
                 <header class="post-card-header">
                     
                         
@@ -732,7 +659,7 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">오일러 서킷과 트레일의 구현 - Eulerian Circuit and Trail</h2>
+                    <h2 class="post-card-title">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -769,26 +696,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/find-if-path-exists-between-vertices">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/finger-bridge.jpg)"></div>
+            <a class="post-card-image-link" href="/BOJ-2252">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/height-difference.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/find-if-path-exists-between-vertices">
+            <a class="post-card-content-link" href="/BOJ-2252">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Algorithm</span>
+                               <span class="post-card-tags">Dfs</span>
                             
                         
                             
-                                <span class="post-card-tags">Theory</span>
+                                <span class="post-card-tags">Algorithm</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices</h2>
+                    <h2 class="post-card-title">BOJ 2252 - 줄 세우기</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -834,18 +761,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">위상정렬의 구현 - Topological Sort</div>
+    <div class="floating-header-title">그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC%EC%9D%98+%EA%B5%AC%ED%98%84+-+Topological+Sort&amp;url=https://hy38.github.iotopological-sort"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98+%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98+-+Shortest+Path+Algorithm+of+Graph&amp;url=https://hy38.github.ioabout-Shortest-Path"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.iotopological-sort"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioabout-Shortest-Path"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

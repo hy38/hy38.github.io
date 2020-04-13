@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge",
+      "date"     : "2020-04-13 04:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/about-Shortest-Path",
+      "date"     : "2020-04-06 19:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "BOJ 2252 - 줄 세우기",
       "category" : "",
       "tags"     : "DFS, algorithm",

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/algorithm/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-03-25T16:23:36+09:00</updated>
+  <updated>2020-04-13T17:37:16+09:00</updated>
   <id>https://hy38.github.io/tag/algorithm/feed.xml</id>
 
   
@@ -30,6 +30,345 @@
   
   
 
+  
+    <entry>
+      <title type="html">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</title>
+      <link href="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge" rel="alternate" type="text/html" title="다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge" />
+      <published>2020-04-13T04:00:00+09:00</published>
+      <updated>2020-04-13T04:00:00+09:00</updated>
+      <id>https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge</id>
+      <content type="html" xml:base="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge">&lt;blockquote&gt;
+  &lt;p&gt;다익스트라 알고리즘과 음수 간선&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;다익스트라-알고리즘에서-음수-간선의-존재-여부가-중요한-이유&quot;&gt;다익스트라 알고리즘에서 음수 간선의 존재 여부가 중요한 이유&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;흔히들 음수 간선이 있으면 &lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; 대신에 &lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; 알고리즘을 사용한다. 다만, 그 구체적인 이유를 알고 사용하면 각 알고리즘들의 원리를 더 깊게 파악할 수 있을것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;음수 간선이 존재하게 될 경우 다익스트라 알고리즘을 사용하지 않는 이유는 크게 두 가지 이유가 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;(가중치의 합이 음수인)음수 사이클의 발생 가능성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edge Relaxation 계산의 오류 가능성&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;1-가중치의-합이-음수인-사이클의-발생-가능성&quot;&gt;1. 가중치의 합이 음수인 사이클의 발생 가능성&lt;/h4&gt;
+
+&lt;p&gt;그래프에서 사이클은 상황에 따라 존재할 수 있다. 다만, 사이클 내의 가중치 합이 음수인 음수 사이클이 존재할 경우 상황이 복잡해진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/cycle.png&quot; alt=&quot;cycle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그래프에서 시작점을 A라 설정하였을 때, A에서 D까지 가는 최단경로는 얼마일까?&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A - B - C - D&lt;/code&gt; 의 경로를 지나게 되면 거리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;60&lt;/code&gt;일 것이다.&lt;/p&gt;
+
+&lt;p&gt;그러나, 간선 CA의 가중치가 음수인 것을 이용하면 다음과 같은 경로가 나올 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A - B - C - A - B - C - D&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같이 사이클을 한번 지나게되면 경로는 기존 거리 60의 경로보다 50이 작은 &lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;이 된다.&lt;/p&gt;
+
+&lt;p&gt;사이클을 한번 더 돌아보게 되면 다음과 같은 경로가 나오고, 경로는 10보다 50이 더 작은 &lt;code class=&quot;highlighter-rouge&quot;&gt;-40&lt;/code&gt;이 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A - B - C - A - B - C - A - B - C - D&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;여기서 알 수 있는 사실은, 음수 사이클이 존재하게 되면 최단 경로가 음의 무한대로 수렴하게 된다는 것 이다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;따라서 음수 사이클이 존재할 수 있기 때문에, 음수 간선이 존재하게 되면 다익스트라 외에 다른 알고리즘을 사용하는 것이 타당해보인다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;2-edge-relaxation-계산의-오류-가능성&quot;&gt;2. Edge Relaxation 계산의 오류 가능성&lt;/h4&gt;
+
+&lt;p&gt;대부분 음수 사이클에 대해 유념하고 있을 것이라 생각한다.&lt;/p&gt;
+
+&lt;p&gt;다만 그 외에도 음수간선이 존재하게 되면 &lt;strong&gt;relax 연산이 잘못 수행될 수 있는 여지가 있다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;다음 시작점이 A라 가정한 그래프를 보자. 이때, 다익스트라 알고리즘이 min-heap 우선순위 큐를 사용함을 생각해두자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/negative-weight-edge.png&quot; alt=&quot;cycle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그래프에서 초기 dist는 시작점 A를 제외하고 모두 양의 무한대일 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dist[A] + cost(A, C) &amp;lt; dist[C]&lt;/code&gt; 이기에 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[C]&lt;/code&gt;를 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[A] + cost(A, C)&lt;/code&gt;인 &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;로 relax해준다. 마찬가지로 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[B]&lt;/code&gt; 또한 relax를 해준다.&lt;/p&gt;
+
+&lt;p&gt;이 때, 간선 AC의 가중치가 AB의 가중치보다 작기 때문에, 우선순위 큐에 들어가 있는 B와 C 중 C를 먼저 꺼내게 된다.&lt;/p&gt;
+
+&lt;p&gt;이후 다익스트라 알고리즘은 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[C]&lt;/code&gt;를 최단거리라 인식하고 더이상 relax를 진행하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 되면 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[C]&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;로 남게 되지만, 정작 최단거리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;-5&lt;/code&gt;이어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;결과적으로 다익스트라 알고리즘이 제대로 작동하지 못한 것이다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;그 이유는, 다익스트라 알고리즘은 기본적으로 minimum에 minimum을 더하는 식으로 작동하기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;시작점 A가 minimum이라는 원칙아래에 A와 연결된 노드들을 우선순위큐에 넣고, 가중치가 작은 것들부터 뽑아서 relax해주기 때문에 minimum + minimum = minimum 을 이용하여 최단 경로를 찾아낸다.&lt;/p&gt;
+
+&lt;p&gt;이는 다익스트라 알고리즘이 &lt;strong&gt;그리디 알고리즘&lt;/strong&gt;인 것과도 관련이 있다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;음수-간선이-존재하는-문제-예시&quot;&gt;음수 간선이 존재하는 문제 예시&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11657&quot; target=&quot;_blank&quot;&gt;BOJ 11657 - 타임머신&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges&quot; target=&quot;_blank&quot;&gt;https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/6799172/negative-weights-using-dijkstras-algorithm/6799344#6799344&quot; target=&quot;_blank&quot;&gt;https://stackoverflow.com/questions/6799172/negative-weights-using-dijkstras-algorithm/6799344#6799344&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cs.stackexchange.com/questions/19771/why-does-dijkstras-algorithm-fail-on-a-negative-weighted-graphs&quot; target=&quot;_blank&quot;&gt;https://cs.stackexchange.com/questions/19771/why-does-dijkstras-algorithm-fail-on-a-negative-weighted-graphs&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="algorithm" />
+      
+        <category term="theory" />
+      
+
+      
+        <summary type="html">다익스트라 알고리즘과 음수 간선</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</title>
+      <link href="https://hy38.github.io/about-Shortest-Path" rel="alternate" type="text/html" title="그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph" />
+      <published>2020-04-06T19:00:00+09:00</published>
+      <updated>2020-04-06T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/about-Shortest-Path</id>
+      <content type="html" xml:base="https://hy38.github.io/about-Shortest-Path">&lt;blockquote&gt;
+  &lt;p&gt;그래프의 최단경로 알고리즘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;최단-경로shortest-path&quot;&gt;최단 경로(Shortest Path)&lt;/h3&gt;
+
+&lt;h4 id=&quot;사전적-정의&quot;&gt;사전적 정의&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;최단 경로 : 그래프에서 두 정점을 연결하는 가장 짧은 경로의 길이를 찾는 문제&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;가중치가 없는 그래프&lt;/strong&gt;에서는 보통 두 정점을 잇는 가장 적은 간선의 개수를 뜻함.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;가중치가 존재하는 그래프&lt;/strong&gt;에서는 두 정점을 잇는 간선들의 가중치의 합 중 최소 가중치 합을 의미함.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;가중치가-없는-그래프에서의-최단-경로&quot;&gt;가중치가 없는 그래프에서의 최단 경로&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;/about-BFS&quot; target=&quot;_blank&quot;&gt;BFS(Breadth First Search)&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;그래프를 탐색하는 기법 중 하나이다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/about-DFS&quot; target=&quot;_blank&quot;&gt;DFS&lt;/a&gt;와 다르게&lt;/strong&gt; 주변 정점들을 먼저 탐색하는 방식의 탐색법이다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;가중치가-존재하는-그래프에서의-최단-경로의-분류&quot;&gt;가중치가 존재하는 그래프에서의 최단 경로의 분류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Single Source / One-to-All
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;하나의 출발점에서 다른 모든 정점까지의 최단 경로를 찾음.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예시 : &lt;strong&gt;&lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라(Dijkstra)&lt;/a&gt;&lt;/strong&gt; 알고리즘&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Single Destination
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;모든 정점으로부터 하나의 도착점까지의 최단 경로를 찾음.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;다익스트라&lt;/strong&gt;로 대체 가능함&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Single Pair
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;하나의 출발점으로부터 하나의 도착점까지의 최단 경로를 찾음.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;시간복잡도를 고려하면 최악의 경우 &lt;strong&gt;다익스트라가 가장 빠름&lt;/strong&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;All-Pairs
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;모든 쌍에 대해 최단 경로를 찾음.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예시 : &lt;strong&gt;&lt;a href=&quot;/floyd-warshall-algorithm&quot; target=&quot;_blank&quot;&gt;플로이드-워셜(Floyd-Warshall)&lt;/a&gt;&lt;/strong&gt; 알고리즘, 존슨 알고리즘&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이와 같이 &lt;strong&gt;다익스트라&lt;/strong&gt; 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 &lt;strong&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드(Bellman-Ford)&lt;/a&gt;&lt;/strong&gt; 알고리즘을 사용한다. 자세한 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 통해 알아볼 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;edge-relaxation이란&quot;&gt;Edge Relaxation이란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;흔히 relax 라고도 일컫는 이것은 초기 정점들 간의 거리값을 지정해둔 상태에서 더 나은 경로를 발견하였을 때 &lt;strong&gt;개선&lt;/strong&gt;시켜준다는 의미가 강하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;초기값의-설정&quot;&gt;초기값의 설정&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;시작정점 S로부터 다른 모든 정점 v들까지의 초기값을 어떻게 설정해야할까?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기본적으로 떠오르는 아이디어는 0, 음의 무한대, 양의 무한대가 있다. 결론부터 말하자면, 가장 좋은 선택지는 &lt;strong&gt;양의 무한대&lt;/strong&gt;가 된다.&lt;/p&gt;
+
+&lt;p&gt;첫번째 이유로는, 시작정점 S로부터 닿을수 없는 정점이 존재하기 때문이다. 이러한 정점들을 양의 무한대로 처리하는 것이 합리적일 것이다.&lt;/p&gt;
+
+&lt;p&gt;두번째 이유로는, 우리가 relax라는 작업을 할 때 가중치가 큰 경로가 더 작은 경로를 만나면 작은 경로로 &lt;strong&gt;업데이트&lt;/strong&gt; 시켜주는데, 이와 잘 맞아떨어지기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;다른 이유로는, 다른 대안이 딱히 없기 때문이다. 0으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, 무한대와 0은 역수를 취하면 성질이 거의 비슷할 것이다.) 음의 무한대 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 음의 무한대를 사용할것인지는 고민해봐야 할 문제인 것 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;그렇다면 양의 무한대를 어떻게 표기해야 하는가?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;컴퓨터에서 무한대를 표현하는 것은 쉽지 않은 일이다. 사실 불가능하다고 생각한다. 무한이라는 수학적 개념을 적용해보면, 어떤 엄청나게 큰 값을 지정하게되면, 그보다 큰 값이 반드시 존재하기 때문에 심지어 컴퓨터에서의 표기는 더더욱 어려워보인다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;그렇다면, 무한대를 표기할 다른 대안이 있을까?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;수학적으로는 무한대가 아니지만, 적당히 큰 수를 지정하면 무한대와 비슷한 효과를 볼 수 있을것이다. PS에서 자주 사용되는 다음과 같은 수들이 대표적이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;#define INF 987654321
+#define INF2 1e9
+#define INF3 0x7fffffff
+#define INF4 0x3f3f3f3f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;나는 개인적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;987654321&lt;/code&gt;를 주로 사용하는 편이다. 다만, 가끔 INF와 INF를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 INF를 표현한다. 상황에 맞게 적절하게 INF값을 설정해주면 좋을것같다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;최단-경로-알고리즘의-시간복잡도&quot;&gt;최단 경로 알고리즘의 시간복잡도&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; :
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;우선순위큐 사용 : O(ElogV)&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;반복문 사용 : O(V*V + E)&lt;/li&gt;
+      &lt;li&gt;피보나치힙 사용 : O(E + VlogV)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; : O()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;/floyd-warshall-algorithm&quot; target=&quot;_blank&quot;&gt;플로이드-워셜&lt;/a&gt; : O()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;존슨 : O()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;각각의 알고리즘은 위의 링크들을 통해 더 자세히 다루도록 할것이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769&quot; target=&quot;_blank&quot;&gt;https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="algorithm" />
+      
+        <category term="theory" />
+      
+
+      
+        <summary type="html">그래프의 최단경로 알고리즘</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">BOJ 2252 - 줄 세우기</title>
@@ -2008,382 +2347,6 @@
 
       
         <summary type="html">DFS를 이용한 문제해결</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph</title>
-      <link href="https://hy38.github.io/counting-the-components-of-graph" rel="alternate" type="text/html" title="그래프에서의 연결 요소(컴포넌트)의 개수 세기 - Counting the Components of Graph" />
-      <published>2020-02-18T23:00:00+09:00</published>
-      <updated>2020-02-18T23:00:00+09:00</updated>
-      <id>https://hy38.github.io/counting-the-components-of-graph</id>
-      <content type="html" xml:base="https://hy38.github.io/counting-the-components-of-graph">&lt;blockquote&gt;
-  &lt;p&gt;연결 요소(컴포넌트) 세기&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;그래프의-연결-요소&quot;&gt;그래프의 연결 요소&lt;/h2&gt;
-
-&lt;h3 id=&quot;사전적-정의&quot;&gt;사전적 정의&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;컴포넌트 : 무향 그래프가 간선으로 서로 연결되지 않은 몇 개의 조각으로 쪼개져 있는 경우, 각 연결된 정점들의 부분집합을 컴포넌트라고 한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;“연결 요소”, “연결된 부분집합”, “컴포넌트” 등으로 불린다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DFS를 이용하여 연결요소의 개수를 찾기 때문에, 시간복잡도는 O(V + E)를 갖는다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;연결-요소를-찾는-간단한-방법&quot;&gt;연결 요소를 찾는 간단한 방법&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DFS를 이용하여 연결 요소를, 혹은 개수를 찾는다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;모든 정점 V에 대해 DFS를 할때, DFS가 몇번 호출되는지를 세면 된다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;같은 컴포넌트로 이루어져 있다면, 한 정점에서의 DFS만으로 모든 컴포넌트의 정점들이 방문되었을 것이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;관련-문제들&quot;&gt;관련 문제들&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11724&quot; target=&quot;_blank&quot;&gt;BOJ 11724 - 연결 요소의 개수&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2667&quot; target=&quot;_blank&quot;&gt;BOJ 2667 - 단지 번호 붙이기&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/4963&quot; target=&quot;_blank&quot;&gt;BOJ 4963 - 섬의 개수&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Sanghyun Park</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="algorithm" />
-      
-        <category term="theory" />
-      
-
-      
-        <summary type="html">연결 요소(컴포넌트) 세기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity</title>
-      <link href="https://hy38.github.io/about-DFS" rel="alternate" type="text/html" title="DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity" />
-      <published>2020-02-17T19:00:00+09:00</published>
-      <updated>2020-02-17T19:00:00+09:00</updated>
-      <id>https://hy38.github.io/about-DFS</id>
-      <content type="html" xml:base="https://hy38.github.io/about-DFS">&lt;blockquote&gt;
-  &lt;p&gt;DFS의 목적과 시간복잡도&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;그래프의-탐색&quot;&gt;그래프의 탐색&lt;/h1&gt;
-
-&lt;h2 id=&quot;깊이-우선-탐색depth-first-search&quot;&gt;깊이 우선 탐색(Depth First Search)&lt;/h2&gt;
-
-&lt;h3 id=&quot;사전적-정의&quot;&gt;사전적 정의&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;DFS : 그래프의 탐색 방법 중 하나로, 현재 정점과 인접한 간선들 중 아직 방문하지 않은 정점으로 향하는 간선을 무조건 따라간다. 더이상 방문할 곳이 없는 정점에 도달하면, 마지막으로 따라왔던 간선을 따라 뒤로 돌아간다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;가능한 한 그래프에서 “더 깊이” 검색하는 알고리즘으로, 가장 최근에 발견되고 아직 조사하지 않은 간선을 가진 정점 v로부터 나오는 간선을 조사한다. v의 모든 간선이 조사되면 그 검색은 v를 발견하게 해준 정점으로부터 나오는 간선을 조사하기 위해 “뒤로 되돌아간다”. 발견되지 않은 정점이 하나라도 남아있으면, 깊이 우선 탐색은 그 중 하나를 새 출발점으로 선택하고 해당 출발점으로부터의 검색을 반복한다. 이 전체 과정을 &lt;strong&gt;모든 정점을 발견&lt;/strong&gt;할 때까지 반복한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DFS를 한번만 사용하여 모든 정점을 발견하지 못할 경우가 존재한다. 그래프가 두 개 이상의 컴포넌트로 이루어져있을 경우이다. 따라서, 모든 정점들을 발견하기 위해서는 모든 정점들을 시작점으로 DFS를 해주어야 한다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;이를 저격한 문제가 &lt;a href=&quot;https://www.acmicpc.net/problem/1707&quot; target=&quot;_blank&quot;&gt;이분 그래프&lt;/a&gt; 문제이다. 그래프가 하나의 컴포넌트로 이루어졌다고 착각하기 쉬운 문제이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;깊이-우선-탐색의-목적과-쓰임&quot;&gt;깊이 우선 탐색의 목적과 쓰임&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;모든 정점을 (순서대로) 발견&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그래프 전체의 &lt;strong&gt;구조 파악&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다른 알고리즘의 &lt;strong&gt;서브 루틴&lt;/strong&gt;으로 자주 사용됨.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;/find-if-path-exists-between-vertices&quot; target=&quot;_blank&quot;&gt;그래프에서 두 정점이 연결되어있는지를 확인하기&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;/counting-the-components-of-graph&quot; target=&quot;_blank&quot;&gt;그래프의 연결 요소(Component)의 개수를 세기&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;/topological-sort&quot; target=&quot;_blank&quot;&gt;위상 정렬(Topological Sort)&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;/euilerian-circuit-and-trail&quot; target=&quot;_blank&quot;&gt;오일러 서킷/트레일 찾기(Eulerian Circuit &amp;amp; Trail)&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;/is-graph-cyclic&quot; target=&quot;_blank&quot;&gt;사이클(Cycle)이 존재하는지 확인하기&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;절단점(Cut Vertex / Articulation Point) 찾기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;다리(Bridge) 찾기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;강결합 컴포넌트(Strongly Connected Components, SCC)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;2 - SAT&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;dfs의-시간복잡도&quot;&gt;DFS의 시간복잡도&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;인접 리스트(Adjacency List) : O(V + E)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;인접 리스트의 경우, 모든 정점에 대해 DFS를 실행하므로 V, 각 간선을 모두 지나므로 E의 시간복잡도를 갖는다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;구체적으로는, 방향있는 그래프의 경우 모든 간선을 한 번씩 확인하여 E, 무방향 그래프의 경우 모든 간선을 두 번씩 확인하여 2E를 갖는다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이를 빅 O 표기법을 사용하면 모두 O(V + E)를 갖게된다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;인접 행렬(Adjacency Matrix) : O(V * V)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;각 정점 V에 대해, 다른 정점들과 연결되어있는 간선이 있는지 모두 탐색하기 때문에 V를 갖는다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;따라서 이 경우 시간복잡도는 O(V * V)이다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;dfs의-구현방법&quot;&gt;DFS의 구현방법&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DFS를 구현하는 방법으로는 스택을 이용한 방법이 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;방문하는 정점 v를 스택에 넣고, v와 인접한 방문하지 않은 한 정점을 스택에 넣는것을 반복한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;더 이상 방문할 수 있는 정점이 존재하지 않은 경우에는, 스택에서 빼준다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;스택을 만들어 사용하는 방법과, 함수 호출 스택(재귀)를 이용하는 방법이 존재한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;스택-구현-vs-재귀-함수-이용&quot;&gt;스택 구현 vs 재귀 함수 이용&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;개인적으로 재귀함수를 이용하여 DFS를 구현하는 것을 선호한다. 코딩이 간편하기도 하고, 코드가 직관적이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다만, 재귀함수를 이용할 경우에 함수를 호출하고 메모리에 올리는데 드는 오버헤드가 존재하는 단점이 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;구체적으로는, 컨텍스트 스위칭(Context Switching)이 일어나 수행시간이 느려진다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;참조 링크 : &lt;a href=&quot;https://itance.tistory.com/entry/%EC%9E%AC%EA%B7%80%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;dfs의-구현코드&quot;&gt;DFS의 구현(코드)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Pseudo Code&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DFS_All&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GRAY&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mark as visited
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BALCK&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mark as finished
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;C++ Code&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS_All&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;DFS visits &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://velog.io/@pa324/%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-5fk1upw4e3&quot; target=&quot;_blank&quot;&gt;https://velog.io/@pa324/%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-5fk1upw4e3&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://namu.wiki/w/DFS&quot; target=&quot;_blank&quot;&gt;https://namu.wiki/w/DFS&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0kaHIfrB3T4&amp;amp;feature=youtu.&quot; target=&quot;_blank&quot;&gt;https://www.youtube.com/watch?v=0kaHIfrB3T4&amp;amp;feature=youtu.&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://twpower.github.io/151-bfs-dfs-basic-problem&quot; target=&quot;_blank&quot;&gt;https://twpower.github.io/151-bfs-dfs-basic-problem&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html&quot; target=&quot;_blank&quot;&gt;https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Sanghyun Park</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="algorithm" />
-      
-        <category term="theory" />
-      
-
-      
-        <summary type="html">DFS의 목적과 시간복잡도</summary>
       
 
       

@@ -8,6 +8,40 @@
     
       
       <item>
+        <title>다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;다익스트라 알고리즘과 음수 간선&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Apr 2020 04:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge</link>
+        <guid isPermaLink="true">https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;그래프의 최단경로 알고리즘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Apr 2020 19:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/about-Shortest-Path</link>
+        <guid isPermaLink="true">https://hy38.github.io/about-Shortest-Path</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>BOJ 2252 - 줄 세우기</title>
         
           <description>&lt;blockquote&gt;
