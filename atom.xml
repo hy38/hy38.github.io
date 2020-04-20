@@ -76,10 +76,10 @@
     
       
       <item>
-        <title>그래프의 사이클 유무 확인 - Finding Cycles in Graph</title>
+        <title>그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph</title>
         
           <description>&lt;blockquote&gt;
-  &lt;p&gt;그래프의 사이클 찾기&lt;/p&gt;
+  &lt;p&gt;그래프의 사이클 및 사이클 내의 정점 찾기&lt;/p&gt;
 &lt;/blockquote&gt;
 
 </description>

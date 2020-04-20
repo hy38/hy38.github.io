@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/theory/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-04-13T17:37:16+09:00</updated>
+  <updated>2020-04-20T16:20:25+09:00</updated>
   <id>https://hy38.github.io/tag/theory/feed.xml</id>
 
   
@@ -44,10 +44,10 @@
 &lt;h4 id=&quot;다익스트라-알고리즘에서-음수-간선의-존재-여부가-중요한-이유&quot;&gt;다익스트라 알고리즘에서 음수 간선의 존재 여부가 중요한 이유&lt;/h4&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;흔히들 음수 간선이 있으면 &lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; 대신에 &lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; 알고리즘을 사용한다. 다만, 그 구체적인 이유를 알고 사용하면 각 알고리즘들의 원리를 더 깊게 파악할 수 있을것이다.&lt;/p&gt;
+  &lt;p&gt;흔히들 음수 간선이 있으면 &lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; 대신에 &lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; 알고리즘이나 &lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt;를 사용한다. 다만, 그 구체적인 이유를 알고 사용하면 각 알고리즘들의 원리를 더 깊게 파악할 수 있을것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;음수 간선이 존재하게 될 경우 다익스트라 알고리즘을 사용하지 않는 이유는 크게 두 가지 이유가 있다.&lt;/p&gt;
+&lt;p&gt;음수 간선이 존재하게 될 경우 다익스트라 알고리즘을 사용하지 않는 이유는 크게 세 가지 이유가 있다.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -55,6 +55,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Edge Relaxation 계산의 오류 가능성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;회피시의 시간복잡도&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -78,9 +81,9 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A - B - C - A - B - C - A - B - C - D&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;여기서 알 수 있는 사실은, 음수 사이클이 존재하게 되면 최단 경로가 음의 무한대로 수렴하게 된다는 것 이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;여기서 알 수 있는 사실은, 가중치의 합이 음수인 사이클이 존재하게 되면 최단 경로가 음의 무한대로 수렴하게 된다는 것 이다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;따라서 음수 사이클이 존재할 수 있기 때문에, 음수 간선이 존재하게 되면 다익스트라 외에 다른 알고리즘을 사용하는 것이 타당해보인다.&lt;/p&gt;
+&lt;p&gt;따라서 음수 간선이 존재하면 음수 사이클이 존재할 가능성이 있기 때문에, 다익스트라 외에 다른 알고리즘을 사용하는 것이 타당해보인다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -106,11 +109,54 @@
 
 &lt;p&gt;&lt;strong&gt;결과적으로 다익스트라 알고리즘이 제대로 작동하지 못한 것이다.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;그 이유는, 다익스트라 알고리즘은 기본적으로 minimum에 minimum을 더하는 식으로 작동하기 때문이다.&lt;/p&gt;
+&lt;p&gt;그 이유는, 다익스트라 알고리즘은 기본적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;minimum&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;minimum&lt;/code&gt;을 더하는 식으로 작동하기 때문이다.&lt;/p&gt;
 
-&lt;p&gt;시작점 A가 minimum이라는 원칙아래에 A와 연결된 노드들을 우선순위큐에 넣고, 가중치가 작은 것들부터 뽑아서 relax해주기 때문에 minimum + minimum = minimum 을 이용하여 최단 경로를 찾아낸다.&lt;/p&gt;
+&lt;p&gt;시작점 A가 &lt;code class=&quot;highlighter-rouge&quot;&gt;minimum&lt;/code&gt;이라는 원칙아래에 A와 연결된 노드들을 우선순위큐에 넣고, 가중치가 작은 것들부터 뽑아서 relax해주기 때문에 &lt;code class=&quot;highlighter-rouge&quot;&gt;minimum + minimum = minimum&lt;/code&gt; 을 이용하여 최단 경로를 찾아낸다.&lt;/p&gt;
 
-&lt;p&gt;이는 다익스트라 알고리즘이 &lt;strong&gt;그리디 알고리즘&lt;/strong&gt;인 것과도 관련이 있다.&lt;/p&gt;
+&lt;p&gt;이는 다익스트라 알고리즘이 최단거리는 최단거리로 이루어져 있다는 데에서 시작한 &lt;strong&gt;&lt;a href=&quot;https://namu.wiki/w/%EA%B7%B8%EB%A6%AC%EB%94%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&quot; target=&quot;_blank&quot;&gt;그리디(Greedy) 알고리즘&lt;/a&gt;&lt;/strong&gt;이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;그리디하게 작은것만을 계속 취하게 되다 보니 근시안적 관점을 유지할 수밖에 없다. 다만, 모든 가중치가 양수일 경우에는 이로 인해 더욱 빠르게 최단경로를 구할 수 있다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;3-회피시의-시간복잡도&quot;&gt;3. 회피시의 시간복잡도&lt;/h4&gt;
+
+&lt;p&gt;다익스트라 알고리즘의 코드를 잘 수정하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;priority queue&lt;/code&gt;에 계속 &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt;해주는 방식의 회피법이 존재하지만, 최악의 경우 &lt;strong&gt;지수시간&lt;/strong&gt;이라는 시간복잡도를 갖게 된다. 따라서 음수 간선이 존재할 경우에는 웬만하면 다른 알고리즘들을 사용하자.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;음수-간선이-존재할-경우의-대안&quot;&gt;음수 간선이 존재할 경우의 대안&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; 알고리즘&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt; 알고리즘&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;SPFA 알고리즘의 시간복잡도가 벨만-포드 알고리즘보다 빠르기 때문에 SPFA를 사용하는 것이 유리하다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;모든-간선의-가중치에-수를-더해서-가중치를-모두-양수로-만들면&quot;&gt;모든 간선의 가중치에 수를 더해서 가중치를 모두 양수로 만들면?&lt;/h4&gt;
+
+&lt;p&gt;예를 들어 가장 낮은 가중치가 &lt;code class=&quot;highlighter-rouge&quot;&gt;-5&lt;/code&gt;인 그래프가 존재한다 가정하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/graph-before-plus.png&quot; alt=&quot;graph_before_plus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 모든 간선들에 &lt;code class=&quot;highlighter-rouge&quot;&gt;5&lt;/code&gt; 혹은 그 이상의 가중치를 모두 동일하게 더해주자.&lt;/p&gt;
+
+&lt;p&gt;결과는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/graph-after-plus.png&quot; alt=&quot;graph_after_plus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;모든 간선이 양수이기 때문에, 다익스트라를 사용하면 음수 사이클의 발생도, &lt;code class=&quot;highlighter-rouge&quot;&gt;relax&lt;/code&gt;연산의 오류가능성도 사라지게 된다.&lt;/p&gt;
+
+&lt;p&gt;다만, 구해지는 최단거리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;(우리가 더해준 가중치) * (출발점으로부터 지나온 간선의 수)&lt;/code&gt; 만큼 더해져서 나올 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;나쁘지 않은 발상이었지만, 음수 간선 문제를 해결하는데에는 큰 도움을 주지는 못한다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -135,10 +181,16 @@
     &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges&quot; target=&quot;_blank&quot;&gt;https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/board/view/19865&quot; target=&quot;_blank&quot;&gt;https://www.acmicpc.net/board/view/19865&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/6799172/negative-weights-using-dijkstras-algorithm/6799344#6799344&quot; target=&quot;_blank&quot;&gt;https://stackoverflow.com/questions/6799172/negative-weights-using-dijkstras-algorithm/6799344#6799344&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://cs.stackexchange.com/questions/19771/why-does-dijkstras-algorithm-fail-on-a-negative-weighted-graphs&quot; target=&quot;_blank&quot;&gt;https://cs.stackexchange.com/questions/19771/why-does-dijkstras-algorithm-fail-on-a-negative-weighted-graphs&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jason9319.tistory.com/307&quot; target=&quot;_blank&quot;&gt;https://jason9319.tistory.com/307&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 
@@ -258,7 +310,7 @@
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;이와 같이 &lt;strong&gt;다익스트라&lt;/strong&gt; 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 &lt;strong&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드(Bellman-Ford)&lt;/a&gt;&lt;/strong&gt; 알고리즘을 사용한다. 자세한 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 통해 알아볼 수 있다.&lt;/p&gt;
+  &lt;p&gt;이와 같이 &lt;strong&gt;다익스트라&lt;/strong&gt; 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 &lt;strong&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드(Bellman-Ford)&lt;/a&gt;&lt;/strong&gt; 알고리즘이나 &lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt;를 사용한다. 자세한 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 통해 알아볼 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
@@ -275,13 +327,13 @@
   &lt;li&gt;&lt;strong&gt;시작정점 S로부터 다른 모든 정점 v들까지의 초기값을 어떻게 설정해야할까?&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;기본적으로 떠오르는 아이디어는 0, 음의 무한대, 양의 무한대가 있다. 결론부터 말하자면, 가장 좋은 선택지는 &lt;strong&gt;양의 무한대&lt;/strong&gt;가 된다.&lt;/p&gt;
+&lt;p&gt;기본적으로 떠오르는 아이디어는 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;음의 무한대&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;양의 무한대&lt;/code&gt;가 있다. 결론부터 말하자면, 가장 좋은 선택지는 &lt;strong&gt;양의 무한대&lt;/strong&gt;가 된다.&lt;/p&gt;
 
 &lt;p&gt;첫번째 이유로는, 시작정점 S로부터 닿을수 없는 정점이 존재하기 때문이다. 이러한 정점들을 양의 무한대로 처리하는 것이 합리적일 것이다.&lt;/p&gt;
 
 &lt;p&gt;두번째 이유로는, 우리가 relax라는 작업을 할 때 가중치가 큰 경로가 더 작은 경로를 만나면 작은 경로로 &lt;strong&gt;업데이트&lt;/strong&gt; 시켜주는데, 이와 잘 맞아떨어지기 때문이다.&lt;/p&gt;
 
-&lt;p&gt;다른 이유로는, 다른 대안이 딱히 없기 때문이다. 0으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, 무한대와 0은 역수를 취하면 성질이 거의 비슷할 것이다.) 음의 무한대 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 음의 무한대를 사용할것인지는 고민해봐야 할 문제인 것 같다.&lt;/p&gt;
+&lt;p&gt;다른 이유로는, 다른 대안이 딱히 없기 때문이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, &lt;code class=&quot;highlighter-rouge&quot;&gt;무한대&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;은 역수를 취하면 성질이 거의 비슷할 것이다.) &lt;code class=&quot;highlighter-rouge&quot;&gt;음의 무한대&lt;/code&gt; 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 &lt;code class=&quot;highlighter-rouge&quot;&gt;음의 무한대&lt;/code&gt;를 사용할것인지는 고민해봐야 할 문제인 것 같다. 실생활에서는 음수 가중치가 많이 드물기 때문에 &lt;code class=&quot;highlighter-rouge&quot;&gt;양의 무한대&lt;/code&gt;가 합리적인 선택인것 같다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;그렇다면 양의 무한대를 어떻게 표기해야 하는가?&lt;/strong&gt;&lt;/li&gt;
@@ -301,7 +353,7 @@
 #define INF4 0x3f3f3f3f
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;나는 개인적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;987654321&lt;/code&gt;를 주로 사용하는 편이다. 다만, 가끔 INF와 INF를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 INF를 표현한다. 상황에 맞게 적절하게 INF값을 설정해주면 좋을것같다.&lt;/p&gt;
+&lt;p&gt;나는 개인적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;987654321&lt;/code&gt;를 주로 사용하는 편이다. 다만, 가끔 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;를 표현한다. 상황에 맞게 적절하게 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;값을 설정해주면 좋을것같다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -317,6 +369,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드&lt;/a&gt; : O()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt; : O()&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;/floyd-warshall-algorithm&quot; target=&quot;_blank&quot;&gt;플로이드-워셜&lt;/a&gt; : O()&lt;/p&gt;
@@ -339,6 +394,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769&quot; target=&quot;_blank&quot;&gt;https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/board/view/19865&quot; target=&quot;_blank&quot;&gt;https://www.acmicpc.net/board/view/19865&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 
@@ -371,13 +429,13 @@
     </entry>
   
     <entry>
-      <title type="html">그래프의 사이클 유무 확인 - Finding Cycles in Graph</title>
-      <link href="https://hy38.github.io/is-graph-cyclic" rel="alternate" type="text/html" title="그래프의 사이클 유무 확인 - Finding Cycles in Graph" />
+      <title type="html">그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph</title>
+      <link href="https://hy38.github.io/is-graph-cyclic" rel="alternate" type="text/html" title="그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph" />
       <published>2020-02-24T04:00:00+09:00</published>
       <updated>2020-02-24T04:00:00+09:00</updated>
       <id>https://hy38.github.io/is-graph-cyclic</id>
       <content type="html" xml:base="https://hy38.github.io/is-graph-cyclic">&lt;blockquote&gt;
-  &lt;p&gt;그래프의 사이클 찾기&lt;/p&gt;
+  &lt;p&gt;그래프의 사이클 및 사이클 내의 정점 찾기&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;그래프에서-사이클cycle이란&quot;&gt;그래프에서 사이클(Cycle)이란?&lt;/h2&gt;
@@ -596,7 +654,7 @@
       
 
       
-        <summary type="html">그래프의 사이클 찾기</summary>
+        <summary type="html">그래프의 사이클 및 사이클 내의 정점 찾기</summary>
       
 
       

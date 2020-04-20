@@ -33,7 +33,7 @@
     } ,
   
     {
-      "title"    : "그래프의 사이클 유무 확인 - Finding Cycles in Graph",
+      "title"    : "그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph",
       "category" : "",
       "tags"     : "algorithm, theory",
       "url"      : "https://hy38.github.io/is-graph-cyclic",

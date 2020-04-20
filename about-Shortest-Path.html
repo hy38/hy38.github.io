@@ -285,7 +285,7 @@ into the {body} of the default.hbs template -->
 </ul>
 
 <blockquote>
-  <p>이와 같이 <strong>다익스트라</strong> 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 <strong><a href="/bellman-ford-algorithm" target="_blank">벨만-포드(Bellman-Ford)</a></strong> 알고리즘을 사용한다. 자세한 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank">여기</a>를 통해 알아볼 수 있다.</p>
+  <p>이와 같이 <strong>다익스트라</strong> 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 <strong><a href="/bellman-ford-algorithm" target="_blank">벨만-포드(Bellman-Ford)</a></strong> 알고리즘이나 <a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a>를 사용한다. 자세한 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank">여기</a>를 통해 알아볼 수 있다.</p>
 </blockquote>
 
 <hr />
@@ -302,13 +302,13 @@ into the {body} of the default.hbs template -->
   <li><strong>시작정점 S로부터 다른 모든 정점 v들까지의 초기값을 어떻게 설정해야할까?</strong></li>
 </ul>
 
-<p>기본적으로 떠오르는 아이디어는 0, 음의 무한대, 양의 무한대가 있다. 결론부터 말하자면, 가장 좋은 선택지는 <strong>양의 무한대</strong>가 된다.</p>
+<p>기본적으로 떠오르는 아이디어는 <code class="highlighter-rouge">0</code>, <code class="highlighter-rouge">음의 무한대</code>, <code class="highlighter-rouge">양의 무한대</code>가 있다. 결론부터 말하자면, 가장 좋은 선택지는 <strong>양의 무한대</strong>가 된다.</p>
 
 <p>첫번째 이유로는, 시작정점 S로부터 닿을수 없는 정점이 존재하기 때문이다. 이러한 정점들을 양의 무한대로 처리하는 것이 합리적일 것이다.</p>
 
 <p>두번째 이유로는, 우리가 relax라는 작업을 할 때 가중치가 큰 경로가 더 작은 경로를 만나면 작은 경로로 <strong>업데이트</strong> 시켜주는데, 이와 잘 맞아떨어지기 때문이다.</p>
 
-<p>다른 이유로는, 다른 대안이 딱히 없기 때문이다. 0으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, 무한대와 0은 역수를 취하면 성질이 거의 비슷할 것이다.) 음의 무한대 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 음의 무한대를 사용할것인지는 고민해봐야 할 문제인 것 같다.</p>
+<p>다른 이유로는, 다른 대안이 딱히 없기 때문이다. <code class="highlighter-rouge">0</code>으로 설정하자니 edge relaxation을 할때 가중치가 0인 간선에 대한 처리를 어떻게 해야할까에 대한 고민과, 보통 시작정점 S의 거리값을 0으로 설정하는데 이를 어떻게 다르게 표현할것인가 등의 찝찝한 문제들이 발생한다.(물론, <code class="highlighter-rouge">무한대</code>와 <code class="highlighter-rouge">0</code>은 역수를 취하면 성질이 거의 비슷할 것이다.) <code class="highlighter-rouge">음의 무한대</code> 또한 비슷한 이유로 사용하지 않는것 같다. 대부분의 간선이 양수라서 그런것일까? 모든 간선이 음수라면 <code class="highlighter-rouge">음의 무한대</code>를 사용할것인지는 고민해봐야 할 문제인 것 같다. 실생활에서는 음수 가중치가 많이 드물기 때문에 <code class="highlighter-rouge">양의 무한대</code>가 합리적인 선택인것 같다.</p>
 
 <ul>
   <li><strong>그렇다면 양의 무한대를 어떻게 표기해야 하는가?</strong></li>
@@ -328,7 +328,7 @@ into the {body} of the default.hbs template -->
 #define INF4 0x3f3f3f3f
 </code></pre>
 
-<p>나는 개인적으로 <code class="highlighter-rouge">987654321</code>를 주로 사용하는 편이다. 다만, 가끔 INF와 INF를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 INF를 표현한다. 상황에 맞게 적절하게 INF값을 설정해주면 좋을것같다.</p>
+<p>나는 개인적으로 <code class="highlighter-rouge">987654321</code>를 주로 사용하는 편이다. 다만, 가끔 <code class="highlighter-rouge">INF</code>와 <code class="highlighter-rouge">INF</code>를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 <code class="highlighter-rouge">INF</code>를 표현한다. 상황에 맞게 적절하게 <code class="highlighter-rouge">INF</code>값을 설정해주면 좋을것같다.</p>
 
 <hr />
 
@@ -344,6 +344,9 @@ into the {body} of the default.hbs template -->
   </li>
   <li>
     <p><a href="/bellman-ford-algorithm" target="_blank">벨만-포드</a> : O()</p>
+  </li>
+  <li>
+    <p><a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a> : O()</p>
   </li>
   <li>
     <p><a href="/floyd-warshall-algorithm" target="_blank">플로이드-워셜</a> : O()</p>
@@ -366,6 +369,9 @@ into the {body} of the default.hbs template -->
   </li>
   <li>
     <p><a href="https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769" target="_blank">https://towardsdatascience.com/algorithm-shortest-paths-1d8fa3f50769</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.acmicpc.net/board/view/19865" target="_blank">https://www.acmicpc.net/board/view/19865</a></p>
   </li>
 </ul>
 
