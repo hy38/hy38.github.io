@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm",
+      "category" : "",
+      "tags"     : "algorithm, theory",
+      "url"      : "https://hy38.github.io/dijkstra-algorithm",
+      "date"     : "2020-04-20 18:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge",
       "category" : "",
       "tags"     : "algorithm, theory",

@@ -92,9 +92,28 @@
     "description": "다익스트라 알고리즘과 음수 간선 다익스트라 알고리즘에서 음수 간선의 존재 여부가 중요한 이유 흔히들 음수 간선이 있으면 다익스트라 대신에 벨만-포드 알고리즘이나 SPFA를 사용한다. 다만, 그 구체적인 이유를 알고 사용하면 각 알고리즘들의 원리를 더 깊게 파악할 수 있을것이다. 음수 간선이 존재하게 될 경우 다익스트라 알고리즘을 사용하지 않는 이유는 크게 세 가지 이유가"
 }
     </script>
-
-    <script data-ad-client="ca-pub-2887658471387992" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
+<!-- katex -->
+    <script data-ad-client="ca-pub-2887658471387992" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+  integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
+  integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ]
+    });
+  });
+</script>
+
     <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
     <script type="text/javascript">
     ghost.init({
@@ -318,7 +337,7 @@ into the {body} of the default.hbs template -->
 
 <p><img src="/assets/images/algorithm/graph-after-plus.png" alt="graph_after_plus" /></p>
 
-<p>모든 간선이 양수이기 때문에, 다익스트라를 사용하면 음수 사이클의 발생도, <code class="highlighter-rouge">relax</code>연산의 오류가능성도 사라지게 된다.</p>
+<p>모든 간선이 음이 아닌 수이기 때문에, 다익스트라를 사용하면 음수 사이클의 발생도, <code class="highlighter-rouge">relax</code>연산의 오류가능성도 사라지게 된다.</p>
 
 <p>다만, 구해지는 최단거리는 <code class="highlighter-rouge">(우리가 더해준 가중치) * (출발점으로부터 지나온 간선의 수)</code> 만큼 더해져서 나올 것이다.</p>
 
@@ -476,6 +495,15 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
+                                        
+                                        
+                                            <li><a href="/dijkstra-algorithm">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
@@ -499,8 +527,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/BOJ-11559">BOJ 11559 - Puyo Puyo</a></li>
                                         
                                     
                                   
@@ -617,7 +643,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 16 posts  →
+                                    See all 17 posts  →
                                 
                             </a>
                         </footer>
@@ -626,6 +652,59 @@ into the {body} of the default.hbs template -->
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/dijkstra-algorithm">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/crystal.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/dijkstra-algorithm">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Theory</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/hy38-main-picture2.jpg" alt="Sanghyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">Sanghyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
