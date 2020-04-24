@@ -306,7 +306,7 @@ into the {body} of the default.hbs template -->
 
 <h4 id="3-회피시의-시간복잡도">3. 회피시의 시간복잡도</h4>
 
-<p>다익스트라 알고리즘의 코드를 잘 수정하여 <code class="highlighter-rouge">priority queue</code>에 계속 <code class="highlighter-rouge">update</code>해주는 방식의 회피법이 존재하지만, 최악의 경우 <strong>지수시간</strong>이라는 시간복잡도를 갖게 된다. 따라서 음수 간선이 존재할 경우에는 웬만하면 다른 알고리즘들을 사용하자.</p>
+<p>다익스트라 알고리즘의 코드를 잘 수정하여 <code class="highlighter-rouge">priority queue</code>에 계속 <code class="highlighter-rouge">update</code>해주는 방식의 회피법이 존재하지만, 최악의 경우 <strong>지수시간</strong>이라는 매우 느린 시간복잡도를 갖게 된다. 따라서 음수 간선이 존재할 경우에는 웬만하면 다른 알고리즘들을 사용하자.</p>
 
 <hr />
 
@@ -383,10 +383,10 @@ into the {body} of the default.hbs template -->
             </section>
 
             <!-- Email subscribe form at the bottom of the page -->
-            
+            <!-- <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
+            <p>Get the latest posts delivered right to your inbox</p> -->
+            <!-- 
                 <section class="subscribe-form">
-                    <!-- <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
-                    <p>Get the latest posts delivered right to your inbox</p> -->
                     <h3 class="subscribe-form-title">Search Posts from HY38's IT Blog</h3>
                     <p>After pressing Enter, you will be leaded to search page. <br>
                         You should press <strong>CTRL</strong> to search after then.</p>
@@ -415,7 +415,7 @@ into the {body} of the default.hbs template -->
 </span>
 
                 </section>
-            
+             -->
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
@@ -441,16 +441,13 @@ into the {body} of the default.hbs template -->
                 <!-- /author  -->
             </footer>
 
-            <!-- If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id. -->
-            <!--  -->
                 <section class="post-full-comments">
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
                             this.page.url = 'https://hy38.github.io/';
-                            this.page.identifier = 'HY38's IT Blog';
+                            // this.page.identifier = 'HY38's IT Blog';
+                            this.page.identifier = 'HY38\'s IT Blog';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -460,7 +457,6 @@ into the {body} of the default.hbs template -->
                         })();
                     </script>
                 </section>
-            <!--  -->
 
         </article>
 
