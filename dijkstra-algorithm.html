@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" />
-    <meta property="og:description" content="다익스트라 최단경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점 u에서" />
+    <meta property="og:description" content="다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점" />
     <meta property="og:url" content="https://hy38.github.io/dijkstra-algorithm" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/crystal.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" />
-    <meta name="twitter:description" content="다익스트라 최단경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점 u에서" />
+    <meta name="twitter:description" content="다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/crystal.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/dijkstra-algorithm"
     },
-    "description": "다익스트라 최단경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점 u에서"
+    "description": "다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점"
 }
     </script>
     
@@ -107,7 +107,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderMathInElement(document.body, {
       delimiters: [
-        { left: "$$", right: "$$", display: true },
+        { left: "$$", right: "$$", display: true }, //  true : 가운데 정렬
         { left: "$", right: "$", display: false },
       ]
     });
@@ -223,15 +223,15 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>다익스트라 최단경로 알고리즘</p>
+  <p>다익스트라 최단 경로 알고리즘</p>
 </blockquote>
 
 <h4 id="그래프의-최단경로-알고리즘">그래프의 최단경로 알고리즘</h4>
 
-<p>그래프의 최단경로 알고리즘에 대한 설명은 <a href="/about-Shortest-Path" target="_blank">여기</a>에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 <code class="highlighter-rouge">edge relaxation</code>에 대해 설명한다.</p>
+<p>그래프의 최단경로 알고리즘에 대한 설명은 <a href="/about-Shortest-Path" target="_blank"><strong>여기</strong></a>에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 <code class="highlighter-rouge">edge relaxation</code>에 대해 설명한다.</p>
 
 <blockquote>
-  <p>최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, <a href="/about-Shortest-Path" target="_blank">여기</a>에서 먼저 알아보는 것이 좋을것 같다.</p>
+  <p>최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, <a href="/about-Shortest-Path" target="_blank"><strong>여기</strong></a>에서 먼저 알아보는 것이 좋을것 같다.</p>
 </blockquote>
 
 <hr />
@@ -270,7 +270,7 @@ into the {body} of the default.hbs template -->
   </li>
 </ol>
 
-<p>다만 중요한 내용이기 때문에 세부적인 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank">여기</a>에서 자세히 다룬다.</p>
+<p>다만 중요한 내용이기 때문에 세부적인 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank"><strong>여기</strong></a>에서 자세히 다룬다.</p>
 
 <hr />
 
@@ -444,10 +444,10 @@ into the {body} of the default.hbs template -->
     <p><a href="https://www.acmicpc.net/problem/1504" target="_blank">BOJ 1504 - 특정한 최단 경로</a></p>
   </li>
   <li>
-    <p><a href="https://www.acmicpc.net/problem/11657" target="_blank">BOJ 11657 - 타임머신</a></p>
+    <p><a href="https://www.acmicpc.net/problem/18223" target="_blank">BOJ 18223 - 민준이와 마산 그리고 건우</a></p>
   </li>
   <li>
-    <p><a href="https://www.acmicpc.net/problem/18223" target="_blank">BOJ 18223 - 민준이와 마산 그리고 건우</a></p>
+    <p><a href="https://www.acmicpc.net/problem/11779" target="_blank">BOJ 11779 - 최소비용 구하기 2</a></p>
   </li>
   <li>
     <p><a href="https://algospot.com/judge/problem/read/FIRETRUCKS" target="_blank">Algospot - 소방차</a></p>
@@ -459,7 +459,7 @@ into the {body} of the default.hbs template -->
 <h3 id="참고-사항">참고 사항</h3>
 
 <ul>
-  <li>다음 코드로 인해 큐에 들어간 중복원소를 무시한다. 이 코드를 작성하지 않아도 최단거리는 구해지지만, 시간초과가 나게끔 하는 테스트케이스로 저격이 가능하다. 이에 대한 설명은 <a href="http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/" target="_blank">여기</a>에서 알아볼수 있다.</li>
+  <li>다음 코드로 인해 큐에 들어간 중복원소를 무시한다. 이 코드를 작성하지 않아도 최단거리는 구해지지만, 시간초과가 나게끔 하는 테스트케이스로 저격이 가능하다. 이에 대한 설명은 <a href="http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/" target="_blank"><strong>여기</strong></a>에서 알아볼수 있다.</li>
 </ul>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(dist[node] &lt; cost) continue;
@@ -603,6 +603,15 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
+                                        
+                                        
+                                            <li><a href="/bellman-ford-algorithm">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
@@ -626,8 +635,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/BOJ-2252">BOJ 2252 - 줄 세우기</a></li>
                                         
                                     
                                   
@@ -751,7 +758,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 17 posts  →
+                                    See all 18 posts  →
                                 
                             </a>
                         </footer>
@@ -760,6 +767,59 @@ into the {body} of the default.hbs template -->
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/bellman-ford-algorithm">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/green-red-arrow.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/bellman-ford-algorithm">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Theory</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/hy38-main-picture2.jpg" alt="Sanghyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">Sanghyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->

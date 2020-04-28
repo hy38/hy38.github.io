@@ -107,7 +107,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderMathInElement(document.body, {
       delimiters: [
-        { left: "$$", right: "$$", display: true },
+        { left: "$$", right: "$$", display: true }, //  true : 가운데 정렬
         { left: "$", right: "$", display: false },
       ]
     });
@@ -304,7 +304,7 @@ into the {body} of the default.hbs template -->
 </ul>
 
 <blockquote>
-  <p>이와 같이 <strong>다익스트라</strong> 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 <strong><a href="/bellman-ford-algorithm" target="_blank">벨만-포드(Bellman-Ford)</a></strong> 알고리즘이나 <a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a>를 사용한다. 자세한 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank">여기</a>를 통해 알아볼 수 있다.</p>
+  <p>이와 같이 <strong>다익스트라</strong> 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 <strong><a href="/bellman-ford-algorithm" target="_blank">벨만-포드(Bellman-Ford)</a></strong> 알고리즘이나 <a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a>를 사용한다. 자세한 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank"><strong>여기</strong></a>를 통해 알아볼 수 있다.</p>
 </blockquote>
 
 <hr />
@@ -356,9 +356,9 @@ into the {body} of the default.hbs template -->
 <ul>
   <li><a href="/dijkstra-algorithm" target="_blank">다익스트라</a> :
     <ul>
-      <li><strong>우선순위큐 사용 : O(ElogV)</strong></li>
-      <li>반복문 사용 : O(V*V + E)</li>
-      <li>피보나치힙 사용 : O(E + VlogV)</li>
+      <li><strong>우선순위큐 사용 : $O(ElogV)$</strong></li>
+      <li>반복문 사용 : $O(V^2 + E)$</li>
+      <li>피보나치힙 사용 : $O(E + VlogV)$</li>
     </ul>
   </li>
   <li>
@@ -508,6 +508,15 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
+                                            <li><a href="/bellman-ford-algorithm">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/dijkstra-algorithm">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</a></li>
                                         
                                     
@@ -529,8 +538,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/BOJ-2252">BOJ 2252 - 줄 세우기</a></li>
                                         
                                     
                                   
@@ -654,7 +661,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 17 posts  →
+                                    See all 18 posts  →
                                 
                             </a>
                         </footer>

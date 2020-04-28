@@ -1,13 +1,393 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-04-25T00:57:26+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</title><link href="https://hy38.github.io/dijkstra-algorithm" rel="alternate" type="text/html" title="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" /><published>2020-04-20T18:00:00+09:00</published><updated>2020-04-20T18:00:00+09:00</updated><id>https://hy38.github.io/dijkstra-algorithm</id><content type="html" xml:base="https://hy38.github.io/dijkstra-algorithm">&lt;blockquote&gt;
-  &lt;p&gt;다익스트라 최단경로 알고리즘&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2020-04-28T22:32:59+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</title><link href="https://hy38.github.io/bellman-ford-algorithm" rel="alternate" type="text/html" title="벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm" /><published>2020-04-25T04:00:00+09:00</published><updated>2020-04-25T04:00:00+09:00</updated><id>https://hy38.github.io/bellman-ford-algorithm</id><content type="html" xml:base="https://hy38.github.io/bellman-ford-algorithm">&lt;blockquote&gt;
+  &lt;p&gt;벨만-포드 최단 경로 알고리즘&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h4 id=&quot;그래프의-최단경로-알고리즘&quot;&gt;그래프의 최단경로 알고리즘&lt;/h4&gt;
 
-&lt;p&gt;그래프의 최단경로 알고리즘에 대한 설명은 &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 &lt;code class=&quot;highlighter-rouge&quot;&gt;edge relaxation&lt;/code&gt;에 대해 설명한다.&lt;/p&gt;
+&lt;p&gt;그래프의 최단경로 알고리즘에 대한 설명은 &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 &lt;code class=&quot;highlighter-rouge&quot;&gt;edge relaxation&lt;/code&gt;에 대해 설명한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에서 먼저 알아보는 것이 좋을것 같다.&lt;/p&gt;
+  &lt;p&gt;최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 먼저 알아보는 것이 좋을것 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;음수간선은-ok-가중치의-합이-음수인-사이클은-no&quot;&gt;음수간선은 OK, 가중치의 합이 음수인 사이클은 NO!&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; 알고리즘과 달리 벨만-포드 알고리즘은 음수 간선이 존재해도 제대로 작동한다.&lt;/p&gt;
+
+&lt;p&gt;다익스트라의 대안으로 벨만-포드 알고리즘을 사용하는 이유이다.&lt;/p&gt;
+
+&lt;p&gt;다만, 가중치의 합이 음수인 사이클은 벨만-포드 알고리즘으로 하여금 제대로된 최단 경로를 찾을 수 없게한다. (보다 자세한 설명은 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 서술하는 3가지 이유 중 첫번째 이유를 참조하면 될것같다.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;닿을 수 없는 정점의 음수 사이클은 무시한다. 닿을 수 없는 정점에서의 사이클을 신경쓸 필요가 전혀 없기 때문이다.&lt;/strong&gt; 아래에서 닿을 수 없는 정점이 이루는 음수 사이클을 무시하는 방법을 살펴볼 것이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;기본적인-아이디어&quot;&gt;기본적인 아이디어&lt;/h6&gt;
+
+&lt;p&gt;다익스트라는 최단 경로는 최단경로로 구성되어있다는데에 출발하였다.&lt;/p&gt;
+
+&lt;p&gt;반면, 벨만-포드는 최단경로를 예측하고 점차 &lt;strong&gt;오차를 줄여나가는&lt;/strong&gt; 아이디어를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;따라서 배열 선언부터 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt;대신 &lt;code class=&quot;highlighter-rouge&quot;&gt;upper&lt;/code&gt;이라는 이름으로 선언한다. 이는 단일 시작점 &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt;에서 각 정점까지의 경로들의 &lt;code class=&quot;highlighter-rouge&quot;&gt;상한값&lt;/code&gt;을 담은 배열으로 사용된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;상한값&lt;/code&gt;이라는 말이 어렵지만, 벨만 포드가 사용하는 최단 경로의 특성을 알면 이해하기 수월하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최단경로 dist[u]와 dist[v]에 대해 다음의 특성이 항상 성립한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$ dist[v] \leq dist[u] + w(u, v) $&lt;/p&gt;
+
+&lt;p&gt;이로인해 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[v]&lt;/code&gt;가 될 수 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[u] + w(u, v)&lt;/code&gt;는 모두 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist[v]&lt;/code&gt;보다 크거나 같다.&lt;/p&gt;
+
+&lt;p&gt;최단경로와 가까운 값들을 구해나가며 최종적인 최단 경로를 찾아가는 방식으로 동작하기에 &lt;code class=&quot;highlighter-rouge&quot;&gt;상한값&lt;/code&gt;이라는 단어가 쓰인다.&lt;/p&gt;
+
+&lt;p&gt;총 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1번&lt;/code&gt; 반복하여 모든 정점들에 대한 최단경로를 알아낼 수 있으며, 한 번씩 그래프의 모든 간선을 완화할 경우 최소 한개의 정점에 대한 최단 경로값이 발견된다.&lt;/p&gt;
+
+&lt;p&gt;계속되는 완화를 통해 &lt;code class=&quot;highlighter-rouge&quot;&gt;upper&lt;/code&gt; 배열이 우리가 원하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; 배열이 되도록 한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;벨만-포드-알고리즘의-edge-relaxation&quot;&gt;벨만-포드 알고리즘의 Edge Relaxation&lt;/h4&gt;
+
+&lt;h6 id=&quot;edge-relaxation의-동작-과정&quot;&gt;Edge Relaxation의 동작 과정&lt;/h6&gt;
+
+&lt;p&gt;첫번째로 진행하는 모든 간선에 대한 완화에 대해 시작 정점인 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점에서부터 그 인접 정점들 &lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt;에 대한 최단 경로가 다음과 같이 구해진다.&lt;/p&gt;
+
+&lt;p&gt;위에서 설명한 최단경로의 특성을 이용하면,&lt;/p&gt;
+
+&lt;p&gt;$ upper[v] \leq upper[1] + w(1, v) $ 가 항상 성립하고,&lt;/p&gt;
+
+&lt;p&gt;$upper[1] = 0$ 이기에 $ upper[v] \leq w(1, v) $가 된다.&lt;/p&gt;
+
+&lt;p&gt;이 때, 자연스럽게 w(1, v)는 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;v번&lt;/code&gt; 정점까지의 최단경로이며, 이로 인해 &lt;code class=&quot;highlighter-rouge&quot;&gt;v번&lt;/code&gt; 정점의 최단경로가 구해진다.&lt;/p&gt;
+
+&lt;p&gt;이는 처음 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점의 최단경로가 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;임을 확신할 수 있었기에 가능했으며, 확신할 수 있게된 &lt;code class=&quot;highlighter-rouge&quot;&gt;v번&lt;/code&gt; 정점의 최단경로를 이용하여 이와 비슷하게 다른 정점의 최단경로를 구할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 작업의 연쇄를 통해 모든 정점의 최단 경로를 구한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;다음 그림을 통해 연쇄 작업을 이해할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;점으로 표시된 정점은 최단경로가 보장된 정점이다. 최악의 경우 총 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1번&lt;/code&gt;인 4번의 &lt;code class=&quot;highlighter-rouge&quot;&gt;Edge Relaxation&lt;/code&gt;이 진행됨을 알 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/bellman-ford-graph3.png&quot; alt=&quot;bellman_ford_graph3&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최단경로가 구해지는 반복 횟수 및 순서는 그래프의 모양 및 간선의 입력 순서 등에 따라 달라질 수 있다. 다음 그림이 예시이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/algorithm/bellman-ford-graph2.png&quot; alt=&quot;bellman_ford_graph2&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;edge-relaxation의-반복-횟수&quot;&gt;Edge Relaxation의 반복 횟수&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;총 &lt;strong&gt;V-1번&lt;/strong&gt;의 Edge Relaxation을 진행한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점부터 &lt;code class=&quot;highlighter-rouge&quot;&gt;V번&lt;/code&gt; 정점까지 인접리스트를 이용하여 그래프의 모든 간선의 완화를 진행한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 간선을 한번씩 완화했다는 것은, 최소 하나의 정점의 최단경로가 구해졌다는 것이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 총 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1번&lt;/code&gt; 반복한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;벨만-포드-알고리즘의-구현코드&quot;&gt;벨만-포드 알고리즘의 구현(코드)&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점에서 시작하여 다른 &lt;code class=&quot;highlighter-rouge&quot;&gt;2 ~ V번&lt;/code&gt; 정점들까지의 각각의 최단거리를 계산한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ Code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define INF 987654321
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isCyclic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;502&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sync_with_stdio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bellmanFord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//  시작점을 제외한 모든 정점까지의 최단 거리 상한을 INF로 둔다.
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//  V번 순회한다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//  닿을수 없는 정점을 건너띔으로써 해당 정점에서 발생하는 사이클을 무시한다.
+&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;//  (node, next) 간선을 따라 완화를 시도한다.
+&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//  성공
+&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//  모든 간선에 대해 완화가 실패했을 경우 V-1번도 돌 필요 없이 곧장 종료한다.
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//  V번째 순회에서도 완화가 성공했다면 음수 사이클이 있다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;isNegativeCycle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bellmanFord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isNegativeCycle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-1&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;900000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-1&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;updated-변수의-2가지-쓰임&quot;&gt;updated 변수의 2가지 쓰임&lt;/h4&gt;
+
+&lt;h6 id=&quot;1-모든-정점의-최단경로가-구해진-경우의-탈출&quot;&gt;1. 모든 정점의 최단경로가 구해진 경우의 탈출&lt;/h6&gt;
+
+&lt;p&gt;모든 간선에 대해 완화 시도를 하였지만 실패한 경우는 모든 정점의 &lt;code class=&quot;highlighter-rouge&quot;&gt;상한값 upper&lt;/code&gt;이 &lt;code class=&quot;highlighter-rouge&quot;&gt;최단경로 dist&lt;/code&gt;에 수렴했다는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;이는 더이상의 간선 검사를 무의미하게 만들며, 곧바로 종료를 시킴으로써 시간을 절약할 수 있게된다.&lt;/p&gt;
+
+&lt;p&gt;이 때 사용하는 변수가 &lt;code class=&quot;highlighter-rouge&quot;&gt;updated&lt;/code&gt;라는 &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; 변수이다.&lt;/p&gt;
+
+&lt;p&gt;V번 반복하는 도중에 &lt;code class=&quot;highlighter-rouge&quot;&gt;updated&lt;/code&gt;가 &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;로 바뀌지 않는 경우에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;를 통해 곧바로 for문을 탈출한다.&lt;/p&gt;
+
+&lt;h6 id=&quot;2-가중치의-합이-음수인-사이클의-존재-여부&quot;&gt;2. 가중치의 합이 음수인 사이클의 존재 여부&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;벨만-포드 알고리즘의 장점은 음수 가중치 간선이 존재할 때에도 작동한다는 것일뿐만 아니라, &lt;strong&gt;(닿을 수 있는) 음수 사이클이 존재하는지&lt;/strong&gt;를 알려준다는 것이다.
+이 역시 &lt;code class=&quot;highlighter-rouge&quot;&gt;updated&lt;/code&gt;를 이용하여 판별한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;모든 최단경로를 계산하는데에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1&lt;/code&gt;번의 반복이면 충분하지만, 한번 더 반복을 진행하여 총 &lt;code class=&quot;highlighter-rouge&quot;&gt;V번&lt;/code&gt; 반복을 시켜준다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 되면 이미 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1&lt;/code&gt;번째 반복에 의해 모든 최단경로가 구해져있지만, 음수 사이클이 존재하는 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;edge relaxation&lt;/code&gt;이 진행됨을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 경우에 &lt;code class=&quot;highlighter-rouge&quot;&gt;updated&lt;/code&gt;를 &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;로 설정해주면 다음과 같은 조건문을 사용하여 음수 사이클 여부를 체크할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;//  V번째 순회에서도 완화가 성공했다면 음수 사이클이 있다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;isNegativeCycle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//  음수 사이클이 존재하여 최단 경로를 구할 수 없다.
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;최단경로가 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1번&lt;/code&gt; 이전에 모두 구해져 &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;를 통해 탈출한 경우에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;updated&lt;/code&gt;가 &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;인 상태이기 때문에 위의 음수 사이클을 찾는 코드에 걸리지 않는다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;두-가지-문제점과-한-가지-해결-방법&quot;&gt;두 가지 문제점과 한 가지 해결 방법&lt;/h4&gt;
+
+&lt;p&gt;1) 출발점에서 도달 불가능한 음수 사이클&lt;/p&gt;
+
+&lt;p&gt;출발점에서 도달 불가능한 정점들이 가중치의 합이 음수인 사이클을 이루고 있는 경우가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;이 경우 원래는 도달 가능한 정점들에 대해 &lt;code class=&quot;highlighter-rouge&quot;&gt;upper&lt;/code&gt;을 출력하고, 도달 불가능한 정점들에 대해 &lt;code class=&quot;highlighter-rouge&quot;&gt;UNREACHABLE&lt;/code&gt; 혹은 &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt;등의 처리를 해야한다.&lt;/p&gt;
+
+&lt;p&gt;하지만, V번째 반복에서 도달 불가능한 정점들의 음수 사이클을 발견하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;isNegativeCycle&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;로 바꾸게되는 경우에 &lt;code class=&quot;highlighter-rouge&quot;&gt;UNREACHABLE&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt;이 아닌 &lt;code class=&quot;highlighter-rouge&quot;&gt;음수 사이클이 존재하므로 거리를 구할수 없음&lt;/code&gt; 처리를 해버리는 경우가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;따라서 도달 불가능한 정점들을 무시하는 등의 처리가 필요하다.&lt;/p&gt;
+
+&lt;p&gt;2) 도달 불가능한 정점의 식별시 주의사항&lt;/p&gt;
+
+&lt;p&gt;도달불가능한 정점들 &lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt;가 음의 가중치를 갖는 간선을 보유하고 있을 경우의 문제점이 존재한다.&lt;/p&gt;
+
+&lt;p&gt;모든 간선들을 그래프의 정점 갯수번만큼 완화를 진행할 때 위의 경우에 &lt;code class=&quot;highlighter-rouge&quot;&gt;upper[v]&lt;/code&gt;가 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;가 아니라 &lt;strong&gt;INF보다 작은 값으로&lt;/strong&gt; 완화된다.&lt;/p&gt;
+
+&lt;p&gt;따라서 도달 불가능한 정점들을 찾을때 &lt;code class=&quot;highlighter-rouge&quot;&gt;if(upper[v] == INF)&lt;/code&gt;라는 코드는 제대로 작동하지 않을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;적당히 큰 수 M을 잡아 &lt;code class=&quot;highlighter-rouge&quot;&gt;if(upper[v] &amp;gt;= (INF - M)&lt;/code&gt;으로 코드를 수정해주어 도달 불가능한 정점들을 제대로 식별할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한 가지 간단한 해결 방법&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;우선, 벨만-포드 알고리즘이 &lt;em&gt;‘Single Source Shortest Path’&lt;/em&gt; 알고리즘임을 기억하자.&lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;(관련 포스트)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이는 즉 &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt;에서 도달할 수 없는 정점들은 신경쓰지 않아도 된다는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;따라서 과감하게 도달할 수 없는 정점들을 무시해버리자.&lt;/p&gt;
+
+&lt;p&gt;도달할 수 없는 정점들을 무시하면, 알고리즘의 &lt;code class=&quot;highlighter-rouge&quot;&gt;V번&lt;/code&gt;째 반복에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;isNegativeCycle&lt;/code&gt;이 &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;가 될 일이 없다.&lt;/p&gt;
+
+&lt;p&gt;다만, 어떻게 이 정점들을 무시할 수 있을까?&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//  닿을수 없는 정점을 건너띔으로써 해당 정점에서 발생하는 사이클을 무시한다.
+&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;//  (node, next) 간선을 따라 완화를 시도한다.
+&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;//  성공
+&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//  모든 간선에 대해 완화가 실패했을 경우 V-1번도 돌 필요 없이 곧장 종료한다.
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;두번째 for문의 다음 코드를 주목하자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if(upper[node] == INF) continue;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이러면 모든 정점들에 대해 건너띄는것이 아닌가 생각이 들겠지만, 우리는 시작 정점인 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점의 upper값을 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;으로 지정해준 상태이다.&lt;/p&gt;
+
+&lt;p&gt;따라서 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점과 연결된 모든 정점들의 완화가 진행된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt; 정점과 연결되어있지 않은 정점들은 위 &lt;code class=&quot;highlighter-rouge&quot;&gt;continue&lt;/code&gt; 코드에 의해 upper값이 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;로 남아있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;이를 통해 자연스럽게 &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt;에서 도달할 수 없는 정점들을 건너띄게 된다.&lt;/p&gt;
+
+&lt;p&gt;이로써 첫번째 문제를 해결하였다. 이제 두번째 문제를 해결하면 된다. 공교롭게도 두번째 문제는 자동으로 해결된다.&lt;/p&gt;
+
+&lt;p&gt;도달할 수 없는 정점들을 건너띄었으므로, 도달 불가능한 정점들끼리의 완화가 진행될 경우가 없고, 따라서 두번째 문제인 도달 불가능한 정점의 식별시 주의사항또한 지킬 필요가 없어졌다!&lt;/p&gt;
+
+&lt;p&gt;따라서 더이상 &lt;code class=&quot;highlighter-rouge&quot;&gt;INF&lt;/code&gt;값에 적당한 수를 빼는 수고를 하지 않아도 된다.&lt;/p&gt;
+
+&lt;p&gt;한 줄의 코드로 두개의 문제사항을 해결한 셈이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;시간-복잡도의-계산&quot;&gt;시간 복잡도의 계산&lt;/h4&gt;
+
+&lt;p&gt;이 알고리즘에서 3중 for문이 사용된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;두번째, 세번째 for문은 시작정점인 &lt;code class=&quot;highlighter-rouge&quot;&gt;1번&lt;/code&gt;정점부터 &lt;code class=&quot;highlighter-rouge&quot;&gt;V번&lt;/code&gt;정점까지 각각 &lt;code class=&quot;highlighter-rouge&quot;&gt;edge relaxation&lt;/code&gt;을 진행한다. 이때 &lt;strong&gt;그래프의 모든 간선을 검사&lt;/strong&gt;하므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;O(E)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;첫번째 for문은 위 과정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;V번&lt;/code&gt;만큼 반복한다. 음수 사이클 여부가 중요하지 않다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;V-1번&lt;/code&gt; 반복하겠지만 시간복잡도는 어쨌든 &lt;code class=&quot;highlighter-rouge&quot;&gt;O(V)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 벨만-포드 알고리즘의 최종 시간복잡도는 $O(VE)$가 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;관련-문제&quot;&gt;관련 문제&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11657&quot; target=&quot;_blank&quot;&gt;BOJ 11657 - 타임머신&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1865&quot; target=&quot;_blank&quot;&gt;BOJ 1865 - 웜홀&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h4&gt;
+
+&lt;p&gt;PS에서는 많은 사람들이 벨만-포드 알고리즘을 다음과 같이 간단하게 구현한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minusCycle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
+                &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minusCycle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://bluemoon-1st.tistory.com/17&quot; target=&quot;_blank&quot;&gt;https://bluemoon-1st.tistory.com/17&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.crocus.co.kr/534&quot; target=&quot;_blank&quot;&gt;https://www.crocus.co.kr/534&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ratsgo.github.io/data%20structure&amp;amp;algorithm/2017/11/27/bellmanford/&quot; target=&quot;_blank&quot;&gt;https://ratsgo.github.io/data%20structure&amp;amp;algorithm/2017/11/27/bellmanford/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">벨만-포드 최단 경로 알고리즘</summary></entry><entry><title type="html">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</title><link href="https://hy38.github.io/dijkstra-algorithm" rel="alternate" type="text/html" title="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" /><published>2020-04-20T18:00:00+09:00</published><updated>2020-04-20T18:00:00+09:00</updated><id>https://hy38.github.io/dijkstra-algorithm</id><content type="html" xml:base="https://hy38.github.io/dijkstra-algorithm">&lt;blockquote&gt;
+  &lt;p&gt;다익스트라 최단 경로 알고리즘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;그래프의-최단경로-알고리즘&quot;&gt;그래프의 최단경로 알고리즘&lt;/h4&gt;
+
+&lt;p&gt;그래프의 최단경로 알고리즘에 대한 설명은 &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 &lt;code class=&quot;highlighter-rouge&quot;&gt;edge relaxation&lt;/code&gt;에 대해 설명한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, &lt;a href=&quot;/about-Shortest-Path&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 먼저 알아보는 것이 좋을것 같다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
@@ -46,7 +426,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;다만 중요한 내용이기 때문에 세부적인 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에서 자세히 다룬다.&lt;/p&gt;
+&lt;p&gt;다만 중요한 내용이기 때문에 세부적인 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 자세히 다룬다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -220,10 +600,10 @@
     &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1504&quot; target=&quot;_blank&quot;&gt;BOJ 1504 - 특정한 최단 경로&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11657&quot; target=&quot;_blank&quot;&gt;BOJ 11657 - 타임머신&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/18223&quot; target=&quot;_blank&quot;&gt;BOJ 18223 - 민준이와 마산 그리고 건우&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/18223&quot; target=&quot;_blank&quot;&gt;BOJ 18223 - 민준이와 마산 그리고 건우&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11779&quot; target=&quot;_blank&quot;&gt;BOJ 11779 - 최소비용 구하기 2&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://algospot.com/judge/problem/read/FIRETRUCKS&quot; target=&quot;_blank&quot;&gt;Algospot - 소방차&lt;/a&gt;&lt;/p&gt;
@@ -235,7 +615,7 @@
 &lt;h3 id=&quot;참고-사항&quot;&gt;참고 사항&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;다음 코드로 인해 큐에 들어간 중복원소를 무시한다. 이 코드를 작성하지 않아도 최단거리는 구해지지만, 시간초과가 나게끔 하는 테스트케이스로 저격이 가능하다. 이에 대한 설명은 &lt;a href=&quot;http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;에서 알아볼수 있다.&lt;/li&gt;
+  &lt;li&gt;다음 코드로 인해 큐에 들어간 중복원소를 무시한다. 이 코드를 작성하지 않아도 최단거리는 구해지지만, 시간초과가 나게끔 하는 테스트케이스로 저격이 가능하다. 이에 대한 설명은 &lt;a href=&quot;http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;에서 알아볼수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if(dist[node] &amp;lt; cost) continue;
@@ -265,7 +645,7 @@
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&quot; target=&quot;_blank&quot;&gt;https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">다익스트라 최단경로 알고리즘</summary></entry><entry><title type="html">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</title><link href="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge" rel="alternate" type="text/html" title="다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge" /><published>2020-04-13T04:00:00+09:00</published><updated>2020-04-13T04:00:00+09:00</updated><id>https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge</id><content type="html" xml:base="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">다익스트라 최단 경로 알고리즘</summary></entry><entry><title type="html">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</title><link href="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge" rel="alternate" type="text/html" title="다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge" /><published>2020-04-13T04:00:00+09:00</published><updated>2020-04-13T04:00:00+09:00</updated><id>https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge</id><content type="html" xml:base="https://hy38.github.io/why-dijkstra-fail-on-a-negative-weighted-edge">&lt;blockquote&gt;
   &lt;p&gt;다익스트라 알고리즘과 음수 간선&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -309,7 +689,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A - B - C - A - B - C - A - B - C - D&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;여기서 알 수 있는 사실은, 가중치의 합이 음수인 사이클이 존재하게 되면 최단 경로가 음의 무한대로 수렴하게 된다는 것 이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;여기서 알 수 있는 사실은, 가중치의 합이 음수인 사이클이 존재하게 되면 최단 경로가 음의 무한대로 발산하게 된다는 것 이다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;따라서 음수 간선이 존재하면 음수 사이클이 존재할 가능성이 있기 때문에, 다익스트라 외에 다른 알고리즘을 사용하는 것이 타당해보인다.&lt;/p&gt;
 
@@ -502,7 +882,7 @@
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;이와 같이 &lt;strong&gt;다익스트라&lt;/strong&gt; 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 &lt;strong&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드(Bellman-Ford)&lt;/a&gt;&lt;/strong&gt; 알고리즘이나 &lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt;를 사용한다. 자세한 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 통해 알아볼 수 있다.&lt;/p&gt;
+  &lt;p&gt;이와 같이 &lt;strong&gt;다익스트라&lt;/strong&gt; 알고리즘이 최단 경로 문제에서 차지하는 중요도는 엄청나다. 다만, 다익스트라 알고리즘은 음수 간선이 존재하는 경우에는 사용이 제한된다. 이 경우에는 &lt;strong&gt;&lt;a href=&quot;/bellman-ford-algorithm&quot; target=&quot;_blank&quot;&gt;벨만-포드(Bellman-Ford)&lt;/a&gt;&lt;/strong&gt; 알고리즘이나 &lt;a href=&quot;/shortest-path-faster-algorithm&quot; target=&quot;_blank&quot;&gt;SPFA&lt;/a&gt;를 사용한다. 자세한 이유는 &lt;a href=&quot;/why-dijkstra-fail-on-a-negative-weighted-edge&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;여기&lt;/strong&gt;&lt;/a&gt;를 통해 알아볼 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
@@ -554,9 +934,9 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/dijkstra-algorithm&quot; target=&quot;_blank&quot;&gt;다익스트라&lt;/a&gt; :
     &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;우선순위큐 사용 : O(ElogV)&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;반복문 사용 : O(V*V + E)&lt;/li&gt;
-      &lt;li&gt;피보나치힙 사용 : O(E + VlogV)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;우선순위큐 사용 : $O(ElogV)$&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;반복문 사용 : $O(V^2 + E)$&lt;/li&gt;
+      &lt;li&gt;피보나치힙 사용 : $O(E + VlogV)$&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -2068,46 +2448,4 @@
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://jason9319.tistory.com/93&quot; target=&quot;_blank&quot;&gt;https://jason9319.tistory.com/93&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.</summary></entry><entry><title type="html">두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices</title><link href="https://hy38.github.io/find-if-path-exists-between-vertices" rel="alternate" type="text/html" title="두 정점이 서로 연결되어 있는지 확인하기 - Find if Path Exists between Vertices" /><published>2020-02-19T19:00:00+09:00</published><updated>2020-02-19T19:00:00+09:00</updated><id>https://hy38.github.io/find-if-path-exists-between-vertices</id><content type="html" xml:base="https://hy38.github.io/find-if-path-exists-between-vertices">&lt;blockquote&gt;
-  &lt;p&gt;DFS를 이용하여 그래프에서의 두 정점이 연결되어 있는지 간단하게 확인하기&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;두-정점의-연결성-확인&quot;&gt;두 정점의 연결성 확인&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이는 두 정점이 같은 컴포넌트에 존재하는지와 같은 문제이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;정점 u와 v가 같은 컴포넌트에 존재한다면, u에서 DFS를 돌렸을 때 v가 방문된다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;정점 u에서 DFS를 할 때에는, u에서 갈 수 있는 모든 정점들을 방문하게 된다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;따라서, u에서 DFS를 돌려 v가 방문되는지를 확인하면 두 정점이 연결되어있는지를 확인할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;코드&quot;&gt;코드&lt;/h2&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DFS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Connected!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Not Connected..&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Introduction to Algorithms&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;알고리즘 문제 해결 전략 2&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">DFS를 이용하여 그래프에서의 두 정점이 연결되어 있는지 간단하게 확인하기</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><category term="algorithm" /><category term="theory" /><summary type="html">위상정렬(Topological Sort) : DAG의 정점들을 변의 방향을 거스르지 않도록 그래프를 선형으로 나열하는 것.</summary></entry></feed>

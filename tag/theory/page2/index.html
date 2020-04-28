@@ -11,7 +11,7 @@
 
 
 
-    <title>Search Result</title>
+    <title>Theorypage2 - HY38's IT Blog</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,19 +40,19 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/search" />
+    <link rel="canonical" href="https://hy38.github.io/tag/theory/page2/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Search Result" />
+    <meta property="og:title" content="Theorypage2 - HY38's IT Blog" />
     <meta property="og:description" content="b Ha p" />
-    <meta property="og:url" content="https://hy38.github.io/search" />
+    <meta property="og:url" content="https://hy38.github.io/tag/theory/page2/" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Search Result" />
+    <meta name="twitter:title" content="Theorypage2 - HY38's IT Blog" />
     <meta name="twitter:description" content="b Ha p" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/blog-cover.jpg" />
@@ -72,7 +72,7 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/search",
+    "url": "https://hy38.github.io/tag/theory/page2/",
     "image": {
         "@type": "ImageObject",
         "url": "https://hy38.github.io/assets/images/blog-cover.jpg",
@@ -81,7 +81,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/search"
+        "@id": "https://hy38.github.io/tag/theory/page2/"
     },
     "description": "b Ha p"
 }
@@ -117,20 +117,23 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Search Result" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
 
 
 </head>
-<body class="page-template">
+<body class="paged archive-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        <!-- < default -->
-<!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template -->
+        <!-- default -->
+<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer">
+<!-- #tag -->
+<!-- dynamically loading backgrounds for tags,  descriptions and page titles -->
+
+
+<header class="site-header outer no-cover">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
@@ -179,101 +182,100 @@ into the {body} of the default.hbs template -->
     </div>
 </nav>
 
+        <div class="site-header-content">
+            <h1 class="site-title">Theory</h1>
+            <h2 class="site-description">
+                
+    			    A collection of 11 posts
+                
+            </h2>
+        </div>
     </div>
 </header>
+<!-- tag -->
 
-<!-- Everything inside the #post tags pulls data from the post -->
-<!-- #post -->
-
+<!-- The main content area -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
-        <article class="post-full post page no-image">
-
-            <header class="post-full-header">
-                <h1 class="post-full-title">Search Result</h1>
-            </header>
-
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
             
 
-            <section class="post-full-content">
-                <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-</head>
 
-<!-- get query from URL -->
-<script>
-    function getUrlParams() {
-        //  this does NOT support IE(Internet Explorer)
-        var urlParams = new URLSearchParams(location.search);
-        let input = urlParams.get("query");
-        document.getElementById("search-input").value = input;
+    <article class="post-card tag-template">
+        
+            <a class="post-card-image-link" href="/about-DFS">
+                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/cave.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/about-DFS">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Theory</span>
+                            
+                        
+                    
 
-        //  below has encoding problems for korean
-        // var queryString = window.location.search;
-        // var params = queryString;
-        // document.getElementById("search-input").value = params;
-    }
-</script>
+                    <h2 class="post-card-title">DFS의 목적과 시간복잡도 - Purpose of DFS and its Time Complexity</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>
+  DFS의 목적과 시간복잡도
 
-<body onload="getUrlParams()"></body>
 
-<!-- HTML elements for search -->
-Press ctrl to search!
-<br>
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/hy38-main-picture2.jpg" alt="Sanghyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">Sanghyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      2 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
 
-<input type="text" id="search-input" placeholder="Search by title / tag .." onclick=this.value=''; autofocus>
-<input type="button" value="clear" onclick="javascript:eraseText();" >
 
-<script>
-function eraseText() {
-    document.getElementById("search-input").value = "";
-    // resultsContainer.value = ''; // doesn't work..
-}
-</script>
-
-<ul id="results-container"></ul>
-
-<a href="#">Back To Top</a>
-
-<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
-
-<!-- Configuration -->
-<script>
-    SimpleJekyllSearch({
-    //   searchResultTemplate: '<div><a href="{url}"><h1>{title}</h1></a><span>{date}</span></div>',
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
-      noResultsText: 'No result found :(',  //  message when no results extants
-      limit: 999    //  limit of how many search items to be shown
-    })
-    </script>
-
-<!-- <script src="assets/js/lunr.js"></script> -->
-<script src="assets/js/search-script.js"></script>
-
-            </section>
-
-        </article>
-
+        </div>
     </div>
 </main>
 
-<!-- /post -->
-
-<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-
-
 
         <!-- Previous/next page links - displayed on every page -->
+        
+            
+                <nav class="pagination" role="pagination">
+    
+        
+            <a class="newer-posts" href="/tag/theory" title="Previous Page">&laquo; Newer Posts</a>
+        
+    
+    <span class="page-number"> Page 2 of 2 </span>
+    
+</nav>
+
+            
         
 
         <!-- The footer at the very bottom of the screen -->
@@ -351,7 +353,7 @@ $(function() {
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
-        var maxPages = parseInt('');
+        var maxPages = parseInt('2');
     </script>
     <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
@@ -374,14 +376,6 @@ $(function() {
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
-    
-        <script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->

@@ -8,10 +8,27 @@
     
       
       <item>
+        <title>벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;벨만-포드 최단 경로 알고리즘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Sat, 25 Apr 2020 04:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/bellman-ford-algorithm</link>
+        <guid isPermaLink="true">https://hy38.github.io/bellman-ford-algorithm</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</title>
         
           <description>&lt;blockquote&gt;
-  &lt;p&gt;다익스트라 최단경로 알고리즘&lt;/p&gt;
+  &lt;p&gt;다익스트라 최단 경로 알고리즘&lt;/p&gt;
 &lt;/blockquote&gt;
 
 </description>
