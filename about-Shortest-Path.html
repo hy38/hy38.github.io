@@ -342,12 +342,30 @@ into the {body} of the default.hbs template -->
 <p>수학적으로는 무한대가 아니지만, 적당히 큰 수를 지정하면 무한대와 비슷한 효과를 볼 수 있을것이다. PS에서 자주 사용되는 다음과 같은 수들이 대표적이다.</p>
 
 <pre><code class="language-C++">#define INF 987654321
-#define INF2 1e9
-#define INF3 0x7fffffff
-#define INF4 0x3f3f3f3f
+#define INF2 1e9  //  1000000000 (10억)
+#define INF3 2e9  //  2000000000 (20억)
+#define INF4 0x7fffffff //  2147483647 (int범위 최대값)
+#define INF5 0x3f3f3f3f //  1061109567 (약 10억)
+#define INF6 0x7f7f7f7f //  2139062143 (약 21억)
 </code></pre>
 
-<p>나는 개인적으로 <code class="highlighter-rouge">987654321</code>를 주로 사용하는 편이다. 다만, 가끔 <code class="highlighter-rouge">INF</code>와 <code class="highlighter-rouge">INF</code>를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다. 이런 경우 적당히 큰 수를 이용하여 <code class="highlighter-rouge">INF</code>를 표현한다. 상황에 맞게 적절하게 <code class="highlighter-rouge">INF</code>값을 설정해주면 좋을것같다.</p>
+<p>나는 개인적으로 <code class="highlighter-rouge">987654321</code>를 주로 사용했던 편이다. 다만, 가끔 <code class="highlighter-rouge">INF</code>와 <code class="highlighter-rouge">INF</code>를 계속해서 더하는 문제의 경우 오버플로우 발생을 염려해야한다.</p>
+
+<p>그래서 memset하기도 편한 <code class="highlighter-rouge">0x3f3f3f3f</code>을 사용하는 추세이다. 더 큰 <code class="highlighter-rouge">INF</code>값이 필요하면 <code class="highlighter-rouge">0x7f7f7f7f</code>을 사용한다.</p>
+
+<p>이들은 다음과 같이 모든 값을 <code class="highlighter-rouge">INF</code>로 쉽게 설정할 수 있어 애용하게되었다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string.h&gt;
+</span>
+<span class="p">...</span> <span class="n">some</span> <span class="n">code</span> <span class="p">...</span>
+
+<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">][</span><span class="n">MAX_V</span><span class="p">];</span>
+
+<span class="p">...</span> <span class="n">some</span> <span class="n">code</span> <span class="p">...</span>
+
+<span class="n">memset</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+<span class="n">memset</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+</code></pre></div></div>
 
 <hr />
 
@@ -362,15 +380,12 @@ into the {body} of the default.hbs template -->
     </ul>
   </li>
   <li>
-    <p><a href="/bellman-ford-algorithm" target="_blank">벨만-포드</a> : O()</p>
+    <p><a href="/bellman-ford-algorithm" target="_blank">벨만-포드</a> : $O(VE)$</p>
   </li>
   <li>
-    <p><a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a> : O()</p>
+    <p><a href="/shortest-path-faster-algorithm" target="_blank">SPFA</a> : $O(VE)$, 최선의 경우 $O(E)$</p>
   </li>
-  <li>
-    <p><a href="/floyd-warshall-algorithm" target="_blank">플로이드-워셜</a> : O()</p>
-  </li>
-  <li>존슨 : O()</li>
+  <li><a href="/floyd-warshall-algorithm" target="_blank">플로이드-워셜</a> : $O(V^3)$</li>
 </ul>
 
 <p>각각의 알고리즘은 위의 링크들을 통해 더 자세히 다루도록 할것이다.</p>
@@ -508,6 +523,15 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
+                                            <li><a href="/floyd-warshall-algorithm">플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/bellman-ford-algorithm">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</a></li>
                                         
                                     
@@ -525,8 +549,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/why-dijkstra-fail-on-a-negative-weighted-edge">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</a></li>
                                         
                                     
                                   
@@ -661,7 +683,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 18 posts  →
+                                    See all 19 posts  →
                                 
                             </a>
                         </footer>
