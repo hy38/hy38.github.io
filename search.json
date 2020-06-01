@@ -209,6 +209,14 @@
     } ,
   
     {
+      "title"    : "D2L 2 - Linear Algebra",
+      "category" : "",
+      "tags"     : "deep learning, linear algebra",
+      "url"      : "https://hy38.github.io/D2L-2-linear-algebra",
+      "date"     : "2019-05-29 19:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "ML Coursera 1-2 Linear Regression with One Variable",
       "category" : "",
       "tags"     : "machine learning, Coursera",
@@ -222,6 +230,22 @@
       "tags"     : "machine learning, Coursera",
       "url"      : "https://hy38.github.io/MLcoursera-1-1",
       "date"     : "2019-05-27 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "D2L 2 - ndarray, pandas",
+      "category" : "",
+      "tags"     : "deep learning, numpy, pandas, ndarray",
+      "url"      : "https://hy38.github.io/D2L-2-ndarray-pandas",
+      "date"     : "2019-05-27 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "D2L 1-1 Introduction",
+      "category" : "",
+      "tags"     : "deep learning",
+      "url"      : "https://hy38.github.io/D2L-1-introduction",
+      "date"     : "2019-05-22 19:00:00 +0900"
     } 
   
 ]

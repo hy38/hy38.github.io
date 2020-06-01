@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/machine-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-05-19T17:32:47+09:00</updated>
+  <updated>2020-06-01T13:29:22+09:00</updated>
   <id>https://hy38.github.io/tag/machine-learning/feed.xml</id>
 
   
@@ -1257,8 +1257,6 @@ n이 10000보다 큰 엄청난 양의 데이터의 경우에는 gradient descent
 &lt;p&gt;지도학습과 다르게 비지도학습은 unlabeled data를 다루게 됩니다. 우리는 데이터가 어떻게 구성되어있는지를 밝혀내게 되는데, 그 방법중 하나가 이 중구난방인 데이터들을 그룹으로 묶어 군집화를 하는 것입니다. 이는 &lt;strong&gt;clustering algorithm&lt;/strong&gt; 이라고 불립니다.&lt;/p&gt;
 
 &lt;p&gt;Clustering algorithm은 비슷한 뉴스끼리 군집을 이루는 것부터 시작하여 유전학을 비롯하여 곧 알아보게 될 Cocktail party algorithm에도 이용됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;지극히 사담이지만, 작년에 뉴스 기사를 군집화하는 아르바이트를 한 적이 있습니다. 덕분에 좋은 분들을 만나 인연을 맺게 되었는데요, 그 당시에는 웃프게도 군집화를 수동적으로만 진행하였지, 이것이 어떻게 활용될지를 생각하지 않았던 기억이 있습니다. 그때 조금만 더 일찍 능동적으로 생각해보았으면 어땠을까 하는 아쉬움이 남네요.&lt;/del&gt;&lt;/p&gt;
 
 &lt;p&gt;지도학습과의 가장 큰 차이점은 &lt;strong&gt;right answer&lt;/strong&gt;을 주지 않는다는데에 있습니다. 지도학습은 주어진 &lt;strong&gt;answer&lt;/strong&gt;를 이용하여 input feature에 해당하는 output을 예측할 수 있는 반면에, 비지도학습은 주어진 &lt;strong&gt;answer 없이&lt;/strong&gt; 데이터가 어떻게 struct되어있는지를 밝혀낸다는 의미있는 차이점입니다.&lt;/p&gt;
 

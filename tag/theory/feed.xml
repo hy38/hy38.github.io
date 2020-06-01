@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/theory/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-05-19T17:32:47+09:00</updated>
+  <updated>2020-06-01T13:29:22+09:00</updated>
   <id>https://hy38.github.io/tag/theory/feed.xml</id>
 
   
@@ -97,7 +97,7 @@
 
 &lt;p&gt;추가로, 만약 &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt;까지 직접 가는 것이 최단 경로인 경우라면 다른 정점들을 전부 지나지 않는다는 것을 의미한다.&lt;/p&gt;
 
-&lt;p&gt;…&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;h6 id=&quot;초기화&quot;&gt;초기화&lt;/h6&gt;
 

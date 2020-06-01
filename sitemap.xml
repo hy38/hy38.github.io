@@ -420,6 +420,22 @@
     </url>
     
     <url>
+        <loc>https://hy38.github.io/D2L-2-linear-algebra.html</loc>
+        
+        <lastmod>2019-05-29T19:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://hy38.github.io/MLcoursera-1-2.html</loc>
         
         <lastmod>2019-05-28T19:00:00+09:00</lastmod>
@@ -439,6 +455,38 @@
         <loc>https://hy38.github.io/MLcoursera-1-1.html</loc>
         
         <lastmod>2019-05-27T19:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://hy38.github.io/D2L-2-ndarray-pandas.html</loc>
+        
+        <lastmod>2019-05-27T19:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://hy38.github.io/D2L-1-introduction.html</loc>
+        
+        <lastmod>2019-05-22T19:00:00+09:00</lastmod>
         
 
         
