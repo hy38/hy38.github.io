@@ -11,7 +11,7 @@
 
 
 
-    <title>플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm</title>
+    <title>D2L 2 - Calculus</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,30 +40,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/floyd-warshall-algorithm" />
+    <link rel="canonical" href="https://hy38.github.io/D2L-2-calculus" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm" />
-    <meta property="og:description" content="플로이드-와샬 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 전반적인 설명은 여기에서 확인할 수 있다. 플로이드-워셜 알고리즘은 플로이드-와샬, 플로이드 등 다양하게 불린다. All Pairs Shortest Path 플로이드 알고리즘은 모든 쌍의 정점들에 대해 최단 경로를 구하는 알고리즘이다. 모든 쌍에 대해 최단 경로를 구할때에는 다익스트라 알고리즘을 V번만큼 수행하는 것도 가능하겠지만," />
-    <meta property="og:url" content="https://hy38.github.io/floyd-warshall-algorithm" />
-    <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/road.jpg" />
+    <meta property="og:title" content="D2L 2 - Calculus" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Calculus (Basic) 1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$. Lets first define the function y in python. After, what I have to" />
+    <meta property="og:url" content="https://hy38.github.io/D2L-2-calculus" />
+    <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2020-05-07T04:00:00+09:00" />
-    <meta property="article:modified_time" content="2020-05-07T04:00:00+09:00" />
-    <meta property="article:tag" content="Algorithm" />
+    <meta property="article:published_time" content="2019-06-01T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-06-01T19:00:00+09:00" />
+    <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm" />
-    <meta name="twitter:description" content="플로이드-와샬 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 전반적인 설명은 여기에서 확인할 수 있다. 플로이드-워셜 알고리즘은 플로이드-와샬, 플로이드 등 다양하게 불린다. All Pairs Shortest Path 플로이드 알고리즘은 모든 쌍의 정점들에 대해 최단 경로를 구하는 알고리즘이다. 모든 쌍에 대해 최단 경로를 구할때에는 다익스트라 알고리즘을 V번만큼 수행하는 것도 가능하겠지만," />
+    <meta name="twitter:title" content="D2L 2 - Calculus" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Calculus (Basic) 1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$. Lets first define the function y in python. After, what I have to" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
-    <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/road.jpg" />
+    <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="HY38's IT Blog" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:data2" content="Deep Learning" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -78,18 +78,18 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/floyd-warshall-algorithm",
+    "url": "https://hy38.github.io/D2L-2-calculus",
     "image": {
         "@type": "ImageObject",
-        "url": "https://hy38.github.io/assets/images/algorithm/road.jpg",
+        "url": "https://hy38.github.io/assets/images/d2l/brain.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/floyd-warshall-algorithm"
+        "@id": "https://hy38.github.io/D2L-2-calculus"
     },
-    "description": "플로이드-와샬 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 전반적인 설명은 여기에서 확인할 수 있다. 플로이드-워셜 알고리즘은 플로이드-와샬, 플로이드 등 다양하게 불린다. All Pairs Shortest Path 플로이드 알고리즘은 모든 쌍의 정점들에 대해 최단 경로를 구하는 알고리즘이다. 모든 쌍에 대해 최단 경로를 구할때에는 다익스트라 알고리즘을 V번만큼 수행하는 것도 가능하겠지만,"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Calculus (Basic) 1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$. Lets first define the function y in python. After, what I have to"
 }
     </script>
     
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 2 - Calculus" href="/feed.xml" />
 
 
 </head>
@@ -199,251 +199,87 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 7 May 2020"> 7 May 2020</time>
+                    <time class="post-full-meta-date" datetime=" 1 June 2019"> 1 June 2019</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/algorithm/'>ALGORITHM</a>,
+                               <a href='/tag/deep-learning/'>DEEP LEARNING</a>,
                             
                         
                             
-                               <a href='/tag/theory/'>THEORY</a>
+                               <a href='/tag/calculus/'>CALCULUS</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm</h1>
+                <h1 class="post-full-title">D2L 2 - Calculus</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/road.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/d2l/brain.png)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>플로이드-와샬 최단 경로 알고리즘</p>
+  <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h4 id="그래프의-최단경로-알고리즘">그래프의 최단경로 알고리즘</h4>
+<h3 id="exercise--calculus-basic">Exercise : Calculus (Basic)</h3>
 
-<p>그래프의 최단경로 알고리즘에 대한 전반적인 설명은 <a href="/about-Shortest-Path" target="_blank"><strong>여기</strong></a>에서 확인할 수 있다.</p>
+<p><strong>1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$.</strong></p>
 
-<p>플로이드-워셜 알고리즘은 플로이드-와샬, 플로이드 등 다양하게 불린다.</p>
+<p>Lets first define the function y in python. After, what I have to do is finding the tangent line of y when x is 1.</p>
 
-<h6 id="all-pairs-shortest-path">All Pairs Shortest Path</h6>
-
-<p>플로이드 알고리즘은 모든 쌍의 정점들에 대해 최단 경로를 구하는 알고리즘이다.</p>
-
-<p>모든 쌍에 대해 최단 경로를 구할때에는 다익스트라 알고리즘을 V번만큼 수행하는 것도 가능하겠지만, 다익스트라의 시간복잡도가 $O(ElogV)$이므로, 총 $O(V * ElogV)$가 되어 복잡하고 효율적이지 못하다.</p>
-
-<p>플로이드 알고리즘은 간단한 <strong>4줄의 코드</strong>로 모든 쌍에 대한 최단 경로를 $O(V^3)$의 시간복잡도로 구한다.</p>
-
-<p>비록 4줄의 코드지만 개인적으로는 최단 경로 알고리즘 중 <strong>가장 이해하기 힘들었던</strong> 알고리즘인것 같다.</p>
-
-<hr />
-
-<h4 id="기본적인-아이디어">기본적인 아이디어</h4>
-
-<h6 id="dpdynamic-programming">DP(Dynamic Programming)</h6>
-
-<p>플로이드 알고리즘은 다이나믹 프로그래밍을 사용하는 알고리즘이다.</p>
-
-<p>따라서 다이나믹 프로그래밍에 대한 이해가 하나도 없다면, <a href="/https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%EA%B3%84%ED%9A%8D%EB%B2%95" target="_blank"><strong>여기</strong></a>에서 기본적인 메커니즘정도는 파악하는것이 이 알고리즘을 이해하는데 도움이 될 것이다.</p>
-
-<h6 id="경유점">경유점</h6>
-
-<p>정점 <code class="highlighter-rouge">i</code>에서 <code class="highlighter-rouge">j</code>로 가는데에는 여러 가지 경로가 존재한다. 그러나 모든 경로는 두 가지 경우로 나뉜다.</p>
+<p>The derivative functinon y’ is $3x^2 + \dfrac{1}{x^2}$, and the tangent line would be $y = ax + b$. We can get <code class="highlighter-rouge">a</code>, <code class="highlighter-rouge">b</code> as below.</p>
 
 <ol>
   <li>
-    <p><code class="highlighter-rouge">i</code>에서 <code class="highlighter-rouge">j</code>로 곧바로 가는 경로</p>
+    <p>y’(1) equals to 3 + 1 = 4, which is <code class="highlighter-rouge">a</code>. So the tangent line is $y = 4x + b$.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">i</code>에서 다른 정점 <code class="highlighter-rouge">k</code>를 거쳐 <code class="highlighter-rouge">j</code>로 가는 경로</p>
+    <p>Using the fact that y, y’ passes cordinate (1,0), <code class="highlighter-rouge">b</code> comes to be <code class="highlighter-rouge">-4</code>.</p>
   </li>
 </ol>
 
-<p>이들 중에 작은것을 최단 경로로 택하면 된다.</p>
+<p>So the tangent line is $y = 4x - 4$.</p>
 
-<p>플로이드는 이렇게 <strong>경유점을 선택해나가며 길을 만들어가는 방식</strong>으로 동작한다.</p>
+<p>Using python, we can simply plot it.</p>
 
-<p>반복문에서 <code class="highlighter-rouge">k</code>가 <code class="highlighter-rouge">1</code>부터 <code class="highlighter-rouge">V</code>번 정점까지 돌면서 각각의 정점을 지나는 경로를 선택할것인지를 결정한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span>
 
-<p>만일 <code class="highlighter-rouge">k</code>를 거쳐간다면, <code class="highlighter-rouge">i</code>에서 <code class="highlighter-rouge">k</code>까지 경로 <code class="highlighter-rouge">p1</code>이 존재하게된다. 이때 <code class="highlighter-rouge">p1</code>은 {1, 2, …, k-1} 까지의 정점들을 선택할것인지를 이미 결정을 끝낸 최단경로이며, <code class="highlighter-rouge">k</code>에서 <code class="highlighter-rouge">j</code>까지의 경로 <code class="highlighter-rouge">p2</code>또한 마찬가지이다.</p>
-
-<p>플로이드 알고리즘의 핵심은 다음 식이다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adj[i][j] = min(adj[i][j], adj[i][k] + adj[k][j]);
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="p">[</span><span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">],</span> <span class="s">'x2'</span><span class="p">,</span> <span class="s">'f2(x)'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s">'f2(x)'</span><span class="p">,</span> <span class="s">'Tangent line (x2=1)'</span><span class="p">])</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">k</code>를 거쳐가지 않는 경우와 <code class="highlighter-rouge">k</code>를 거쳐가는 경우인 <code class="highlighter-rouge">p1 + p2</code> 중 작은것을 택한다.</p>
+<p><img src="https://user-images.githubusercontent.com/34434143/83482268-d87b3380-a4da-11ea-9761-c7fabce37097.png" alt="tangent_line" /></p>
 
-<p>추가로, 만약 <code class="highlighter-rouge">i</code>에서 <code class="highlighter-rouge">j</code>까지 직접 가는 것이 최단 경로인 경우라면 다른 정점들을 전부 지나지 않는다는 것을 의미한다.</p>
+<p><strong>2) Find the gradient of the function $f(x) = 3x_1^2 + 5e^{x_2}$.</strong></p>
 
-<hr />
+<p>By differentiating the function with respect to each variable $x_1$, $x_2$ can we get the gradient of f(x).</p>
 
-<h6 id="초기화">초기화</h6>
+<p>$\frac{\partial f}{\partial x_{1}} = 6 x_{1}$</p>
 
-<p>플로이드 알고리즘은 <strong>DP</strong>를 이용하며, 결과값을 만들어내기 전의 초기화는 상당히 중요하다.</p>
+<p>$\frac{\partial f}{\partial x_{2}} = 5 e^{x_{2}}$</p>
 
-<p>이전의 최단경로 알고리즘에서는 모든 가중 그래프의 표기를 인접 리스트 방식으로 표현했지만, 플로이드 알고리즘에서는 인접 행렬 표기법을 사용한다. 행렬은 간선들의 가중치를 담는다.</p>
+<p>$\nabla f(x) = (6 x_{1}, 5 e^{x_{2}})$</p>
 
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">adj</code> 배열의 초기화</p>
+<p><strong>3) What is the gradient of the function $f(\mathbf{x}) = ||\mathbf{x}||_2$?</strong></p>
 
-    <ul>
-      <li>
-        <p>도달할 수 없는 정점들에 대해 모두 <strong>매우</strong> 큰 값(<code class="highlighter-rouge">INF</code>)을 넣어주어야 한다.</p>
-      </li>
-      <li>
-        <p>또한, 자기 자신에게 가는 간선의 가중치는 <code class="highlighter-rouge">0</code>으로 설정해주어야 한다.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<p>Since $ ||\mathbf{x}||_2 = (x_1^2 + x_2^2 + …)^\frac{1}{2} $,</p>
 
-<hr />
+<p>when you partially derivate each $x_i$s,</p>
 
-<h4 id="음수-간선의-존재-여부">음수 간선의 존재 여부</h4>
+<p>you can get the answer : $\nabla_{\mathbf{x}} ||\mathbf{x}||_2 = \frac{\mathbf{x}}{||\mathbf{x}||_2}$</p>
 
-<h6 id="음수간선은-ok-가중치의-합이-음수인-사이클은-no">음수간선은 OK, 가중치의 합이 음수인 사이클은 NO!</h6>
+<p><strong>4) Can you write out the chain rule for the case where $u = f(x, y, z)$ and $x = x(a, b), y = y(a, b)$, and $z = z(a, b)$?</strong></p>
 
-<p>다른 알고리즘과 마찬가지로 음수인 사이클은 플로이드 알고리즘의 정당성을 보장하지 못한다.</p>
+<p>$\frac{\partial u}{\partial a}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial a}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial a}+\frac{\partial u}{\partial z}\frac{\partial z}{\partial a}$</p>
 
-<p>음수인 사이클로 빠지게 될 경우 최단 경로가 <code class="highlighter-rouge">음의 무한대</code>로 계속 발산할 수 있기 때문이다.</p>
-
-<p>다만, <a href="/bellman-ford-algorithm" target="_blank"><strong>벨만-포드</strong></a> 알고리즘과 동일하게 음수 사이클이 아닌 <code class="highlighter-rouge">음수 간선</code>은 알고리즘에 영향을 미치지 않는다.</p>
-
-<h6 id="가중치의-합이-음수인-사이클의-존재-여부-파악">가중치의 합이 음수인 사이클의 존재 여부 파악</h6>
-
-<p>벨만-포드 알고리즘의 경우 반복을 <code class="highlighter-rouge">V번</code> 수행함으로써 음수 사이클이 있는지를 확인할 수 있었다.</p>
-
-<p>플로이드 알고리즘은 <strong>자기 자신에게 가는 간선들을 검사</strong>함으로써 확인할 수 있다.</p>
-
-<p>자기 자신에게 가는 간선들을 adj[i][i]라 하고, 당연하게 최단 경로를 <code class="highlighter-rouge">0</code>으로 초기화한다.</p>
-
-<p>플로이드 수행 이후 adj[i][i]가 0보다 작으면 그래프에 음수 사이클이 존재한다는 의미이다.</p>
-
-<p>아주 간단한 사이클을 예로 들어보자.</p>
-
-<p><code class="highlighter-rouge">i</code>에서 출발하여 다른 정점 <code class="highlighter-rouge">k</code>를 거쳐갔다 다시 <code class="highlighter-rouge">i</code>로 왔을 때 이는 <code class="highlighter-rouge">i - k - i</code> 사이클을 이룬다.</p>
-
-<p>이때 이 사이클의 가중치 합이 음수일 경우에, 초기값이 <code class="highlighter-rouge">0</code>이었던 최단 경로 adj[i][i]가 음수값을 갖게된다.</p>
-
-<hr />
-
-<h4 id="플로이드-알고리즘의-구현코드">플로이드 알고리즘의 구현(코드)</h4>
-
-<ul>
-  <li>C++ Code</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-</span>
-<span class="cp">#define INF 0x3f3f3f3f
-#define MAX_V 201
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">adj</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">][</span><span class="n">MAX_V</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">edges</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
-  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">){</span>
-          <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span>  <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-          <span class="k">else</span> <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
-      <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">floyd</span><span class="p">(){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span><span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">V</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
-                <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">adj</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">input</span><span class="p">();</span>
-    <span class="n">init</span><span class="p">();</span>
-    <span class="n">floyd</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div>
-
-<hr />
-
-<h4 id="시간-복잡도의-계산">시간 복잡도의 계산</h4>
-
-<p>이 알고리즘에서는 3중 for문이 사용된다.</p>
-
-<p>모든 for문은 V번씩 반복을 하며, 최종 시간복잡도는 $O(V^3)$로 자명하다.</p>
-
-<hr />
-
-<h6 id="관련-문제">관련 문제</h6>
-
-<ul>
-  <li><a href="https://www.acmicpc.net/problem/1389" target="_blank">BOJ 1389 - 케빈 베이컨의 6단계 법칙</a>
-    <ul>
-      <li><a href="/BOJ-1389" target="_blank">풀이</a></li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h4 id="참고-사항">참고 사항</h4>
-
-<ul>
-  <li>
-    <p>플로이드 워셜 알고리즘을 구현할 때 편의상 <code class="highlighter-rouge">k</code>를 for문으로 오름차순 처리하지만, 어떤 순서로 <code class="highlighter-rouge">k</code>를 매겨도 알고리즘 동작에는 영향을 주지 않는다.</p>
-  </li>
-  <li>
-    <p>양의 사이클을 판별할 때에는 adj[i][i] 또한 <code class="highlighter-rouge">INF</code>로 초기화 시켜준다. 이는 adj[i][i]가 adj[i][k] + adj[k][i]임을 이용하기 위한것이다.</p>
-  </li>
-  <li>문제에서 정점의 인덱스가 <code class="highlighter-rouge">0</code>부터 시작하는지, <code class="highlighter-rouge">1</code>부터 시작하는지에 따라 초기화를 적절히 해주어야한다.
-    <ul>
-      <li>그렇지 않는 경우에 <code class="highlighter-rouge">1</code>부터 시작하는데, <code class="highlighter-rouge">V번</code> 정점을 초기화하지 않는 실수들을 범할수 있다.</li>
-    </ul>
-  </li>
-  <li>문제에서 <code class="highlighter-rouge">i</code>에서 <code class="highlighter-rouge">j</code>로 가는 간선이 여러개가 입력으로 들어올 수 있다. 이 때 작은 간선을 택해주어야 한다.</li>
-</ul>
-
-<hr />
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>
-    <p>Introduction to Algorithms</p>
-  </li>
-  <li>
-    <p>알고리즘 문제 해결 전략 2</p>
-  </li>
-  <li>
-    <p><a href="https://codingdog.tistory.com/entry/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC%EA%B0%80-%EA%B0%B1%EC%8B%A0%EB%90%98%EB%8A%94%EA%B0%80?category=1055063" target="_blank">https://codingdog.tistory.com/entry/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC%EA%B0%80-%EA%B0%B1%EC%8B%A0%EB%90%98%EB%8A%94%EA%B0%80?category=1055063</a></p>
-  </li>
-  <li>
-    <p><a href="https://cloge.tistory.com/28" target="_blank">https://cloge.tistory.com/28</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.geeksforgeeks.org/detecting-negative-cycle-using-floyd-warshall/?ref=rp" target="_blank">https://www.geeksforgeeks.org/detecting-negative-cycle-using-floyd-warshall/?ref=rp</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/" target="_blank">https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/</a></p>
-  </li>
-  <li>
-    <p><a href="https://dl.acm.org/doi/10.1145/367766.368168" target="_blank">https://dl.acm.org/doi/10.1145/367766.368168</a></p>
-  </li>
-</ul>
+<p>$\frac{\partial u}{\partial b}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial b}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial b}+\frac{\partial u}{\partial z}\frac{\partial z}{\partial b}$</p>
 
                 </div>
             </section>
@@ -546,7 +382,7 @@ into the {body} of the default.hbs template -->
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/algorithm/">Algorithm</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/deep-learning/">Deep learning</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -556,146 +392,29 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/bellman-ford-algorithm">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/dijkstra-algorithm">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/why-dijkstra-fail-on-a-negative-weighted-edge">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                    
-                                  
                                 
                                   
-                                    
-                                        
-                                        
-                                    
-                                  
                                 
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
                                   
                                 
                                   
@@ -720,14 +439,51 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                 
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-2-linear-algebra">D2L 2 - Linear Algebra</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-2-ndarray-pandas">D2L 2 - ndarray, pandas</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-1-introduction">D2L 1-1 Introduction</a></li>
+                                        
+                                    
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/algorithm/">
+                            <a href="/tag/deep-learning/">
                                 
-                                    See all 19 posts  →
+                                    See all 3 posts  →
                                 
                             </a>
                         </footer>
@@ -737,6 +493,59 @@ into the {body} of the default.hbs template -->
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/MLcoursera-3-1">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/MLcoursera-3-1">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Machine learning</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Coursera</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">ML Coursera 3-1 Logistic Regression</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/hy38-main-picture2.jpg" alt="Sanghyun Park" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/hy38/">Sanghyun Park</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
@@ -744,26 +553,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/bellman-ford-algorithm">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/green-red-arrow.jpg)"></div>
+            <a class="post-card-image-link" href="/MLcoursera-2-1">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/bellman-ford-algorithm">
+            <a class="post-card-content-link" href="/MLcoursera-2-1">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Algorithm</span>
+                               <span class="post-card-tags">Machine learning</span>
                             
                         
                             
-                                <span class="post-card-tags">Theory</span>
+                                <span class="post-card-tags">Coursera</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</h2>
+                    <h2 class="post-card-title">ML Coursera 2-1 Linear Regression with Multiple Variables</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -809,18 +618,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm</div>
+    <div class="floating-header-title">D2L 2 - Calculus</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C+%EC%9B%8C%EC%85%9C+%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98+%EA%B5%AC%ED%98%84+-+Floyd-Warshall+Shortest+Path+Algorithm&amp;url=https://hy38.github.iofloyd-warshall-algorithm"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+2+-+Calculus&amp;url=https://hy38.github.ioD2L-2-calculus"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.iofloyd-warshall-algorithm"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-2-calculus"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

@@ -201,6 +201,14 @@
     } ,
   
     {
+      "title"    : "D2L 2 - Calculus",
+      "category" : "",
+      "tags"     : "deep learning, calculus",
+      "url"      : "https://hy38.github.io/D2L-2-calculus",
+      "date"     : "2019-06-01 19:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "ML Coursera 2-1 Linear Regression with Multiple Variables",
       "category" : "",
       "tags"     : "machine learning, Coursera",

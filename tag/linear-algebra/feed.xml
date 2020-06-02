@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/linear-algebra/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-01T13:29:22+09:00</updated>
+  <updated>2020-06-02T20:52:22+09:00</updated>
   <id>https://hy38.github.io/tag/linear-algebra/feed.xml</id>
 
   
@@ -41,7 +41,7 @@
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;exercise--linear-algebra&quot;&gt;Exercise : linear algebra&lt;/h3&gt;
+&lt;h3 id=&quot;exercise--linear-algebra-basic&quot;&gt;Exercise : Linear Algebra (Basic)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Prove that the transpose of a matrix A’s transpose is  A : $(𝐀^T)^⊤ = A$.&lt;/strong&gt;&lt;/li&gt;
