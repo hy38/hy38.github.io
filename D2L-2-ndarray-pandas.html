@@ -237,7 +237,7 @@ into the {body} of the default.hbs template -->
 
 <h3 id="exercise--ndarray">Exercise : ndarray</h3>
 
-<p>1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you can get.</p>
+<p><strong>1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you can get.</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mxnet</span> <span class="kn">import</span> <span class="n">np</span>
 
@@ -260,7 +260,7 @@ into the {body} of the default.hbs template -->
 <span class="c">#  [ True  True  True  True]]</span>
 </code></pre></div></div>
 
-<p>2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?</p>
+<p><strong>2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To broadcast you need to have dimensions of size 1, or matching dimensions across your tensors</span>
 
@@ -327,7 +327,7 @@ into the {body} of the default.hbs template -->
 <span class="c"># 3       NaN   NaN  140000</span>
 </code></pre></div></div>
 
-<p>1) Delete the column with the most missing values.</p>
+<p><strong>1) Delete the column with the most missing values.</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
@@ -359,7 +359,7 @@ into the {body} of the default.hbs template -->
 <p>As shown by <code class="highlighter-rouge">maxNaCount</code>, the most value missing column in this data is NumRooms.
 We delete <code class="highlighter-rouge">NumRooms</code> using <code class="highlighter-rouge">del</code>.</p>
 
-<p>2) Convert the preprocessed dataset to the ndarray format.</p>
+<p><strong>2) Convert the preprocessed dataset to the ndarray format.</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Convert 'Alley' column data to 2 columns</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">dummy_na</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -540,6 +540,15 @@ We delete <code class="highlighter-rouge">NumRooms</code> using <code class="hig
                                     
                                         
                                         
+                                            <li><a href="/D2L-2-autograd">D2L 2 - autograd</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/D2L-2-calculus">D2L 2 - Calculus</a></li>
                                         
                                     
@@ -568,8 +577,6 @@ We delete <code class="highlighter-rouge">NumRooms</code> using <code class="hig
                                     
                                         
                                         
-                                            <li><a href="/D2L-1-introduction">D2L 1-1 Introduction</a></li>
-                                        
                                     
                                   
                                 
@@ -578,7 +585,7 @@ We delete <code class="highlighter-rouge">NumRooms</code> using <code class="hig
                         <footer class="read-next-card-footer">
                             <a href="/tag/deep-learning/">
                                 
-                                    See all 3 posts  →
+                                    See all 4 posts  →
                                 
                             </a>
                         </footer>

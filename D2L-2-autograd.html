@@ -11,7 +11,7 @@
 
 
 
-    <title>ML Coursera 6-1 Advice for Applying Machine Learning</title>
+    <title>D2L 2 - autograd</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,30 +40,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/MLcoursera-6-1" />
+    <link rel="canonical" href="https://hy38.github.io/D2L-2-autograd" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ML Coursera 6-1 Advice for Applying Machine Learning" />
-    <meta property="og:description" content="Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Advice for Applying Machine Learning 지금까지 선형회귀와 분류, 신경망에 대해 알아보았습니다. 이제 이것들을 구현하여 나온 결과값들을 분석하여 어떤 문제점들이 있는지, 어떻게 개선해나가야 할지에 대해 살펴보겠습니다. 또한, 모델을 선택하는데에 있어 몇차식(d)을 사용할지와, 정규화 매개변수인 $\lambda$를 어떻게 정할지를 알아보겠습니다. Deciding what to try next" />
-    <meta property="og:url" content="https://hy38.github.io/MLcoursera-6-1" />
-    <meta property="og:image" content="https://hy38.github.io/assets/images/ml.jpg" />
+    <meta property="og:title" content="D2L 2 - autograd" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : autograd 1) Why is the second derivative much more expensive to compute than the first derivative? First of all, from the perspective of memory, you need to store the first derivative result. Also, you" />
+    <meta property="og:url" content="https://hy38.github.io/D2L-2-autograd" />
+    <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2019-07-31T19:00:00+09:00" />
-    <meta property="article:modified_time" content="2019-07-31T19:00:00+09:00" />
-    <meta property="article:tag" content="Machine Learning" />
+    <meta property="article:published_time" content="2019-06-02T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-06-02T19:00:00+09:00" />
+    <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ML Coursera 6-1 Advice for Applying Machine Learning" />
-    <meta name="twitter:description" content="Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Advice for Applying Machine Learning 지금까지 선형회귀와 분류, 신경망에 대해 알아보았습니다. 이제 이것들을 구현하여 나온 결과값들을 분석하여 어떤 문제점들이 있는지, 어떻게 개선해나가야 할지에 대해 살펴보겠습니다. 또한, 모델을 선택하는데에 있어 몇차식(d)을 사용할지와, 정규화 매개변수인 $\lambda$를 어떻게 정할지를 알아보겠습니다. Deciding what to try next" />
+    <meta name="twitter:title" content="D2L 2 - autograd" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : autograd 1) Why is the second derivative much more expensive to compute than the first derivative? First of all, from the perspective of memory, you need to store the first derivative result. Also, you" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
-    <meta name="twitter:image" content="https://hy38.github.io/assets/images/ml.jpg" />
+    <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="HY38's IT Blog" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Machine Learning" />
+    <meta name="twitter:data2" content="Deep Learning" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -78,18 +78,18 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/MLcoursera-6-1",
+    "url": "https://hy38.github.io/D2L-2-autograd",
     "image": {
         "@type": "ImageObject",
-        "url": "https://hy38.github.io/assets/images/ml.jpg",
+        "url": "https://hy38.github.io/assets/images/d2l/brain.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/MLcoursera-6-1"
+        "@id": "https://hy38.github.io/D2L-2-autograd"
     },
-    "description": "Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다. Advice for Applying Machine Learning 지금까지 선형회귀와 분류, 신경망에 대해 알아보았습니다. 이제 이것들을 구현하여 나온 결과값들을 분석하여 어떤 문제점들이 있는지, 어떻게 개선해나가야 할지에 대해 살펴보겠습니다. 또한, 모델을 선택하는데에 있어 몇차식(d)을 사용할지와, 정규화 매개변수인 $\lambda$를 어떻게 정할지를 알아보겠습니다. Deciding what to try next"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : autograd 1) Why is the second derivative much more expensive to compute than the first derivative? First of all, from the perspective of memory, you need to store the first derivative result. Also, you"
 }
     </script>
     
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="ML Coursera 6-1 Advice for Applying Machine Learning" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 2 - autograd" href="/feed.xml" />
 
 
 </head>
@@ -199,269 +199,202 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="31 July 2019">31 July 2019</time>
+                    <time class="post-full-meta-date" datetime=" 2 June 2019"> 2 June 2019</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/machine-learning/'>MACHINE LEARNING</a>,
+                               <a href='/tag/deep-learning/'>DEEP LEARNING</a>,
                             
                         
                             
-                               <a href='/tag/coursera/'>COURSERA</a>
+                               <a href='/tag/autograd/'>AUTOGRAD</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">ML Coursera 6-1 Advice for Applying Machine Learning</h1>
+                <h1 class="post-full-title">D2L 2 - autograd</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/ml.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/d2l/brain.png)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>Coursera Andrew Ng 교수님의 ML 강의를 정리한 포스트입니다.</p>
+  <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h1 id="advice-for-applying-machine-learning">Advice for Applying Machine Learning</h1>
-
-<p>지금까지 선형회귀와 분류, 신경망에 대해 알아보았습니다. 이제 이것들을 구현하여 나온 결과값들을 <strong>분석</strong>하여 어떤 문제점들이 있는지, 어떻게 개선해나가야 할지에 대해 살펴보겠습니다.
-또한, 모델을 선택하는데에 있어 몇차식(d)을 사용할지와, 정규화 매개변수인 $\lambda$를 어떻게 정할지를 알아보겠습니다.</p>
-
-<h2 id="deciding-what-to-try-next">Deciding what to try next</h2>
-
-<p>시작은 집값을 예측하는 linear regression으로 시작하겠습니다.
-현재 상황은 이렇습니다 : 
-cost function J를 minimize하는 theta를 구하여(train) 그 theta들을 가지고 새로운 데이터에 적용시켜보았더니(test) 예측결과가 영 꽝인 상황입니다.
-이 때 어떤것들을 시도해봐야할까요? 아래는 우리가 시도해볼 수 있는 작업들입니다.</p>
-
-<ul>
-  <li>더 많은 데이터를 사용한다.</li>
-  <li>feature의 수를 줄인다.</li>
-  <li>feature의 수를 늘린다.</li>
-  <li>polynomial feature을 추가한다.</li>
-  <li>regularization parameter $\lambda$를 줄이거나 키워본다.</li>
-</ul>
-
-<h3 id="machine-learning-diagnostics">Machine Learning Diagnostics</h3>
-
-<p>위 작업들 중에서 어떤 경우에 사용해야하며, 어떤 경우에는 효과가 미미한지를 구별해나갈 것입니다.
-예를들어, 데이터를 수집하는데에 소요되는 시간이 6개월이지만, 정작 더 많은 데이터가 있어도 모델이 개선되지 않는다면 6개월의 시간낭비를 한 셈일것입니다.
-우리는 <strong>진단</strong>하는 법을 배움으로써 <strong>Time saving</strong>을 할 수 있게 될것입니다.</p>
-
-<h2 id="evaluation-a-hypothesis">Evaluation a Hypothesis</h2>
-
-<p>우리가 학습을 통해 cost function을 minimize하는 $\theta$를 구할때, 과연 이 cost function의 작은 <strong>error</strong>가 좋은것일지 생각해볼 필요가 있습니다.
-너무 적은 error을 갖는 parameter는 <strong>오버피팅</strong>을 의심하게 만듭니다.
-이는 곧 parameter가 <strong>generalize</strong>를 잘 하지 못함을 의미하며, <strong>새로운 데이터</strong>에 좋지 않은 결과를 보일것입니다.
-$h(\theta)x$를 그려보면 overfitting을 눈대중으로 파악할 수 있겠지만, feature의 개수가 많아질수록 $h(\theta)x$를 그리기가 힘들어지고, 불가능해집니다.</p>
-
-<p>결국 우리의 가설함수 $h(\theta)x$를 <strong>다른 방법으로 Evaluate</strong>할 필요성이 생기게 되는데요, 우리가 가진 데이터셋을 70:30의 비율로 쪼개 training set(70%)과 test set(30%)을 만듭니다. 물론 데이터가 섞이도록 shuffle을 해줘야합니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/train-test-split.png" alt="train_test_split" /></p>
-
-<h3 id="train-and-test-scheme">Train and Test Scheme</h3>
-
-<p>데이터셋의 분할 이후에는 다음과 같은 순서로 가설함수 $h(\theta)x$를 평가합니다.</p>
-
-<ol>
-  <li>training set(70%)의 데이터를 이용하여 parameter $\theta$를 학습시킨다.</li>
-  <li>30%의 남은 데이터를 이용하여 <strong>Test Error</strong>을 구한다.</li>
-</ol>
-
-<p>이 때 Test Error $J_test(\theta)$ 은 다음과 같이 구합니다.</p>
-<ul>
-  <li>linear regression:</li>
-</ul>
-
-<p><img src="/assets/images/ml/coursera/week6/J-test-linear-regression.png" alt="J_test_linear_regression" /></p>
-
-<ul>
-  <li>logistic regression:</li>
-</ul>
-
-<p><img src="/assets/images/ml/coursera/week6/J-test-logistic-regression.png" alt="J_test_logistic_regression" /></p>
-
-<p>이때 logistic regression에서는 더욱 간소화된 test error을 사용합니다. 이것을 <strong>misclassification error</strong>라고 부르며, 
-이는 다음과 같습니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/J-test-new-error.png" alt="J_test_new_error" /></p>
-
-<p><img src="/assets/images/ml/coursera/week6/J-test-new-full-function.png" alt="J_test_new_full_function" /></p>
-
-<p>이것들이 hypothesis의 학습정도를 평가하는 <strong>일반적인</strong> 방법입니다.</p>
-
-<h2 id="model-selection-and-training-validation-test-sets">Model Selection and training Validation Test Sets</h2>
-
-<p>다음은 모델 선택시 몇차다항식이 가장 효과적인지 비교하고 가장 효과적인 차수의 다항식을 사용하는 방법을 알아보겠습니다.</p>
-
-<p>이 때 가설함수가 몇차다항식이냐를 d 로 표현합니다. 3차다항식의 가설함수의 경우에 d는 3이 되겠죠?</p>
-
-<p>우선, 다음과 같이 d=1 ~ d=10의 총 10개의 가설함수를 만듭니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/ten-hypothesis-function.png" alt="ten_hypothesis_function" /></p>
-
-<p>그리고 각각의 가설함수에 대해 cost function을 minimize하는 $\theta$를 구합니다. 총 10개의 $\theta$가 나옵니다. 
-<strong>이 때 주의할 점은 $\theta$를 구하는 과정에서 training set의 데이터를 이용해야합니다.</strong></p>
-
-<p>training set을 이용하여 구한 10개의 $\theta$를 이제는 $J_test(\theta)$에 넣어줍니다.</p>
-
-<p>이 error function 중 가장 적은 error을 갖는 d를 채택하면 됩니다.</p>
-
-<p>그러나, 이렇게 하면 모델이 training data를 memorise하게된다고 합니다. 실제로도 많이 발생한다고 합니다.</p>
-
-<p>그래서 더 좋은 방법이 있습니다. 바로 Cross Validation set을 이용하는것인데요,
-train, cross validation, test set의 비율을 60 : 20 : 20으로 분할하는 방법입니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/split-into-three-sets.png" alt="split_into_three_sets" /></p>
-
-<p>기존과 같이 training set을 이용하여 학습을 시키고, 학습된 $\theta$들을 이용하여 각각의 <strong>Cross Validation Error</strong>를 구한 후
-가장 낮은 <strong>Cross Validation Error</strong>을 갖는 d를 채택하는 방식입니다.</p>
-
-<p>달라진 것이라면, test set은 전혀 건들지 않고, test error가 아닌 <strong>cross validation error</strong>을 이용하여 d를 구한다는 것입니다.</p>
-
-<h2 id="diagnosis---bias-vs-variance">Diagnosis - Bias vs Variance</h2>
-
-<p>다음으로, 집값을 예측했을 때 예측결과가 High Bias(underfitting)을 겪는지 High Variance(Overfitting)을 겪는지를 판별하는 법을 알아보겠습니다.
-이 그래프는 d(다항식의 차수)에 따른 error을 나타내주는 그래프인데요, 이를 통해 성능이 잘 나오지 않는 모델이 underfitting을 겪는지, 혹은 overfitting겪는지 구별할 수 있습니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/Jcv-Jtrain-graph.png" alt="Jcv_Jtrain_graph" />
-image</p>
-
-<p>먼저, High Bias인 경우에는 $J_train$과 $J_cv$가 비슷한 높은 error을 갖습니다. 이 경우 underfit을 의심할 수 있습니다.
-다음으로, High Variance인 경우에는 $J_cv$가 크고 $J_train$이 작은 error을 갖습니다. 이 경우 overfit이 의심되며, 충분히 자명해보입니다.</p>
-
-<p><strong>이 그래프는 매우 중요한 그래프이며, overfit과 underfit의 차이를 드러냅니다.</strong></p>
-
-<h2 id="regularization-and-biasvariance">Regularization and Bias/Variance</h2>
-
-<p>이제 $\lambda$를 고르는 방법에 대해 알아봅시다.
-정규화 매개변수인 $\lambda$는 너무 높게 설정하면 underfit(high bias)이, 너무 작게 설정하면 overfit(high variance)이 발생합니다.</p>
-
-<p><strong>따라서, 적정한 값의 $\lambda$를 설정하는 것은 좋은 결과를 내는데에 중요한 역할을 합니다.</strong></p>
-
-<p>다음은 좋은 람다값을 찾는 방법입니다.</p>
-
-<ul>
-  <li>다양한 $\lambda$를 설정한다. (보통 10개)</li>
-  <li>각각의 $\lambda$들의 cost function J($\theta$)를 최소화하는 각각의 $\theta$들을 구한다.</li>
-  <li>이 $\lambda$들에 매칭되는 $\theta$들을 $J_cv(\theta)$에 넣는다.</li>
-  <li>최소의 $J_cv(\theta)$를 갖는 $\theta$를 찾아 $J_test(\theta)$에 넣는다.</li>
-  <li>그 $\lambda$가 잘 골라졌는지 확인한다.</li>
-</ul>
-
-<p><img src="/assets/images/ml/coursera/week6/lambda-selection.png" alt="lambda_selection" /></p>
-
-<p><strong>이 때의 $J_train, J_cv, J_test$는 모두 regularization term이 삭제된 식임을 주의해주세요.</strong></p>
-
-<script type="math/tex; mode=display">Regularization Term : + {\lambda \over 2m} \sum_{j=1}^{m}\theta_j^2</script>
-
-<p>추가로, 다음 그래프는 $\lambda$에 따른 $J_cv$, $J_train$을 나타낸 것입니다. 위에서 본 그래프와 비교하면 좌우로 대칭이 된것을 확인할 수 있습니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/lambda-graph.png" alt="lambda_graph" /></p>
-
-<h2 id="learning-curves">Learning Curves</h2>
-
-<h3 id="learning-curve란">Learning Curve란?</h3>
-
-<p>learning curve란 성능 향상을, 혹은 알고리즘이 적합한지를 체크(algorithmic sanity check)할 때 주로 사용되는 그래프로,
-$J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
-
-<p>이 그래프 또한 <strong>high bias와 high variance를 구별하기 위해</strong>, 또한 <strong>데이터를 추가해야할지 여부</strong>에 대해 자주 쓰이므로 잘 알아둘 필요가 있어보입니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/learning-curve-general.png" alt="learning_curve_general" /></p>
-
-<p>일반적으로 $J_train$은 m이 작으면 fitting이 쉽지만, m이 커질수록 모든 data를 fitting하지 못하는 경우가 생기고, 이로인해 $J_train$ error가 증가합니다.</p>
-
-<p>반면, $J_cv$는 m들이 추가될수록 generalize되기 쉬워지며, 그에 따라 $J_cv$ error가 감소합니다.</p>
-
-<h3 id="learning-curve---high-bias">Learning Curve - High Bias</h3>
-
-<p>우선, High bias problem 즉 언더피팅의 경우를 살펴봅시다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/learning-curve-underfit.png" alt="learning_curve_underfit" /></p>
-
-<p>이 경우 그래프의 특징은 <strong>높은 error에서의 수렴</strong>입니다. 따라서 m의 증가가 error 감소에 아주 미미한 영향을 주게되며, <strong>결과적으로 데이터양의 증가가 결과값 개선에 큰 도움을 주지 못합니다.</strong></p>
-
-<p>이는 낮은 degree의 가설함수를 갖는 $J_cv$가 데이터수에 따른 영향을 적게받기 때문입니다.</p>
-
-<p>다음 그림을 참고하시면 도움이 될 것 같습니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/learning-curve-underfit-m.png" alt="learning_curve_underfit_m" /></p>
-
-<h3 id="learning-curve---high-variance">Learning Curve - High Variance</h3>
-
-<p>다음은 High variance problem 즉 오버피팅의 경우입니다.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/learning-curve-overrfit.png" alt="learning_curve_overfit" /></p>
-
-<p>오버피팅 러닝커브의 특징은 <strong>일반적인 m에 대해 아주 높은 $J_cv$를 갖는다는 것</strong>인데요, 이 때 x축(m)을 연장시켜주면 <strong>낮은 error로 이동</strong>하는것을 보실수 있습니다. 이와같이 m이 커질수록 $J_cv$가 점점 작아지는것을 확인할 수 있는데요, <strong>결과적으로 많은 데이터가 결과값 개선에 도움을 줍니다.</strong></p>
-
-<p>이는 높은 degree의 가설함수를 갖는 $J_cv$가 데이터를 잘 fitting하기 때문입니다. 오버피팅의 힘일까요?</p>
-
-<p>역시 다음 그림을 참고해주세요.</p>
-
-<p><img src="/assets/images/ml/coursera/week6/learning-curve-overfit-m.png" alt="learning_curve_overfit_m" /></p>
-
-<p>이 그래프는 $J_cv$와 $J_train$간의 <strong>Gap</strong>이 또다른 특징입니다. 이를 통해 쉽게 오버피팅을 파악할 수 있습니다.</p>
-
-<p>** 이 그래프들은 이상적인 경우의 그래프이며, 실제 데이터를 사용하다보면 훨씬 지저분한 그래프들을 만나게 될 것입니다. **</p>
-
-<h2 id="what-to-do-next-revisited">What to do next (revisited)</h2>
-
-<p>이번 포스트의 처음에 우리의 결과값이 좋지 않을때 시도해볼 수 있는것들에 대해 나열했었습니다.
-이제 그것들을 케이스별로 분류하면서 정리하겠습니다.</p>
-
-<ul>
-  <li>더 많은 데이터를 사용한다.  =&gt; fixes high variance</li>
-  <li>feature의 수를 줄인다.  =&gt; fixes high variance</li>
-  <li>feature의 수를 늘린다.  =&gt; fixes high bias</li>
-  <li>polynomial feature을 추가한다.  =&gt; fixes high bias</li>
-  <li>regularization parameter $\lambda$를 줄인다.  =&gt; fixes high bias</li>
-  <li>regularization parameter $\lambda$를 키운다.  =&gt; fixes high variance</li>
-</ul>
-
-<h3 id="selecting-a-network-architecture">Selecting a Network Architecture</h3>
-
-<p>뉴럴넷의 크기를 결정할 때 참고하면 좋을 상황들입니다. 각각 장단점이 존재합니다.</p>
-
-<ol>
-  <li>Small neural network</li>
-</ol>
-
-<ul>
-  <li>장점 : 연산량이 적다</li>
-  <li>단점 : parameter가 충분하지 않기 때문에 underfitting에 취약하다</li>
-</ul>
-
-<ol>
-  <li>Larger nueral network</li>
-</ol>
-
-<ul>
-  <li>장점 : 아무래도 좋은 결과값이 나온다.</li>
-  <li>단점 : 연산량이 많아지며, overfitting에 취약하다</li>
-  <li>특이사항 : overfitting은 regularization을 통해 해결할 수 있다.</li>
-</ul>
-
-<ol>
-  <li>종합</li>
-</ol>
-
-<ul>
-  <li>시작은 하나의 hidden layer로 시작하는 것이 좋다.</li>
-  <li>주로 큰 nueral network를 고른 후 overfitting을 regularization을 통해 해결하는것이 더 좋다.</li>
-</ul>
-
-<p>이상으로 6주차의 첫번째 섹션을 알아보았습니다. 결과값이 우리가 원한대로 나오지 않은 경우의 해결법에 대해 알아보았고,
-다음 포스트에는 <a href="/ml/MLcoursera-6-2/">Machine Learning System Design</a> 에 대해 알아보겠습니다.</p>
-
-<p>감사합니다.</p>
-
+<h3 id="exercise--autograd">Exercise : autograd</h3>
+
+<p><strong>1) Why is the second derivative much more expensive to compute than the first derivative?</strong></p>
+
+<p>First of all, from the perspective of memory, you need to store the first derivative result.</p>
+
+<p>Also, you need extra time for first derivative result to be calculated.</p>
+
+<p><strong>2) After running y.backward(), immediately run it again and see what happens.</strong></p>
+
+<p>The kernel died. I don’t get the reason it happens.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>  <span class="c"># y is a vector</span>
+<span class="n">y</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+
+<span class="n">y</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>3) In the control flow example where we calculate the derivative of d with respect to a, what would happen if we changed the variable a to a random vector or matrix. At this point, the result of the calculation f(a) is no longer a scalar. What happens to the result? How do we analyze this?</strong></p>
+
+<p>Changing $a$ to a random matrix, the result $d = f(a)$ comes to be a matrix having same size of $a$.</p>
+
+<p>Analizing the $d = f(a)$ for a random matrix $a$, it is very similar when $a$ is a scalar value.</p>
+
+<p>The <code class="highlighter-rouge">==</code> calculation results some of the elements to be <code class="highlighter-rouge">false</code>, but it is because of the floating point division. You can see it below.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [[ 1.0731696   1.8307649   0.12017461 -1.1468065 ]</span>
+<span class="c">#  [-0.9711102   0.05383795 -0.77569664 -2.5074806 ]</span>
+<span class="c">#  [-0.7882176  -0.59164983  0.7417728   0.8586049 ]</span>
+<span class="c">#  [-1.4734439  -0.22794184 -1.0730928   0.20131476]</span>
+<span class="c">#  [-1.0424827   0.35005474 -1.3278849   0.5360521 ]]</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [[ 27473.14    46867.582    3076.47   -29358.246 ]</span>
+<span class="c">#  [-24860.422    1378.2517 -19857.834  -64191.504 ]</span>
+<span class="c">#  [-20178.371  -15146.235   18989.383   21980.285 ]</span>
+<span class="c">#  [-37720.164   -5835.311  -27471.176    5153.6577]</span>
+<span class="c">#  [-26687.559    8961.401  -33993.855   13722.934 ]]</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">grad</span> <span class="o">==</span> <span class="n">d</span> <span class="o">/</span> <span class="n">a</span>
+<span class="c"># Result :</span>
+<span class="c"># array([[ True,  True,  True,  True],</span>
+<span class="c">#        [ True, False,  True,  True],</span>
+<span class="c">#        [ True,  True,  True,  True],</span>
+<span class="c">#        [ True,  True,  True, False],</span>
+<span class="c">#        [ True,  True, False,  True]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [[25600. 25600. 25600. 25600.]</span>
+<span class="c">#  [25600. 25600. 25600. 25600.]</span>
+<span class="c">#  [25600. 25600. 25600. 25600.]</span>
+<span class="c">#  [25600. 25600. 25600. 25600.]</span>
+<span class="c">#  [25600. 25600. 25600. 25600.]]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [[25600.    25600.    25600.    25600.   ]</span>
+<span class="c">#  [25600.    25600.002 25600.    25600.   ]</span>
+<span class="c">#  [25600.    25600.    25600.    25600.   ]</span>
+<span class="c">#  [25600.    25600.    25600.    25599.998]</span>
+<span class="c">#  [25600.    25600.    25600.002 25600.   ]]</span>
+</code></pre></div></div>
+
+<p><strong>4) Redesign an example of finding the gradient of the control flow. Run and analyze the result.</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">c</span>
+</code></pre></div></div>
+
+<p>Since $d = -100a^2 + 200a$, then $d’ = a.grad = -200a + 200$.</p>
+
+<p>As a result, a.grad will have the value of c’, d.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># 10.241542</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># 9994.166</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># -48.30835</span>
+
+<span class="k">print</span><span class="p">((</span><span class="n">d</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span><span class="n">a</span><span class="p">))</span>
+<span class="c"># Result :</span>
+<span class="c"># -48.30835</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">grad</span> <span class="o">==</span> <span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span><span class="n">a</span><span class="p">))</span>
+<span class="c"># Result :</span>
+<span class="c"># True</span>
+</code></pre></div></div>
+
+<p>Note that the <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code> can be changed by floating point division.</p>
+
+<p><strong>5) Let 𝑓(𝑥)=sin(𝑥). Plot 𝑓(𝑥) and 𝑑𝑓(𝑥)𝑑𝑥, where the latter is computed without exploiting that 𝑓′(𝑥)=cos(𝑥).</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">d2l</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
+    <span class="n">sin</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">sin</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [ 1.          0.9950042   0.9800666   0.9553365   0.921061    0.87758255</span>
+<span class="c">#   0.8253356   0.7648422   0.6967067   0.6216099   0.5403023   0.4535961</span>
+<span class="c">#   0.3623577   0.26749876  0.16996716  0.0707372  -0.02919955 -0.12884454</span>
+<span class="c">#  -0.22720216 -0.32328954 -0.41614684 -0.5048462  -0.58850116 -0.666276</span>
+<span class="c">#  -0.7373938  -0.8011436  -0.85688883 -0.90407217 -0.9422223  -0.9709582 ]</span>
+
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">sin</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">],</span> <span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s">'sin'</span><span class="p">,</span> <span class="s">'cos'</span><span class="p">])</span>
+</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/34434143/83609736-a391de00-a5b9-11ea-86a2-8807f734a326.png" alt="sin_cos" /></p>
+
+<p>Moreover, the graph x.grad seems to be cosine. So, lets see if it is.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="c"># Result :</span>
+<span class="c"># [ True  True  True  True  True  True  True  True  True  True  True  True</span>
+<span class="c">#   True  True  True  True  True  True  True  True  True  True  True  True</span>
+<span class="c">#   True  True  True  True  True  True]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">sin</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># [1.         1.         1.         1.0000001  1.         1.</span>
+<span class="c">#  1.         1.         1.         1.         0.99999994 1.</span>
+<span class="c">#  1.         1.         1.         1.         0.99999994 1.0000001</span>
+<span class="c">#  1.         1.         0.99999994 1.         1.         1.</span>
+<span class="c">#  1.0000001  0.9999999  1.         1.         1.         0.99999994]</span>
+</code></pre></div></div>
+
+<p>Yes, it is cosine.</p>
+
+<p><del><strong>6) In a second-price auction (such as in eBay or in computational advertising), the winning bidder pays the second-highest price. Compute the gradient of the final price with respect to the winning bidder’s bid using autograd. What does the result tell you about the mechanism? If you are curious to learn more about second-price auctions, check out the paper by Edelman et al. :cite:Edelman.Ostrovsky.Schwarz.2007.</strong></del></p>
 
                 </div>
             </section>
@@ -564,7 +497,7 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/machine-learning/">Machine learning</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/deep-learning/">Deep learning</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -614,6 +547,16 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
                                   
                                 
                                   
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
                                     
                                   
                                 
@@ -621,32 +564,18 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
                                     
                                         
                                         
-                                            <li><a href="/MLcoursera-5-1">ML Coursera 5-1 Neural Networks - Learning</a></li>
+                                            <li><a href="/D2L-2-calculus">D2L 2 - Calculus</a></li>
                                         
                                     
+                                  
+                                
                                   
                                 
                                   
                                     
                                         
                                         
-                                            <li><a href="/MLcoursera-4-1">ML Coursera 4-1 Neural Networks - Representation</a></li>
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                            <li><a href="/MLcoursera-3-2">ML Coursera 3-2 Regularization</a></li>
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
+                                            <li><a href="/D2L-2-linear-algebra">D2L 2 - Linear Algebra</a></li>
                                         
                                     
                                   
@@ -659,14 +588,7 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
                                     
                                         
                                         
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
+                                            <li><a href="/D2L-2-ndarray-pandas">D2L 2 - ndarray, pandas</a></li>
                                         
                                     
                                   
@@ -676,18 +598,14 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
                                         
                                         
                                     
-                                  
-                                
-                                  
-                                
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/machine-learning/">
+                            <a href="/tag/deep-learning/">
                                 
-                                    See all 7 posts  →
+                                    See all 4 posts  →
                                 
                             </a>
                         </footer>
@@ -701,30 +619,26 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/BOJ-14502">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/lab.jpg)"></div>
+            <a class="post-card-image-link" href="/MLcoursera-3-1">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/BOJ-14502">
+            <a class="post-card-content-link" href="/MLcoursera-3-1">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Dfs</span>
+                               <span class="post-card-tags">Machine learning</span>
                             
                         
                             
-                               <span class="post-card-tags">Bfs</span>
-                            
-                        
-                            
-                                <span class="post-card-tags">Algorithm</span>
+                                <span class="post-card-tags">Coursera</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">BOJ 14502 - 연구소</h2>
+                    <h2 class="post-card-title">ML Coursera 3-1 Logistic Regression</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -761,26 +675,26 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/MLcoursera-5-1">
-                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
+            <a class="post-card-image-link" href="/D2L-2-calculus">
+                <div class="post-card-image" style="background-image: url(/assets/images/d2l/brain.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/MLcoursera-5-1">
+            <a class="post-card-content-link" href="/D2L-2-calculus">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Machine learning</span>
+                               <span class="post-card-tags">Deep learning</span>
                             
                         
                             
-                                <span class="post-card-tags">Coursera</span>
+                                <span class="post-card-tags">Calculus</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">ML Coursera 5-1 Neural Networks - Learning</h2>
+                    <h2 class="post-card-title">D2L 2 - Calculus</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -826,18 +740,18 @@ $J_cv(\theta)$와 $J_train(\theta)$를 m에 따라 나타낸 것입니다.</p>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">ML Coursera 6-1 Advice for Applying Machine Learning</div>
+    <div class="floating-header-title">D2L 2 - autograd</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=ML+Coursera+6-1+Advice+for+Applying+Machine+Learning&amp;url=https://hy38.github.ioMLcoursera-6-1"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+2+-+autograd&amp;url=https://hy38.github.ioD2L-2-autograd"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioMLcoursera-6-1"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-2-autograd"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 2 - Linear Algebra" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$ turns" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) 1) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$" />
     <meta property="og:url" content="https://hy38.github.io/D2L-2-linear-algebra" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 2 - Linear Algebra" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$ turns" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) 1) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-2-linear-algebra"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$ turns"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Algebra (Basic) 1) Prove that the transpose of a matrix A’s transpose is A : $(𝐀^T)^⊤ = A$. By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$"
 }
     </script>
     
@@ -229,15 +229,11 @@ into the {body} of the default.hbs template -->
 
 <h3 id="exercise--linear-algebra-basic">Exercise : Linear Algebra (Basic)</h3>
 
-<ul>
-  <li><strong>Prove that the transpose of a matrix A’s transpose is  A : $(𝐀^T)^⊤ = A$.</strong></li>
-</ul>
+<p><strong>1) Prove that the transpose of a matrix A’s transpose is  A : $(𝐀^T)^⊤ = A$.</strong></p>
 
 <p>By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$ turns to be $A_(ij)$, the origin A itself.</p>
 
-<ul>
-  <li><strong>Given two matrices A and B, show that the sum of transposes is equal to the transpose of a sum: $A^T + B^T = (A + B)^T$.</strong></li>
-</ul>
+<p><strong>2) Given two matrices A and B, show that the sum of transposes is equal to the transpose of a sum: $A^T + B^T = (A + B)^T$.</strong></p>
 
 <p>This can be shown with some short line of codes below.</p>
 
@@ -257,9 +253,7 @@ into the {body} of the default.hbs template -->
 <span class="c">#        [ True,  True,  True,  True]])</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Given any square matrix A, is $A + A^T$  always symmetric? Why?</strong></li>
-</ul>
+<p><strong>3) Given any square matrix A, is $A + A^T$  always symmetric? Why?</strong></p>
 
 <p>What means a matrix to be <code class="highlighter-rouge">**symmetric**</code>? What is <code class="highlighter-rouge">**symmetric matrix**</code>?</p>
 
@@ -277,9 +271,7 @@ into the {body} of the default.hbs template -->
 
 <p>Conclusively, we get a new matrix C to be always a symmetric matrix.</p>
 
-<ul>
-  <li><strong>We defined the tensor X of shape (2, 3, 4) in this section. What is the output of len(X)?</strong></li>
-</ul>
+<p><strong>4) We defined the tensor X of shape (2, 3, 4) in this section. What is the output of len(X)?</strong></p>
 
 <p>We have made a Tensor X as below.</p>
 
@@ -303,9 +295,7 @@ into the {body} of the default.hbs template -->
 <span class="c"># 2</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>For a tensor X of arbitrary shape, does len(X) always correspond to the length of a certain axis of X? What is that axis?</strong></li>
-</ul>
+<p><strong>5) For a tensor X of arbitrary shape, does len(X) always correspond to the length of a certain axis of X? What is that axis?</strong></p>
 
 <p>It corresponds to the length of axis 0.</p>
 
@@ -324,13 +314,13 @@ into the {body} of the default.hbs template -->
 <span class="c"># 4</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Run A / A.sum(axis=1) and see what happens. Can you analyze the reason?</strong></li>
-</ul>
+<p><strong>6) Run A / A.sum(axis=1) and see what happens. Can you analyze the reason?</strong></p>
 
 <p>Actually the matrix(or the tensor) A is not clearly defined. So we should think about 2 different cases.</p>
 
-<p>1) A is a 5 x 4 matrix</p>
+<ul>
+  <li>A is a 5 x 4 matrix</li>
+</ul>
 
 <p>By summing up with axis=1, it means this calculation reduces the dimension axis=1. This summation result would be a vector shape of (5, ).</p>
 
@@ -361,7 +351,9 @@ into the {body} of the default.hbs template -->
 <span class="c">#  [0.22857143 0.24285714 0.25714287 0.27142859]]</span>
 </code></pre></div></div>
 
-<p>2) A is a 4 x 4 matrix</p>
+<ul>
+  <li>A is a 4 x 4 matrix</li>
+</ul>
 
 <p>The case when matrix A is a square matrix, the A / A.sum(axis=1) calculation would result (4 x 4) matrix since it invokes broadcasting.</p>
 
@@ -400,7 +392,9 @@ into the {body} of the default.hbs template -->
 <span class="c">#  [0.22222222 0.24074075 0.25925925 0.2777778 ]]</span>
 </code></pre></div></div>
 
-<p>3) A is a 4 x 2 x 4 tensor</p>
+<ul>
+  <li>A is a 4 x 2 x 4 tensor</li>
+</ul>
 
 <p>It was a long way to show what <code class="highlighter-rouge">axis=1</code> does. But in tensor, it is more easier to understand.</p>
 
@@ -430,17 +424,13 @@ into the {body} of the default.hbs template -->
 
 </code></pre></div></div>
 
-<ul>
-  <li><strong>When traveling between two points in Manhattan, what is the distance that you need to cover in terms of the coordinates, i.e., in terms of avenues and streets? Can you travel diagonally?</strong></li>
-</ul>
+<p><strong>7) When traveling between two points in Manhattan, what is the distance that you need to cover in terms of the coordinates, i.e., in terms of avenues and streets? Can you travel diagonally?</strong></p>
 
 <p>I’m not sure what this question wants. But what I might guess is <code class="highlighter-rouge">L1 norm</code> because we call <code class="highlighter-rouge">L1 norm</code> the <code class="highlighter-rouge">Manhattan Norm</code>. (We call <code class="highlighter-rouge">L2 norm</code> the <code class="highlighter-rouge">Euclidean Norm</code>.)</p>
 
 <p>I don’t know what I should answer to this question..</p>
 
-<ul>
-  <li><strong>Consider a tensor with shape (2, 3, 4). What are the shapes of the summation outputs along axis 0, 1, and 2?</strong></li>
-</ul>
+<p><strong>8) Consider a tensor with shape (2, 3, 4). What are the shapes of the summation outputs along axis 0, 1, and 2?</strong></p>
 
 <p>This is a similar question up above.</p>
 
@@ -477,9 +467,7 @@ into the {body} of the default.hbs template -->
 <span class="c">#  [54. 70. 86.]]</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Feed a tensor with 3 or more axes to the linalg.norm function and observe its output. What does this function compute for ndarrays of arbitrary shape?</strong></li>
-</ul>
+<p><strong>9) Feed a tensor with 3 or more axes to the linalg.norm function and observe its output. What does this function compute for ndarrays of arbitrary shape?</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -680,6 +668,15 @@ You can arbitrary change the order of norm calculation by filling up the <code c
                                     
                                         
                                         
+                                            <li><a href="/D2L-2-autograd">D2L 2 - autograd</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/D2L-2-calculus">D2L 2 - Calculus</a></li>
                                         
                                     
@@ -708,8 +705,6 @@ You can arbitrary change the order of norm calculation by filling up the <code c
                                     
                                         
                                         
-                                            <li><a href="/D2L-1-introduction">D2L 1-1 Introduction</a></li>
-                                        
                                     
                                   
                                 
@@ -718,7 +713,7 @@ You can arbitrary change the order of norm calculation by filling up the <code c
                         <footer class="read-next-card-footer">
                             <a href="/tag/deep-learning/">
                                 
-                                    See all 3 posts  →
+                                    See all 4 posts  →
                                 
                             </a>
                         </footer>
