@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hy38.github.io/tag/probability/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
+  <updated>2020-06-04T18:10:47+09:00</updated>
+  <id>https://hy38.github.io/tag/probability/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">HY38’s IT Blog | </title>
+  
+
+  
+    <subtitle>b Ha p</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">D2L 2 - Probability</title>
+      <link href="https://hy38.github.io/D2L-2-probability" rel="alternate" type="text/html" title="D2L 2 - Probability" />
+      <published>2019-06-04T19:00:00+09:00</published>
+      <updated>2019-06-04T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-2-probability</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-2-probability">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--probability&quot;&gt;Exercise : Probability&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I have varied m and n arbitrary and got these graphs below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Increasing drawing samples(n)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;![image](https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png)&quot; alt=&quot;500m_1000n&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719608-63426680-a672-11ea-9cf7-2a5d9bb96e8a.png&quot; alt=&quot;500m_100000n&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Increasing number of groups(m)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719738-b3b9c400-a672-11ea-9be4-aceab07e70b9.png&quot; alt=&quot;50000m_10n&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Increasing both number of groups and the samples each group draws.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719871-f8455f80-a672-11ea-90e5-9fe4d7237e7f.png&quot; alt=&quot;50000m_1000n&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$ 0 \leq 𝑃(A∪B) \leq 1 $&lt;/p&gt;
+
+&lt;p&gt;$ 0 \leq 𝑃(A∩B) \leq 0.5$&lt;/p&gt;
+
+&lt;p&gt;The upper bound of 𝑃(A∪B) is when A and B is mutually exclusive. If P(A) + P(B) = 1, it becomes the upper bound. Also, the upper bound of 𝑃(A∩B) is when A is in B or B is in A. If P(A) = P(B) = 0.5, it becomes the upper bound.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, the lower bound 𝑃(A∪B) is when A is in B or vice versa. If P(A) = P(B) = 0, it becomes the lower bound. The lower bound of 𝑃(A∩B) is when A and B is mutually exclusive. Then the lower bound of 𝑃(A∩B) becomes 0.&lt;/p&gt;
+
+&lt;p&gt;You can notice that these two are opposite.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4) In &lt;a href=&quot;https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app&quot; target=&quot;_blank&quot;&gt;Section 2.6.2.6&lt;/a&gt;, the first test is more accurate. Why not just run the first test a second time?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;that when usedin  conjunctionwith the old test, will give a lower false discoveryrate because the results of the two tests are conditionally independent given the disease state of thepatient.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="probability" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
