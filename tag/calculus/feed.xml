@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/calculus/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-04T18:10:47+09:00</updated>
+  <updated>2020-06-05T11:07:15+09:00</updated>
   <id>https://hy38.github.io/tag/calculus/feed.xml</id>
 
   
@@ -43,7 +43,7 @@
 
 &lt;h3 id=&quot;exercise--calculus-basic&quot;&gt;Exercise : Calculus (Basic)&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-plot-the-function-y--fx--x3---dfrac1x-and-its-tangent-line-when-x--1&quot;&gt;1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$.&lt;/h6&gt;
 
 &lt;p&gt;Lets first define the function y in python. After, what I have to do is finding the tangent line of y when x is 1.&lt;/p&gt;
 
@@ -71,7 +71,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83482268-d87b3380-a4da-11ea-9761-c7fabce37097.png&quot; alt=&quot;tangent_line&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Find the gradient of the function $f(x) = 3x_1^2 + 5e^{x_2}$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-find-the-gradient-of-the-function-fx--3x_12--5ex_2&quot;&gt;2) Find the gradient of the function $f(x) = 3x_1^2 + 5e^{x_2}$.&lt;/h6&gt;
 
 &lt;p&gt;By differentiating the function with respect to each variable $x_1$, $x_2$ can we get the gradient of f(x).&lt;/p&gt;
 
@@ -81,7 +81,7 @@
 
 &lt;p&gt;$\nabla f(x) = (6 x_{1}, 5 e^{x_{2}})$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3) What is the gradient of the function $f(\mathbf{x}) = ||\mathbf{x}||_2$?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-what-is-the-gradient-of-the-function-fmathbfx--mathbfx_2&quot;&gt;3) What is the gradient of the function $f(\mathbf{x}) = ||\mathbf{x}||_2$?&lt;/h6&gt;
 
 &lt;p&gt;Since $ ||\mathbf{x}||_2 = (x_1^2 + x_2^2 + …)^\frac{1}{2} $,&lt;/p&gt;
 
@@ -89,7 +89,7 @@
 
 &lt;p&gt;you can get the answer : $\nabla_{\mathbf{x}} ||\mathbf{x}||_2 = \frac{\mathbf{x}}{||\mathbf{x}||_2}$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;4) Can you write out the chain rule for the case where $u = f(x, y, z)$ and $x = x(a, b), y = y(a, b)$, and $z = z(a, b)$?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;4-can-you-write-out-the-chain-rule-for-the-case-where-u--fx-y-z-and-x--xa-b-y--ya-b-and-z--za-b&quot;&gt;4) Can you write out the chain rule for the case where $u = f(x, y, z)$ and $x = x(a, b), y = y(a, b)$, and $z = z(a, b)$?&lt;/h6&gt;
 
 &lt;p&gt;$\frac{\partial u}{\partial a}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial a}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial a}+\frac{\partial u}{\partial z}\frac{\partial z}{\partial a}$&lt;/p&gt;
 

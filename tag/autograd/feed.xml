@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/autograd/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-04T18:10:47+09:00</updated>
+  <updated>2020-06-05T11:07:15+09:00</updated>
   <id>https://hy38.github.io/tag/autograd/feed.xml</id>
 
   
@@ -43,13 +43,13 @@
 
 &lt;h3 id=&quot;exercise--autograd&quot;&gt;Exercise : autograd&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Why is the second derivative much more expensive to compute than the first derivative?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-why-is-the-second-derivative-much-more-expensive-to-compute-than-the-first-derivative&quot;&gt;1) Why is the second derivative much more expensive to compute than the first derivative?&lt;/h6&gt;
 
 &lt;p&gt;First of all, from the perspective of memory, you need to store the first derivative result.&lt;/p&gt;
 
 &lt;p&gt;Also, you need extra time for first derivative result to be calculated.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) After running y.backward(), immediately run it again and see what happens.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-after-running-ybackward-immediately-run-it-again-and-see-what-happens&quot;&gt;2) After running y.backward(), immediately run it again and see what happens.&lt;/h6&gt;
 
 &lt;p&gt;The kernel died. I don’t get the reason it happens.&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;3) In the control flow example where we calculate the derivative of d with respect to a, what would happen if we changed the variable a to a random vector or matrix. At this point, the result of the calculation f(a) is no longer a scalar. What happens to the result? How do we analyze this?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-in-the-control-flow-example-where-we-calculate-the-derivative-of-d-with-respect-to-a-what-would-happen-if-we-changed-the-variable-a-to-a-random-vector-or-matrix-at-this-point-the-result-of-the-calculation-fa-is-no-longer-a-scalar-what-happens-to-the-result-how-do-we-analyze-this&quot;&gt;3) In the control flow example where we calculate the derivative of d with respect to a, what would happen if we changed the variable a to a random vector or matrix. At this point, the result of the calculation f(a) is no longer a scalar. What happens to the result? How do we analyze this?&lt;/h6&gt;
 
 &lt;p&gt;Changing $a$ to a random matrix, the result $d = f(a)$ comes to be a matrix having same size of $a$.&lt;/p&gt;
 
@@ -118,7 +118,7 @@
 &lt;span class=&quot;c&quot;&gt;#  [25600.    25600.    25600.002 25600.   ]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;4) Redesign an example of finding the gradient of the control flow. Run and analyze the result.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;4-redesign-an-example-of-finding-the-gradient-of-the-control-flow-run-and-analyze-the-result&quot;&gt;4) Redesign an example of finding the gradient of the control flow. Run and analyze the result.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
@@ -161,7 +161,7 @@
 
 &lt;p&gt;Note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; can be changed by floating point division.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;5) Let 𝑓(𝑥)=sin(𝑥). Plot 𝑓(𝑥) and 𝑑𝑓(𝑥)𝑑𝑥, where the latter is computed without exploiting that 𝑓′(𝑥)=cos(𝑥).&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;5-let-𝑓𝑥sin𝑥-plot-𝑓𝑥-and-𝑑𝑓𝑥𝑑𝑥-where-the-latter-is-computed-without-exploiting-that-𝑓𝑥cos𝑥&quot;&gt;5) Let 𝑓(𝑥)=sin(𝑥). Plot 𝑓(𝑥) and 𝑑𝑓(𝑥)𝑑𝑥, where the latter is computed without exploiting that 𝑓′(𝑥)=cos(𝑥).&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;d2l&lt;/span&gt;

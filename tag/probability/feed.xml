@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/probability/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-04T18:10:47+09:00</updated>
+  <updated>2020-06-05T11:07:15+09:00</updated>
   <id>https://hy38.github.io/tag/probability/feed.xml</id>
 
   
@@ -43,7 +43,7 @@
 
 &lt;h3 id=&quot;exercise--probability&quot;&gt;Exercise : Probability&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-we-conducted-𝑚500-groups-of-experiments-where-each-group-draws-𝑛10-samples-vary-𝑚-and-𝑛-observe-and-analyze-the-experimental-results&quot;&gt;1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.&lt;/h6&gt;
 
 &lt;p&gt;I have varied m and n arbitrary and got these graphs below.&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;![image](https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png)&quot; alt=&quot;500m_1000n&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png&quot; alt=&quot;500m_1000n&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -79,7 +79,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719871-f8455f80-a672-11ea-90e5-9fe4d7237e7f.png&quot; alt=&quot;50000m_1000n&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-given-two-events-with-probability-𝑃a-and-𝑃b-compute-upper-and-lower-bounds-on-𝑃ab-and-𝑃ab-hint-display-the-situation-using-a-venn-diagram&quot;&gt;2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)&lt;/h6&gt;
 
 &lt;p&gt;$ 0 \leq 𝑃(A∪B) \leq 1 $&lt;/p&gt;
 
@@ -91,11 +91,29 @@
 
 &lt;p&gt;You can notice that these two are opposite.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-assume-that-we-have-a-sequence-of-random-variables-say-𝐴-𝐵-and-𝐶-where-𝐵-only-depends-on-𝐴-and-𝐶-only-depends-on-𝐵-can-you-simplify-the-joint-probability-𝑃𝐴𝐵𝐶-hint-this-is-a-markov-chain&quot;&gt;3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)&lt;/h6&gt;
 
-&lt;p&gt;&lt;strong&gt;4) In &lt;a href=&quot;https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app&quot; target=&quot;_blank&quot;&gt;Section 2.6.2.6&lt;/a&gt;, the first test is more accurate. Why not just run the first test a second time?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We need to analyze the relationship of A, B, C first.&lt;/p&gt;
 
-&lt;p&gt;that when usedin  conjunctionwith the old test, will give a lower false discoveryrate because the results of the two tests are conditionally independent given the disease state of thepatient.&lt;/p&gt;</content>
+&lt;p&gt;Because C only depends on B, C only occurs when B occurs. So P(B) = P(C).&lt;/p&gt;
+
+&lt;p&gt;Similarly, because B depends on A, B only occurs when A occurs. So P(A) = P(B).&lt;/p&gt;
+
+&lt;p&gt;Combining these two relations, P(A) = P(B) = P(C).&lt;/p&gt;
+
+&lt;p&gt;Thus, P(A, B, C) is P(A) (or P(B) or P(C) since the three are same).&lt;/p&gt;
+
+&lt;h6 id=&quot;4-in-section-2626-the-first-test-is-more-accurate-why-not-just-run-the-first-test-a-second-time&quot;&gt;4) In &lt;a href=&quot;https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app&quot; target=&quot;_blank&quot;&gt;Section 2.6.2.6&lt;/a&gt;, the first test is more accurate. Why not just run the first test a second time?&lt;/h6&gt;
+
+&lt;p&gt;Using the different test, the two test get conditionally independent given the disease state of the patient.&lt;/p&gt;
+
+&lt;p&gt;So, by conjuncting with the first test, will have a lower false discovery rate.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf&quot; target=&quot;_blank&quot;&gt;http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
 
       
       

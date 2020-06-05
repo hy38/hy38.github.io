@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/pandas/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-04T18:10:47+09:00</updated>
+  <updated>2020-06-05T11:07:15+09:00</updated>
   <id>https://hy38.github.io/tag/pandas/feed.xml</id>
 
   
@@ -32,8 +32,8 @@
 
   
     <entry>
-      <title type="html">D2L 2 - ndarray, pandas</title>
-      <link href="https://hy38.github.io/D2L-2-ndarray-pandas" rel="alternate" type="text/html" title="D2L 2 - ndarray, pandas" />
+      <title type="html">D2L 2 - Data Manipulation &amp;amp; Processing</title>
+      <link href="https://hy38.github.io/D2L-2-ndarray-pandas" rel="alternate" type="text/html" title="D2L 2 - Data Manipulation &amp; Processing" />
       <published>2019-05-27T19:00:00+09:00</published>
       <updated>2019-05-27T19:00:00+09:00</updated>
       <id>https://hy38.github.io/D2L-2-ndarray-pandas</id>
@@ -41,9 +41,9 @@
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;exercise--ndarray&quot;&gt;Exercise : ndarray&lt;/h3&gt;
+&lt;h3 id=&quot;exercise--data-manipulation-ndarray&quot;&gt;Exercise : Data Manipulation (ndarray)&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Run the code in this section. Change the conditional statement x == y in this section to x &amp;lt; y or x &amp;gt; y, and then see what kind of ndarray you can get.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-run-the-code-in-this-section-change-the-conditional-statement-x--y-in-this-section-to-x--y-or-x--y-and-then-see-what-kind-of-ndarray-you-can-get&quot;&gt;1) Run the code in this section. Change the conditional statement x == y in this section to x &amp;lt; y or x &amp;gt; y, and then see what kind of ndarray you can get.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mxnet&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
 
@@ -66,7 +66,7 @@
 &lt;span class=&quot;c&quot;&gt;#  [ True  True  True  True]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-replace-the-two-ndarrays-that-operate-by-element-in-the-broadcasting-mechanism-with-other-shapes-eg-three-dimensional-tensors-is-the-result-the-same-as-expected&quot;&gt;2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# To broadcast you need to have dimensions of size 1, or matching dimensions across your tensors&lt;/span&gt;
 
@@ -118,7 +118,7 @@
 &lt;span class=&quot;c&quot;&gt;#         [11., 12.]]])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;exercise--pandas&quot;&gt;Exercise : pandas&lt;/h3&gt;
+&lt;h3 id=&quot;exercise--data-processing-pandas&quot;&gt;Exercise : Data Processing (pandas)&lt;/h3&gt;
 
 &lt;p&gt;Create a raw dataset with more rows and columns.&lt;/p&gt;
 
@@ -133,7 +133,7 @@
 &lt;span class=&quot;c&quot;&gt;# 3       NaN   NaN  140000&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Delete the column with the most missing values.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-delete-the-column-with-the-most-missing-values&quot;&gt;1) Delete the column with the most missing values.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -165,7 +165,7 @@
 &lt;p&gt;As shown by &lt;code class=&quot;highlighter-rouge&quot;&gt;maxNaCount&lt;/code&gt;, the most value missing column in this data is NumRooms.
 We delete &lt;code class=&quot;highlighter-rouge&quot;&gt;NumRooms&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;del&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Convert the preprocessed dataset to the ndarray format.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-convert-the-preprocessed-dataset-to-the-ndarray-format&quot;&gt;2) Convert the preprocessed dataset to the ndarray format.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Convert 'Alley' column data to 2 columns&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_dummies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dummy_na&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;

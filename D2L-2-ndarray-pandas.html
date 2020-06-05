@@ -11,7 +11,7 @@
 
 
 
-    <title>D2L 2 - ndarray, pandas</title>
+    <title>D2L 2 - Data Manipulation & Processing</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -46,8 +46,8 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="D2L 2 - ndarray, pandas" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : ndarray 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you" />
+    <meta property="og:title" content="D2L 2 - Data Manipulation & Processing" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Data Manipulation (ndarray) 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of" />
     <meta property="og:url" content="https://hy38.github.io/D2L-2-ndarray-pandas" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -56,8 +56,8 @@
     <meta property="article:modified_time" content="2019-05-27T19:00:00+09:00" />
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="D2L 2 - ndarray, pandas" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : ndarray 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you" />
+    <meta name="twitter:title" content="D2L 2 - Data Manipulation & Processing" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Data Manipulation (ndarray) 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-2-ndarray-pandas"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : ndarray 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Data Manipulation (ndarray) 1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of"
 }
     </script>
     
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="D2L 2 - ndarray, pandas" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 2 - Data Manipulation & Processing" href="/feed.xml" />
 
 
 </head>
@@ -221,7 +221,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">D2L 2 - ndarray, pandas</h1>
+                <h1 class="post-full-title">D2L 2 - Data Manipulation & Processing</h1>
             </header>
 
             
@@ -235,9 +235,9 @@ into the {body} of the default.hbs template -->
   <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h3 id="exercise--ndarray">Exercise : ndarray</h3>
+<h3 id="exercise--data-manipulation-ndarray">Exercise : Data Manipulation (ndarray)</h3>
 
-<p><strong>1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you can get.</strong></p>
+<h6 id="1-run-the-code-in-this-section-change-the-conditional-statement-x--y-in-this-section-to-x--y-or-x--y-and-then-see-what-kind-of-ndarray-you-can-get">1) Run the code in this section. Change the conditional statement x == y in this section to x &lt; y or x &gt; y, and then see what kind of ndarray you can get.</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mxnet</span> <span class="kn">import</span> <span class="n">np</span>
 
@@ -260,7 +260,7 @@ into the {body} of the default.hbs template -->
 <span class="c">#  [ True  True  True  True]]</span>
 </code></pre></div></div>
 
-<p><strong>2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?</strong></p>
+<h6 id="2-replace-the-two-ndarrays-that-operate-by-element-in-the-broadcasting-mechanism-with-other-shapes-eg-three-dimensional-tensors-is-the-result-the-same-as-expected">2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To broadcast you need to have dimensions of size 1, or matching dimensions across your tensors</span>
 
@@ -312,7 +312,7 @@ into the {body} of the default.hbs template -->
 <span class="c">#         [11., 12.]]])</span>
 </code></pre></div></div>
 
-<h3 id="exercise--pandas">Exercise : pandas</h3>
+<h3 id="exercise--data-processing-pandas">Exercise : Data Processing (pandas)</h3>
 
 <p>Create a raw dataset with more rows and columns.</p>
 
@@ -327,7 +327,7 @@ into the {body} of the default.hbs template -->
 <span class="c"># 3       NaN   NaN  140000</span>
 </code></pre></div></div>
 
-<p><strong>1) Delete the column with the most missing values.</strong></p>
+<h6 id="1-delete-the-column-with-the-most-missing-values">1) Delete the column with the most missing values.</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
@@ -359,7 +359,7 @@ into the {body} of the default.hbs template -->
 <p>As shown by <code class="highlighter-rouge">maxNaCount</code>, the most value missing column in this data is NumRooms.
 We delete <code class="highlighter-rouge">NumRooms</code> using <code class="highlighter-rouge">del</code>.</p>
 
-<p><strong>2) Convert the preprocessed dataset to the ndarray format.</strong></p>
+<h6 id="2-convert-the-preprocessed-dataset-to-the-ndarray-format">2) Convert the preprocessed dataset to the ndarray format.</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Convert 'Alley' column data to 2 columns</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">dummy_na</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -723,13 +723,13 @@ We delete <code class="highlighter-rouge">NumRooms</code> using <code class="hig
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">D2L 2 - ndarray, pandas</div>
+    <div class="floating-header-title">D2L 2 - Data Manipulation & Processing</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+2+-+ndarray%2C+pandas&amp;url=https://hy38.github.ioD2L-2-ndarray-pandas"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+2+-+Data+Manipulation+%26+Processing&amp;url=https://hy38.github.ioD2L-2-ndarray-pandas"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 

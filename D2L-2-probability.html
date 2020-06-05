@@ -229,7 +229,7 @@ into the {body} of the default.hbs template -->
 
 <h3 id="exercise--probability">Exercise : Probability</h3>
 
-<p><strong>1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.</strong></p>
+<h6 id="1-we-conducted-𝑚500-groups-of-experiments-where-each-group-draws-𝑛10-samples-vary-𝑚-and-𝑛-observe-and-analyze-the-experimental-results">1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.</h6>
 
 <p>I have varied m and n arbitrary and got these graphs below.</p>
 
@@ -240,7 +240,7 @@ into the {body} of the default.hbs template -->
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multinomial</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">fair_probs</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="![image](https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png)" alt="500m_1000n" /></p>
+<p><img src="https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png" alt="500m_1000n" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multinomial</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="n">fair_probs</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div></div>
@@ -265,7 +265,7 @@ into the {body} of the default.hbs template -->
 
 <p><img src="https://user-images.githubusercontent.com/34434143/83719871-f8455f80-a672-11ea-90e5-9fe4d7237e7f.png" alt="50000m_1000n" /></p>
 
-<p><strong>2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)</strong></p>
+<h6 id="2-given-two-events-with-probability-𝑃a-and-𝑃b-compute-upper-and-lower-bounds-on-𝑃ab-and-𝑃ab-hint-display-the-situation-using-a-venn-diagram">2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)</h6>
 
 <p>$ 0 \leq 𝑃(A∪B) \leq 1 $</p>
 
@@ -277,11 +277,29 @@ into the {body} of the default.hbs template -->
 
 <p>You can notice that these two are opposite.</p>
 
-<p><strong>3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)</strong></p>
+<h6 id="3-assume-that-we-have-a-sequence-of-random-variables-say-𝐴-𝐵-and-𝐶-where-𝐵-only-depends-on-𝐴-and-𝐶-only-depends-on-𝐵-can-you-simplify-the-joint-probability-𝑃𝐴𝐵𝐶-hint-this-is-a-markov-chain">3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)</h6>
 
-<p><strong>4) In <a href="https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app" target="_blank">Section 2.6.2.6</a>, the first test is more accurate. Why not just run the first test a second time?</strong></p>
+<p>We need to analyze the relationship of A, B, C first.</p>
 
-<p>that when usedin  conjunctionwith the old test, will give a lower false discoveryrate because the results of the two tests are conditionally independent given the disease state of thepatient.</p>
+<p>Because C only depends on B, C only occurs when B occurs. So P(B) = P(C).</p>
+
+<p>Similarly, because B depends on A, B only occurs when A occurs. So P(A) = P(B).</p>
+
+<p>Combining these two relations, P(A) = P(B) = P(C).</p>
+
+<p>Thus, P(A, B, C) is P(A) (or P(B) or P(C) since the three are same).</p>
+
+<h6 id="4-in-section-2626-the-first-test-is-more-accurate-why-not-just-run-the-first-test-a-second-time">4) In <a href="https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app" target="_blank">Section 2.6.2.6</a>, the first test is more accurate. Why not just run the first test a second time?</h6>
+
+<p>Using the different test, the two test get conditionally independent given the disease state of the patient.</p>
+
+<p>So, by conjuncting with the first test, will have a lower false discovery rate.</p>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf" target="_blank">http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf</a></li>
+</ul>
 
                 </div>
             </section>

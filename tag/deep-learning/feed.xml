@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-04T18:10:47+09:00</updated>
+  <updated>2020-06-05T11:07:15+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -43,7 +43,7 @@
 
 &lt;h3 id=&quot;exercise--probability&quot;&gt;Exercise : Probability&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-we-conducted-𝑚500-groups-of-experiments-where-each-group-draws-𝑛10-samples-vary-𝑚-and-𝑛-observe-and-analyze-the-experimental-results&quot;&gt;1) We conducted 𝑚=500 groups of experiments where each group draws 𝑛=10 samples. Vary 𝑚 and 𝑛. Observe and analyze the experimental results.&lt;/h6&gt;
 
 &lt;p&gt;I have varied m and n arbitrary and got these graphs below.&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;![image](https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png)&quot; alt=&quot;500m_1000n&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719462-1b234400-a672-11ea-9b68-ea60fb6f6c58.png&quot; alt=&quot;500m_1000n&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multinomial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fair_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -79,7 +79,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83719871-f8455f80-a672-11ea-90e5-9fe4d7237e7f.png&quot; alt=&quot;50000m_1000n&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-given-two-events-with-probability-𝑃a-and-𝑃b-compute-upper-and-lower-bounds-on-𝑃ab-and-𝑃ab-hint-display-the-situation-using-a-venn-diagram&quot;&gt;2) Given two events with probability 𝑃(A) and 𝑃(B), compute upper and lower bounds on 𝑃(A∪B) and 𝑃(A∩B). (Hint: display the situation using a Venn Diagram.)&lt;/h6&gt;
 
 &lt;p&gt;$ 0 \leq 𝑃(A∪B) \leq 1 $&lt;/p&gt;
 
@@ -91,11 +91,29 @@
 
 &lt;p&gt;You can notice that these two are opposite.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-assume-that-we-have-a-sequence-of-random-variables-say-𝐴-𝐵-and-𝐶-where-𝐵-only-depends-on-𝐴-and-𝐶-only-depends-on-𝐵-can-you-simplify-the-joint-probability-𝑃𝐴𝐵𝐶-hint-this-is-a-markov-chain&quot;&gt;3) Assume that we have a sequence of random variables, say 𝐴, 𝐵, and 𝐶, where 𝐵 only depends on 𝐴, and 𝐶 only depends on 𝐵, can you simplify the joint probability 𝑃(𝐴,𝐵,𝐶)? (Hint: this is a Markov Chain.)&lt;/h6&gt;
 
-&lt;p&gt;&lt;strong&gt;4) In &lt;a href=&quot;https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app&quot; target=&quot;_blank&quot;&gt;Section 2.6.2.6&lt;/a&gt;, the first test is more accurate. Why not just run the first test a second time?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We need to analyze the relationship of A, B, C first.&lt;/p&gt;
 
-&lt;p&gt;that when usedin  conjunctionwith the old test, will give a lower false discoveryrate because the results of the two tests are conditionally independent given the disease state of thepatient.&lt;/p&gt;</content>
+&lt;p&gt;Because C only depends on B, C only occurs when B occurs. So P(B) = P(C).&lt;/p&gt;
+
+&lt;p&gt;Similarly, because B depends on A, B only occurs when A occurs. So P(A) = P(B).&lt;/p&gt;
+
+&lt;p&gt;Combining these two relations, P(A) = P(B) = P(C).&lt;/p&gt;
+
+&lt;p&gt;Thus, P(A, B, C) is P(A) (or P(B) or P(C) since the three are same).&lt;/p&gt;
+
+&lt;h6 id=&quot;4-in-section-2626-the-first-test-is-more-accurate-why-not-just-run-the-first-test-a-second-time&quot;&gt;4) In &lt;a href=&quot;https://d2l.ai/chapter_preliminaries/probability.html#subsec-probability-hiv-app&quot; target=&quot;_blank&quot;&gt;Section 2.6.2.6&lt;/a&gt;, the first test is more accurate. Why not just run the first test a second time?&lt;/h6&gt;
+
+&lt;p&gt;Using the different test, the two test get conditionally independent given the disease state of the patient.&lt;/p&gt;
+
+&lt;p&gt;So, by conjuncting with the first test, will have a lower false discovery rate.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf&quot; target=&quot;_blank&quot;&gt;http://web.stanford.edu/class/archive/ee/ee178/ee178.1172/hw/hw3_sn.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
 
       
       
@@ -137,13 +155,13 @@
 
 &lt;h3 id=&quot;exercise--autograd&quot;&gt;Exercise : autograd&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Why is the second derivative much more expensive to compute than the first derivative?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-why-is-the-second-derivative-much-more-expensive-to-compute-than-the-first-derivative&quot;&gt;1) Why is the second derivative much more expensive to compute than the first derivative?&lt;/h6&gt;
 
 &lt;p&gt;First of all, from the perspective of memory, you need to store the first derivative result.&lt;/p&gt;
 
 &lt;p&gt;Also, you need extra time for first derivative result to be calculated.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) After running y.backward(), immediately run it again and see what happens.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-after-running-ybackward-immediately-run-it-again-and-see-what-happens&quot;&gt;2) After running y.backward(), immediately run it again and see what happens.&lt;/h6&gt;
 
 &lt;p&gt;The kernel died. I don’t get the reason it happens.&lt;/p&gt;
 
@@ -156,7 +174,7 @@
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;3) In the control flow example where we calculate the derivative of d with respect to a, what would happen if we changed the variable a to a random vector or matrix. At this point, the result of the calculation f(a) is no longer a scalar. What happens to the result? How do we analyze this?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-in-the-control-flow-example-where-we-calculate-the-derivative-of-d-with-respect-to-a-what-would-happen-if-we-changed-the-variable-a-to-a-random-vector-or-matrix-at-this-point-the-result-of-the-calculation-fa-is-no-longer-a-scalar-what-happens-to-the-result-how-do-we-analyze-this&quot;&gt;3) In the control flow example where we calculate the derivative of d with respect to a, what would happen if we changed the variable a to a random vector or matrix. At this point, the result of the calculation f(a) is no longer a scalar. What happens to the result? How do we analyze this?&lt;/h6&gt;
 
 &lt;p&gt;Changing $a$ to a random matrix, the result $d = f(a)$ comes to be a matrix having same size of $a$.&lt;/p&gt;
 
@@ -212,7 +230,7 @@
 &lt;span class=&quot;c&quot;&gt;#  [25600.    25600.    25600.002 25600.   ]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;4) Redesign an example of finding the gradient of the control flow. Run and analyze the result.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;4-redesign-an-example-of-finding-the-gradient-of-the-control-flow-run-and-analyze-the-result&quot;&gt;4) Redesign an example of finding the gradient of the control flow. Run and analyze the result.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
@@ -255,7 +273,7 @@
 
 &lt;p&gt;Note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; can be changed by floating point division.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;5) Let 𝑓(𝑥)=sin(𝑥). Plot 𝑓(𝑥) and 𝑑𝑓(𝑥)𝑑𝑥, where the latter is computed without exploiting that 𝑓′(𝑥)=cos(𝑥).&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;5-let-𝑓𝑥sin𝑥-plot-𝑓𝑥-and-𝑑𝑓𝑥𝑑𝑥-where-the-latter-is-computed-without-exploiting-that-𝑓𝑥cos𝑥&quot;&gt;5) Let 𝑓(𝑥)=sin(𝑥). Plot 𝑓(𝑥) and 𝑑𝑓(𝑥)𝑑𝑥, where the latter is computed without exploiting that 𝑓′(𝑥)=cos(𝑥).&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matplotlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;d2l&lt;/span&gt;
@@ -344,7 +362,7 @@
 
 &lt;h3 id=&quot;exercise--calculus-basic&quot;&gt;Exercise : Calculus (Basic)&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-plot-the-function-y--fx--x3---dfrac1x-and-its-tangent-line-when-x--1&quot;&gt;1) Plot the function $y = f(x) = x^3 - \dfrac{1}{x}$ and its tangent line when $x = 1$.&lt;/h6&gt;
 
 &lt;p&gt;Lets first define the function y in python. After, what I have to do is finding the tangent line of y when x is 1.&lt;/p&gt;
 
@@ -372,7 +390,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/34434143/83482268-d87b3380-a4da-11ea-9761-c7fabce37097.png&quot; alt=&quot;tangent_line&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Find the gradient of the function $f(x) = 3x_1^2 + 5e^{x_2}$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-find-the-gradient-of-the-function-fx--3x_12--5ex_2&quot;&gt;2) Find the gradient of the function $f(x) = 3x_1^2 + 5e^{x_2}$.&lt;/h6&gt;
 
 &lt;p&gt;By differentiating the function with respect to each variable $x_1$, $x_2$ can we get the gradient of f(x).&lt;/p&gt;
 
@@ -382,7 +400,7 @@
 
 &lt;p&gt;$\nabla f(x) = (6 x_{1}, 5 e^{x_{2}})$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3) What is the gradient of the function $f(\mathbf{x}) = ||\mathbf{x}||_2$?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-what-is-the-gradient-of-the-function-fmathbfx--mathbfx_2&quot;&gt;3) What is the gradient of the function $f(\mathbf{x}) = ||\mathbf{x}||_2$?&lt;/h6&gt;
 
 &lt;p&gt;Since $ ||\mathbf{x}||_2 = (x_1^2 + x_2^2 + …)^\frac{1}{2} $,&lt;/p&gt;
 
@@ -390,7 +408,7 @@
 
 &lt;p&gt;you can get the answer : $\nabla_{\mathbf{x}} ||\mathbf{x}||_2 = \frac{\mathbf{x}}{||\mathbf{x}||_2}$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;4) Can you write out the chain rule for the case where $u = f(x, y, z)$ and $x = x(a, b), y = y(a, b)$, and $z = z(a, b)$?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;4-can-you-write-out-the-chain-rule-for-the-case-where-u--fx-y-z-and-x--xa-b-y--ya-b-and-z--za-b&quot;&gt;4) Can you write out the chain rule for the case where $u = f(x, y, z)$ and $x = x(a, b), y = y(a, b)$, and $z = z(a, b)$?&lt;/h6&gt;
 
 &lt;p&gt;$\frac{\partial u}{\partial a}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial a}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial a}+\frac{\partial u}{\partial z}\frac{\partial z}{\partial a}$&lt;/p&gt;
 
@@ -436,11 +454,11 @@
 
 &lt;h3 id=&quot;exercise--linear-algebra-basic&quot;&gt;Exercise : Linear Algebra (Basic)&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Prove that the transpose of a matrix A’s transpose is  A : $(𝐀^T)^⊤ = A$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-prove-that-the-transpose-of-a-matrix-as-transpose-is--a--𝐀t--a&quot;&gt;1) Prove that the transpose of a matrix A’s transpose is  A : $(𝐀^T)^⊤ = A$.&lt;/h6&gt;
 
 &lt;p&gt;By transposing matrix A size of n x m, $A_(ij)$ turns into $A_(ji)$. Transposing $A_(ji)$ turns to be $A_(ij)$, the origin A itself.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Given two matrices A and B, show that the sum of transposes is equal to the transpose of a sum: $A^T + B^T = (A + B)^T$.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-given-two-matrices-a-and-b-show-that-the-sum-of-transposes-is-equal-to-the-transpose-of-a-sum-at--bt--a--bt&quot;&gt;2) Given two matrices A and B, show that the sum of transposes is equal to the transpose of a sum: $A^T + B^T = (A + B)^T$.&lt;/h6&gt;
 
 &lt;p&gt;This can be shown with some short line of codes below.&lt;/p&gt;
 
@@ -460,7 +478,7 @@
 &lt;span class=&quot;c&quot;&gt;#        [ True,  True,  True,  True]])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;3) Given any square matrix A, is $A + A^T$  always symmetric? Why?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;3-given-any-square-matrix-a-is-a--at--always-symmetric-why&quot;&gt;3) Given any square matrix A, is $A + A^T$  always symmetric? Why?&lt;/h6&gt;
 
 &lt;p&gt;What means a matrix to be &lt;code class=&quot;highlighter-rouge&quot;&gt;**symmetric**&lt;/code&gt;? What is &lt;code class=&quot;highlighter-rouge&quot;&gt;**symmetric matrix**&lt;/code&gt;?&lt;/p&gt;
 
@@ -478,7 +496,7 @@
 
 &lt;p&gt;Conclusively, we get a new matrix C to be always a symmetric matrix.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;4) We defined the tensor X of shape (2, 3, 4) in this section. What is the output of len(X)?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;4-we-defined-the-tensor-x-of-shape-2-3-4-in-this-section-what-is-the-output-of-lenx&quot;&gt;4) We defined the tensor X of shape (2, 3, 4) in this section. What is the output of len(X)?&lt;/h6&gt;
 
 &lt;p&gt;We have made a Tensor X as below.&lt;/p&gt;
 
@@ -502,7 +520,7 @@
 &lt;span class=&quot;c&quot;&gt;# 2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;5) For a tensor X of arbitrary shape, does len(X) always correspond to the length of a certain axis of X? What is that axis?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;5-for-a-tensor-x-of-arbitrary-shape-does-lenx-always-correspond-to-the-length-of-a-certain-axis-of-x-what-is-that-axis&quot;&gt;5) For a tensor X of arbitrary shape, does len(X) always correspond to the length of a certain axis of X? What is that axis?&lt;/h6&gt;
 
 &lt;p&gt;It corresponds to the length of axis 0.&lt;/p&gt;
 
@@ -521,7 +539,7 @@
 &lt;span class=&quot;c&quot;&gt;# 4&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;6) Run A / A.sum(axis=1) and see what happens. Can you analyze the reason?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;6-run-a--asumaxis1-and-see-what-happens-can-you-analyze-the-reason&quot;&gt;6) Run A / A.sum(axis=1) and see what happens. Can you analyze the reason?&lt;/h6&gt;
 
 &lt;p&gt;Actually the matrix(or the tensor) A is not clearly defined. So we should think about 2 different cases.&lt;/p&gt;
 
@@ -631,13 +649,13 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;7) When traveling between two points in Manhattan, what is the distance that you need to cover in terms of the coordinates, i.e., in terms of avenues and streets? Can you travel diagonally?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;7-when-traveling-between-two-points-in-manhattan-what-is-the-distance-that-you-need-to-cover-in-terms-of-the-coordinates-ie-in-terms-of-avenues-and-streets-can-you-travel-diagonally&quot;&gt;7) When traveling between two points in Manhattan, what is the distance that you need to cover in terms of the coordinates, i.e., in terms of avenues and streets? Can you travel diagonally?&lt;/h6&gt;
 
 &lt;p&gt;I’m not sure what this question wants. But what I might guess is &lt;code class=&quot;highlighter-rouge&quot;&gt;L1 norm&lt;/code&gt; because we call &lt;code class=&quot;highlighter-rouge&quot;&gt;L1 norm&lt;/code&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;Manhattan Norm&lt;/code&gt;. (We call &lt;code class=&quot;highlighter-rouge&quot;&gt;L2 norm&lt;/code&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;Euclidean Norm&lt;/code&gt;.)&lt;/p&gt;
 
 &lt;p&gt;I don’t know what I should answer to this question..&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;8) Consider a tensor with shape (2, 3, 4). What are the shapes of the summation outputs along axis 0, 1, and 2?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;8-consider-a-tensor-with-shape-2-3-4-what-are-the-shapes-of-the-summation-outputs-along-axis-0-1-and-2&quot;&gt;8) Consider a tensor with shape (2, 3, 4). What are the shapes of the summation outputs along axis 0, 1, and 2?&lt;/h6&gt;
 
 &lt;p&gt;This is a similar question up above.&lt;/p&gt;
 
@@ -674,7 +692,7 @@
 &lt;span class=&quot;c&quot;&gt;#  [54. 70. 86.]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;9) Feed a tensor with 3 or more axes to the linalg.norm function and observe its output. What does this function compute for ndarrays of arbitrary shape?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;9-feed-a-tensor-with-3-or-more-axes-to-the-linalgnorm-function-and-observe-its-output-what-does-this-function-compute-for-ndarrays-of-arbitrary-shape&quot;&gt;9) Feed a tensor with 3 or more axes to the linalg.norm function and observe its output. What does this function compute for ndarrays of arbitrary shape?&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linalg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;norm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -740,8 +758,8 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
     </entry>
   
     <entry>
-      <title type="html">D2L 2 - ndarray, pandas</title>
-      <link href="https://hy38.github.io/D2L-2-ndarray-pandas" rel="alternate" type="text/html" title="D2L 2 - ndarray, pandas" />
+      <title type="html">D2L 2 - Data Manipulation &amp;amp; Processing</title>
+      <link href="https://hy38.github.io/D2L-2-ndarray-pandas" rel="alternate" type="text/html" title="D2L 2 - Data Manipulation &amp; Processing" />
       <published>2019-05-27T19:00:00+09:00</published>
       <updated>2019-05-27T19:00:00+09:00</updated>
       <id>https://hy38.github.io/D2L-2-ndarray-pandas</id>
@@ -749,9 +767,9 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;exercise--ndarray&quot;&gt;Exercise : ndarray&lt;/h3&gt;
+&lt;h3 id=&quot;exercise--data-manipulation-ndarray&quot;&gt;Exercise : Data Manipulation (ndarray)&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Run the code in this section. Change the conditional statement x == y in this section to x &amp;lt; y or x &amp;gt; y, and then see what kind of ndarray you can get.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-run-the-code-in-this-section-change-the-conditional-statement-x--y-in-this-section-to-x--y-or-x--y-and-then-see-what-kind-of-ndarray-you-can-get&quot;&gt;1) Run the code in this section. Change the conditional statement x == y in this section to x &amp;lt; y or x &amp;gt; y, and then see what kind of ndarray you can get.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mxnet&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
 
@@ -774,7 +792,7 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
 &lt;span class=&quot;c&quot;&gt;#  [ True  True  True  True]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-replace-the-two-ndarrays-that-operate-by-element-in-the-broadcasting-mechanism-with-other-shapes-eg-three-dimensional-tensors-is-the-result-the-same-as-expected&quot;&gt;2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# To broadcast you need to have dimensions of size 1, or matching dimensions across your tensors&lt;/span&gt;
 
@@ -826,7 +844,7 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
 &lt;span class=&quot;c&quot;&gt;#         [11., 12.]]])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;exercise--pandas&quot;&gt;Exercise : pandas&lt;/h3&gt;
+&lt;h3 id=&quot;exercise--data-processing-pandas&quot;&gt;Exercise : Data Processing (pandas)&lt;/h3&gt;
 
 &lt;p&gt;Create a raw dataset with more rows and columns.&lt;/p&gt;
 
@@ -841,7 +859,7 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
 &lt;span class=&quot;c&quot;&gt;# 3       NaN   NaN  140000&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;1) Delete the column with the most missing values.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;1-delete-the-column-with-the-most-missing-values&quot;&gt;1) Delete the column with the most missing values.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -873,7 +891,7 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
 &lt;p&gt;As shown by &lt;code class=&quot;highlighter-rouge&quot;&gt;maxNaCount&lt;/code&gt;, the most value missing column in this data is NumRooms.
 We delete &lt;code class=&quot;highlighter-rouge&quot;&gt;NumRooms&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;del&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2) Convert the preprocessed dataset to the ndarray format.&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-convert-the-preprocessed-dataset-to-the-ndarray-format&quot;&gt;2) Convert the preprocessed dataset to the ndarray format.&lt;/h6&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Convert 'Alley' column data to 2 columns&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_dummies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dummy_na&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
