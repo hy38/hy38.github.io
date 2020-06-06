@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hy38.github.io/tag/linear-regression/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
+  <updated>2020-06-06T22:07:55+09:00</updated>
+  <id>https://hy38.github.io/tag/linear-regression/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">HY38’s IT Blog | </title>
+  
+
+  
+    <subtitle>b Ha p</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">D2L 2 - Linear Regression</title>
+      <link href="https://hy38.github.io/D2L-3-linear-regression-1" rel="alternate" type="text/html" title="D2L 2 - Linear Regression" />
+      <published>2019-06-06T19:00:00+09:00</published>
+      <updated>2019-06-06T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-linear-regression-1</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-linear-regression-1">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--linear-regression&quot;&gt;Exercise : Linear Regression&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-assume-that-we-have-some-data--x_1-ldots-x_n-in-mathbbr--our-goal-is-to-find-a-constant--b--such-that--sum_i-x_i---b2--is-minimized&quot;&gt;1) Assume that we have some data  $x_1, \ldots, x_n \in \mathbb{R}$ . Our goal is to find a constant  b  such that  $\sum_i (x_i - b)^2$  is minimized.&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find a closed-form solution for the optimal value of b .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How does this problem and its solution relate to the normal distribution?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;2-derive-the-closed-form-solution-to-the-optimization-problem-for-linear-regression-with-squared-error-to-keep-things-simple-you-can-omit-the-bias-b-from-the-problem-we-can-do-this-in-principled-fashion-by-adding-one-column-to-x-consisting-of-all-ones&quot;&gt;2) Derive the closed-form solution to the optimization problem for linear regression with squared error. To keep things simple, you can omit the bias $b$ from the problem (we can do this in principled fashion by adding one column to $X$ consisting of all ones).&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write out the optimization problem in matrix and vector notation (treat all the data as a single matrix, all the target values as a single vector).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compute the gradient of the loss with respect to $w$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the closed form solution by setting the gradient equal to zero and solving the matrix equation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When might this be better than using stochastic gradient descent? When might this method break?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;3-assume-that-the-noise-model-governing-the-additive-noise-ϵ-is-the-exponential-distribution-that-is-pepsilon--frac12-exp-epsilon&quot;&gt;3) Assume that the noise model governing the additive noise ϵ is the exponential distribution. That is, $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write out the negative log-likelihood of the data under the model $-\log P(Y \mid X)$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Can you find a closed form solution?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.datascienceblog.net/post/commentary/inference-vs-prediction/&quot; target=&quot;_blank&quot;&gt;https://www.datascienceblog.net/post/commentary/inference-vs-prediction/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="linear regression" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

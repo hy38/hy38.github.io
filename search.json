@@ -201,6 +201,14 @@
     } ,
   
     {
+      "title"    : "D2L 2 - Linear Regression",
+      "category" : "",
+      "tags"     : "deep learning, linear regression",
+      "url"      : "https://hy38.github.io/D2L-3-linear-regression-1",
+      "date"     : "2019-06-06 19:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "D2L 2 - Probability",
       "category" : "",
       "tags"     : "deep learning, probability",
