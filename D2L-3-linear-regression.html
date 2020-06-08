@@ -11,7 +11,7 @@
 
 
 
-    <title>그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph</title>
+    <title>D2L 3 - Linear Regression</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,30 +40,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/is-graph-cyclic" />
+    <link rel="canonical" href="https://hy38.github.io/D2L-3-linear-regression" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph" />
-    <meta property="og:description" content="그래프의 사이클 및 사이클 내의 정점 찾기 그래프에서 사이클(Cycle)이란? 정점 u에서 시작하여 자기 자신으로 돌아오는 경로가 있는 것을 Cyclic이라 하며, 그 경로를 Cycle이라 한다. Cycle이 존재할 경우 그 그래프는 Cyclic Graph가 된다. 방향 그래프에서 사이클의 존재 여부 확인하기 단순하게 해결할 수 있다. 모든 정점에 대해 DFS를 돌려 자기 자신으로 돌아오는" />
-    <meta property="og:url" content="https://hy38.github.io/is-graph-cyclic" />
-    <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/cycle.jpg" />
+    <meta property="og:title" content="D2L 3 - Linear Regression" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about" />
+    <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression" />
+    <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2020-02-24T04:00:00+09:00" />
-    <meta property="article:modified_time" content="2020-02-24T04:00:00+09:00" />
-    <meta property="article:tag" content="Algorithm" />
+    <meta property="article:published_time" content="2019-06-06T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-06-06T19:00:00+09:00" />
+    <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph" />
-    <meta name="twitter:description" content="그래프의 사이클 및 사이클 내의 정점 찾기 그래프에서 사이클(Cycle)이란? 정점 u에서 시작하여 자기 자신으로 돌아오는 경로가 있는 것을 Cyclic이라 하며, 그 경로를 Cycle이라 한다. Cycle이 존재할 경우 그 그래프는 Cyclic Graph가 된다. 방향 그래프에서 사이클의 존재 여부 확인하기 단순하게 해결할 수 있다. 모든 정점에 대해 DFS를 돌려 자기 자신으로 돌아오는" />
+    <meta name="twitter:title" content="D2L 3 - Linear Regression" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
-    <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/cycle.jpg" />
+    <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="HY38's IT Blog" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:data2" content="Deep Learning" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -78,18 +78,18 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/is-graph-cyclic",
+    "url": "https://hy38.github.io/D2L-3-linear-regression",
     "image": {
         "@type": "ImageObject",
-        "url": "https://hy38.github.io/assets/images/algorithm/cycle.jpg",
+        "url": "https://hy38.github.io/assets/images/d2l/brain.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/is-graph-cyclic"
+        "@id": "https://hy38.github.io/D2L-3-linear-regression"
     },
-    "description": "그래프의 사이클 및 사이클 내의 정점 찾기 그래프에서 사이클(Cycle)이란? 정점 u에서 시작하여 자기 자신으로 돌아오는 경로가 있는 것을 Cyclic이라 하며, 그 경로를 Cycle이라 한다. Cycle이 존재할 경우 그 그래프는 Cyclic Graph가 된다. 방향 그래프에서 사이클의 존재 여부 확인하기 단순하게 해결할 수 있다. 모든 정점에 대해 DFS를 돌려 자기 자신으로 돌아오는"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about"
 }
     </script>
     
@@ -107,7 +107,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderMathInElement(document.body, {
       delimiters: [
-        { left: "$$", right: "$$", display: true },
+        { left: "$$", right: "$$", display: true }, //  true : 가운데 정렬
         { left: "$", right: "$", display: false },
       ]
     });
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 3 - Linear Regression" href="/feed.xml" />
 
 
 </head>
@@ -152,6 +152,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-Algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li>
     <li class="nav-Theory" role="menuitem"><a href="/tag/theory/">Theory</a></li>
     <li class="nav-ML" role="menuitem"><a href="/tag/machine-learning/">ML</a></li>
+    <li class="nav-ML" role="menuitem"><a href="/tag/deep-learning/">D2L</a></li>
     <!-- <li class="nav-try-ghost" role="menuitem"><a href="https://ghost.org">Try Ghost</a></li> -->
 </ul>
 
@@ -198,226 +199,201 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="24 February 2020">24 February 2020</time>
+                    <time class="post-full-meta-date" datetime=" 6 June 2019"> 6 June 2019</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/algorithm/'>ALGORITHM</a>,
+                               <a href='/tag/deep-learning/'>DEEP LEARNING</a>,
                             
                         
                             
-                               <a href='/tag/theory/'>THEORY</a>
+                               <a href='/tag/linear-regression/'>LINEAR REGRESSION</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph</h1>
+                <h1 class="post-full-title">D2L 3 - Linear Regression</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/cycle.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/d2l/brain.png)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>그래프의 사이클 및 사이클 내의 정점 찾기</p>
+  <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h2 id="그래프에서-사이클cycle이란">그래프에서 사이클(Cycle)이란?</h2>
+<h3 id="prediction-vs-inference">Prediction vs Inference</h3>
 
-<blockquote>
-  <p>정점 u에서 시작하여 자기 자신으로 돌아오는 경로가 있는 것을 Cyclic이라 하며, 그 경로를 Cycle이라 한다. Cycle이 존재할 경우 그 그래프는 Cyclic Graph가 된다.</p>
-</blockquote>
+<p><code class="highlighter-rouge">Prediction</code> means using the model to predict the outcomes for <strong>new data points</strong>. The word <code class="highlighter-rouge">prediction</code> is generally used in machine learnings and deep learnings.</p>
 
-<hr />
+<p><code class="highlighter-rouge">Inference</code> means using the model to learn about the data generation process. It denotes estimating parameters based on a dataset. It is generally used in statistics.</p>
 
-<h2 id="방향-그래프에서-사이클의-존재-여부-확인하기">방향 그래프에서 사이클의 존재 여부 확인하기</h2>
+<h3 id="mlemaximum-likelihood-estimation-vs-mapmaximum-a-posteriori-estimation">MLE(Maximum Likelihood Estimation) vs MAP(Maximum a Posteriori Estimation)</h3>
+
+<p><strong>MLE is one of the method of estimation $\theta$, making the maximum likelihood.</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\hat \theta = \arg\max_\theta \mathcal L (\theta;X) = \arg\max_\theta f(X</td>
+      <td>\theta)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>MLE is very dependent on the observation (or given data).</p>
+
+<p>We usually use Maximum <strong>Log</strong>-Likelihood Estimation due to the simple computation.</p>
+
+<p><strong>Because MLE is very dependent on the observation, we bring up another method called MAP. MAP is based on MLE and Bayes’s Theorem.</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\hat \theta = \arg\max_\theta f(\theta</td>
+      <td>X)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because MAP uses both observation data and assumptions of prior data, MAP makes us get more general parameter estimation than MLE.</p>
+
+<p>However, to use the method of MAP, we need to know about $f(\theta)$.</p>
+
+<p>If we have enough assumptions about <code class="highlighter-rouge">prior</code> data we can make better estimation.</p>
+
+<p>Of course the <code class="highlighter-rouge">prior</code> data is very important since the setimation refers to the prior data. For example, if we have bad prior data, the estimation also gets bad.</p>
+
+<h3 id="exercise--linear-regression">Exercise : Linear Regression</h3>
+
+<h6 id="1-assume-that-we-have-some-data--x_1-ldots-x_n-in-mathbbr--our-goal-is-to-find-a-constant-b-such-that-sum_i-x_i---b2-is-minimized">1) Assume that we have some data  $x_1, \ldots, x_n \in \mathbb{R}$ . Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.</h6>
 
 <ul>
-  <li>
-    <p>단순하게 해결할 수 있다. 모든 정점에 대해 DFS를 돌려 자기 자신으로 돌아오는 경로가 있다면 사이클이 존재하는 것이다.</p>
-  </li>
-  <li>
-    <p>다만, 이 경우 시간복잡도가 O(V(V + E))로 높게 나온다.</p>
-  </li>
-  <li>사이클의 존재 여부는 <strong>역방향 간선(Back edge)이 존재하는지</strong>와 같은 말이다.
-    <ul>
-      <li>역방향 간선에 대한 설명은 <a href="/about-edges-in-graph" target="_blank">여기</a>를 참조하면 될 것같다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>따라서 두번째 방법은 역방향 간선을 찾으면서 DFS를 하는 것이다.</p>
-  </li>
-  <li>이 경우 일반적인 DFS의 시간복잡도인 O(V + E)가 나온다.</li>
+  <li>Find a closed-form solution for the optimal value of b .</li>
 </ul>
 
-<h3 id="방향-그래프에서의-사이클-존재-여부-확인-코드">방향 그래프에서의 사이클 존재 여부 확인 코드</h3>
+<p>The problem comes to be minimizing $\sum x_i - b$. It can be represented as $(x_1 + x_2 + … + x_n) - (nb)$.
+Since we can notate the $x$s as a vector, minimizing this function to zero is as follows.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">adj</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">vis</span><span class="p">,</span> <span class="n">finished</span><span class="p">;</span>
-<span class="kt">bool</span> <span class="n">hasCycle</span><span class="p">;</span>
+<p>$b = \dfrac{\mathbf{x}}{n}$</p>
 
-<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">vis</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">next</span><span class="p">])</span>
-            <span class="n">DFS</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">finished</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//  next가 이미 방문했지만, 종료되지 않는 정점이면
-</span>            <span class="n">hasCycle</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">finished</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>You may have noticed that it is the average of data $\mathbf{x}$.</p>
 
-<hr />
-
-<h2 id="무방향-그래프에서-사용할-수-있는-추가적인-방법">무방향 그래프에서 사용할 수 있는 추가적인 방법</h2>
+<p>Also, we can think $b$ in $x_i - b$ as a point that minimizes the $x$ values in a <code class="highlighter-rouge">number line</code>.</p>
 
 <ul>
-  <li>
-    <p>무방향 그래프에서는 간선의 방향이 정해져있지 않다.</p>
-  </li>
-  <li>
-    <p>따라서 정점의 방문 순서를 비교함으로써 사이클을 판단할 수 있다.</p>
-  </li>
-  <li>
-    <p>부모를 제외한 정점들 중 이미 방문했고, 방문순서가 더 빠른 정점이 존재하게 되면 사이클이 있다고 판단할 수 있다.</p>
-  </li>
-  <li>
-    <p>자세한 내용은 <a href="https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;logNo=221248815321&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank">여기</a>를 참조하면 될것같다.</p>
-  </li>
+  <li>How does this problem and its solution relate to the normal distribution?</li>
 </ul>
 
-<hr />
+<p>Since $b$ is the average of data $\mathbf{x}$, we can denote $(x_i - b)$ in a different way as $\mathbf{X} - \mu$.</p>
 
-<h2 id="사이클이-있는-정점들-찾기">사이클이 있는 정점들 찾기</h2>
+<h6 id="2-derive-the-closed-form-solution-to-the-optimization-problem-for-linear-regression-with-squared-error-to-keep-things-simple-you-can-omit-the-bias-b-from-the-problem-we-can-do-this-in-principled-fashion-by-adding-one-column-to-x-consisting-of-all-ones">2) Derive the closed-form solution to the optimization problem for linear regression with squared error. To keep things simple, you can omit the bias $b$ from the problem (we can do this in principled fashion by adding one column to $X$ consisting of all ones).</h6>
 
 <ul>
-  <li>
-    <p>그래프에서 사이클일 존재하는지 만으로는 다양한 문제에 적용하는데 한계가 있다.</p>
-  </li>
-  <li>
-    <p>많은 문제들이 사이클이 어떤 정점들끼리 이루어졌는지를 원한다.</p>
-  </li>
-  <li>
-    <p>사이클 안에 있는 정점들을 따로 표시해주면 될것같다.</p>
-  </li>
+  <li>Write out the optimization problem in matrix and vector notation (treat all the data as a single matrix, all the target values as a single vector).</li>
 </ul>
 
-<h2 id="사이클-내의-정점들을-표시하는-코드">사이클 내의 정점들을 표시하는 코드</h2>
+<p>$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2$</p>
+
+<p>By vectorizing the above expression, we get the expression below.</p>
+
+<p>$L(\mathbf{w}, b) = \frac{1}{n} \frac{1}{2}(\mathbf{X}\mathbf{w} - \mathbf{y})^2$</p>
 
 <ul>
-  <li>구현을 하려고하다보니, 사이클임을 확인한 시점에는 부모로 올라갈 수 있는 방법을 찾아야 했다. 이를 위해 parents라는 부모 배열을 만들어 정점의 부모를 저장했다.
-    <ul>
-      <li>예를 들어 parents[node]는 node정점의 부모를 담는다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>부모를 찾다가 부모와 사이클의 시작점(역방향 간선이 가리키는 정점)에 도달하게 되면 멈춘다.</p>
-  </li>
-  <li>사이클에 속한 정점들은 isCycle 배열에 표시해준다.</li>
+  <li>Compute the gradient of the loss with respect to $w$.</li>
 </ul>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<p>The gradient of the equation with respect to $w$ is as below.</p>
 
-<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">adj</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">parent</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">vis</span><span class="p">,</span> <span class="n">finished</span><span class="p">,</span> <span class="n">isCycle</span><span class="p">;</span>
-<span class="kt">bool</span> <span class="n">isGraphCyclic</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">countCyclicVertices</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">denoteCycle</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">next</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">isCycle</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="n">countCyclicVertices</span><span class="o">++</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="n">next</span><span class="p">)</span>
-        <span class="k">return</span><span class="p">;</span>
-    
-    <span class="n">denoteCycle</span><span class="p">(</span><span class="n">parent</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">next</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">vis</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">next</span><span class="p">])</span> <span class="p">{</span>
-            <span class="n">parent</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
-            <span class="n">DFS</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">finished</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">isGraphCyclic</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>   <span class="c1">//  그래프가 사이클을 갖는지 체크해준다.
-</span>            <span class="n">denoteCycle</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>    <span class="c1">//  사이클에 포함된 정점들을 표시해준다.
-</span>        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">finished</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>$\dfrac{1}{n} (\mathbf{X} \mathbf{w} - \mathbf{y}) X$.</p>
 
 <ul>
-  <li>
-    <p>관련문제 - <a href="https://www.acmicpc.net/problem/9466" target="_blank">BOJ 9466 - 텀 프로젝트</a></p>
-
-    <ul>
-      <li><a href="/BOJ-9466" target="_blank">풀이</a></li>
-    </ul>
-  </li>
+  <li>Find the closed form solution by setting the gradient equal to zero and solving the matrix equation.</li>
 </ul>
 
-<hr />
+<p>Since $\dfrac{1}{n} (\mathbf{X} \mathbf{w} - \mathbf{y}) X = 0$, we remove the $\dfrac{1}{n}$ term, $X$ term.</p>
 
-<h3 id="참고-사항">참고 사항</h3>
+<p>Thus, the equation changes as follows.</p>
+
+<p>$\mathbf{X} \mathbf{w} - \mathbf{y} = 0$.</p>
+
+<p>Then, we will multiply $mathbf{X}^T$ and develop the equation as</p>
+
+<p>$\mathbf{X}^T \mathbf{X} \mathbf{w} - \mathbf{X}^T \mathbf{y} = 0$.</p>
+
+<p>Finally, we get this <strong>normal equation</strong> below.</p>
+
+<p>$\mathbf{w} = (\mathbf X^\top \mathbf X)^{-1}\mathbf X^\top \mathbf{y}.$</p>
 
 <ul>
-  <li>
-    <p>DFS 스패닝 트리에서 부모는 하나이기 때문에 가능한 구현인 것 같다.</p>
-  </li>
-  <li>
-    <p>위 코드는 그래프가 사이클이 있는지를 조사함과 동시에 어떤 정점들이 사이클에 속해있는지까지도 알려준다.</p>
-  </li>
-  <li>
-    <p>반복문을 이용해 만들어보려 했지만, 구조적인 문제와 직관성때문에 재귀적으로 구현하게 되었다.</p>
-  </li>
+  <li>When might this be better than using stochastic gradient descent? When might this method break?</li>
 </ul>
 
-<hr />
+<p>(1) Normal equation method</p>
 
-<h2 id="references">References</h2>
+<p>Because this method is non-iterative, this normal equation method is better when we deal datas which size is under 10000. But, this method does inverse matrix calculation, having time-complexity of $O(n^3)$.</p>
+
+<p>Also, we do not have to care about the learning rate.</p>
+
+<p>(2) Stochastic gradient descent</p>
+
+<p>On the other hand, using stochastic gradient descent is useful when dealing with large datas(n $\geq$ 10000).</p>
+
+<p>This method has time-complexity of $O(kn^2)$.</p>
+
+<p>However, we need special care for learning rate to use this method.</p>
+
+<h6 id="3-assume-that-the-noise-model-governing-the-additive-noise-ϵ-is-the-exponential-distribution-that-is-pepsilon--frac12-exp-epsilon">3) Assume that the noise model governing the additive noise ϵ is the exponential distribution. That is, $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.</h6>
+
+<ul>
+  <li>Write out the negative log-likelihood of the data under the model $-\log P(Y \mid X)$.</li>
+</ul>
+
+<p>$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$</p>
+
+<ul>
+  <li>Can you find a closed form solution?</li>
+</ul>
+
+<p>We want to find the solution of $w$ that minimizes the NLL(Negative Log-Likelihood) function.</p>
+
+<p>Since this function is dependent on $w$ and $b$, we could ignore the first term and the $\sigma$.</p>
+
+<p>Doing the derivative and setting the gradient to <em>zero</em> comes up with this solution below.</p>
+
+<p>$w = (X^TX)^{-1}X^TY.$</p>
+
+<p>It is same with normal equation.</p>
+
+<ul>
+  <li>Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?</li>
+</ul>
+
+<h3 id="references">References</h3>
 
 <ul>
   <li>
-    <p>Introduction to Algorithms</p>
+    <p>MLE MAP post <a href="https://sanghyukchun.github.io/58/" target="_blank">https://sanghyukchun.github.io/58/</a></p>
   </li>
   <li>
-    <p>알고리즘 문제 해결 전략 2</p>
+    <p>why NLL? <a href="https://ratsgo.github.io/deep%20learning/2017/09/24/loss/" target="_blank">https://ratsgo.github.io/deep%20learning/2017/09/24/loss/</a></p>
   </li>
   <li>
-    <p><a href="https://kesakiyo.tistory.com/15" target="_blank">https://kesakiyo.tistory.com/15</a></p>
+    <p>MLE <a href="https://ratsgo.github.io/statistics/2017/09/23/MLE/" target="_blank">https://ratsgo.github.io/statistics/2017/09/23/MLE/</a></p>
   </li>
   <li>
-    <p><a href="https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;logNo=221248815321&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F" target="_blank">https://m.blog.naver.com/PostView.nhn?blogId=jh20s&amp;logNo=221248815321&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</a></p>
+    <p><a href="https://www.datascienceblog.net/post/commentary/inference-vs-prediction/" target="_blank">https://www.datascienceblog.net/post/commentary/inference-vs-prediction/</a></p>
   </li>
   <li>
-    <p><a href="https://code0xff.tistory.com/39?category=723759" target="_blank">https://code0xff.tistory.com/39?category=723759</a></p>
+    <p><a href="/MLcoursera-2-1" target="_blank">https://hy38.github.io/MLcoursera-2-1</a></p>
   </li>
   <li>
-    <p><a href="https://kim6394.tistory.com/228" target="_blank">https://kim6394.tistory.com/228</a></p>
-  </li>
-  <li>
-    <p><a href="https://jackpot53.tistory.com/92" target="_blank">https://jackpot53.tistory.com/92</a></p>
-  </li>
-  <li>
-    <p><a href="https://beenlife.tistory.com/54" target="_blank">https://beenlife.tistory.com/54</a></p>
+    <p>edwith normal equation <a href="https://www.edwith.org/linearalgebra4ai/lecture/24131/" target="_blank">https://www.edwith.org/linearalgebra4ai/lecture/24131/</a></p>
   </li>
 </ul>
 
@@ -425,10 +401,10 @@ into the {body} of the default.hbs template -->
             </section>
 
             <!-- Email subscribe form at the bottom of the page -->
-            
+            <!-- <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
+            <p>Get the latest posts delivered right to your inbox</p> -->
+            <!-- 
                 <section class="subscribe-form">
-                    <!-- <h3 class="subscribe-form-title">Subscribe to HY38's IT Blog</h3>
-                    <p>Get the latest posts delivered right to your inbox</p> -->
                     <h3 class="subscribe-form-title">Search Posts from HY38's IT Blog</h3>
                     <p>After pressing Enter, you will be leaded to search page. <br>
                         You should press <strong>CTRL</strong> to search after then.</p>
@@ -457,7 +433,7 @@ into the {body} of the default.hbs template -->
 </span>
 
                 </section>
-            
+             -->
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
@@ -483,16 +459,13 @@ into the {body} of the default.hbs template -->
                 <!-- /author  -->
             </footer>
 
-            <!-- If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id. -->
-            <!--  -->
                 <section class="post-full-comments">
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
                             this.page.url = 'https://hy38.github.io/';
-                            this.page.identifier = 'HY38's IT Blog';
+                            // this.page.identifier = 'HY38's IT Blog';
+                            this.page.identifier = 'HY38\'s IT Blog';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -502,7 +475,6 @@ into the {body} of the default.hbs template -->
                         })();
                     </script>
                 </section>
-            <!--  -->
 
         </article>
 
@@ -526,7 +498,7 @@ into the {body} of the default.hbs template -->
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/algorithm/">Algorithm</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/deep-learning/">Deep learning</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -536,132 +508,21 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/dijkstra-algorithm">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/why-dijkstra-fail-on-a-negative-weighted-edge">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/about-Shortest-Path">그래프의 최단경로 알고리즘 - Shortest Path Algorithm of Graph</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                    
-                                  
                                 
                                   
-                                    
-                                        
-                                        
-                                    
-                                  
                                 
-                                  
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
                                   
                                 
                                   
@@ -678,14 +539,95 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                 
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-3-linear-regression-implementaion-from-scratch">D2L 3 - Linear Regression Implementation from Scratch</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-2-probability">D2L 2 - Probability</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-2-autograd">D2L 2 - autograd</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/algorithm/">
+                            <a href="/tag/deep-learning/">
                                 
-                                    See all 17 posts  →
+                                    See all 7 posts  →
                                 
                             </a>
                         </footer>
@@ -699,30 +641,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/BOJ-11559">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/tetris.png)"></div>
+            <a class="post-card-image-link" href="/D2L-3-linear-regression-implementaion-from-scratch">
+                <div class="post-card-image" style="background-image: url(/assets/images/d2l/brain.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/BOJ-11559">
+            <a class="post-card-content-link" href="/D2L-3-linear-regression-implementaion-from-scratch">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Dfs</span>
+                               <span class="post-card-tags">Deep learning</span>
                             
                         
                             
-                               <span class="post-card-tags">Bfs</span>
-                            
-                        
-                            
-                                <span class="post-card-tags">Algorithm</span>
+                                <span class="post-card-tags">Linear regression</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">BOJ 11559 - Puyo Puyo</h2>
+                    <h2 class="post-card-title">D2L 3 - Linear Regression Implementation from Scratch</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -759,26 +697,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/about-edges-in-graph">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/branch.png)"></div>
+            <a class="post-card-image-link" href="/D2L-2-probability">
+                <div class="post-card-image" style="background-image: url(/assets/images/d2l/brain.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/about-edges-in-graph">
+            <a class="post-card-content-link" href="/D2L-2-probability">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Algorithm</span>
+                               <span class="post-card-tags">Deep learning</span>
                             
                         
                             
-                                <span class="post-card-tags">Theory</span>
+                                <span class="post-card-tags">Probability</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">DFS 스패닝 트리와 간선의 분류 - DFS Spanning Tree and Classifying Edges</h2>
+                    <h2 class="post-card-title">D2L 2 - Probability</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -824,18 +762,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">그래프의 사이클 및 사이클 내의 정점 찾기 - Finding Cycles in Graph</div>
+    <div class="floating-header-title">D2L 3 - Linear Regression</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98+%EC%82%AC%EC%9D%B4%ED%81%B4+%EB%B0%8F+%EC%82%AC%EC%9D%B4%ED%81%B4+%EB%82%B4%EC%9D%98+%EC%A0%95%EC%A0%90+%EC%B0%BE%EA%B8%B0+-+Finding+Cycles+in+Graph&amp;url=https://hy38.github.iois-graph-cyclic"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+3+-+Linear+Regression&amp;url=https://hy38.github.ioD2L-3-linear-regression"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.iois-graph-cyclic"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-3-linear-regression"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

@@ -11,7 +11,7 @@
 
 
 
-    <title>D2L 2 - Linear Regression</title>
+    <title>D2L 3 - Linear Regression Implementation from Scratch</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,24 +40,24 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/D2L-3-linear-regression-1" />
+    <link rel="canonical" href="https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="D2L 2 - Linear Regression" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about" />
-    <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression-1" />
+    <meta property="og:title" content="D2L 3 - Linear Regression Implementation from Scratch" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up" />
+    <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2019-06-06T19:00:00+09:00" />
-    <meta property="article:modified_time" content="2019-06-06T19:00:00+09:00" />
+    <meta property="article:published_time" content="2019-06-08T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-06-08T19:00:00+09:00" />
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="D2L 2 - Linear Regression" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about" />
+    <meta name="twitter:title" content="D2L 3 - Linear Regression Implementation from Scratch" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -78,7 +78,7 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/D2L-3-linear-regression-1",
+    "url": "https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch",
     "image": {
         "@type": "ImageObject",
         "url": "https://hy38.github.io/assets/images/d2l/brain.png",
@@ -87,9 +87,9 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/D2L-3-linear-regression-1"
+        "@id": "https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Prediction vs Inference Prediction means using the model to predict the outcomes for new data points. The word prediction is generally used in machine learnings and deep learnings. Inference means using the model to learn about"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up"
 }
     </script>
     
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="D2L 2 - Linear Regression" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 3 - Linear Regression Implementation from Scratch" href="/feed.xml" />
 
 
 </head>
@@ -199,7 +199,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 6 June 2019"> 6 June 2019</time>
+                    <time class="post-full-meta-date" datetime=" 8 June 2019"> 8 June 2019</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -213,7 +213,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">D2L 2 - Linear Regression</h1>
+                <h1 class="post-full-title">D2L 3 - Linear Regression Implementation from Scratch</h1>
             </header>
 
             
@@ -227,174 +227,26 @@ into the {body} of the default.hbs template -->
   <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h3 id="prediction-vs-inference">Prediction vs Inference</h3>
+<h3 id="exercise--linear-regression-implementation-from-scratch">Exercise : Linear Regression Implementation from Scratch</h3>
 
-<p><code class="highlighter-rouge">Prediction</code> means using the model to predict the outcomes for <strong>new data points</strong>. The word <code class="highlighter-rouge">prediction</code> is generally used in machine learnings and deep learnings.</p>
+<h6 id="1-what-would-happen-if-we-were-to-initialize-the-weights-w0-would-the-algorithm-still-work">1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work?</h6>
 
-<p><code class="highlighter-rouge">Inference</code> means using the model to learn about the data generation process. It denotes estimating parameters based on a dataset. It is generally used in statistics.</p>
+<h6 id="2-assume-that-you-are-georg-simon-ohm-trying-to-come-up-with-a-model-between-voltage-and-current-can-you-use-auto-differentiation-to-learn-the-parameters-of-your-model">2) Assume that you are Georg Simon Ohm trying to come up with a model between voltage and current. Can you use auto differentiation to learn the parameters of your model.</h6>
 
-<h3 id="mlemaximum-likelihood-estimation-vs-mapmaximum-a-posteriori-estimation">MLE(Maximum Likelihood Estimation) vs MAP(Maximum a Posteriori Estimation)</h3>
+<h6 id="3-can-you-use-plancks-law-to-determine-the-temperature-of-an-object-using-spectral-energy-density">3) Can you use Planck’s Law to determine the temperature of an object using spectral energy density?</h6>
 
-<p><strong>MLE is one of the method of estimation $\theta$, making the maximum likelihood.</strong></p>
+<h6 id="4-what-are-the-problems-you-might-encounter-if-you-wanted-to-compute-the-second-derivatives-how-would-you-fix-them">4) What are the problems you might encounter if you wanted to compute the second derivatives? How would you fix them?</h6>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$\hat \theta = \arg\max_\theta \mathcal L (\theta;X) = \arg\max_\theta f(X</td>
-      <td>\theta)$</td>
-    </tr>
-  </tbody>
-</table>
+<h6 id="5-why-is-the-reshape-function-needed-in-the-squared_loss-function">5) Why is the reshape function needed in the squared_loss function?</h6>
 
-<p>MLE is very dependent on the observation (or given data).</p>
+<h6 id="6-experiment-using-different-learning-rates-to-find-out-how-fast-the-loss-function-value-drops">6) Experiment using different learning rates to find out how fast the loss function value drops.</h6>
 
-<p>We usually use Maximum <strong>Log</strong>-Likelihood Estimation due to the simple computation.</p>
-
-<p><strong>Because MLE is very dependent on the observation, we bring up another method called MAP. MAP is based on MLE and Bayes’s Theorem.</strong></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>$\hat \theta = \arg\max_\theta f(\theta</td>
-      <td>X)$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Because MAP uses both observation data and assumptions of prior data, MAP makes us get more general parameter estimation than MLE.</p>
-
-<p>However, to use the method of MAP, we need to know about $f(\theta)$.</p>
-
-<p>If we have enough assumptions about <code class="highlighter-rouge">prior</code> data we can make better estimation.</p>
-
-<p>Of course the <code class="highlighter-rouge">prior</code> data is very important since the setimation refers to the prior data. For example, if we have bad prior data, the estimation also gets bad.</p>
-
-<h3 id="exercise--linear-regression">Exercise : Linear Regression</h3>
-
-<h6 id="1-assume-that-we-have-some-data--x_1-ldots-x_n-in-mathbbr--our-goal-is-to-find-a-constant-b-such-that-sum_i-x_i---b2-is-minimized">1) Assume that we have some data  $x_1, \ldots, x_n \in \mathbb{R}$ . Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.</h6>
-
-<ul>
-  <li>Find a closed-form solution for the optimal value of b .</li>
-</ul>
-
-<p>The problem comes to be minimizing $\sum x_i - b$. It can be represented as $(x_1 + x_2 + … + x_n) - (nb)$.
-Since we can notate the $x$s as a vector, minimizing this function to zero is as follows.</p>
-
-<p>$b = \dfrac{\mathbf{x}}{n}$</p>
-
-<p>You may have noticed that it is the average of data $\mathbf{x}$.</p>
-
-<p>Also, we can think $b$ in $x_i - b$ as a point that minimizes the $x$ values in a <code class="highlighter-rouge">number line</code>.</p>
-
-<ul>
-  <li>How does this problem and its solution relate to the normal distribution?</li>
-</ul>
-
-<p>Since $b$ is the average of data $\mathbf{x}$, we can denote $(x_i - b)$ in a different way as $\mathbf{X} - \mu$.</p>
-
-<h6 id="2-derive-the-closed-form-solution-to-the-optimization-problem-for-linear-regression-with-squared-error-to-keep-things-simple-you-can-omit-the-bias-b-from-the-problem-we-can-do-this-in-principled-fashion-by-adding-one-column-to-x-consisting-of-all-ones">2) Derive the closed-form solution to the optimization problem for linear regression with squared error. To keep things simple, you can omit the bias $b$ from the problem (we can do this in principled fashion by adding one column to $X$ consisting of all ones).</h6>
-
-<ul>
-  <li>Write out the optimization problem in matrix and vector notation (treat all the data as a single matrix, all the target values as a single vector).</li>
-</ul>
-
-<p>$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2$</p>
-
-<p>By vectorizing the above expression, we get the expression below.</p>
-
-<p>$L(\mathbf{w}, b) = \frac{1}{n} \frac{1}{2}(\mathbf{X}\mathbf{w} - \mathbf{y})^2$</p>
-
-<ul>
-  <li>Compute the gradient of the loss with respect to $w$.</li>
-</ul>
-
-<p>The gradient of the equation with respect to $w$ is as below.</p>
-
-<p>$\dfrac{1}{n} (\mathbf{X} \mathbf{w} - \mathbf{y}) X$.</p>
-
-<ul>
-  <li>Find the closed form solution by setting the gradient equal to zero and solving the matrix equation.</li>
-</ul>
-
-<p>Since $\dfrac{1}{n} (\mathbf{X} \mathbf{w} - \mathbf{y}) X = 0$, we remove the $\dfrac{1}{n}$ term, $X$ term.</p>
-
-<p>Thus, the equation changes as follows.</p>
-
-<p>$\mathbf{X} \mathbf{w} - \mathbf{y} = 0$.</p>
-
-<p>Then, we will multiply $mathbf{X}^T$ and develop the equation as</p>
-
-<p>$\mathbf{X}^T \mathbf{X} \mathbf{w} - \mathbf{X}^T \mathbf{y} = 0$.</p>
-
-<p>Finally, we get this <strong>normal equation</strong> below.</p>
-
-<p>$\mathbf{w} = (\mathbf X^\top \mathbf X)^{-1}\mathbf X^\top \mathbf{y}.$</p>
-
-<ul>
-  <li>When might this be better than using stochastic gradient descent? When might this method break?</li>
-</ul>
-
-<p>(1) Normal equation method</p>
-
-<p>Because this method is non-iterative, this normal equation method is better when we deal datas which size is under 10000. But, this method does inverse matrix calculation, having time-complexity of $O(n^3)$.</p>
-
-<p>Also, we do not have to care about the learning rate.</p>
-
-<p>(2) Stochastic gradient descent</p>
-
-<p>On the other hand, using stochastic gradient descent is useful when dealing with large datas(n $\geq$ 10000).</p>
-
-<p>This method has time-complexity of $O(kn^2)$.</p>
-
-<p>However, we need special care for learning rate to use this method.</p>
-
-<h6 id="3-assume-that-the-noise-model-governing-the-additive-noise-ϵ-is-the-exponential-distribution-that-is-pepsilon--frac12-exp-epsilon">3) Assume that the noise model governing the additive noise ϵ is the exponential distribution. That is, $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.</h6>
-
-<ul>
-  <li>Write out the negative log-likelihood of the data under the model $-\log P(Y \mid X)$.</li>
-</ul>
-
-<p>$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$</p>
-
-<ul>
-  <li>Can you find a closed form solution?</li>
-</ul>
-
-<p>We want to find the solution of $w$ that minimizes the NLL(Negative Log-Likelihood) function.</p>
-
-<p>Since this function is dependent on $w$ and $b$, we could ignore the first term and the $\sigma$.</p>
-
-<p>Doing the derivative and setting the gradient to <em>zero</em> comes up with this solution below.</p>
-
-<p>$w = (X^TX)^{-1}X^TY.$</p>
-
-<p>It is same with normal equation.</p>
-
-<ul>
-  <li>Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?</li>
-</ul>
+<h6 id="7-if-the-number-of-examples-cannot-be-divided-by-the-batch-size-what-happens-to-the-data_iter-functions-behavior">7) If the number of examples cannot be divided by the batch size, what happens to the data_iter function’s behavior?</h6>
 
 <h3 id="references">References</h3>
 
 <ul>
-  <li>
-    <p>MLE MAP post <a href="https://sanghyukchun.github.io/58/" target="_blank">https://sanghyukchun.github.io/58/</a></p>
-  </li>
-  <li>
-    <p>why NLL? <a href="https://ratsgo.github.io/deep%20learning/2017/09/24/loss/" target="_blank">https://ratsgo.github.io/deep%20learning/2017/09/24/loss/</a></p>
-  </li>
-  <li>
-    <p>MLE <a href="https://ratsgo.github.io/statistics/2017/09/23/MLE/" target="_blank">https://ratsgo.github.io/statistics/2017/09/23/MLE/</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.datascienceblog.net/post/commentary/inference-vs-prediction/" target="_blank">https://www.datascienceblog.net/post/commentary/inference-vs-prediction/</a></p>
-  </li>
-  <li>
-    <p><a href="/MLcoursera-2-1" target="_blank">https://hy38.github.io/MLcoursera-2-1</a></p>
-  </li>
-  <li>
-    <p>edwith normal equation <a href="https://www.edwith.org/linearalgebra4ai/lecture/24131/" target="_blank">https://www.edwith.org/linearalgebra4ai/lecture/24131/</a></p>
-  </li>
+  <li>&lt;&gt;{: target=”_blank”}</li>
 </ul>
 
                 </div>
@@ -565,6 +417,15 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
                                     
                                         
                                         
+                                            <li><a href="/D2L-3-linear-regression">D2L 3 - Linear Regression</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/D2L-2-probability">D2L 2 - Probability</a></li>
                                         
                                     
@@ -582,8 +443,6 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
                                   
                                     
                                         
-                                        
-                                            <li><a href="/D2L-2-calculus">D2L 2 - Calculus</a></li>
                                         
                                     
                                   
@@ -620,7 +479,7 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
                         <footer class="read-next-card-footer">
                             <a href="/tag/deep-learning/">
                                 
-                                    See all 6 posts  →
+                                    See all 7 posts  →
                                 
                             </a>
                         </footer>
@@ -690,12 +549,12 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/D2L-2-probability">
+            <a class="post-card-image-link" href="/D2L-3-linear-regression">
                 <div class="post-card-image" style="background-image: url(/assets/images/d2l/brain.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/D2L-2-probability">
+            <a class="post-card-content-link" href="/D2L-3-linear-regression">
                 <header class="post-card-header">
                     
                         
@@ -704,12 +563,12 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
                             
                         
                             
-                                <span class="post-card-tags">Probability</span>
+                                <span class="post-card-tags">Linear regression</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">D2L 2 - Probability</h2>
+                    <h2 class="post-card-title">D2L 3 - Linear Regression</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -755,18 +614,18 @@ Since we can notate the $x$s as a vector, minimizing this function to zero is as
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">D2L 2 - Linear Regression</div>
+    <div class="floating-header-title">D2L 3 - Linear Regression Implementation from Scratch</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+2+-+Linear+Regression&amp;url=https://hy38.github.ioD2L-3-linear-regression-1"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+3+-+Linear+Regression+Implementation+from+Scratch&amp;url=https://hy38.github.ioD2L-3-linear-regression-implementaion-from-scratch"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-3-linear-regression-1"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-3-linear-regression-implementaion-from-scratch"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

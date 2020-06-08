@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/algorithm/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-08T14:53:16+09:00</updated>
+  <updated>2020-06-08T15:06:26+09:00</updated>
   <id>https://hy38.github.io/tag/algorithm/feed.xml</id>
 
   
@@ -2369,7 +2369,7 @@
     &lt;p&gt;예를 들어, DFS가 역행 간선을 만들지 않으면 그래프는 사이클이 존재하지 않고, 역도 성립한다. 즉, 사이클의 존재 여부는 역방향 간선의 존재 여부와 동치이다.&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/is-graph-cyclic&quot; target=&quot;_blank&quot;&gt;사이클 존재 여부 확인하기&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/finding-cycles-in-graph&quot; target=&quot;_blank&quot;&gt;사이클 존재 여부 확인하기&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;

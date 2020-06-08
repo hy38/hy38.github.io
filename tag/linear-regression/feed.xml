@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/linear-regression/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-08T14:53:16+09:00</updated>
+  <updated>2020-06-08T15:06:26+09:00</updated>
   <id>https://hy38.github.io/tag/linear-regression/feed.xml</id>
 
   
@@ -32,12 +32,72 @@
 
   
     <entry>
-      <title type="html">D2L 2 - Linear Regression</title>
-      <link href="https://hy38.github.io/D2L-3-linear-regression-1" rel="alternate" type="text/html" title="D2L 2 - Linear Regression" />
+      <title type="html">D2L 3 - Linear Regression Implementation from Scratch</title>
+      <link href="https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch" rel="alternate" type="text/html" title="D2L 3 - Linear Regression Implementation from Scratch" />
+      <published>2019-06-08T19:00:00+09:00</published>
+      <updated>2019-06-08T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--linear-regression-implementation-from-scratch&quot;&gt;Exercise : Linear Regression Implementation from Scratch&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-what-would-happen-if-we-were-to-initialize-the-weights-w0-would-the-algorithm-still-work&quot;&gt;1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work?&lt;/h6&gt;
+
+&lt;h6 id=&quot;2-assume-that-you-are-georg-simon-ohm-trying-to-come-up-with-a-model-between-voltage-and-current-can-you-use-auto-differentiation-to-learn-the-parameters-of-your-model&quot;&gt;2) Assume that you are Georg Simon Ohm trying to come up with a model between voltage and current. Can you use auto differentiation to learn the parameters of your model.&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-can-you-use-plancks-law-to-determine-the-temperature-of-an-object-using-spectral-energy-density&quot;&gt;3) Can you use Planck’s Law to determine the temperature of an object using spectral energy density?&lt;/h6&gt;
+
+&lt;h6 id=&quot;4-what-are-the-problems-you-might-encounter-if-you-wanted-to-compute-the-second-derivatives-how-would-you-fix-them&quot;&gt;4) What are the problems you might encounter if you wanted to compute the second derivatives? How would you fix them?&lt;/h6&gt;
+
+&lt;h6 id=&quot;5-why-is-the-reshape-function-needed-in-the-squared_loss-function&quot;&gt;5) Why is the reshape function needed in the squared_loss function?&lt;/h6&gt;
+
+&lt;h6 id=&quot;6-experiment-using-different-learning-rates-to-find-out-how-fast-the-loss-function-value-drops&quot;&gt;6) Experiment using different learning rates to find out how fast the loss function value drops.&lt;/h6&gt;
+
+&lt;h6 id=&quot;7-if-the-number-of-examples-cannot-be-divided-by-the-batch-size-what-happens-to-the-data_iter-functions-behavior&quot;&gt;7) If the number of examples cannot be divided by the batch size, what happens to the data_iter function’s behavior?&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="linear regression" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">D2L 3 - Linear Regression</title>
+      <link href="https://hy38.github.io/D2L-3-linear-regression" rel="alternate" type="text/html" title="D2L 3 - Linear Regression" />
       <published>2019-06-06T19:00:00+09:00</published>
       <updated>2019-06-06T19:00:00+09:00</updated>
-      <id>https://hy38.github.io/D2L-3-linear-regression-1</id>
-      <content type="html" xml:base="https://hy38.github.io/D2L-3-linear-regression-1">&lt;blockquote&gt;
+      <id>https://hy38.github.io/D2L-3-linear-regression</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-linear-regression">&lt;blockquote&gt;
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
 &lt;/blockquote&gt;
 

@@ -433,7 +433,24 @@
     
       
       <item>
-        <title>D2L 2 - Linear Regression</title>
+        <title>D2L 3 - Linear Regression Implementation from Scratch</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Sat, 08 Jun 2019 19:00:00 +0900</pubDate>
+        <link>
+        https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch</link>
+        <guid isPermaLink="true">https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>D2L 3 - Linear Regression</title>
         
           <description>&lt;blockquote&gt;
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
@@ -443,8 +460,8 @@
         
         <pubDate>Thu, 06 Jun 2019 19:00:00 +0900</pubDate>
         <link>
-        https://hy38.github.io/D2L-3-linear-regression-1</link>
-        <guid isPermaLink="true">https://hy38.github.io/D2L-3-linear-regression-1</guid>
+        https://hy38.github.io/D2L-3-linear-regression</link>
+        <guid isPermaLink="true">https://hy38.github.io/D2L-3-linear-regression</guid>
       </item>
       
     

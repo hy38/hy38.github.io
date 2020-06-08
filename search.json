@@ -201,10 +201,18 @@
     } ,
   
     {
-      "title"    : "D2L 2 - Linear Regression",
+      "title"    : "D2L 3 - Linear Regression Implementation from Scratch",
       "category" : "",
       "tags"     : "deep learning, linear regression",
-      "url"      : "https://hy38.github.io/D2L-3-linear-regression-1",
+      "url"      : "https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch",
+      "date"     : "2019-06-08 19:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "D2L 3 - Linear Regression",
+      "category" : "",
+      "tags"     : "deep learning, linear regression",
+      "url"      : "https://hy38.github.io/D2L-3-linear-regression",
       "date"     : "2019-06-06 19:00:00 +0900"
     } ,
   
