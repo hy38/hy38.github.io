@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/linear-regression/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-08T15:06:26+09:00</updated>
+  <updated>2020-06-08T16:40:25+09:00</updated>
   <id>https://hy38.github.io/tag/linear-regression/feed.xml</id>
 
   
@@ -111,14 +111,7 @@
 
 &lt;p&gt;&lt;strong&gt;MLE is one of the method of estimation $\theta$, making the maximum likelihood.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$\hat \theta = \arg\max_\theta \mathcal L (\theta;X) = \arg\max_\theta f(X&lt;/td&gt;
-      &lt;td&gt;\theta)$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;$\hat \theta = \arg\max_\theta \mathcal L (\theta;X) = \arg\max_\theta f(X|\theta)$&lt;/p&gt;
 
 &lt;p&gt;MLE is very dependent on the observation (or given data).&lt;/p&gt;
 
@@ -126,14 +119,7 @@
 
 &lt;p&gt;&lt;strong&gt;Because MLE is very dependent on the observation, we bring up another method called MAP. MAP is based on MLE and Bayes’s Theorem.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$\hat \theta = \arg\max_\theta f(\theta&lt;/td&gt;
-      &lt;td&gt;X)$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;$\hat \theta = \arg\max_\theta f(\theta|X)$&lt;/p&gt;
 
 &lt;p&gt;Because MAP uses both observation data and assumptions of prior data, MAP makes us get more general parameter estimation than MLE.&lt;/p&gt;
 
