@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 3 - Linear Regression Implementation from Scratch" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? w = torch.zeros(size=(2,1), requires_grad=True) print(w) # Result : # tensor([[0.], # [0.]]," />
     <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 3 - Linear Regression Implementation from Scratch" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? w = torch.zeros(size=(2,1), requires_grad=True) print(w) # Result : # tensor([[0.], # [0.]]," />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-3-linear-regression-implementaion-from-scratch"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? 2) Assume that you are Georg Simon Ohm trying to come up"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Linear Regression Implementation from Scratch 1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work? w = torch.zeros(size=(2,1), requires_grad=True) print(w) # Result : # tensor([[0.], # [0.]],"
 }
     </script>
     
@@ -231,22 +231,161 @@ into the {body} of the default.hbs template -->
 
 <h6 id="1-what-would-happen-if-we-were-to-initialize-the-weights-w0-would-the-algorithm-still-work">1) What would happen if we were to initialize the weights $w=0$. Would the algorithm still work?</h6>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+<span class="c"># Result :</span>
+<span class="c"># tensor([[0.],</span>
+        <span class="c"># [0.]], requires_grad=True)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># epoch 1, loss 9.015191078186035</span>
+<span class="c"># epoch 2, loss 5.008845329284668</span>
+<span class="c"># epoch 3, loss 2.783064842224121</span>
+<span class="c"># epoch 4, loss 1.5464041233062744</span>
+<span class="c"># epoch 5, loss 0.8592801094055176</span>
+<span class="c"># epoch 6, loss 0.4775138795375824</span>
+<span class="c"># epoch 7, loss 0.26536378264427185</span>
+<span class="c"># epoch 8, loss 0.1474914401769638</span>
+<span class="c"># epoch 9, loss 0.08198854327201843</span>
+<span class="c"># epoch 10, loss 0.045585036277770996</span>
+</code></pre></div></div>
+
+<p>The initialization to zero did not matter to the training algorithm.</p>
+
 <h6 id="2-assume-that-you-are-georg-simon-ohm-trying-to-come-up-with-a-model-between-voltage-and-current-can-you-use-auto-differentiation-to-learn-the-parameters-of-your-model">2) Assume that you are Georg Simon Ohm trying to come up with a model between voltage and current. Can you use auto differentiation to learn the parameters of your model.</h6>
+
+<p>The Ohm’s law is a relationship between voltage, current, resistance. Setting current as the target value $y$, and the voltage as $x$, we get this equation.</p>
+
+<p>$I = \dfrac{V}{R}, y = \dfrac{x}{R}$</p>
+
+<p>By using mean-squared loss function with SGD, we can use <code class="highlighter-rouge">backward()</code> as follows.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">X</span> <span class="o">/</span> <span class="n">R</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>  <span class="c"># Minibatch loss in X and y</span>
+<span class="n">l</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>  <span class="c"># Compute gradient on l with respect to [w,b]</span>
+</code></pre></div></div>
 
 <h6 id="3-can-you-use-plancks-law-to-determine-the-temperature-of-an-object-using-spectral-energy-density">3) Can you use Planck’s Law to determine the temperature of an object using spectral energy density?</h6>
 
+<p>Planck’s law is the equation among <code class="highlighter-rouge">wavelength</code>, <code class="highlighter-rouge">spectral energy density</code>, <code class="highlighter-rouge">temperture</code>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34434143/84217437-1b569000-ab07-11ea-97f6-1af76307d92d.png" alt="planck_law" /></p>
+
+<p>By transpositing I and T, we get the equation below.</p>
+
+<p>$T(I, v) = \dfrac{hv}{Kln \dfrac{2hv^3}{c^2I}}$</p>
+
 <h6 id="4-what-are-the-problems-you-might-encounter-if-you-wanted-to-compute-the-second-derivatives-how-would-you-fix-them">4) What are the problems you might encounter if you wanted to compute the second derivatives? How would you fix them?</h6>
+
+<p>The first derivative may be a constant which goes to 0 when we derivate once more.</p>
+
+<p>Also, the function might not be derivable.</p>
 
 <h6 id="5-why-is-the-reshape-function-needed-in-the-squared_loss-function">5) Why is the reshape function needed in the squared_loss function?</h6>
 
+<p>y_hat is the result of matrix multiplication between $X$ and $w$.</p>
+
+<p>The shape of matmul(X, w) would be (1000, 1).</p>
+
+<p>Since we previously set the batch size batch_size to 10, the loss shape l for each minibatch is (10, 1).</p>
+
+<p>The shape of y_hat is (10, 1) and the shape of y is (10).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'y_hat shape:'</span><span class="p">,</span> <span class="n">net</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">'y shape: '</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c"># Result :</span>
+<span class="c"># y_hat shape: torch.Size([10, 1]) y shape:  torch.Size([10])</span>
+</code></pre></div></div>
+
 <h6 id="6-experiment-using-different-learning-rates-to-find-out-how-fast-the-loss-function-value-drops">6) Experiment using different learning rates to find out how fast the loss function value drops.</h6>
 
+<ul>
+  <li>lr = 0.03, batch size = 10, epoch = 10</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># epoch 1, loss 8.98647689819336</span>
+<span class="c"># epoch 2, loss 4.993009567260742</span>
+<span class="c"># epoch 3, loss 2.7741053104400635</span>
+<span class="c"># epoch 4, loss 1.541479229927063</span>
+<span class="c"># epoch 5, loss 0.8565448522567749</span>
+<span class="c"># epoch 6, loss 0.47596117854118347</span>
+<span class="c"># epoch 7, loss 0.2645193934440613</span>
+<span class="c"># epoch 8, loss 0.1470237821340561</span>
+<span class="c"># epoch 9, loss 0.08172017335891724</span>
+<span class="c"># epoch 10, loss 0.045438218861818314</span>
+</code></pre></div></div>
+
+<ul>
+  <li>lr = 0.1, batch size = 10, epoch = 10</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># epoch 1, loss 2.2391698360443115</span>
+<span class="c"># epoch 2, loss 0.3058370053768158</span>
+<span class="c"># epoch 3, loss 0.04183046892285347</span>
+<span class="c"># epoch 4, loss 0.005764374043792486</span>
+<span class="c"># epoch 5, loss 0.0008321439381688833</span>
+<span class="c"># epoch 6, loss 0.00015854007506277412</span>
+<span class="c"># epoch 7, loss 6.705385749228299e-05</span>
+<span class="c"># epoch 8, loss 5.424357368610799e-05</span>
+<span class="c"># epoch 9, loss 5.2451756346272305e-05</span>
+<span class="c"># epoch 10, loss 5.219781451160088e-05</span>
+</code></pre></div></div>
+
+<ul>
+  <li>lr = 0.3, batch size = 10, epoch = 10</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ch 1, loss 0.041470203548669815</span>
+<span class="c"># epoch 2, loss 0.0001545503328088671</span>
+<span class="c"># epoch 3, loss 5.335054447641596e-05</span>
+<span class="c"># epoch 4, loss 5.316684837453067e-05</span>
+<span class="c"># epoch 5, loss 5.3126728744246066e-05</span>
+<span class="c"># epoch 6, loss 5.326157042873092e-05</span>
+<span class="c"># epoch 7, loss 5.310575943440199e-05</span>
+<span class="c"># epoch 8, loss 5.3188410674920306e-05</span>
+<span class="c"># epoch 9, loss 5.316302849678323e-05</span>
+<span class="c"># epoch 10, loss 5.317722025210969e-05</span>
+</code></pre></div></div>
+
+<ul>
+  <li>lr = 0.01, batch size = 10, epoch = 10</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># epoch 1, loss 13.367563247680664</span>
+<span class="c"># epoch 2, loss 10.992039680480957</span>
+<span class="c"># epoch 3, loss 9.03872013092041</span>
+<span class="c"># epoch 4, loss 7.43253231048584</span>
+<span class="c"># epoch 5, loss 6.1117939949035645</span>
+<span class="c"># epoch 6, loss 5.025759696960449</span>
+<span class="c"># epoch 7, loss 4.132733345031738</span>
+<span class="c"># epoch 8, loss 3.398400068283081</span>
+<span class="c"># epoch 9, loss 2.794539451599121</span>
+<span class="c"># epoch 10, loss 2.297992706298828</span>
+</code></pre></div></div>
+
+<p>The best learning rate above is 0.3.</p>
+
 <h6 id="7-if-the-number-of-examples-cannot-be-divided-by-the-batch-size-what-happens-to-the-data_iter-functions-behavior">7) If the number of examples cannot be divided by the batch size, what happens to the data_iter function’s behavior?</h6>
+
+<p>In Pytorch DataLoader, there is a parameter called drop_last. It makes the last batch smaller by default.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drop_last (bool, optional): set to ``True`` to drop the last incomplete batch,
+    if the dataset size is not divisible by the batch size. If ``False`` and
+    the size of dataset is not divisible by the batch size, then the last batch
+    will be smaller. (default: ``False``)
+</code></pre></div></div>
 
 <h3 id="references">References</h3>
 
 <ul>
-  <li><a href="https://pytorch.org/docs/stable/torch.html" target="_blank">https://pytorch.org/docs/stable/torch.html</a></li>
+  <li>
+    <p><a href="https://pytorch.org/docs/stable/torch.html" target="_blank">https://pytorch.org/docs/stable/torch.html</a></p>
+  </li>
+  <li>
+    <p><a href="https://pytorch.org/docs/1.1.0/_modules/torch/utils/data/dataloader.html" target="_blank">https://pytorch.org/docs/1.1.0/_modules/torch/utils/data/dataloader.html</a></p>
+  </li>
 </ul>
 
                 </div>
