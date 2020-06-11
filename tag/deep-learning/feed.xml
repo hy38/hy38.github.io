@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-10T16:41:12+09:00</updated>
+  <updated>2020-06-11T11:27:44+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -30,6 +30,58 @@
   
   
 
+  
+    <entry>
+      <title type="html">D2L 3 - Concise Implementation of Linear Regression</title>
+      <link href="https://hy38.github.io/D2L-3-linear-regression-concise" rel="alternate" type="text/html" title="D2L 3 - Concise Implementation of Linear Regression" />
+      <published>2019-06-11T19:00:00+09:00</published>
+      <updated>2019-06-11T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-linear-regression-concise</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-linear-regression-concise">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--concise-implementation-of-linear-regression&quot;&gt;Exercise : Concise Implementation of Linear Regression&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-if-we-replace-nnmseloss-with-nnmselossreductionmean-how-can-we-change-the-learning-rate-for-the-code-to-behave-identically-why&quot;&gt;1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why?&lt;/h6&gt;
+
+&lt;h6 id=&quot;2-review-the-pytorch-documentation-to-see-what-loss-functions-and-initialization-methods-are-provided-replace-the-loss-by-hubers-loss&quot;&gt;2) Review the PyTorch documentation to see what loss functions and initialization methods are provided. Replace the loss by Huber’s loss.&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-how-do-you-access-the-gradient-of-net0weight&quot;&gt;3) How do you access the gradient of net[0].weight?&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="linear regression" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">D2L 3 - Linear Regression Implementation from Scratch</title>
