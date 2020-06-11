@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-11T11:27:44+09:00</updated>
+  <updated>2020-06-11T15:13:01+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -45,14 +45,139 @@
 
 &lt;h6 id=&quot;1-if-we-replace-nnmseloss-with-nnmselossreductionmean-how-can-we-change-the-learning-rate-for-the-code-to-behave-identically-why&quot;&gt;1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why?&lt;/h6&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MSELoss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Result : &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 1, loss 0.0003235114854760468&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 2, loss 0.00010156028292840347&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 3, loss 0.00010140725498786196&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 4, loss 0.00010207432933384553&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 5, loss 0.0001025137462420389&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 6, loss 0.00010135988122783601&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 7, loss 0.00010229978943243623&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 8, loss 0.00010266812751069665&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 9, loss 0.00010165313869947568&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 10, loss 0.0001017447721096687&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reduction=’mean’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MSELoss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mean'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Result : &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 1, loss 0.00030811436590738595&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 2, loss 0.00010188968735747039&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 3, loss 0.00010148757428396493&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 4, loss 0.00010275946988258511&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 5, loss 0.00010129388829227537&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 6, loss 0.00010324743197998032&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 7, loss 0.00010137827484868467&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 8, loss 0.00010235008812742308&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 9, loss 0.00010130245937034488&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 10, loss 0.00010261914576403797&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reduction=’sum’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MSELoss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sum'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Result : &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 1, loss 0.13585303723812103&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 2, loss 0.11845800280570984&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 3, loss 0.10822969675064087&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 4, loss 0.1097884401679039&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 5, loss 0.13867419958114624&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 6, loss 0.13072428107261658&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 7, loss 0.10201241821050644&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 8, loss 0.10634788870811462&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 9, loss 0.13075295090675354&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 10, loss 0.11476431041955948&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h6 id=&quot;2-review-the-pytorch-documentation-to-see-what-loss-functions-and-initialization-methods-are-provided-replace-the-loss-by-hubers-loss&quot;&gt;2) Review the PyTorch documentation to see what loss functions and initialization methods are provided. Replace the loss by Huber’s loss.&lt;/h6&gt;
 
+&lt;p&gt;The name of &lt;code class=&quot;highlighter-rouge&quot;&gt;Huber's loss&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;SmoothL1Loss&lt;/code&gt; in pytorch &lt;code class=&quot;highlighter-rouge&quot;&gt;torch.nn&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;As you can see the loss below, after epoch 3, the SmoothL1Loss gives us better result.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SmoothL1Loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 1, loss 2.2134926319122314&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 2, loss 0.456503301858902&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 3, loss 0.0023368450347334146&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 4, loss 5.8054902183357626e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 5, loss 5.063020216766745e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 6, loss 5.0628041208256036e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 7, loss 5.068484824732877e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 8, loss 5.080221308162436e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 9, loss 5.061490446678363e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 10, loss 5.0722886953735724e-05&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;More information is in this &lt;a href=&quot;https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, you can go &lt;a href=&quot;https://pytorch.org/docs/master/nn.html#loss-functions&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; to see other loss functions in &lt;code class=&quot;highlighter-rouge&quot;&gt;torch.nn&lt;/code&gt;.&lt;/p&gt;
+
 &lt;h6 id=&quot;3-how-do-you-access-the-gradient-of-net0weight&quot;&gt;3) How do you access the gradient of net[0].weight?&lt;/h6&gt;
+
+&lt;p&gt;We give the parameter net.parameters() to `torch.optim.SGD().&lt;/p&gt;
+
+&lt;p&gt;The gradient of net[0].weight can be accessed by the code below.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'epoch {}, loss {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.1970,  0.2462]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 1, loss 2.210540533065796&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.3758,  0.1829]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 2, loss 0.45404237508773804&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0013,  0.0685]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 3, loss 0.0022276039235293865&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0009,  0.0033]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 4, loss 5.720141780329868e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[0.0016, 0.0007]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 5, loss 5.089789192425087e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0009,  0.0037]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 6, loss 5.0788381486199796e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[0.0029, 0.0022]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 7, loss 5.075278750155121e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0009,  0.0028]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 8, loss 5.072250496596098e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0058,  0.0067]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 9, loss 5.0622238632058725e-05&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tensor([[-0.0029,  0.0014]])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# epoch 10, loss 5.065527147962712e-05&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html&quot; target=&quot;_blank&quot;&gt;https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pytorch.org/docs/master/nn.html#loss-functions&quot; target=&quot;_blank&quot;&gt;https://pytorch.org/docs/master/nn.html#loss-functions&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber&quot; target=&quot;_blank&quot;&gt;https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://discuss.pytorch.org/t/how-to-print-the-computed-gradient-values-for-a-network/34179/6&quot; target=&quot;_blank&quot;&gt;https://discuss.pytorch.org/t/how-to-print-the-computed-gradient-values-for-a-network/34179/6&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content>
 
       

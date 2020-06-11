@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 3 - Concise Implementation of Linear Regression" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? 2) Review the PyTorch documentation to see what" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
     <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression-concise" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 3 - Concise Implementation of Linear Regression" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? 2) Review the PyTorch documentation to see what" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-3-linear-regression-concise"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? 2) Review the PyTorch documentation to see what"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr"
 }
     </script>
     
@@ -231,14 +231,139 @@ into the {body} of the default.hbs template -->
 
 <h6 id="1-if-we-replace-nnmseloss-with-nnmselossreductionmean-how-can-we-change-the-learning-rate-for-the-code-to-behave-identically-why">1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why?</h6>
 
+<ul>
+  <li>default</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span><span class="p">)</span>
+
+<span class="c"># Result : </span>
+<span class="c"># epoch 1, loss 0.0003235114854760468</span>
+<span class="c"># epoch 2, loss 0.00010156028292840347</span>
+<span class="c"># epoch 3, loss 0.00010140725498786196</span>
+<span class="c"># epoch 4, loss 0.00010207432933384553</span>
+<span class="c"># epoch 5, loss 0.0001025137462420389</span>
+<span class="c"># epoch 6, loss 0.00010135988122783601</span>
+<span class="c"># epoch 7, loss 0.00010229978943243623</span>
+<span class="c"># epoch 8, loss 0.00010266812751069665</span>
+<span class="c"># epoch 9, loss 0.00010165313869947568</span>
+<span class="c"># epoch 10, loss 0.0001017447721096687</span>
+</code></pre></div></div>
+
+<ul>
+  <li>reduction=’mean’</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span><span class="p">)</span>
+
+<span class="c"># Result : </span>
+<span class="c"># epoch 1, loss 0.00030811436590738595</span>
+<span class="c"># epoch 2, loss 0.00010188968735747039</span>
+<span class="c"># epoch 3, loss 0.00010148757428396493</span>
+<span class="c"># epoch 4, loss 0.00010275946988258511</span>
+<span class="c"># epoch 5, loss 0.00010129388829227537</span>
+<span class="c"># epoch 6, loss 0.00010324743197998032</span>
+<span class="c"># epoch 7, loss 0.00010137827484868467</span>
+<span class="c"># epoch 8, loss 0.00010235008812742308</span>
+<span class="c"># epoch 9, loss 0.00010130245937034488</span>
+<span class="c"># epoch 10, loss 0.00010261914576403797</span>
+</code></pre></div></div>
+
+<ul>
+  <li>reduction=’sum’</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s">'sum'</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span><span class="p">)</span>
+
+<span class="c"># Result : </span>
+<span class="c"># epoch 1, loss 0.13585303723812103</span>
+<span class="c"># epoch 2, loss 0.11845800280570984</span>
+<span class="c"># epoch 3, loss 0.10822969675064087</span>
+<span class="c"># epoch 4, loss 0.1097884401679039</span>
+<span class="c"># epoch 5, loss 0.13867419958114624</span>
+<span class="c"># epoch 6, loss 0.13072428107261658</span>
+<span class="c"># epoch 7, loss 0.10201241821050644</span>
+<span class="c"># epoch 8, loss 0.10634788870811462</span>
+<span class="c"># epoch 9, loss 0.13075295090675354</span>
+<span class="c"># epoch 10, loss 0.11476431041955948</span>
+</code></pre></div></div>
+
 <h6 id="2-review-the-pytorch-documentation-to-see-what-loss-functions-and-initialization-methods-are-provided-replace-the-loss-by-hubers-loss">2) Review the PyTorch documentation to see what loss functions and initialization methods are provided. Replace the loss by Huber’s loss.</h6>
 
+<p>The name of <code class="highlighter-rouge">Huber's loss</code> is <code class="highlighter-rouge">SmoothL1Loss</code> in pytorch <code class="highlighter-rouge">torch.nn</code>.</p>
+
+<p>As you can see the loss below, after epoch 3, the SmoothL1Loss gives us better result.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">SmoothL1Loss</span><span class="p">()</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span><span class="p">)</span>
+
+<span class="c"># Result :</span>
+<span class="c"># epoch 1, loss 2.2134926319122314</span>
+<span class="c"># epoch 2, loss 0.456503301858902</span>
+<span class="c"># epoch 3, loss 0.0023368450347334146</span>
+<span class="c"># epoch 4, loss 5.8054902183357626e-05</span>
+<span class="c"># epoch 5, loss 5.063020216766745e-05</span>
+<span class="c"># epoch 6, loss 5.0628041208256036e-05</span>
+<span class="c"># epoch 7, loss 5.068484824732877e-05</span>
+<span class="c"># epoch 8, loss 5.080221308162436e-05</span>
+<span class="c"># epoch 9, loss 5.061490446678363e-05</span>
+<span class="c"># epoch 10, loss 5.0722886953735724e-05</span>
+</code></pre></div></div>
+
+<p>More information is in this <a href="https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber" target="_blank">link</a>.</p>
+
+<p>Also, you can go <a href="https://pytorch.org/docs/master/nn.html#loss-functions" target="_blank">here</a> to see other loss functions in <code class="highlighter-rouge">torch.nn</code>.</p>
+
 <h6 id="3-how-do-you-access-the-gradient-of-net0weight">3) How do you access the gradient of net[0].weight?</h6>
+
+<p>We give the parameter net.parameters() to `torch.optim.SGD().</p>
+
+<p>The gradient of net[0].weight can be accessed by the code below.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">net</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'epoch {}, loss {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+
+<span class="c"># Result :</span>
+<span class="c"># tensor([[-0.1970,  0.2462]])</span>
+<span class="c"># epoch 1, loss 2.210540533065796</span>
+<span class="c"># tensor([[-0.3758,  0.1829]])</span>
+<span class="c"># epoch 2, loss 0.45404237508773804</span>
+<span class="c"># tensor([[-0.0013,  0.0685]])</span>
+<span class="c"># epoch 3, loss 0.0022276039235293865</span>
+<span class="c"># tensor([[-0.0009,  0.0033]])</span>
+<span class="c"># epoch 4, loss 5.720141780329868e-05</span>
+<span class="c"># tensor([[0.0016, 0.0007]])</span>
+<span class="c"># epoch 5, loss 5.089789192425087e-05</span>
+<span class="c"># tensor([[-0.0009,  0.0037]])</span>
+<span class="c"># epoch 6, loss 5.0788381486199796e-05</span>
+<span class="c"># tensor([[0.0029, 0.0022]])</span>
+<span class="c"># epoch 7, loss 5.075278750155121e-05</span>
+<span class="c"># tensor([[-0.0009,  0.0028]])</span>
+<span class="c"># epoch 8, loss 5.072250496596098e-05</span>
+<span class="c"># tensor([[-0.0058,  0.0067]])</span>
+<span class="c"># epoch 9, loss 5.0622238632058725e-05</span>
+<span class="c"># tensor([[-0.0029,  0.0014]])</span>
+<span class="c"># epoch 10, loss 5.065527147962712e-05</span>
+</code></pre></div></div>
 
 <h3 id="references">References</h3>
 
 <ul>
-  <li>&lt;&gt;{: target=”_blank”}</li>
+  <li>
+    <p><a href="https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html" target="_blank">https://pytorch.org/docs/master/generated/torch.nn.MSELoss.html</a></p>
+  </li>
+  <li>
+    <p><a href="https://pytorch.org/docs/master/nn.html#loss-functions" target="_blank">https://pytorch.org/docs/master/nn.html#loss-functions</a></p>
+  </li>
+  <li>
+    <p><a href="https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber" target="_blank">https://pytorch.org/docs/master/generated/torch.nn.SmoothL1Loss.html?highlight=huber</a></p>
+  </li>
+  <li>
+    <p><a href="https://discuss.pytorch.org/t/how-to-print-the-computed-gradient-values-for-a-network/34179/6" target="_blank">https://discuss.pytorch.org/t/how-to-print-the-computed-gradient-values-for-a-network/34179/6</a></p>
+  </li>
 </ul>
 
                 </div>
