@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 3 - Concise Implementation of Linear Regression" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’sum’), how can we change the learning rate for the code to behave identically. Why? default(mean) loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
     <meta property="og:url" content="https://hy38.github.io/D2L-3-linear-regression-concise" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 3 - Concise Implementation of Linear Regression" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’sum’), how can we change the learning rate for the code to behave identically. Why? default(mean) loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-3-linear-regression-concise"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why? default loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’sum’), how can we change the learning rate for the code to behave identically. Why? default(mean) loss = nn.MSELoss() trainer = torch.optim.SGD(net.parameters(), lr"
 }
     </script>
     
@@ -229,10 +229,10 @@ into the {body} of the default.hbs template -->
 
 <h3 id="exercise--concise-implementation-of-linear-regression">Exercise : Concise Implementation of Linear Regression</h3>
 
-<h6 id="1-if-we-replace-nnmseloss-with-nnmselossreductionmean-how-can-we-change-the-learning-rate-for-the-code-to-behave-identically-why">1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’mean’), how can we change the learning rate for the code to behave identically. Why?</h6>
+<h6 id="1-if-we-replace-nnmseloss-with-nnmselossreductionsum-how-can-we-change-the-learning-rate-for-the-code-to-behave-identically-why">1) If we replace nn.MSELoss() with nn.MSELoss(reduction=’sum’), how can we change the learning rate for the code to behave identically. Why?</h6>
 
 <ul>
-  <li>default</li>
+  <li>default(mean)</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
@@ -249,26 +249,6 @@ into the {body} of the default.hbs template -->
 <span class="c"># epoch 8, loss 0.00010266812751069665</span>
 <span class="c"># epoch 9, loss 0.00010165313869947568</span>
 <span class="c"># epoch 10, loss 0.0001017447721096687</span>
-</code></pre></div></div>
-
-<ul>
-  <li>reduction=’mean’</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="o">.</span><span class="mo">03</span><span class="p">)</span>
-
-<span class="c"># Result : </span>
-<span class="c"># epoch 1, loss 0.00030811436590738595</span>
-<span class="c"># epoch 2, loss 0.00010188968735747039</span>
-<span class="c"># epoch 3, loss 0.00010148757428396493</span>
-<span class="c"># epoch 4, loss 0.00010275946988258511</span>
-<span class="c"># epoch 5, loss 0.00010129388829227537</span>
-<span class="c"># epoch 6, loss 0.00010324743197998032</span>
-<span class="c"># epoch 7, loss 0.00010137827484868467</span>
-<span class="c"># epoch 8, loss 0.00010235008812742308</span>
-<span class="c"># epoch 9, loss 0.00010130245937034488</span>
-<span class="c"># epoch 10, loss 0.00010261914576403797</span>
 </code></pre></div></div>
 
 <ul>
