@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hy38.github.io/tag/softmax/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
+  <updated>2020-06-15T23:04:16+09:00</updated>
+  <id>https://hy38.github.io/tag/softmax/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">HY38’s IT Blog | </title>
+  
+
+  
+    <subtitle>b Ha p</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">D2L 3 - Softmax Regression</title>
+      <link href="https://hy38.github.io/D2L-3-softmax-regression" rel="alternate" type="text/html" title="D2L 3 - Softmax Regression" />
+      <published>2019-06-15T19:00:00+09:00</published>
+      <updated>2019-06-15T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-softmax-regression</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-softmax-regression">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--concise-implementation-of-linear-regression&quot;&gt;Exercise : Concise Implementation of Linear Regression&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-show-that-the-kullback-leibler-divergence--dpq--is-nonnegative-for-all-distributions--p--and--q--hint-use-jensens-inequality-ie-use-the-fact-that--logx--is-a-convex-function&quot;&gt;1) Show that the Kullback-Leibler divergence  D(p∥q)  is nonnegative for all distributions  p  and  q . Hint: use Jensen’s inequality, i.e., use the fact that  −logx  is a convex function.&lt;/h6&gt;
+
+&lt;h6 id=&quot;2-show-that--logjexpoj--is-a-convex-function-in--o-&quot;&gt;2) Show that  log∑jexp(oj)  is a convex function in  o .&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-we-can-explore-the-connection-between-exponential-families-and-the-softmax-in-some-more-depth&quot;&gt;3) We can explore the connection between exponential families and the softmax in some more depth&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compute the second derivative of the cross-entropy loss  l(y,y^)  for the softmax.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compute the variance of the distribution given by  softmax(o)  and show that it matches the second derivative computed above.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;4-assume-that-we-have-three-classes-which-occur-with-equal-probability-ie-the-probability-vector-is--131313-&quot;&gt;4) Assume that we have three classes which occur with equal probability, i.e., the probability vector is  (13,13,13) .&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the problem if we try to design a binary code for it? Can we match the entropy lower bound on the number of bits?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Can you design a better code. Hint: what happens if we try to encode two independent observations? What if we encode  n  observations jointly?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;5-softmax-is-a-misnomer-for-the-mapping-introduced-above-but-everyone-in-deep-learning-uses-it-the-real-softmax-is-defined-as--realsoftmaxablogexpaexpb-&quot;&gt;5) Softmax is a misnomer for the mapping introduced above (but everyone in deep learning uses it). The real softmax is defined as  RealSoftMax(a,b)=log(exp(a)+exp(b)) .&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prove that  RealSoftMax(a,b)&amp;gt;max(a,b) .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prove that this holds for  λ−1RealSoftMax(λa,λb) , provided that  λ&amp;gt;0 .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Show that for  λ→∞  we have  λ−1RealSoftMax(λa,λb)→max(a,b) .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does the soft-min look like?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extend this to more than two numbers.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="softmax" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
