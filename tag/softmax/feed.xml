@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/softmax/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-15T23:04:16+09:00</updated>
+  <updated>2020-06-16T22:59:11+09:00</updated>
   <id>https://hy38.github.io/tag/softmax/feed.xml</id>
 
   
@@ -43,22 +43,22 @@
 
 &lt;h3 id=&quot;exercise--concise-implementation-of-linear-regression&quot;&gt;Exercise : Concise Implementation of Linear Regression&lt;/h3&gt;
 
-&lt;h6 id=&quot;1-show-that-the-kullback-leibler-divergence--dpq--is-nonnegative-for-all-distributions--p--and--q--hint-use-jensens-inequality-ie-use-the-fact-that--logx--is-a-convex-function&quot;&gt;1) Show that the Kullback-Leibler divergence  D(p∥q)  is nonnegative for all distributions  p  and  q . Hint: use Jensen’s inequality, i.e., use the fact that  −logx  is a convex function.&lt;/h6&gt;
+&lt;h6 id=&quot;1-show-that-the-kullback-leibler-divergence-dpq-is-nonnegative-for-all-distributions-p-and-q-hint-use-jensens-inequality-ie-use-the-fact-that-logx-is-a-convex-function&quot;&gt;1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function.&lt;/h6&gt;
 
-&lt;h6 id=&quot;2-show-that--logjexpoj--is-a-convex-function-in--o-&quot;&gt;2) Show that  log∑jexp(oj)  is a convex function in  o .&lt;/h6&gt;
+&lt;h6 id=&quot;2-show-that-log-sum_j-expo_j-is-a-convex-function-in-o&quot;&gt;2) Show that $\log \sum_j \exp(o_j)$ is a convex function in $o$.&lt;/h6&gt;
 
 &lt;h6 id=&quot;3-we-can-explore-the-connection-between-exponential-families-and-the-softmax-in-some-more-depth&quot;&gt;3) We can explore the connection between exponential families and the softmax in some more depth&lt;/h6&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Compute the second derivative of the cross-entropy loss  l(y,y^)  for the softmax.&lt;/p&gt;
+    &lt;p&gt;Compute the second derivative of the cross-entropy loss$l(y,\hat{y})$ for the softmax.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Compute the variance of the distribution given by  softmax(o)  and show that it matches the second derivative computed above.&lt;/p&gt;
+    &lt;p&gt;Compute the variance of the distribution given by $softmax(o)$ and show that it matches the second derivative computed above.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&quot;4-assume-that-we-have-three-classes-which-occur-with-equal-probability-ie-the-probability-vector-is--131313-&quot;&gt;4) Assume that we have three classes which occur with equal probability, i.e., the probability vector is  (13,13,13) .&lt;/h6&gt;
+&lt;h6 id=&quot;4-assume-that-we-have-three-classes-which-occur-with-equal-probability-ie-the-probability-vector-is-dfrac13-dfrac13-dfrac13&quot;&gt;4) Assume that we have three classes which occur with equal probability, i.e., the probability vector is $(\dfrac{1}{3}, \dfrac{1}{3}, \dfrac{1}{3})$.&lt;/h6&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -69,17 +69,17 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&quot;5-softmax-is-a-misnomer-for-the-mapping-introduced-above-but-everyone-in-deep-learning-uses-it-the-real-softmax-is-defined-as--realsoftmaxablogexpaexpb-&quot;&gt;5) Softmax is a misnomer for the mapping introduced above (but everyone in deep learning uses it). The real softmax is defined as  RealSoftMax(a,b)=log(exp(a)+exp(b)) .&lt;/h6&gt;
+&lt;h6 id=&quot;5-softmax-is-a-misnomer-for-the-mapping-introduced-above-but-everyone-in-deep-learning-uses-it-the-real-softmax-is-defined-as-mathrmrealsoftmaxa-b--log-expa--expb&quot;&gt;5) Softmax is a misnomer for the mapping introduced above (but everyone in deep learning uses it). The real softmax is defined as $\mathrm{RealSoftMax}(a, b) = \log (\exp(a) + \exp(b))$.&lt;/h6&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Prove that  RealSoftMax(a,b)&amp;gt;max(a,b) .&lt;/p&gt;
+    &lt;p&gt;Prove that $\mathrm{RealSoftMax}(a, b) &amp;gt; \mathrm{max}(a, b)$.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Prove that this holds for  λ−1RealSoftMax(λa,λb) , provided that  λ&amp;gt;0 .&lt;/p&gt;
+    &lt;p&gt;Prove that this holds for $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b)$, provided that $\lambda &amp;gt; 0$.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Show that for  λ→∞  we have  λ−1RealSoftMax(λa,λb)→max(a,b) .&lt;/p&gt;
+    &lt;p&gt;Show that for $\lambda \to \infty$ we have $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) \to \mathrm{max}(a, b)$.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;What does the soft-min look like?&lt;/p&gt;
