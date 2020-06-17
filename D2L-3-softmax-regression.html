@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 3 - Softmax Regression" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function." />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. What is Softmax Softmax is a procedure producing probabilities that maximize the likelihood of the observed data. … Negative Log-likelihood Loss Function What we want is to maximize the likelihood of data. And the expression is" />
     <meta property="og:url" content="https://hy38.github.io/D2L-3-softmax-regression" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 3 - Softmax Regression" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function." />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. What is Softmax Softmax is a procedure producing probabilities that maximize the likelihood of the observed data. … Negative Log-likelihood Loss Function What we want is to maximize the likelihood of data. And the expression is" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-3-softmax-regression"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Concise Implementation of Linear Regression 1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function."
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. What is Softmax Softmax is a procedure producing probabilities that maximize the likelihood of the observed data. … Negative Log-likelihood Loss Function What we want is to maximize the likelihood of data. And the expression is"
 }
     </script>
     
@@ -227,7 +227,27 @@ into the {body} of the default.hbs template -->
   <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h3 id="exercise--concise-implementation-of-linear-regression">Exercise : Concise Implementation of Linear Regression</h3>
+<h4 id="what-is-softmax">What is Softmax</h4>
+
+<p>Softmax is a procedure producing <strong>probabilities</strong> that maximize the <strong>likelihood</strong> of the observed data.</p>
+
+<p>…</p>
+
+<h4 id="negative-log-likelihood-loss-function">Negative Log-likelihood Loss Function</h4>
+
+<p>What we want is to <strong>maximize</strong> the likelihood of data. And the expression is below.</p>
+
+<p>$P(Y \mid X) = \prod_{i=1}^n P(y^{(i)} \mid x^{(i)})$</p>
+
+<p>For the convenience of math, we plug (natural) logarithm.</p>
+
+<p>By plugging log to this expression, <code class="highlighter-rouge">product</code> gets replaced by <code class="highlighter-rouge">sum</code>.</p>
+
+<p>Since optimizers typically do minimize a function, minimizing the expression is more advantageous rather than maximizing.</p>
+
+<p>That is the reason we use <strong>NEGATIVE</strong> Log-likelihood loss function!</p>
+
+<h3 id="exercise--softmax-regression">Exercise : Softmax Regression</h3>
 
 <h6 id="1-show-that-the-kullback-leibler-divergence-dpq-is-nonnegative-for-all-distributions-p-and-q-hint-use-jensens-inequality-ie-use-the-fact-that-logx-is-a-convex-function">1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function.</h6>
 
@@ -278,7 +298,12 @@ into the {body} of the default.hbs template -->
 <h3 id="references">References</h3>
 
 <ul>
-  <li>&lt;&gt;{: target=”_blank”}</li>
+  <li>
+    <p>Why do we minimize NLL <a href="https://stats.stackexchange.com/questions/141087/why-do-we-minimize-the-negative-likelihood-if-it-is-equivalent-to-maximization-o" target="_blank">https://stats.stackexchange.com/questions/141087/why-do-we-minimize-the-negative-likelihood-if-it-is-equivalent-to-maximization-o</a></p>
+  </li>
+  <li>
+    <p><a href="https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1" target="_blank">https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1</a></p>
+  </li>
 </ul>
 
                 </div>

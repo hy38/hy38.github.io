@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-16T22:59:11+09:00</updated>
+  <updated>2020-06-17T23:34:08+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -41,7 +41,27 @@
   &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;exercise--concise-implementation-of-linear-regression&quot;&gt;Exercise : Concise Implementation of Linear Regression&lt;/h3&gt;
+&lt;h4 id=&quot;what-is-softmax&quot;&gt;What is Softmax&lt;/h4&gt;
+
+&lt;p&gt;Softmax is a procedure producing &lt;strong&gt;probabilities&lt;/strong&gt; that maximize the &lt;strong&gt;likelihood&lt;/strong&gt; of the observed data.&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;h4 id=&quot;negative-log-likelihood-loss-function&quot;&gt;Negative Log-likelihood Loss Function&lt;/h4&gt;
+
+&lt;p&gt;What we want is to &lt;strong&gt;maximize&lt;/strong&gt; the likelihood of data. And the expression is below.&lt;/p&gt;
+
+&lt;p&gt;$P(Y \mid X) = \prod_{i=1}^n P(y^{(i)} \mid x^{(i)})$&lt;/p&gt;
+
+&lt;p&gt;For the convenience of math, we plug (natural) logarithm.&lt;/p&gt;
+
+&lt;p&gt;By plugging log to this expression, &lt;code class=&quot;highlighter-rouge&quot;&gt;product&lt;/code&gt; gets replaced by &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since optimizers typically do minimize a function, minimizing the expression is more advantageous rather than maximizing.&lt;/p&gt;
+
+&lt;p&gt;That is the reason we use &lt;strong&gt;NEGATIVE&lt;/strong&gt; Log-likelihood loss function!&lt;/p&gt;
+
+&lt;h3 id=&quot;exercise--softmax-regression&quot;&gt;Exercise : Softmax Regression&lt;/h3&gt;
 
 &lt;h6 id=&quot;1-show-that-the-kullback-leibler-divergence-dpq-is-nonnegative-for-all-distributions-p-and-q-hint-use-jensens-inequality-ie-use-the-fact-that-logx-is-a-convex-function&quot;&gt;1) Show that the Kullback-Leibler divergence $D(p||q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen’s inequality, i.e., use the fact that $−logx$ is a convex function.&lt;/h6&gt;
 
@@ -92,7 +112,12 @@
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why do we minimize NLL &lt;a href=&quot;https://stats.stackexchange.com/questions/141087/why-do-we-minimize-the-negative-likelihood-if-it-is-equivalent-to-maximization-o&quot; target=&quot;_blank&quot;&gt;https://stats.stackexchange.com/questions/141087/why-do-we-minimize-the-negative-likelihood-if-it-is-equivalent-to-maximization-o&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&quot; target=&quot;_blank&quot;&gt;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
