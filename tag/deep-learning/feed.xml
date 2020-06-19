@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-18T20:20:37+09:00</updated>
+  <updated>2020-06-19T23:02:30+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -45,7 +45,7 @@
 
 &lt;p&gt;Softmax is a procedure producing &lt;strong&gt;probabilities&lt;/strong&gt; that maximize the &lt;strong&gt;likelihood&lt;/strong&gt; of the observed data.&lt;/p&gt;
 
-&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;We define the label with the probability of the data we observe.&lt;/p&gt;
 
 &lt;h4 id=&quot;negative-log-likelihood-loss-function&quot;&gt;Negative Log-likelihood Loss Function&lt;/h4&gt;
 
