@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/softmax/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-20T23:58:50+09:00</updated>
+  <updated>2020-06-21T22:21:13+09:00</updated>
   <id>https://hy38.github.io/tag/softmax/feed.xml</id>
 
   
@@ -46,6 +46,10 @@
 &lt;p&gt;Softmax is a procedure producing &lt;strong&gt;probabilities&lt;/strong&gt; that maximize the &lt;strong&gt;likelihood&lt;/strong&gt; of the observed data.&lt;/p&gt;
 
 &lt;p&gt;We define the label with the probability of the data we observe.&lt;/p&gt;
+
+&lt;h3 id=&quot;cross-entropy-loss&quot;&gt;Cross Entropy Loss&lt;/h3&gt;
+
+&lt;p&gt;We can think of the cross-entropy classification objective in two ways: (i) as maximizing the likelihood of the observed data; and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.&lt;/p&gt;
 
 &lt;h4 id=&quot;negative-log-likelihood-loss-function&quot;&gt;Negative Log-likelihood Loss Function&lt;/h4&gt;
 
@@ -119,6 +123,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;about MLE &lt;a href=&quot;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&quot; target=&quot;_blank&quot;&gt;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;about Entropy &lt;a href=&quot;https://hyunw.kim/blog/2017/10/14/Entropy.html&quot; target=&quot;_blank&quot;&gt;https://hyunw.kim/blog/2017/10/14/Entropy.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 

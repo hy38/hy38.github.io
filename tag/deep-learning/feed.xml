@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-20T23:58:50+09:00</updated>
+  <updated>2020-06-21T22:21:13+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -32,6 +32,91 @@
 
   
     <entry>
+      <title type="html">D2L 3 - Image Classification Dataset</title>
+      <link href="https://hy38.github.io/D2L-3-image-classification-dataset" rel="alternate" type="text/html" title="D2L 3 - Image Classification Dataset" />
+      <published>2019-06-21T19:00:00+09:00</published>
+      <updated>2019-06-21T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-image-classification-dataset</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-image-classification-dataset">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--image-classification-dataset&quot;&gt;Exercise : Image Classification Dataset&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-does-reducing-the-batch_size-for-instance-to-1-affect-read-performance&quot;&gt;1) Does reducing the batch_size (for instance, to 1) affect read performance?&lt;/h6&gt;
+
+&lt;p&gt;When the &lt;code class=&quot;highlighter-rouge&quot;&gt;batch_size&lt;/code&gt; increases, the read makes better performance.&lt;/p&gt;
+
+&lt;p&gt;batch_size = 1&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '319.19 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 64&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '14.09 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 128&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '8.21 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 256&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '6.36 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 1024&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '17.25 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;64 ‘14.54 sec’
+128 ‘15.01 sec’
+256 ‘11.29 sec’
+512 ‘23.95 sec’
+1024 ‘21.08 sec’&lt;/p&gt;
+
+&lt;h6 id=&quot;2-for-non-windows-users-try-modifying-num_workers-to-see-how-it-affects-read-performance-plot-the-performance-against-the-number-of-works-employed&quot;&gt;2) For non-Windows users, try modifying num_workers to see how it affects read performance. Plot the performance against the number of works employed.&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-use-the-frameworks-api-document-website-to-see-which-other-datasets-are-available&quot;&gt;3) Use the framework’s API document website to see which other datasets are available.&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="image classification" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">D2L 3 - Softmax Regression</title>
       <link href="https://hy38.github.io/D2L-3-softmax-regression" rel="alternate" type="text/html" title="D2L 3 - Softmax Regression" />
       <published>2019-06-15T19:00:00+09:00</published>
@@ -46,6 +131,10 @@
 &lt;p&gt;Softmax is a procedure producing &lt;strong&gt;probabilities&lt;/strong&gt; that maximize the &lt;strong&gt;likelihood&lt;/strong&gt; of the observed data.&lt;/p&gt;
 
 &lt;p&gt;We define the label with the probability of the data we observe.&lt;/p&gt;
+
+&lt;h3 id=&quot;cross-entropy-loss&quot;&gt;Cross Entropy Loss&lt;/h3&gt;
+
+&lt;p&gt;We can think of the cross-entropy classification objective in two ways: (i) as maximizing the likelihood of the observed data; and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.&lt;/p&gt;
 
 &lt;h4 id=&quot;negative-log-likelihood-loss-function&quot;&gt;Negative Log-likelihood Loss Function&lt;/h4&gt;
 
@@ -119,6 +208,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;about MLE &lt;a href=&quot;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&quot; target=&quot;_blank&quot;&gt;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;about Entropy &lt;a href=&quot;https://hyunw.kim/blog/2017/10/14/Entropy.html&quot; target=&quot;_blank&quot;&gt;https://hyunw.kim/blog/2017/10/14/Entropy.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 
@@ -1603,85 +1695,6 @@ We delete &lt;code class=&quot;highlighter-rouge&quot;&gt;NumRooms&lt;/code&gt; 
 
       
         <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">D2L 1-1 Introduction</title>
-      <link href="https://hy38.github.io/D2L-1-introduction" rel="alternate" type="text/html" title="D2L 1-1 Introduction" />
-      <published>2019-05-22T19:00:00+09:00</published>
-      <updated>2019-05-22T19:00:00+09:00</updated>
-      <id>https://hy38.github.io/D2L-1-introduction</id>
-      <content type="html" xml:base="https://hy38.github.io/D2L-1-introduction">&lt;blockquote&gt;
-  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;우리는 어떤 문제를 직면했을 때, 제일 먼저 소위 ‘first principle’ 코딩을 통해 문제를 해결한다. 그리고, 이것으로 주어진 문제를 100% 해결할 수 있으면 굳이 ML을 사용하지 않아도 된다.(물론 ML도 정확도의 한계가 존재할것이다.)&lt;/p&gt;
-
-&lt;p&gt;하지만, 이런 방식으로는 분명 한계가 존재한다. 가장 대표적으로 내일 날씨를 예측하는 일이 있다.&lt;/p&gt;
-
-&lt;p&gt;이 책에서는 Siri를 작동시키는 방법을 통해 전개를 한다.&lt;/p&gt;
-
-&lt;p&gt;흔히 하는 코딩을 통해 Siri를 작동시키는 &lt;code class=&quot;highlighter-rouge&quot;&gt;wake word&lt;/code&gt;를 아이폰에 인식시키는것은 쉽지 않은 일이다. 다만, 사람은 &lt;code class=&quot;highlighter-rouge&quot;&gt;wake word&lt;/code&gt;를 &lt;strong&gt;인식&lt;/strong&gt; 할 수 있다. 이것이 출발점이다.&lt;/p&gt;
-
-&lt;p&gt;사람들은 소리를 듣고 이 소리가 &lt;code class=&quot;highlighter-rouge&quot;&gt;wake word&lt;/code&gt;에 해당하는지 해당하지 않는지를 &lt;strong&gt;분류&lt;/strong&gt;할 수 있다. 이 label된 데이터들을 모아서 하나의 큰 dataset을 만들어 모델에게 parameter로 넘겨준다.&lt;/p&gt;
-
-&lt;p&gt;dataset을 넘겨받은 모델은 방대한 data들을 학습하게 된다. 이를 Training이라 부른다.&lt;/p&gt;
-
-&lt;p&gt;이후 모델은 적절한 연산을 통해 dataset에 존재하지 않는 소리가 Siri를 부르는것인지 아닌지를 구별해낸다.&lt;/p&gt;
-
-&lt;h3 id=&quot;supervised-learning&quot;&gt;Supervised Learning&lt;/h3&gt;
-
-&lt;h4 id=&quot;regression&quot;&gt;Regression&lt;/h4&gt;
-
-&lt;p&gt;회귀는 지도학습의 한 종류이다.&lt;/p&gt;
-
-&lt;p&gt;feature &lt;strong&gt;x&lt;/strong&gt;에 대한 target &lt;strong&gt;y&lt;/strong&gt;가 실수(Real Number)인 경우에 이 문제를 회귀라 한다.&lt;/p&gt;
-
-&lt;p&gt;대부분의 회귀문제들은 이 두 법칙을 따르는데, 문제를 분석할 때 참고하면 좋을것같다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;How much (cost will I need to buy this house?)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How many (dogs are in this picture?)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;classification&quot;&gt;Classification&lt;/h4&gt;
-
-&lt;p&gt;대부분의 분류문제들은 다음 법칙을 따르는데, 문제를 분석할 때 참고하면 좋을것같다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Is this (tumor malignant?)&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Sanghyun Park</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="deep learning" />
-      
-
-      
-        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning).</summary>
       
 
       

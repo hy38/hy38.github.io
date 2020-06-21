@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hy38.github.io/tag/image-classification/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
+  <updated>2020-06-21T22:21:13+09:00</updated>
+  <id>https://hy38.github.io/tag/image-classification/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">HY38’s IT Blog | </title>
+  
+
+  
+    <subtitle>b Ha p</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">D2L 3 - Image Classification Dataset</title>
+      <link href="https://hy38.github.io/D2L-3-image-classification-dataset" rel="alternate" type="text/html" title="D2L 3 - Image Classification Dataset" />
+      <published>2019-06-21T19:00:00+09:00</published>
+      <updated>2019-06-21T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-image-classification-dataset</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-image-classification-dataset">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--image-classification-dataset&quot;&gt;Exercise : Image Classification Dataset&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-does-reducing-the-batch_size-for-instance-to-1-affect-read-performance&quot;&gt;1) Does reducing the batch_size (for instance, to 1) affect read performance?&lt;/h6&gt;
+
+&lt;p&gt;When the &lt;code class=&quot;highlighter-rouge&quot;&gt;batch_size&lt;/code&gt; increases, the read makes better performance.&lt;/p&gt;
+
+&lt;p&gt;batch_size = 1&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '319.19 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 64&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '14.09 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 128&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '8.21 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 256&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '6.36 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;batch_size = 1024&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# '17.25 sec'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;64 ‘14.54 sec’
+128 ‘15.01 sec’
+256 ‘11.29 sec’
+512 ‘23.95 sec’
+1024 ‘21.08 sec’&lt;/p&gt;
+
+&lt;h6 id=&quot;2-for-non-windows-users-try-modifying-num_workers-to-see-how-it-affects-read-performance-plot-the-performance-against-the-number-of-works-employed&quot;&gt;2) For non-Windows users, try modifying num_workers to see how it affects read performance. Plot the performance against the number of works employed.&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-use-the-frameworks-api-document-website-to-see-which-other-datasets-are-available&quot;&gt;3) Use the framework’s API document website to see which other datasets are available.&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="image classification" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

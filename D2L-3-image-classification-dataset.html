@@ -11,7 +11,7 @@
 
 
 
-    <title>다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</title>
+    <title>D2L 3 - Image Classification Dataset</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹 폰트 설정 -->
@@ -40,30 +40,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="b Ha p" />
     <link rel="shortcut icon" href="https://hy38.github.io/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://hy38.github.io/dijkstra-algorithm" />
+    <link rel="canonical" href="https://hy38.github.io/D2L-3-image-classification-dataset" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" />
-    <meta property="og:description" content="다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점" />
-    <meta property="og:url" content="https://hy38.github.io/dijkstra-algorithm" />
-    <meta property="og:image" content="https://hy38.github.io/assets/images/algorithm/crystal.jpg" />
+    <meta property="og:title" content="D2L 3 - Image Classification Dataset" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size" />
+    <meta property="og:url" content="https://hy38.github.io/D2L-3-image-classification-dataset" />
+    <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
     <meta property="article:author" content="https://www.facebook.com/hy387" />
-    <meta property="article:published_time" content="2020-04-20T18:00:00+09:00" />
-    <meta property="article:modified_time" content="2020-04-20T18:00:00+09:00" />
-    <meta property="article:tag" content="Algorithm" />
+    <meta property="article:published_time" content="2019-06-21T19:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-06-21T19:00:00+09:00" />
+    <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" />
-    <meta name="twitter:description" content="다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점" />
+    <meta name="twitter:title" content="D2L 3 - Image Classification Dataset" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
-    <meta name="twitter:image" content="https://hy38.github.io/assets/images/algorithm/crystal.jpg" />
+    <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="HY38's IT Blog" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:data2" content="Deep Learning" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -78,18 +78,18 @@
         "name": "HY38's IT Blog",
         "logo": "https://hy38.github.io/"
     },
-    "url": "https://hy38.github.io/dijkstra-algorithm",
+    "url": "https://hy38.github.io/D2L-3-image-classification-dataset",
     "image": {
         "@type": "ImageObject",
-        "url": "https://hy38.github.io/assets/images/algorithm/crystal.jpg",
+        "url": "https://hy38.github.io/assets/images/d2l/brain.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hy38.github.io/dijkstra-algorithm"
+        "@id": "https://hy38.github.io/D2L-3-image-classification-dataset"
     },
-    "description": "다익스트라 최단 경로 알고리즘 그래프의 최단경로 알고리즘 그래프의 최단경로 알고리즘에 대한 설명은 여기에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 edge relaxation에 대해 설명한다. 최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, 여기에서 먼저 알아보는 것이 좋을것 같다. 기본적인 아이디어 다익스트라 알고리즘의 시작점은 최단경로는 최단경로로 이루어졌다는 그리디(Greedy) 알고리즘에서 나왔다. 어떤 정점"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size"
 }
     </script>
     
@@ -123,7 +123,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="D2L 3 - Image Classification Dataset" href="/feed.xml" />
 
 
 </head>
@@ -199,297 +199,79 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="20 April 2020">20 April 2020</time>
+                    <time class="post-full-meta-date" datetime="21 June 2019">21 June 2019</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/algorithm/'>ALGORITHM</a>,
+                               <a href='/tag/deep-learning/'>DEEP LEARNING</a>,
                             
                         
                             
-                               <a href='/tag/theory/'>THEORY</a>
+                               <a href='/tag/image-classification/'>IMAGE CLASSIFICATION</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</h1>
+                <h1 class="post-full-title">D2L 3 - Image Classification Dataset</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/algorithm/crystal.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/d2l/brain.png)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <blockquote>
-  <p>다익스트라 최단 경로 알고리즘</p>
+  <p>This is a post that I organized while studying <a href="https://d2l.ai/index.html" target="_blank">D2L(Dive into Deep Learning)</a> exercises.</p>
 </blockquote>
 
-<h4 id="그래프의-최단경로-알고리즘">그래프의 최단경로 알고리즘</h4>
+<h3 id="exercise--image-classification-dataset">Exercise : Image Classification Dataset</h3>
 
-<p>그래프의 최단경로 알고리즘에 대한 설명은 <a href="/about-Shortest-Path" target="_blank"><strong>여기</strong></a>에서 확인할 수 있다. 최단거리 알고리즘의 종류들과 <code class="highlighter-rouge">edge relaxation</code>에 대해 설명한다.</p>
+<h6 id="1-does-reducing-the-batch_size-for-instance-to-1-affect-read-performance">1) Does reducing the batch_size (for instance, to 1) affect read performance?</h6>
 
-<blockquote>
-  <p>최단경로 알고리즘과 edge relaxation에 대해 자세히 알지 못한다면, <a href="/about-Shortest-Path" target="_blank"><strong>여기</strong></a>에서 먼저 알아보는 것이 좋을것 같다.</p>
-</blockquote>
+<p>When the <code class="highlighter-rouge">batch_size</code> increases, the read makes better performance.</p>
 
-<hr />
-
-<h6 id="기본적인-아이디어">기본적인 아이디어</h6>
-
-<p>다익스트라 알고리즘의 시작점은 <strong>최단경로는 최단경로로 이루어졌다</strong>는 그리디(Greedy) 알고리즘에서 나왔다.</p>
-
-<p>어떤 정점 u에서 정점 v까지 가는 <strong>최단경로</strong>가 다음과 같이 존재한다 하자.</p>
-
-<p><code class="highlighter-rouge">u -&gt; x -&gt; y -&gt; z -&gt; v</code></p>
-
-<p>이 때 <code class="highlighter-rouge">u -&gt; x</code>로의 경로는 최단경로이고, <code class="highlighter-rouge">x -&gt; y</code>로, <code class="highlighter-rouge">y -&gt; z</code>로, <code class="highlighter-rouge">z -&gt; v</code>로의 경로 모두 <strong>최단경로</strong>이며</p>
-
-<p>이것을 <strong>최단경로는 최단경로로 이루어졌다</strong>고 표현한다.</p>
-
-<p>다익스트라 알고리즘은 여기에서 시작한다.</p>
-
-<hr />
-
-<h4 id="음수간선이-존재하면-안되는-이유">음수간선이 존재하면 안되는 이유</h4>
-
-<p>다익스트라 알고리즘을 사용할 때에는 그래프에 음수 가중치를 갖는 간선이 존재하는지의 여부가 매우 중요하다.</p>
-
-<p>그 이유는 크게 3가지가 있다.</p>
-
-<ol>
-  <li>
-    <p>(가중치의 합이 음수인)음수 사이클의 발생 가능성</p>
-  </li>
-  <li>
-    <p>Edge Relaxation 계산의 오류 가능성</p>
-  </li>
-  <li>
-    <p>회피시의 시간복잡도</p>
-  </li>
-</ol>
-
-<p>다만 중요한 내용이기 때문에 세부적인 이유는 <a href="/why-dijkstra-fail-on-a-negative-weighted-edge" target="_blank"><strong>여기</strong></a>에서 자세히 다룬다.</p>
-
-<hr />
-
-<h6 id="우선순위-큐의-사용">우선순위 큐의 사용</h6>
-
-<p>초기 다익스트라가 고안한 알고리즘은 우선순위큐를 사용하지 않는 형태였다. 따라서 시간복잡도가 $O(N^2)$을 가졌었는데, 적절한 자료구조들을 이용하여 점차 시간복잡도를 줄일 수 있게 되었다.</p>
-
-<p>그 중 주로 사용하는 자료구조가 <strong><a href="https://ko.wikipedia.org/wiki/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84_%ED%81%90" target="_blank">우선순위 큐(Priority Queue)</a></strong>이다.</p>
-
-<p>우선순위 큐의 사용은 가중치가 낮은 간선을 먼저 따라가기 위함이며, 주로 <code class="highlighter-rouge">heap</code>을 사용하여 구현한다.</p>
-
-<p>다익스트라 알고리즘은 작은것의 우선순위가 더 높은 <code class="highlighter-rouge">min-heap</code>을 사용한다.</p>
-
-<p>우선순위 큐를 사용하는 알고리즘의 시간복잡도는 $O(ElogV)$이다.</p>
-
-<hr />
-
-<h4 id="우선순위-큐에-정점을-넣는-2가지-방법">우선순위 큐에 정점을 넣는 2가지 방법</h4>
-
-<p>우선순위 큐를 이용하여 다익스트라 알고리즘을 구현할 때 선택할 수 있는 두 가지 방법이 있다.</p>
-
-<ol>
-  <li>
-    <p>시작할 때 모든 정점을 우선순위 큐에 <code class="highlighter-rouge">push</code>한다.</p>
-  </li>
-  <li>
-    <p>시작 정점을 우선순위 큐에 넣고 시작하여 edge relaxation이 일어날때마다 우선순위 큐에 <code class="highlighter-rouge">push</code>한다.</p>
-  </li>
-</ol>
-
-<p>개인적으로 두번째 방법을 주로 사용하는 편이기에 2번을 중점으로 알아보겠다.</p>
-
-<hr />
-
-<h6 id="다익스트라-알고리즘의-구현코드">다익스트라 알고리즘의 구현(코드)</h6>
-
-<ul>
-  <li>C++ Code with Priority Queue(STL)</li>
-</ul>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
-#include &lt;queue&gt;
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">MAX_V</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="mi">987654321</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
-<span class="c1">//  인접리스트, &lt;연결된 정점 번호, 간선 가중치&gt; 쌍
-</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">MAX_V</span><span class="p">];</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dist</span><span class="p">;</span>
-
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dijkstra</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">){</span>
-
-    <span class="n">dist</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">INF</span><span class="p">);</span>
-    <span class="n">dist</span><span class="p">[</span><span class="n">src</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">priority_queue</span><span class="o">&lt;</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span>    <span class="c1">//  &lt;간선 가중치, 연결된 정점 번호&gt; 쌍
-</span>    <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="n">src</span><span class="p">});</span>  <span class="c1">//  시작정점을 pq에 넣어준다.
-</span>
-    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
-
-        <span class="kt">int</span> <span class="n">cost</span> <span class="o">=</span> <span class="o">-</span><span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">;</span> <span class="c1">//  min-heap을 이용하기 위해 cost에 -를 붙인다.
-</span>        <span class="kt">int</span> <span class="n">node</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">second</span><span class="p">;</span>
-        <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-
-        <span class="c1">//  만약 지금 꺼낸 것보다 더 짧은 경로를 알고 있다면 지금 꺼낸 것을 무시한다.
-</span>        <span class="k">if</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">cost</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
-            <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">;</span>
-            <span class="kt">int</span> <span class="n">nextDist</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">second</span> <span class="o">+</span> <span class="n">cost</span><span class="p">;</span>  <span class="c1">// 간선 (node, next)의 가중치에 cost를 더해준다. 
-</span>
-            <span class="c1">//  더 짧은 경로를 발견하면, dist[]를 갱신하고 우선순위 큐에 넣는다.
-</span>            <span class="k">if</span><span class="p">(</span><span class="n">nextDist</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">next</span><span class="p">]){</span>
-                <span class="n">dist</span><span class="p">[</span><span class="n">next</span><span class="p">]</span> <span class="o">=</span> <span class="n">nextDist</span><span class="p">;</span>  <span class="c1">//  edge relaxation
-</span>                <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="o">-</span><span class="n">nextDist</span><span class="p">,</span> <span class="n">next</span><span class="p">));</span>    <span class="c1">//  min-heap을 이용하기 위해 cost에 -를 붙인다.
-</span>            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">dist</span><span class="p">;</span>    <span class="c1">//  src정점부터 다른 모든 정점까지의 거리를 담은 벡터를 반환한다.
-</span><span class="p">}</span>
+<p>batch_size = 1</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
+<span class="c"># '319.19 sec'</span>
 </code></pre></div></div>
 
-<hr />
-
-<h6 id="다익스트라-알고리즘의-동작-과정">다익스트라 알고리즘의 동작 과정</h6>
-
-<blockquote>
-  <p>시작점은 <code class="highlighter-rouge">a</code>번 정점이라 생각하자. 여기에서 말하는 큐는 모두 우선순위 큐이다. 큐에서 정점을 뽑는 과정을 그 정점을 방문한다고 말한다.</p>
-</blockquote>
-
-<blockquote>
-  <p>또한, <code class="highlighter-rouge">dist[v]는 dist[v] &gt; dist[u] + cost(u, v)</code>인 경우에 <code class="highlighter-rouge">dist[u] + cost(u, v)</code>로 업데이트한다. 업데이트와 동시에 해당 정점을 큐에 넣는다. 큐에 넣을때에는 해당 정점번호와 그 번호로 가기위한 거리까지를 쌍으로 넣어준다.</p>
-</blockquote>
-
-<p><img src="/assets/images/algorithm/dijkstra1-graph.png" alt="dijkstra1_graph" /></p>
-
-<p>1) 모든 정점까지의 거리를 <code class="highlighter-rouge">양의 무한대</code>로 설정해준다. 다만 <code class="highlighter-rouge">a</code>번 정점까지의 거리는 <code class="highlighter-rouge">0</code>으로 설정한다.</p>
-
-<p>2) <code class="highlighter-rouge">a</code>번 정점을 큐에 넣고 빼어 주변 정점들을 찾아 방문한다.</p>
-
-<p>2-1) 주변 정점인 <code class="highlighter-rouge">b</code>와 <code class="highlighter-rouge">c</code>의 거리값인 <code class="highlighter-rouge">dist[b]</code>와 <code class="highlighter-rouge">dist[c]</code>를 업데이트해주고 <code class="highlighter-rouge">b</code>와 <code class="highlighter-rouge">c</code>를 큐에 넣는다.</p>
-
-<p>3) 큐에 남은 원소 <code class="highlighter-rouge">b, c</code> 중 거리값이 낮은 값인 <code class="highlighter-rouge">c</code>를 먼저 큐에서 뽑는다.</p>
-
-<p>3-1) <code class="highlighter-rouge">c</code> 주변 정점인 <code class="highlighter-rouge">d</code>의 거리값 <code class="highlighter-rouge">dist[d]</code>를 업데이트해주고, <code class="highlighter-rouge">d</code>를 큐에 넣는다.</p>
-
-<p>4) 큐에 남은 원소 <code class="highlighter-rouge">b, d</code> 중 거리값이 낮은 값인 <code class="highlighter-rouge">d</code>를 먼저 큐에서 뽑는다.</p>
-
-<p>4-1) d의 주변 정점인 <code class="highlighter-rouge">b</code>와 <code class="highlighter-rouge">e, f</code>가 존재한다.</p>
-
-<p>4-2) 먼저, <code class="highlighter-rouge">b</code>로 가는 더 짧은 경로가 존재하므로 <code class="highlighter-rouge">dist[b]</code>를 다시 업데이트해준다.</p>
-
-<p>4-3) <code class="highlighter-rouge">dist[e]</code>와 <code class="highlighter-rouge">dist[f]</code>는 아직 <code class="highlighter-rouge">양의 무한대</code>이기에 곧바로 업데이트한다.</p>
-
-<p>5) 큐에 남은 원소 <code class="highlighter-rouge">b, e, f</code> 중 거리값이 낮은 값인 <code class="highlighter-rouge">b</code>를 먼저 큐에서 뽑는다.</p>
-
-<p>5-1) 주변 정점 <code class="highlighter-rouge">g</code>와 <code class="highlighter-rouge">f</code>의 <code class="highlighter-rouge">dist[]</code> 업데이트를 시도한다.</p>
-
-<p>5-2) <code class="highlighter-rouge">dist[g]</code>가 <code class="highlighter-rouge">양의 무한대</code>이기에 바로 업데이트해준다.</p>
-
-<p>5-3) <code class="highlighter-rouge">dist[f]</code>는 <code class="highlighter-rouge">b</code>가 찾은 경로 <code class="highlighter-rouge">7</code>보다 작은 상태이기에 업데이트하지 않는다.</p>
-
-<p>6) 큐에 남은 원소 <code class="highlighter-rouge">e, f, g</code>중 거리값이 낮은 값인 <code class="highlighter-rouge">f</code>를 먼저 큐에서 뽑는다.</p>
-
-<p>6-1) <code class="highlighter-rouge">g</code>까지 갈수있는 거리가 8인 경로가 있지만, <code class="highlighter-rouge">dist[g]</code>는 이미 <code class="highlighter-rouge">7</code>이기 때문에 업데이트하지 않는다.</p>
-
-<p>7) 큐에 남은 원소 <code class="highlighter-rouge">e</code>, <code class="highlighter-rouge">g</code>중 거리값이 낮은 값인 <code class="highlighter-rouge">g</code>를 먼저 큐에서 뽑는다.</p>
-
-<p>7-1) <code class="highlighter-rouge">g</code>에서 업데이트 가능한 정점이 없으므로 다음 과정을 진행한다.</p>
-
-<p>8) 마지막 남은 원소 <code class="highlighter-rouge">e</code>를 뽑는다.</p>
-
-<p>8-1) <code class="highlighter-rouge">e</code>에서 업데이트 가능한 정점이 없으므로 다음 과정을 진행한다.</p>
-
-<p>9) 큐에 남은 정점이 존재하지 않으므로 <code class="highlighter-rouge">while 반복문</code>을 종료하고 <code class="highlighter-rouge">dist배열</code>을 반환한다.</p>
-
-<ul>
-  <li>최종 결과</li>
-</ul>
-
-<p><img src="/assets/images/algorithm/dijkstra2-graph.png" alt="dijkstra2_graph" /></p>
-
-<hr />
-
-<h4 id="시간-복잡도의-계산">시간 복잡도의 계산</h4>
-
-<p>1) 모든 정점은 한번씩 방문되고, 모든 간선은 한번씩 검사된다. <code class="highlighter-rouge">O(E)</code></p>
-
-<p>2-1) 큐에는 최대 간선수만큼의 원소가 들어갈 수 있다. <code class="highlighter-rouge">O(E)</code></p>
-
-<p>2-2) 우선순위 큐에서 각 원소의 추가 / 삭제에는 비용이 든다. <code class="highlighter-rouge">O(log(E))</code></p>
-
-<p>위 두 과정을 모두 더하면 총 시간복잡도는 <code class="highlighter-rouge">O(E + ElogE) = O(ElogE)</code>가 된다.</p>
-
-<p>$E &lt; V^2 , log(E) &lt; 2log(V)$</p>
-
-<p>이므로 <code class="highlighter-rouge">logE</code>를 <code class="highlighter-rouge">logV</code>라 해도 무방하다.</p>
-
-<p>따라서 우선순위 큐를 사용한 다익스트라 알고리즘의 시간 복잡도는 <code class="highlighter-rouge">ElogV</code> 이다.</p>
-
-<hr />
-
-<h6 id="관련-문제">관련 문제</h6>
-
-<ul>
-  <li>
-    <p><a href="https://www.acmicpc.net/problem/1261" target="_blank">BOJ 1261 - 알고스팟</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.acmicpc.net/problem/1504" target="_blank">BOJ 1504 - 특정한 최단 경로</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.acmicpc.net/problem/18223" target="_blank">BOJ 18223 - 민준이와 마산 그리고 건우</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.acmicpc.net/problem/11779" target="_blank">BOJ 11779 - 최소비용 구하기 2</a></p>
-  </li>
-  <li>
-    <p><a href="https://algospot.com/judge/problem/read/FIRETRUCKS" target="_blank">Algospot - 소방차</a></p>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="참고-사항">참고 사항</h3>
-
-<ul>
-  <li>다음 코드로 인해 큐에 들어간 중복원소를 무시한다. 이 코드를 작성하지 않아도 최단거리는 구해지지만, 시간초과가 나게끔 하는 테스트케이스로 저격이 가능하다. 이에 대한 설명은 <a href="http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/" target="_blank"><strong>여기</strong></a>에서 알아볼수 있다.</li>
-</ul>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(dist[node] &lt; cost) continue;
+<p>batch_size = 64</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
+<span class="c"># '14.09 sec'</span>
 </code></pre></div></div>
 
+<p>batch_size = 128</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
+<span class="c"># '8.21 sec'</span>
+</code></pre></div></div>
+
+<p>batch_size = 256</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
+<span class="c"># '6.36 sec'</span>
+</code></pre></div></div>
+
+<p>batch_size = 1024</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
+<span class="c"># '17.25 sec'</span>
+</code></pre></div></div>
+
+<p>64 ‘14.54 sec’
+128 ‘15.01 sec’
+256 ‘11.29 sec’
+512 ‘23.95 sec’
+1024 ‘21.08 sec’</p>
+
+<h6 id="2-for-non-windows-users-try-modifying-num_workers-to-see-how-it-affects-read-performance-plot-the-performance-against-the-number-of-works-employed">2) For non-Windows users, try modifying num_workers to see how it affects read performance. Plot the performance against the number of works employed.</h6>
+
+<h6 id="3-use-the-frameworks-api-document-website-to-see-which-other-datasets-are-available">3) Use the framework’s API document website to see which other datasets are available.</h6>
+
+<h3 id="references">References</h3>
+
 <ul>
-  <li>다익스트라 관련 문제들 중 <strong>최단거리는 최단거리로 이루어졌음을</strong> 이용하는 문제가 많다.</li>
-</ul>
-
-<hr />
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>
-    <p>Introduction to Algorithms</p>
-  </li>
-  <li>
-    <p>알고리즘 문제 해결 전략 2</p>
-  </li>
-  <li>
-    <p><a href="https://jason9319.tistory.com/307" target="_blank">https://jason9319.tistory.com/307</a></p>
-  </li>
-  <li>
-    <p><a href="http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/" target="_blank">http://www.secmem.org/blog/2019/01/09/wrong-dijkstra/</a></p>
-  </li>
-  <li>
-    <p><a href="https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" target="_blank">https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98</a></p>
-  </li>
+  <li>&lt;&gt;{: target=”_blank”}</li>
 </ul>
 
                 </div>
@@ -593,7 +375,7 @@ into the {body} of the default.hbs template -->
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; HY38's IT Blog &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/algorithm/">Algorithm</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/deep-learning/">Deep learning</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -603,146 +385,15 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/floyd-warshall-algorithm">플로이드 워셜 최단경로 알고리즘의 구현 - Floyd-Warshall Shortest Path Algorithm</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                            <li><a href="/bellman-ford-algorithm">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</a></li>
-                                        
-                                    
+                                
                                   
                                 
                                   
-                                    
-                                  
                                 
-                                  
-                                    
-                                        
-                                        
-                                            <li><a href="/why-dijkstra-fail-on-a-negative-weighted-edge">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</a></li>
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
                                   
                                 
                                   
@@ -781,14 +432,100 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                 
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-3-softmax-regression">D2L 3 - Softmax Regression</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-3-linear-regression-concise">D2L 3 - Concise Implementation of Linear Regression</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/D2L-3-linear-regression-implementaion-from-scratch">D2L 3 - Linear Regression Implementation from Scratch</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/algorithm/">
+                            <a href="/tag/deep-learning/">
                                 
-                                    See all 19 posts  →
+                                    See all 10 posts  →
                                 
                             </a>
                         </footer>
@@ -802,26 +539,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/bellman-ford-algorithm">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/green-red-arrow.jpg)"></div>
+            <a class="post-card-image-link" href="/MLcoursera-3-2">
+                <div class="post-card-image" style="background-image: url(/assets/images/ml.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/bellman-ford-algorithm">
+            <a class="post-card-content-link" href="/MLcoursera-3-2">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Algorithm</span>
+                               <span class="post-card-tags">Machine learning</span>
                             
                         
                             
-                                <span class="post-card-tags">Theory</span>
+                                <span class="post-card-tags">Coursera</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">벨만 포드 최단경로 알고리즘의 구현 - Bellman-Ford Shortest Path Algorithm</h2>
+                    <h2 class="post-card-title">ML Coursera 3-2 Regularization</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -858,26 +595,26 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/why-dijkstra-fail-on-a-negative-weighted-edge">
-                <div class="post-card-image" style="background-image: url(/assets/images/algorithm/infinite.png)"></div>
+            <a class="post-card-image-link" href="/D2L-3-softmax-regression">
+                <div class="post-card-image" style="background-image: url(/assets/images/d2l/brain.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/why-dijkstra-fail-on-a-negative-weighted-edge">
+            <a class="post-card-content-link" href="/D2L-3-softmax-regression">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Algorithm</span>
+                               <span class="post-card-tags">Deep learning</span>
                             
                         
                             
-                                <span class="post-card-tags">Theory</span>
+                                <span class="post-card-tags">Softmax</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">다익스트라 알고리즘에서 음수 간선이 존재하면 안되는 이유 - Reason Why Dijkstra Fail on a Negative Weighted Edge</h2>
+                    <h2 class="post-card-title">D2L 3 - Softmax Regression</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -923,18 +660,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">다익스트라 최단경로 알고리즘의 구현 - Dijkstra Shortest Path Algorithm</div>
+    <div class="floating-header-title">D2L 3 - Image Classification Dataset</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC+%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98+%EA%B5%AC%ED%98%84+-+Dijkstra+Shortest+Path+Algorithm&amp;url=https://hy38.github.iodijkstra-algorithm"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=D2L+3+-+Image+Classification+Dataset&amp;url=https://hy38.github.ioD2L-3-image-classification-dataset"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.iodijkstra-algorithm"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://hy38.github.ioD2L-3-image-classification-dataset"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
