@@ -264,7 +264,44 @@ into the {body} of the default.hbs template -->
 512 ‘23.95 sec’
 1024 ‘21.08 sec’</p>
 
+<p>8 ‘86.08 sec’
+16 42.01
+32 32.87
+64 22.22
+128 17.19
+256 17.11
+512 19.74
+1024 14.81, 18.14, 14.89, 16.74</p>
+
 <h6 id="2-for-non-windows-users-try-modifying-num_workers-to-see-how-it-affects-read-performance-plot-the-performance-against-the-number-of-works-employed">2) For non-Windows users, try modifying num_workers to see how it affects read performance. Plot the performance against the number of works employed.</h6>
+
+<p>Since my computer is a 2-core processor, I set the <code class="highlighter-rouge">workers</code> as [1, 2] with my <code class="highlighter-rouge">batch_size</code> as 256.</p>
+
+<p>The performance increased when using 2 cores, and the plot is below.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">workers</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+    <span class="n">train_iter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                             <span class="n">num_workers</span><span class="o">=</span><span class="n">workers</span><span class="p">)</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="n">d2l</span><span class="o">.</span><span class="n">Timer</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_iter</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">())</span>
+
+<span class="c"># Result : </span>
+<span class="c"># [23.362491607666016, 15.475221872329712]</span>
+</code></pre></div></div>
+
+<p>I made a really simple plot. Because I have only 2 data, it is hard to find the analyze the result of graph.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s">'workers'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s">'time'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/34434143/85283207-eca5c580-b4c7-11ea-95a4-f5a3a07009a5.png" alt="worker-time-plot" /></p>
 
 <h6 id="3-use-the-frameworks-api-document-website-to-see-which-other-datasets-are-available">3) Use the framework’s API document website to see which other datasets are available.</h6>
 
