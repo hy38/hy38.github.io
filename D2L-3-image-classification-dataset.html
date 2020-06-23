@@ -47,7 +47,7 @@
     <meta property="og:site_name" content="HY38's IT Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="D2L 3 - Image Classification Dataset" />
-    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size" />
+    <meta property="og:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. But when the batch_size gets bigger than 512, performance gets" />
     <meta property="og:url" content="https://hy38.github.io/D2L-3-image-classification-dataset" />
     <meta property="og:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta property="article:publisher" content="https://www.facebook.com/hy387" />
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Deep Learning" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="D2L 3 - Image Classification Dataset" />
-    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size" />
+    <meta name="twitter:description" content="This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. But when the batch_size gets bigger than 512, performance gets" />
     <meta name="twitter:url" content="https://hy38.github.io/" />
     <meta name="twitter:image" content="https://hy38.github.io/assets/images/d2l/brain.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "@type": "WebPage",
         "@id": "https://hy38.github.io/D2L-3-image-classification-dataset"
     },
-    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. batch_size = 1 # Result : # '319.19 sec' batch_size"
+    "description": "This is a post that I organized while studying D2L(Dive into Deep Learning) exercises. Exercise : Image Classification Dataset 1) Does reducing the batch_size (for instance, to 1) affect read performance? When the batch_size increases, the read makes better performance. But when the batch_size gets bigger than 512, performance gets"
 }
     </script>
     
@@ -233,49 +233,51 @@ into the {body} of the default.hbs template -->
 
 <p>When the <code class="highlighter-rouge">batch_size</code> increases, the read makes better performance.</p>
 
-<p>batch_size = 1</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
-<span class="c"># '319.19 sec'</span>
+<p>But when the <code class="highlighter-rouge">batch_size</code> gets bigger than 512, performance gets worse.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b_result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span> <span class="p">,</span><span class="mi">64</span> <span class="p">,</span><span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">2048</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">b_s</span> <span class="ow">in</span> <span class="n">batch_size</span><span class="p">:</span>
+    <span class="n">train_iter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train</span><span class="p">,</span> <span class="n">b_s</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                                 <span class="n">num_workers</span><span class="o">=</span><span class="n">get_dataloader_workers</span><span class="p">())</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="n">d2l</span><span class="o">.</span><span class="n">Timer</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_iter</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">b_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">())</span>
+
+<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b_result</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"batch_size:"</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">[</span><span class="n">cnt</span><span class="p">],</span> <span class="s">", time: {:.2f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">cnt</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="c"># Result :</span>
+<span class="c"># batch_size: 1 , time: 245.93</span>
+<span class="c"># batch_size: 2 , time: 127.68</span>
+<span class="c"># batch_size: 4 , time: 66.66</span>
+<span class="c"># batch_size: 8 , time: 43.02</span>
+<span class="c"># batch_size: 16 , time: 19.77</span>
+<span class="c"># batch_size: 32 , time: 11.95</span>
+<span class="c"># batch_size: 64 , time: 9.08</span>
+<span class="c"># batch_size: 128 , time: 7.61</span>
+<span class="c"># batch_size: 256 , time: 6.64</span>
+<span class="c"># batch_size: 512 , time: 7.20</span>
+<span class="c"># batch_size: 1024 , time: 7.09</span>
+<span class="c"># batch_size: 2048 , time: 8.27</span>
 </code></pre></div></div>
 
-<p>batch_size = 64</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
-<span class="c"># '14.09 sec'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">batch_size</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b_result</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s">'batch_size'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s">'time'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>batch_size = 128</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
-<span class="c"># '8.21 sec'</span>
-</code></pre></div></div>
+<p>The <strong>best</strong> <code class="highlighter-rouge">batch_size</code> seems to be <code class="highlighter-rouge">256</code>.</p>
 
-<p>batch_size = 256</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
-<span class="c"># '6.36 sec'</span>
-</code></pre></div></div>
-
-<p>batch_size = 1024</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Result :</span>
-<span class="c"># '17.25 sec'</span>
-</code></pre></div></div>
-
-<p>64 ‘14.54 sec’
-128 ‘15.01 sec’
-256 ‘11.29 sec’
-512 ‘23.95 sec’
-1024 ‘21.08 sec’</p>
-
-<p>8 ‘86.08 sec’
-16 42.01
-32 32.87
-64 22.22
-128 17.19
-256 17.11
-512 19.74
-1024 14.81, 18.14, 14.89, 16.74</p>
+<p><img src="https://user-images.githubusercontent.com/34434143/85409820-40381200-b5a1-11ea-9940-9b34df4bc922.png" alt="bs-time-plot" /></p>
 
 <h6 id="2-for-non-windows-users-try-modifying-num_workers-to-see-how-it-affects-read-performance-plot-the-performance-against-the-number-of-works-employed">2) For non-Windows users, try modifying num_workers to see how it affects read performance. Plot the performance against the number of works employed.</h6>
 
-<p>Since my computer is a 2-core processor, I set the <code class="highlighter-rouge">workers</code> as [1, 2] with my <code class="highlighter-rouge">batch_size</code> as 256.</p>
+<p>Since my computer is a 2-core processor, I set the <code class="highlighter-rouge">workers</code> as [1, 2].</p>
+
+<p>Also, as we know our best <code class="highlighter-rouge">batch_size</code>, I will set my <code class="highlighter-rouge">batch_size</code> to 256.</p>
 
 <p>The performance increased when using 2 cores, and the plot is below.</p>
 
@@ -289,26 +291,65 @@ into the {body} of the default.hbs template -->
         <span class="k">continue</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">())</span>
 
+<span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w_result</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"workers:"</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="s">", time: {:.2f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">cnt</span><span class="o">+=</span><span class="mi">1</span>
+
 <span class="c"># Result : </span>
-<span class="c"># [23.362491607666016, 15.475221872329712]</span>
+<span class="c"># workers: 1 , time: 18.48</span>
+<span class="c"># workers: 2 , time: 14.81</span>
 </code></pre></div></div>
 
-<p>I made a really simple plot. Because I have only 2 data, it is hard to find the analyze the result of graph.</p>
+<p>I made a really simple plot. Because I have only 2 data, it is hard to analyze the result of graph.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s">'workers'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s">'time'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/34434143/85283207-eca5c580-b4c7-11ea-95a4-f5a3a07009a5.png" alt="worker-time-plot" /></p>
+<p><img src="https://user-images.githubusercontent.com/34434143/85411032-cd2f9b00-b5a2-11ea-9669-37da22a2536e.png" alt="workers-time-plot" /></p>
 
 <h6 id="3-use-the-frameworks-api-document-website-to-see-which-other-datasets-are-available">3) Use the framework’s API document website to see which other datasets are available.</h6>
+
+<p>You can see 27 available datasets <a href="https://pytorch.org/docs/stable/torchvision/datasets.html" target="_blank"><strong>here</strong></a>.</p>
+
+<p>MNIST
+Fashion-MNIST
+KMNIST
+EMNIST
+QMNIST
+FakeData
+COCO
+Captions
+Detection
+LSUN
+ImageFolder
+DatasetFolder
+ImageNet
+CIFAR
+STL10
+SVHN
+PhotoTour
+SBU
+Flickr
+VOC
+Cityscapes
+SBD
+USPS
+Kinetics-400
+HMDB51
+UCF101
+CelebA</p>
 
 <h3 id="references">References</h3>
 
 <ul>
-  <li>&lt;&gt;{: target=”_blank”}</li>
+  <li>
+    <p><a href="https://pytorch.org/docs/stable/torchvision/datasets.html" target="_blank">https://pytorch.org/docs/stable/torchvision/datasets.html</a></p>
+  </li>
+  <li>
+    <p>About batch, SGD vs MBGD <a href="https://light-tree.tistory.com/133" target="_blank">https://light-tree.tistory.com/133</a></p>
+  </li>
 </ul>
 
                 </div>
