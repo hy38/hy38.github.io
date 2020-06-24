@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-23T23:02:55+09:00</updated>
+  <updated>2020-06-24T22:13:02+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -30,6 +30,67 @@
   
   
 
+  
+    <entry>
+      <title type="html">D2L 3 - Image Classification Implementation from Scratch</title>
+      <link href="https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch" rel="alternate" type="text/html" title="D2L 3 - Image Classification Implementation from Scratch" />
+      <published>2019-06-24T19:00:00+09:00</published>
+      <updated>2019-06-24T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--image-classification-implementation-from-scratch&quot;&gt;Exercise : Image Classification Implementation from Scratch&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-in-this-section-we-directly-implemented-the-softmax-function-based-on-the-mathematical-definition-of-the-softmax-operation-what-problems-might-this-cause-hint-try-to-calculate-the-size-of-exp50&quot;&gt;1) In this section, we directly implemented the softmax function based on the mathematical definition of the softmax operation. What problems might this cause (hint: try to calculate the size of $exp(50)$)?&lt;/h6&gt;
+
+&lt;h6 id=&quot;2-the-function-cross_entropy-in-this-section-is-implemented-according-to-the-definition-of-the-cross-entropy-loss-function-what-could-be-the-problem-with-this-implementation-hint-consider-the-domain-of-the-logarithm&quot;&gt;2) The function cross_entropy in this section is implemented according to the definition of the cross-entropy loss function. What could be the problem with this implementation (hint: consider the domain of the logarithm)?&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-what-solutions-you-can-think-of-to-fix-the-two-problems-above&quot;&gt;3) What solutions you can think of to fix the two problems above?&lt;/h6&gt;
+
+&lt;h6 id=&quot;4-is-it-always-a-good-idea-to-return-the-most-likely-label-eg-would-you-do-this-for-medical-diagnosis&quot;&gt;4) Is it always a good idea to return the most likely label. E.g., would you do this for medical diagnosis?&lt;/h6&gt;
+
+&lt;h6 id=&quot;5-assume-that-we-want-to-use-softmax-regression-to-predict-the-next-word-based-on-some-features-what-are-some-problems-that-might-arise-from-a-large-vocabulary&quot;&gt;5) Assume that we want to use softmax regression to predict the next word based on some features. What are some problems that might arise from a large vocabulary?&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="image classification" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">D2L 3 - Image Classification Dataset</title>
@@ -1586,189 +1647,6 @@ You can arbitrary change the order of norm calculation by filling up the &lt;cod
         <category term="deep learning" />
       
         <category term="linear algebra" />
-      
-
-      
-        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">D2L 2 - Data Manipulation &amp;amp; Processing</title>
-      <link href="https://hy38.github.io/D2L-2-ndarray-pandas" rel="alternate" type="text/html" title="D2L 2 - Data Manipulation &amp; Processing" />
-      <published>2019-05-27T19:00:00+09:00</published>
-      <updated>2019-05-27T19:00:00+09:00</updated>
-      <id>https://hy38.github.io/D2L-2-ndarray-pandas</id>
-      <content type="html" xml:base="https://hy38.github.io/D2L-2-ndarray-pandas">&lt;blockquote&gt;
-  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;exercise--data-manipulation-ndarray&quot;&gt;Exercise : Data Manipulation (ndarray)&lt;/h3&gt;
-
-&lt;h6 id=&quot;1-run-the-code-in-this-section-change-the-conditional-statement-x--y-in-this-section-to-x--y-or-x--y-and-then-see-what-kind-of-ndarray-you-can-get&quot;&gt;1) Run the code in this section. Change the conditional statement x == y in this section to x &amp;lt; y or x &amp;gt; y, and then see what kind of ndarray you can get.&lt;/h6&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mxnet&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# [[False False False False]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [False False False False]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [False False False False]]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# [[False False False False]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [False False False False]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [False False False False]]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# [[ True  True  True  True]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [ True  True  True  True]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#  [ True  True  True  True]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;2-replace-the-two-ndarrays-that-operate-by-element-in-the-broadcasting-mechanism-with-other-shapes-eg-three-dimensional-tensors-is-the-result-the-same-as-expected&quot;&gt;2) Replace the two ndarrays that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?&lt;/h6&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# To broadcast you need to have dimensions of size 1, or matching dimensions across your tensors&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# array([[[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]],&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#        [[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]],&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#        [[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]],&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#        [[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]],&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#        [[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]],&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#        [[ 1.,  2.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 3.,  4.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 5.,  6.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 7.,  8.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [ 9., 10.],&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#         [11., 12.]]])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;exercise--data-processing-pandas&quot;&gt;Exercise : Data Processing (pandas)&lt;/h3&gt;
-
-&lt;p&gt;Create a raw dataset with more rows and columns.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    NumRooms Alley   Price&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 0       NaN  Pave  127500&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 1       2.0   NaN  106000&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 2       4.0   NaN  178100&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 3       NaN   NaN  140000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;1-delete-the-column-with-the-most-missing-values&quot;&gt;1) Delete the column with the most missing values.&lt;/h6&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    NumRooms Alley&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 0       NaN  Pave&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 1       2.0   NaN&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 2       4.0   NaN&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 3       NaN   NaN&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;maxNaCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxNaCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# NumRooms    2&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Alley       3&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Price       0&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# dtype: int64&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;del&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'NumRooms'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   Alley&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 0  Pave&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 1   NaN&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 2   NaN&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 3   NaN&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As shown by &lt;code class=&quot;highlighter-rouge&quot;&gt;maxNaCount&lt;/code&gt;, the most value missing column in this data is NumRooms.
-We delete &lt;code class=&quot;highlighter-rouge&quot;&gt;NumRooms&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;del&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h6 id=&quot;2-convert-the-preprocessed-dataset-to-the-ndarray-format&quot;&gt;2) Convert the preprocessed dataset to the ndarray format.&lt;/h6&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. Convert 'Alley' column data to 2 columns&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_dummies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dummy_na&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 2. Convert preprocessed dataset to ndarray format&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Result :&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    Alley_Pave  Alley_nan&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 0           1          0&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 1           0          1&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 2           0          1&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 3           0          1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Sanghyun Park</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="deep learning" />
-      
-        <category term="numpy" />
-      
-        <category term="pandas" />
-      
-        <category term="ndarray" />
       
 
       

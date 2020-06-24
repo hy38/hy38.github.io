@@ -193,6 +193,14 @@
     } ,
   
     {
+      "title"    : "D2L 3 - Image Classification Implementation from Scratch",
+      "category" : "",
+      "tags"     : "deep learning, image classification",
+      "url"      : "https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch",
+      "date"     : "2019-06-24 19:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "D2L 3 - Image Classification Dataset",
       "category" : "",
       "tags"     : "deep learning, image classification",

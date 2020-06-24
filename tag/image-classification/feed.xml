@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/image-classification/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-23T23:02:55+09:00</updated>
+  <updated>2020-06-24T22:13:02+09:00</updated>
   <id>https://hy38.github.io/tag/image-classification/feed.xml</id>
 
   
@@ -30,6 +30,67 @@
   
   
 
+  
+    <entry>
+      <title type="html">D2L 3 - Image Classification Implementation from Scratch</title>
+      <link href="https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch" rel="alternate" type="text/html" title="D2L 3 - Image Classification Implementation from Scratch" />
+      <published>2019-06-24T19:00:00+09:00</published>
+      <updated>2019-06-24T19:00:00+09:00</updated>
+      <id>https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch</id>
+      <content type="html" xml:base="https://hy38.github.io/D2L-3-image-classification-implementation-from-scratch">&lt;blockquote&gt;
+  &lt;p&gt;This is a post that I organized while studying &lt;a href=&quot;https://d2l.ai/index.html&quot; target=&quot;_blank&quot;&gt;D2L(Dive into Deep Learning)&lt;/a&gt; exercises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;exercise--image-classification-implementation-from-scratch&quot;&gt;Exercise : Image Classification Implementation from Scratch&lt;/h3&gt;
+
+&lt;h6 id=&quot;1-in-this-section-we-directly-implemented-the-softmax-function-based-on-the-mathematical-definition-of-the-softmax-operation-what-problems-might-this-cause-hint-try-to-calculate-the-size-of-exp50&quot;&gt;1) In this section, we directly implemented the softmax function based on the mathematical definition of the softmax operation. What problems might this cause (hint: try to calculate the size of $exp(50)$)?&lt;/h6&gt;
+
+&lt;h6 id=&quot;2-the-function-cross_entropy-in-this-section-is-implemented-according-to-the-definition-of-the-cross-entropy-loss-function-what-could-be-the-problem-with-this-implementation-hint-consider-the-domain-of-the-logarithm&quot;&gt;2) The function cross_entropy in this section is implemented according to the definition of the cross-entropy loss function. What could be the problem with this implementation (hint: consider the domain of the logarithm)?&lt;/h6&gt;
+
+&lt;h6 id=&quot;3-what-solutions-you-can-think-of-to-fix-the-two-problems-above&quot;&gt;3) What solutions you can think of to fix the two problems above?&lt;/h6&gt;
+
+&lt;h6 id=&quot;4-is-it-always-a-good-idea-to-return-the-most-likely-label-eg-would-you-do-this-for-medical-diagnosis&quot;&gt;4) Is it always a good idea to return the most likely label. E.g., would you do this for medical diagnosis?&lt;/h6&gt;
+
+&lt;h6 id=&quot;5-assume-that-we-want-to-use-softmax-regression-to-predict-the-next-word-based-on-some-features-what-are-some-problems-that-might-arise-from-a-large-vocabulary&quot;&gt;5) Assume that we want to use softmax regression to predict the next word based on some features. What are some problems that might arise from a large vocabulary?&lt;/h6&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt;&amp;gt;{: target=”_blank”}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Sanghyun Park</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="deep learning" />
+      
+        <category term="image classification" />
+      
+
+      
+        <summary type="html">This is a post that I organized while studying D2L(Dive into Deep Learning) exercises.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">D2L 3 - Image Classification Dataset</title>
