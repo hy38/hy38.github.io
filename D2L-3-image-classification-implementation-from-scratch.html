@@ -231,7 +231,24 @@ into the {body} of the default.hbs template -->
 
 <h6 id="1-in-this-section-we-directly-implemented-the-softmax-function-based-on-the-mathematical-definition-of-the-softmax-operation-what-problems-might-this-cause-hint-try-to-calculate-the-size-of-exp50">1) In this section, we directly implemented the softmax function based on the mathematical definition of the softmax operation. What problems might this cause (hint: try to calculate the size of $exp(50)$)?</h6>
 
-<p>The size of exp(50) is</p>
+<p>The result of exp(50.0) is tensor([5.1847e+21]).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">50.0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+
+<span class="c"># Result :</span>
+<span class="c"># tensor([5.1847e+21])</span>
+</code></pre></div></div>
+
+<p>The result is as below.</p>
+
+<p><code class="highlighter-rouge">5,184,700,000,000,000,000,000</code></p>
+
+<p>When implementing expressions in computer, we should care about overflows, underflows even though it is mathmatically right.</p>
+
+<p>I have experimented $exp(X)$ with some numbers and noticed that when the number gets bigger than <code class="highlighter-rouge">88.7</code>, the output is printed as <code class="highlighter-rouge">tensor([inf])</code>.</p>
+
+<p>We should be more careful of over / underflows when computing numerical values.</p>
 
 <h6 id="2-the-function-cross_entropy-in-this-section-is-implemented-according-to-the-definition-of-the-cross-entropy-loss-function-what-could-be-the-problem-with-this-implementation-hint-consider-the-domain-of-the-logarithm">2) The function cross_entropy in this section is implemented according to the definition of the cross-entropy loss function. What could be the problem with this implementation (hint: consider the domain of the logarithm)?</h6>
 
