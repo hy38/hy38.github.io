@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hy38.github.io/tag/deep-learning/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hy38.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-06-27T22:39:40+09:00</updated>
+  <updated>2020-06-28T23:31:57+09:00</updated>
   <id>https://hy38.github.io/tag/deep-learning/feed.xml</id>
 
   
@@ -65,6 +65,8 @@
 &lt;p&gt;We should be more careful of over / underflows when computing numerical values.&lt;/p&gt;
 
 &lt;h6 id=&quot;2-the-function-cross_entropy-in-this-section-is-implemented-according-to-the-definition-of-the-cross-entropy-loss-function-what-could-be-the-problem-with-this-implementation-hint-consider-the-domain-of-the-logarithm&quot;&gt;2) The function cross_entropy in this section is implemented according to the definition of the cross-entropy loss function. What could be the problem with this implementation (hint: consider the domain of the logarithm)?&lt;/h6&gt;
+
+&lt;p&gt;$\log(0)$ has the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;-inf&lt;/code&gt;. When implementing cross-entropy loss function, this might cause some problems.&lt;/p&gt;
 
 &lt;h6 id=&quot;3-what-solutions-you-can-think-of-to-fix-the-two-problems-above&quot;&gt;3) What solutions you can think of to fix the two problems above?&lt;/h6&gt;
 
