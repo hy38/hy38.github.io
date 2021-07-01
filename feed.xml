@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2021-07-01T20:35:53+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">맥쏘 팀 - 모각코 1회차</title><link href="https://hy38.github.io/first-meeting" rel="alternate" type="text/html" title="맥쏘 팀 - 모각코 1회차" /><published>2021-06-23T19:00:00+09:00</published><updated>2021-06-23T19:00:00+09:00</updated><id>https://hy38.github.io/first-meeting</id><content type="html" xml:base="https://hy38.github.io/first-meeting">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hy38.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hy38.github.io/" rel="alternate" type="text/html" /><updated>2021-07-01T23:35:16+09:00</updated><id>https://hy38.github.io/</id><title type="html">HY38’s IT Blog</title><subtitle>b Ha p</subtitle><entry><title type="html">맥쏘 팀 - 모각코 1회차</title><link href="https://hy38.github.io/first-meeting" rel="alternate" type="text/html" title="맥쏘 팀 - 모각코 1회차" /><published>2021-06-23T19:00:00+09:00</published><updated>2021-06-23T19:00:00+09:00</updated><id>https://hy38.github.io/first-meeting</id><content type="html" xml:base="https://hy38.github.io/first-meeting">&lt;blockquote&gt;
   &lt;p&gt;맥쏘 팀 - 모각코 1회차&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -10,12 +10,29 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;목표 : Introduction to Static Analysis 36p ~ 58p 까지 학습하기&lt;/p&gt;
+    &lt;p&gt;목표 : Introduction to Static Analysis 36p부터 학습하기&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;회고 :&lt;/p&gt;
+    &lt;p&gt;회고 : Non-Deterministic Choice와 Non-Deterministic Iteration에 대한 Abstraction을 공부를 하였다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sanghyun Park</name></author><summary type="html">맥쏘 팀 - 모각코 1회차</summary></entry><entry><title type="html">2021 모각코 하계 계획</title><link href="https://hy38.github.io/summer-plan" rel="alternate" type="text/html" title="2021 모각코 하계 계획" /><published>2021-06-23T19:00:00+09:00</published><updated>2021-06-23T19:00:00+09:00</updated><id>https://hy38.github.io/summer-plan</id><content type="html" xml:base="https://hy38.github.io/summer-plan">&lt;blockquote&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Non-Deterministic Choice&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Union을 이용하여 두 case의 abstract elements들을 합친다는 것을 알게 되었다. Intervals abstraction의 경우에는 boundary를 따로 지정해주어야 하지만, Convex polyhedra abstraction의 경우에는 따로 지정해줄 필요가 없었다.&lt;/p&gt;
+
+&lt;p&gt;domain이 합쳐짐에 따라 이 union이라는 연산은 precision에 영향을 주는데, 이는 상관 없는 point들이 convex hull에 포함이 되기 때문이다. 이게 문제가 되는 것은, 상관 없는 point들은 하나의 point의 pre-condition을 실행하였을때 절대 post-condition으로 나올 수 없기 때문이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Non-Deterministic Iteration&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Program의 iteration은 무한히도 반복될 수 있다. 따라서 우리는 program이 terminate된다는 것을 보장해야 한다.
+하나의 program이 terminate된다는 것은 보통 어떤 양의 값이 점점 감소하면서 (유한의)특정 값에 도달한다는 것으로 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;추가로, widening이라는 것은 abstract iteration의 수렴을 강제하는 기법이라고 하는데, 추가적인 학습이 필요할 것 같다.&lt;/p&gt;</content><author><name>Sanghyun Park</name></author><summary type="html">맥쏘 팀 - 모각코 1회차</summary></entry><entry><title type="html">2021 모각코 하계 계획</title><link href="https://hy38.github.io/summer-plan" rel="alternate" type="text/html" title="2021 모각코 하계 계획" /><published>2021-06-23T19:00:00+09:00</published><updated>2021-06-23T19:00:00+09:00</updated><id>https://hy38.github.io/summer-plan</id><content type="html" xml:base="https://hy38.github.io/summer-plan">&lt;blockquote&gt;
   &lt;p&gt;2021 모각코 하계 계획&lt;/p&gt;
 &lt;/blockquote&gt;
 
