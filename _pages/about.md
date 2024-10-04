@@ -1,5 +1,5 @@
 ---
-permalink: /about
+permalink: /about/
 title: "About Me"
 excerpt: "A student full of curiosity"
 last_modified_at: 2024-09-19T11:59:26-04:00
