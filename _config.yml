@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "Sanghyun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Engineer and researcher securing tomorrow, today."
+  bio              : "Security engineer and researcher"
   location         : "Daejeon, South Korea"
   email            :
   links:
