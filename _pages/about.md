@@ -1,8 +1,8 @@
 ---
 permalink: /about/
 title: "About Me"
-excerpt: "A student full of curiosity"
-last_modified_at: 2024-09-19T11:59:26-04:00
+excerpt: "An engineer/researcher full of curiosity"
+last_modified_at: 2025-05-01T11:59:26-04:00
 author_profile: true
 layout: single
 toc: false
@@ -15,14 +15,14 @@ classes: wide
 
 ### Hello, I'm Sanghyun Park!
 
-I am currently an M.S. student in the Department of School of Computing at KAIST, interested in fuzzing, and overall software security.
+I am an M.S. graduate in the Department of School of Computing at KAIST, interested in fuzzing, and overall software security.
 
 ---
 
 ### Education
 
 - M.S. in School of Computing, KAIST, 2023 - Present
-  - Thesis (in progress): Systematic 1-Day Bug Reproduction with Large Language Model
+  - Thesis: Systematic 1-day Bug Reproduction with Large Language Model
   - Advisor: Prof. [Sang Kil Cha](https://softsec.kaist.ac.kr/~sangkilc/)
 
 - B.S. in Computer Science and Engineering, Chungnam National University(CNU), 2017 - 2023
@@ -60,7 +60,7 @@ I am currently an M.S. student in the Department of School of Computing at KAIST
 
 ### Experience
 
-- Graduate Researcher, KAIST Software Security Lab, `Mar 2023 - Present`
+- Graduate Researcher, KAIST Software Security Lab, `Mar 2023 - Feb 2025`
 
 - Research Intern, CNU Mobile Distributed Computing Lab, `Mar 2022 - Feb 2023`
 
@@ -122,7 +122,7 @@ I am currently an M.S. student in the Department of School of Computing at KAIST
   - Social Service Agent, Republic of Korea Army (2019-2021)
 
 - Skills
-  - C, Python, Bash, SQL, Docker, Git
+  - C/C++, Python, Bash, SQL, Docker, Git
 
 - Languages
   - Korean(Native), English(Fluent)
@@ -133,7 +133,7 @@ I am currently an M.S. student in the Department of School of Computing at KAIST
 
 - Academic Club
   - S.P.G (System Programming Group) at CNU
-  - President of the Club in 2021
+  - Served as President of the Club in 2021
 
 ---
 
