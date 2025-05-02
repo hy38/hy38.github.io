@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "About Me"
+title: "About Sanghyun Park"
 excerpt: "An engineer/researcher full of curiosity"
 last_modified_at: 2025-05-01T11:59:26-04:00
 author_profile: true
