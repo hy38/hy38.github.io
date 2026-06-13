@@ -1,139 +1,54 @@
 ---
 permalink: /about/
 title: "About Sanghyun Park"
-excerpt: "An engineer/researcher full of curiosity"
-last_modified_at: 2025-05-01T11:59:26-04:00
+excerpt: "Security engineer and researcher focused on fuzzing and software security"
+last_modified_at: 2026-06-13T00:00:00+09:00
 author_profile: true
 layout: single
 toc: false
 classes: wide
 ---
 
+## Summary
 
-![ducks](/assets/images/myphoto/ducks.jpeg){: width="600" height="300"}
+I'm Sanghyun Park, a security engineer and researcher based in Daejeon, South Korea. My work centers on fuzzing, directed fuzzing, LLM-assisted bug reproduction, and practical software security research.
 
+This page is the web CV source of truth for my background, selected research, skills, and public contact links.
 
-### Hello, I'm Sanghyun Park!
+## Focus
 
-I am an M.S. graduate in the Department of School of Computing at KAIST, interested in fuzzing, and overall software security.
+* Fuzzing and directed fuzzing for software security.
+* LLM-assisted 1-day bug reproduction.
+* Vulnerability analysis and technical writeups.
+* Security research workflows that connect source analysis, reproduction, and reporting.
 
----
+## Background
 
-### Education
+* M.S. in School of Computing, KAIST, 2023 to 2025.
+* Thesis: Systematic 1-day Bug Reproduction with Large Language Model.
+* Graduate Researcher, KAIST Software Security Lab, March 2023 to February 2025.
+* B.S. in Computer Science and Engineering, Chungnam National University, 2017 to 2023.
+* Research Intern, CNU Mobile Distributed Computing Lab, March 2022 to February 2023.
+* Research Intern, CNU Software Analysis and Testing Lab, July 2021 to December 2021.
+* Visiting Scholar, Purdue University, December 2021 to February 2022.
 
-- M.S. in School of Computing, KAIST, 2023 - Present
-  - Thesis: Systematic 1-day Bug Reproduction with Large Language Model
-  - Advisor: Prof. [Sang Kil Cha](https://softsec.kaist.ac.kr/~sangkilc/)
+## Research and Reports
 
-- B.S. in Computer Science and Engineering, Chungnam National University(CNU), 2017 - 2023
-  - GPA: 4.21/4.5 (Rank 2/102 in CSE, Major GPA: 4.27/4.5)
-  - Advisor: Prof. [Hoon Choi](http://strauss.cnu.ac.kr/members_prof.php)
+* LLM1dFuzz, a systematic 1-day bug reproduction tool using GPT-4 Turbo that improved directed fuzzing performance across the evaluated programs listed in my prior CV notes.
+* Fuzzing Survey, an ongoing genealogy database covering more than 361 fuzzers.
+* Systematic Bug Reproduction with Large Language Model, ESORICS Workshop on Security and AI, 2024. [PDF](/assets/papers/SECAI-2024.pdf)
+* Analysis of CVE-2016-9827, a libming vulnerability analysis note. [Post](/analysis-of-cve-2016-9827-post/)
+* More posts are listed in the [blog archive](/blog/).
 
----
+## Skills
 
-### Projects
+* Languages: C, C++, Python, Bash, SQL.
+* Security: fuzzing, directed fuzzing, bug reproduction, vulnerability analysis.
+* Tooling: Docker, Git, FastAPI, MinIO.
+* Languages: Korean, English.
 
-- LLM1dFuzz
-  - Proposed a systematic 1-day bug reproduction tool using GPT-4 Turbo.
-  - Improved directed fuzzing performance by 37.5% across 15 programs using LLM-generated seeds.
+## Contact
 
-- Fuzzing Survey
-  - Maintaining an up-to-date genealogy database of over 361+ fuzzers.
-
-- ChatFive
-  - Developed a system utilizing multiple LLM agents to enhance user experience in personality tests.
-  - Achieved 77% accuracy in key traits, with 85% of users preferring the system over the Big Five test.
-
-- Edge-Cloud Migration of Intruder Detection System
-  - Designed a communication protocol for edge-cloud migration to accelerate response in critical situations.
-  - Implemented custom APIs using FastAPI, enabling seamless updates and integration for developers.
-
-- DasMin
-  - Architected a high-performance distributed IoT data storage system utilizing MinIO.
-  - Improved GET request performance by 347% and PUT request by 155% across 4 nodes.
-
-- Shot Tracker
-  - Designed a novel shot group measurement IoT system using LoRa and YOLO V5.
-  - Achieved 91.8% mean accuracy in indoor shot group measurements.
-
----
-
-### Experience
-
-- Graduate Researcher, KAIST Software Security Lab, `Mar 2023 - Feb 2025`
-
-- Research Intern, CNU Mobile Distributed Computing Lab, `Mar 2022 - Feb 2023`
-
-- Visiting Scholar, Purdue University, `Dec 2021 - Feb 2022`
-
-- Research Intern, CNU Software Analysis and Testing Lab, `Jul 2021 - Dec 2021`
-
----
-
-### Publications
-
-#### International Conferences
-
-- Systematic Bug Reproduction with Large Language Model
-  - ***Sanghyun Park***, Haeun Lee, Sang Kil Cha
-  - In proceedings of the ESORICS Workshop on Security and AI (SECAI), 2024, [[pdf]](/assets/papers/SECAI-2024.pdf)
-
-- ChatFive: Enhancing User Experience in Likert Scale Personality Test through Interactive Conversation with LLM Agents
-  - Jungjae Lee, Yubin Choi, Minhyuk Song, ***Sanghyun Park***
-  - In proceedings of the ACM Conference on Conversational User Interfaces (CUI), 2024, [[pdf]](/assets/papers/CUI-2024.pdf)
-
-- Feasibility of Measuring Shot Group Using LoRa Technology and YOLO V5
-  - ***Sanghyun Park***, Dongheon Lee, Jisoo Choi, Dohyeon Ko, Minji Lee, et al.
-  - In proceedings of the IEEE Sensors Applications Symposium (SAS), 2022, [[pdf]](/assets/papers/SAS-2022.pdf)
-
-
-#### Domestic Conferences
-
-- Design and Implementation of Communication Protocol for Edge-Cloud based Power
-  Plant Surveillance System
-  - Yewon Kim, ***Sanghyun Park***, Honggi Oh, Jongik Kim, Hoon Choi
-  - 2022 KICS Fall Conference, 2022
-
-- A Study on Distributed Data Storing Edge Node and Data Pipeline for Efficient
-  IoT Data Acquisition
-  - Honggi Oh, ***Sanghyun Park***, Yewon Kim, Jongik Kim, Hoon Choi
-  - 2022 KICS Fall Conference, 2022
-
----
-
-### Selected Awards
-
-- 2022 CNU Engineer of the Year Award
-
-- 2022 SW Festival Outstanding Project Award
-  - Corporate Award
-
-- 2022 CNU SW/AI Project Fair
-  - 1st Prize
-
-- 2021 CNU Creative SW Festival Club Performance Presentation
-  - 2nd Prize
-
----
-
-### Others
-
-- Mandatory Military Service
-  - Social Service Agent, Republic of Korea Army (2019-2021)
-
-- Skills
-  - C/C++, Python, Bash, SQL, Docker, Git
-
-- Languages
-  - Korean(Native), English(Fluent)
-  - OPIc Intermediate High - (2H4346729438)
-
-- Certificates
-  - SQL Developer - (SQLD-041006166)
-
-- Academic Club
-  - S.P.G (System Programming Group) at CNU
-  - Served as President of the Club in 2021
-
----
-
+* Email: [sanghyun.park.cnu@gmail.com](mailto:sanghyun.park.cnu@gmail.com)
+* GitHub: [hy38](https://github.com/hy38)
+* LinkedIn: [Sanghyun Park](https://www.linkedin.com/in/sanghyun-park-hy38/)
