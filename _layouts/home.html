@@ -14,5 +14,18 @@ layout: default
     <p class="home-note">
       This is my personal website for background, research notes, and writing.
     </p>
+    {% assign home_link_labels = "GitHub|LinkedIn" | split: "|" %}
+    <ul class="home-links" aria-label="Profile links">
+      {% for link in site.author.links %}
+        {% if link.url and home_link_labels contains link.label %}
+          <li>
+            <a href="{{ link.url | escape }}" rel="me noopener noreferrer" target="_blank">
+              {% if link.icon %}<i class="{{ link.icon | escape }}" aria-hidden="true"></i>{% endif %}
+              <span>{{ link.label | escape }}</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </section>
 </main>

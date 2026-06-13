@@ -512,6 +512,34 @@ figure.highlight pre.highlight,
   border-left: 2px solid #b9c7bf;
 }
 
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-bottom: 0.12rem;
+  color: #202426;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  border-bottom: 1px solid #b9c7bf;
+}
+
+.home-links a:hover,
+.home-links a:focus {
+  color: #4f665f;
+  border-bottom-color: #4f665f;
+}
+
 @media (max-width: 40em) {
   .layout--home #main {
     max-width: calc(100vw - 1.5rem);
