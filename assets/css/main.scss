@@ -456,3 +456,342 @@ figure.highlight pre.highlight,
 .wide .archive {
   max-width: 100%;
 }
+
+.layout--home {
+  background:
+    linear-gradient(90deg, rgba(32, 60, 71, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(32, 60, 71, 0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #f7f5ef 0%, #edf4f1 42%, #fbf7ef 100%);
+  background-size: 42px 42px, 42px 42px, auto;
+}
+
+.layout--home #main {
+  max-width: min(1180px, calc(100vw - 2rem));
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 3rem) 0;
+}
+
+.home-shell {
+  display: grid;
+  gap: clamp(1.1rem, 2.5vw, 2rem);
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  min-height: 0;
+  padding: clamp(1.25rem, 5vw, 4rem);
+  color: #f5f1e8;
+  background:
+    linear-gradient(115deg, rgba(21, 25, 27, 0.98), rgba(31, 61, 67, 0.96) 58%, rgba(122, 73, 43, 0.92)),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 16px);
+  border: 1px solid rgba(31, 61, 67, 0.38);
+  border-radius: 0.5rem;
+  box-shadow: 0 30px 70px rgba(28, 42, 42, 0.18);
+}
+
+.home-hero__copy {
+  max-width: 47rem;
+}
+
+.home-shell .home-eyebrow,
+.home-shell .home-section__label,
+.home-shell .home-card__label {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.home-shell .home-eyebrow {
+  color: #a9d7c1;
+}
+
+.home-shell .home-title {
+  margin: 0;
+  color: #fffaf0;
+  font-size: clamp(2.7rem, 9vw, 7.4rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.home-shell .home-role {
+  max-width: 14ch;
+  margin: 0.35rem 0 1rem;
+  color: #fffaf0;
+  font-size: clamp(1.6rem, 5vw, 3.7rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.home-shell .home-deck {
+  max-width: 40rem;
+  margin-bottom: 1.35rem;
+  color: rgba(255, 250, 240, 0.82);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.home-actions,
+.home-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-actions {
+  margin-bottom: 1rem;
+}
+
+.home-button,
+.home-contact-links a,
+.home-text-link {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  min-height: 2.4rem;
+  text-decoration: none;
+}
+
+.home-button {
+  padding: 0.55rem 0.85rem;
+  color: #fffaf0;
+  background: rgba(255, 250, 240, 0.08);
+  border: 1px solid rgba(255, 250, 240, 0.22);
+  border-radius: 0.45rem;
+}
+
+.home-button:hover,
+.home-button:focus {
+  color: #ffffff;
+  background: rgba(255, 250, 240, 0.16);
+}
+
+.home-button--primary {
+  color: #14201f;
+  background: #a9d7c1;
+  border-color: #a9d7c1;
+}
+
+.home-button--primary:hover,
+.home-button--primary:focus {
+  color: #14201f;
+  background: #c3ead8;
+}
+
+.home-contact-links a {
+  padding: 0.42rem 0.65rem;
+  color: rgba(255, 250, 240, 0.86);
+  background: rgba(255, 250, 240, 0.07);
+  border: 1px solid rgba(255, 250, 240, 0.16);
+  border-radius: 0.45rem;
+}
+
+.home-contact-links a:hover,
+.home-contact-links a:focus {
+  color: #fffaf0;
+  border-color: rgba(255, 250, 240, 0.36);
+}
+
+.home-portrait {
+  align-self: end;
+  max-width: 21rem;
+  margin: 0;
+}
+
+.home-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid rgba(255, 250, 240, 0.26);
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.2);
+}
+
+.home-portrait figcaption {
+  margin-top: 0.55rem;
+  color: rgba(255, 250, 240, 0.68);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-metrics,
+.home-card-grid,
+.home-latest-grid,
+.home-route-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-metric,
+.home-section,
+.home-card,
+.home-latest-card,
+.home-route,
+.home-contact-band {
+  background: rgba(255, 252, 246, 0.82);
+  border: 1px solid rgba(81, 104, 102, 0.18);
+  border-radius: 0.5rem;
+  box-shadow: 0 18px 44px rgba(39, 52, 49, 0.08);
+}
+
+.home-metric {
+  padding: 1rem;
+}
+
+.home-metric strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #1f3d43;
+  font-size: 1.15rem;
+}
+
+.home-shell .home-metric span,
+.home-shell .home-section p,
+.home-shell .home-card p,
+.home-shell .home-latest-card p,
+.home-shell .home-route p {
+  color: #546260;
+}
+
+.home-section,
+.home-contact-band {
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.home-section__header {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 45rem;
+  margin-bottom: 1.1rem;
+}
+
+.home-shell .home-section__label,
+.home-shell .home-card__label {
+  color: #8e4f24;
+}
+
+.home-section h2,
+.home-contact-band h2 {
+  margin: 0;
+  color: #1f2b2c;
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  line-height: 1.08;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-card,
+.home-latest-card,
+.home-route {
+  padding: 1.05rem;
+}
+
+.home-card h3,
+.home-latest-card h3,
+.home-route h3 {
+  margin-top: 0;
+  color: #1f3d43;
+  font-size: 1.2rem;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-card p:last-child,
+.home-latest-card p:last-child,
+.home-route p:last-child,
+.home-contact-band p:last-child {
+  margin-bottom: 0;
+}
+
+.home-text-link {
+  color: #8e4f24;
+  font-weight: 700;
+}
+
+.home-contact-band {
+  display: grid;
+  gap: 1.1rem;
+  color: #fffaf0;
+  background:
+    linear-gradient(120deg, rgba(32, 61, 67, 0.96), rgba(24, 32, 33, 0.96)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 18px);
+}
+
+.home-shell .home-contact-band h2,
+.home-shell .home-contact-band .home-section__label {
+  color: #fffaf0;
+}
+
+.home-contact-links--band a {
+  color: #fffaf0;
+}
+
+@media (min-width: 48em) {
+  .home-metrics,
+  .home-card-grid,
+  .home-route-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-latest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+    align-items: end;
+  }
+
+  .home-contact-band {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+@media (max-width: 40em) {
+  .layout--home #main {
+    max-width: calc(100vw - 1.25rem);
+    padding-block: 0.75rem 1.5rem;
+  }
+
+  .home-hero {
+    padding: 1.05rem;
+  }
+
+  .home-title {
+    font-size: clamp(2.65rem, 14vw, 3.4rem);
+  }
+
+  .home-role {
+    max-width: 16ch;
+    font-size: clamp(1.35rem, 8vw, 2rem);
+    line-height: 1.02;
+  }
+
+  .home-shell .home-eyebrow,
+  .home-shell .home-section__label,
+  .home-shell .home-card__label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .home-button,
+  .home-contact-links a {
+    min-height: 2.25rem;
+  }
+
+  .home-portrait {
+    display: none;
+  }
+}

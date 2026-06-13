@@ -1,232 +1,146 @@
 ---
-layout: archive
+layout: default
 ---
-
-{{ content }}
-
-<style>
-  .home-landing {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  .home-hero,
-  .home-panel,
-  .home-card,
-  .home-contact {
-    background: rgba(251, 248, 243, 0.78);
-    border: 1px solid var(--line, #d7cbbd);
-    border-radius: var(--radius, 0.85rem);
-    box-shadow: var(--shadow, 0 18px 40px rgba(50, 36, 22, 0.08));
-  }
-
-  .home-hero {
-    position: relative;
-    padding: clamp(1.35rem, 4vw, 2.6rem);
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 88% 12%, rgba(154, 90, 45, 0.13), transparent 11rem),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(244, 239, 230, 0.72));
-  }
-
-  .home-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0.85rem;
-    border: 1px solid rgba(154, 90, 45, 0.16);
-    border-radius: calc(var(--radius, 0.85rem) * 0.8);
-    pointer-events: none;
-  }
-
-  .home-kicker,
-  .home-card__label {
-    margin: 0 0 0.7rem;
-    color: var(--accent, #9a5a2d);
-    font-family: var(--mono, monospace);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-  }
-
-  .home-hero h1 {
-    max-width: 13ch;
-    margin: 0 0 1rem;
-    font-size: clamp(2.25rem, 7vw, 4.8rem);
-    line-height: 0.95;
-    letter-spacing: -0.07em;
-  }
-
-  .home-deck {
-    max-width: 44rem;
-    margin-bottom: 1.35rem;
-    color: var(--muted, #6f655d);
-    font-size: clamp(1rem, 2vw, 1.22rem);
-  }
-
-  .home-actions,
-  .home-hero-contact__links,
-  .home-contact__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .home-actions .btn,
-  .home-hero-contact__links a,
-  .home-contact__links a {
-    border-color: var(--line-strong, #c7b7a6);
-    border-radius: 999px;
-  }
-
-  .home-hero-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem 0.75rem;
-    align-items: baseline;
-    margin-top: 1rem;
-    color: var(--muted, #6f655d);
-    font-size: 0.9rem;
-  }
-
-  .home-hero-contact__label {
-    margin: 0;
-    font-family: var(--mono, monospace);
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .home-hero-contact__links a {
-    display: inline-block;
-    padding: 0.25rem 0.55rem;
-    background: rgba(255, 255, 255, 0.45);
-    text-decoration: none;
-  }
-
-  .home-actions .btn--primary {
-    background: var(--ink, #2b2520);
-  }
-
-  .home-panel,
-  .home-contact {
-    padding: clamp(1.1rem, 3vw, 1.6rem);
-  }
-
-  .home-panel h2,
-  .home-contact h2,
-  .home-card h2 {
-    margin-top: 0;
-  }
-
-  .home-proof-list {
-    display: grid;
-    gap: 0.75rem;
-    margin-bottom: 0;
-    padding-left: 1.15rem;
-  }
-
-  .home-grid {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .home-card {
-    padding: 1.1rem;
-  }
-
-  .home-card p:last-child,
-  .home-contact p:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 56em) {
-    .home-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-</style>
-
 
 {% assign visible_research = site.research | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
 {% assign latest_research = visible_research | first %}
 {% assign latest_post = site.posts | first %}
 
-<div class="page__content home-landing">
+<main id="main" class="page__content home-shell" role="main">
+  {{ content }}
+
   <section class="home-hero" aria-labelledby="home-title">
-    <p class="home-kicker">Security engineer and researcher</p>
-    <h1 id="home-title">Sanghyun Park studies how real software breaks.</h1>
-    <p class="home-deck">
-      I work on fuzzing, directed fuzzing, LLM-assisted bug reproduction, and software security research from Daejeon, South Korea.
-    </p>
+    <div class="home-hero__copy">
+      <p class="home-eyebrow">Security research / fuzzing / vulnerability analysis</p>
+      <h1 id="home-title" class="home-title">Sanghyun Park</h1>
+      <p class="home-role">Security engineer and researcher studying how real software breaks.</p>
+      <p class="home-deck">
+        I work on directed fuzzing, LLM-assisted 1-day bug reproduction, and practical vulnerability analysis from Daejeon, South Korea.
+      </p>
 
-    <div class="home-actions" aria-label="Primary links">
-      <a class="btn btn--primary" href="/research/">Read research</a>
-      <a class="btn" href="/about/">About Sanghyun</a>
-      <a class="btn" href="/blog/">Blog</a>
-    </div>
+      <nav class="home-actions" aria-label="Primary homepage links">
+        <a class="home-button home-button--primary" href="{{ '/research/' | relative_url }}">
+          <i class="fas fa-fw fa-flask" aria-hidden="true"></i><span>Research</span>
+        </a>
+        <a class="home-button" href="{{ '/about/' | relative_url }}">
+          <i class="fas fa-fw fa-user" aria-hidden="true"></i><span>About</span>
+        </a>
+        <a class="home-button" href="{{ '/blog/' | relative_url }}">
+          <i class="fas fa-fw fa-pen" aria-hidden="true"></i><span>Blog</span>
+        </a>
+      </nav>
 
-    <div class="home-hero-contact" aria-label="Contact links">
-      <p class="home-hero-contact__label">Contact</p>
-      <ul class="home-hero-contact__links">
-        {% for link in site.author.links %}
-          {% if link.url %}
-            <li><a href="{{ link.url }}">{{ link.label }}</a></li>
-          {% endif %}
-        {% endfor %}
+      <ul class="home-contact-links" aria-label="Contact links">
+        {% include home-contact-links.html %}
       </ul>
     </div>
+
+    <figure class="home-portrait">
+      <img src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Sanghyun Park" loading="eager">
+      <figcaption>Daejeon, South Korea</figcaption>
+    </figure>
   </section>
 
-  <section class="home-panel" aria-labelledby="proof-title">
-    <h2 id="proof-title">Proof of work</h2>
-    <ul class="home-proof-list">
-      <li>Graduate researcher at KAIST Software Security Lab, focused on fuzzing and software security.</li>
-      <li>Built LLM1dFuzz, a systematic 1-day bug reproduction tool using GPT-4 Turbo.</li>
-      <li>Maintains a fuzzing genealogy database tracking more than 361 fuzzers.</li>
-    </ul>
+  <section class="home-metrics" aria-label="Research highlights">
+    <div class="home-metric">
+      <strong>KAIST SSL</strong>
+      <span>Graduate researcher focused on fuzzing and software security.</span>
+    </div>
+    <div class="home-metric">
+      <strong>LLM1dFuzz</strong>
+      <span>Systematic 1-day bug reproduction with large language models.</span>
+    </div>
+    <div class="home-metric">
+      <strong>361+ fuzzers</strong>
+      <span>Fuzzing genealogy database tracking the evolution of fuzzing work.</span>
+    </div>
   </section>
 
-  <section class="home-grid" aria-label="Explore the site">
-    <article class="home-card">
-      <p class="home-card__label">Background</p>
-      <h2><a href="/about/">About</a></h2>
-      <p>Education, research experience, publications, awards, and technical skills.</p>
-    </article>
-
-    <article class="home-card">
-      <p class="home-card__label">Research</p>
-      <h2><a href="/research/">Research</a></h2>
-      {% if latest_research %}
-        <p>Latest: <a href="{{ latest_research.url | relative_url }}">{{ latest_research.title }}</a></p>
-      {% else %}
-        <p>Security research notes and reports will collect here as public writeups are published.</p>
-      {% endif %}
-    </article>
-
-    <article class="home-card">
-      <p class="home-card__label">Writing</p>
-      <h2><a href="/blog/">Blog</a></h2>
-      {% if latest_post %}
-        <p>Latest: <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></p>
-      {% else %}
-        <p>Technical notes, vulnerability analysis, and project writeups.</p>
-      {% endif %}
-    </article>
+  <section class="home-section" aria-labelledby="focus-title">
+    <div class="home-section__header">
+      <p class="home-section__label">Focus</p>
+      <h2 id="focus-title">I connect reproduction, analysis, and reporting.</h2>
+    </div>
+    <div class="home-card-grid">
+      <article class="home-card">
+        <h3>Directed fuzzing</h3>
+        <p>Building workflows that guide fuzzers toward real targets instead of abstract coverage alone.</p>
+      </article>
+      <article class="home-card">
+        <h3>LLM-assisted reproduction</h3>
+        <p>Turning known bug reports into runnable reproduction cases with model-assisted reasoning.</p>
+      </article>
+      <article class="home-card">
+        <h3>Vulnerability analysis</h3>
+        <p>Tracing root cause, affected code paths, and mitigation context in public-safe writeups.</p>
+      </article>
+    </div>
   </section>
 
-  <section class="home-contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact</h2>
-    <p>For recruiting, collaboration, or security research conversation, use the direct channels below.</p>
-    <ul class="home-contact__links">
-      {% for link in site.author.links %}
-        {% if link.url %}
-          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+  <section class="home-section" aria-labelledby="latest-title">
+    <div class="home-section__header">
+      <p class="home-section__label">Latest</p>
+      <h2 id="latest-title">Research and writing</h2>
+    </div>
+    <div class="home-latest-grid">
+      <article class="home-latest-card">
+        <p class="home-card__label">Research</p>
+        {% if latest_research %}
+          <h3><a href="{{ latest_research.url | relative_url }}">{{ latest_research.title | escape }}</a></h3>
+          {% if latest_research.description %}
+            <p>{{ latest_research.description | escape }}</p>
+          {% else %}
+            <p>Public research notes, CVE analysis, and security writeups.</p>
+          {% endif %}
+        {% else %}
+          <h3><a href="{{ '/research/' | relative_url }}">Research archive</a></h3>
+          <p>Public research notes and reports will collect here as writeups are published.</p>
         {% endif %}
-      {% endfor %}
+        <a class="home-text-link" href="{{ '/research/' | relative_url }}">View research</a>
+      </article>
+
+      <article class="home-latest-card">
+        <p class="home-card__label">Blog</p>
+        {% if latest_post %}
+          <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title | escape }}</a></h3>
+          <p>Technical notes, vulnerability analysis, and project writeups from the blog archive.</p>
+        {% else %}
+          <h3><a href="{{ '/blog/' | relative_url }}">Blog archive</a></h3>
+          <p>Technical notes, vulnerability analysis, and project writeups.</p>
+        {% endif %}
+        <a class="home-text-link" href="{{ '/blog/' | relative_url }}">Read posts</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="routes-title">
+    <div class="home-section__header">
+      <p class="home-section__label">Start here</p>
+      <h2 id="routes-title">Choose the shortest path.</h2>
+    </div>
+    <div class="home-route-grid">
+      <article class="home-route">
+        <h3><a href="{{ '/research/' | relative_url }}">Research</a></h3>
+        <p>CVE notes, public reports, and security research material.</p>
+      </article>
+      <article class="home-route">
+        <h3><a href="{{ '/about/' | relative_url }}">About</a></h3>
+        <p>Background, selected research, skills, and public contact links.</p>
+      </article>
+      <article class="home-route">
+        <h3><a href="{{ '/blog/' | relative_url }}">Blog</a></h3>
+        <p>Long-form analysis and implementation notes.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-contact-band" aria-labelledby="contact-title">
+    <div>
+      <p class="home-section__label">Contact</p>
+      <h2 id="contact-title">Recruiting, collaboration, or security research conversation.</h2>
+    </div>
+    <ul class="home-contact-links home-contact-links--band">
+      {% include home-contact-links.html %}
     </ul>
   </section>
-</div>
+</main>
