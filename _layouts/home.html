@@ -4,42 +4,229 @@ layout: archive
 
 {{ content }}
 
+<style>
+  .home-landing {
+    display: grid;
+    gap: 1.5rem;
+  }
 
-<div class="page__content">
-  <h1>Sanghyun Park</h1>
+  .home-hero,
+  .home-panel,
+  .home-card,
+  .home-contact {
+    background: rgba(251, 248, 243, 0.78);
+    border: 1px solid var(--line, #d7cbbd);
+    border-radius: var(--radius, 0.85rem);
+    box-shadow: var(--shadow, 0 18px 40px rgba(50, 36, 22, 0.08));
+  }
 
-  <p>
-    Hello, I'm <strong>Sanghyun Park</strong>, a security engineer/researcher
-    interested in fuzzing, directed fuzzing, LLMs, and overall software
-    security.
-  </p>
-  <p>
-    I'm currently seeking job opportunities.
-  </p>
+  .home-hero {
+    position: relative;
+    padding: clamp(1.35rem, 4vw, 2.6rem);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 12%, rgba(154, 90, 45, 0.13), transparent 11rem),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(244, 239, 230, 0.72));
+  }
 
-  <p>
-    You can find my experiences <a href="/about/">here</a>, and you can reach out to me via:
-  </p>
-  <ul>
-  <li><a href="mailto:sanghyun.park.cnu@gmail.com">sanghyun.park.cnu@gmail.com</a></li>
-  </ul>
+  .home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0.85rem;
+    border: 1px solid rgba(154, 90, 45, 0.16);
+    border-radius: calc(var(--radius, 0.85rem) * 0.8);
+    pointer-events: none;
+  }
+
+  .home-kicker,
+  .home-card__label {
+    margin: 0 0 0.7rem;
+    color: var(--accent, #9a5a2d);
+    font-family: var(--mono, monospace);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .home-hero h1 {
+    max-width: 13ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 7vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+  }
+
+  .home-deck {
+    max-width: 44rem;
+    margin-bottom: 1.35rem;
+    color: var(--muted, #6f655d);
+    font-size: clamp(1rem, 2vw, 1.22rem);
+  }
+
+  .home-actions,
+  .home-hero-contact__links,
+  .home-contact__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-actions .btn,
+  .home-hero-contact__links a,
+  .home-contact__links a {
+    border-color: var(--line-strong, #c7b7a6);
+    border-radius: 999px;
+  }
+
+  .home-hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.75rem;
+    align-items: baseline;
+    margin-top: 1rem;
+    color: var(--muted, #6f655d);
+    font-size: 0.9rem;
+  }
+
+  .home-hero-contact__label {
+    margin: 0;
+    font-family: var(--mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .home-hero-contact__links a {
+    display: inline-block;
+    padding: 0.25rem 0.55rem;
+    background: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+  }
+
+  .home-actions .btn--primary {
+    background: var(--ink, #2b2520);
+  }
+
+  .home-panel,
+  .home-contact {
+    padding: clamp(1.1rem, 3vw, 1.6rem);
+  }
+
+  .home-panel h2,
+  .home-contact h2,
+  .home-card h2 {
+    margin-top: 0;
+  }
+
+  .home-proof-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 0;
+    padding-left: 1.15rem;
+  }
+
+  .home-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .home-card {
+    padding: 1.1rem;
+  }
+
+  .home-card p:last-child,
+  .home-contact p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 56em) {
+    .home-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
+
+
+{% assign visible_research = site.research | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
+{% assign latest_research = visible_research | first %}
+{% assign latest_post = site.posts | first %}
+
+<div class="page__content home-landing">
+  <section class="home-hero" aria-labelledby="home-title">
+    <p class="home-kicker">Security engineer and researcher</p>
+    <h1 id="home-title">Sanghyun Park studies how real software breaks.</h1>
+    <p class="home-deck">
+      I work on fuzzing, directed fuzzing, LLM-assisted bug reproduction, and software security research from Daejeon, South Korea.
+    </p>
+
+    <div class="home-actions" aria-label="Primary links">
+      <a class="btn btn--primary" href="/research/">Read research</a>
+      <a class="btn" href="/about/">About Sanghyun</a>
+      <a class="btn" href="/blog/">Blog</a>
+    </div>
+
+    <div class="home-hero-contact" aria-label="Contact links">
+      <p class="home-hero-contact__label">Contact</p>
+      <ul class="home-hero-contact__links">
+        {% for link in site.author.links %}
+          {% if link.url %}
+            <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-panel" aria-labelledby="proof-title">
+    <h2 id="proof-title">Proof of work</h2>
+    <ul class="home-proof-list">
+      <li>Graduate researcher at KAIST Software Security Lab, focused on fuzzing and software security.</li>
+      <li>Built LLM1dFuzz, a systematic 1-day bug reproduction tool using GPT-4 Turbo.</li>
+      <li>Maintains a fuzzing genealogy database tracking more than 361 fuzzers.</li>
+    </ul>
+  </section>
+
+  <section class="home-grid" aria-label="Explore the site">
+    <article class="home-card">
+      <p class="home-card__label">Background</p>
+      <h2><a href="/about/">About</a></h2>
+      <p>Education, research experience, publications, awards, and technical skills.</p>
+    </article>
+
+    <article class="home-card">
+      <p class="home-card__label">Research</p>
+      <h2><a href="/research/">Research</a></h2>
+      {% if latest_research %}
+        <p>Latest: <a href="{{ latest_research.url | relative_url }}">{{ latest_research.title }}</a></p>
+      {% else %}
+        <p>Security research notes and reports will collect here as public writeups are published.</p>
+      {% endif %}
+    </article>
+
+    <article class="home-card">
+      <p class="home-card__label">Writing</p>
+      <h2><a href="/blog/">Blog</a></h2>
+      {% if latest_post %}
+        <p>Latest: <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></p>
+      {% else %}
+        <p>Technical notes, vulnerability analysis, and project writeups.</p>
+      {% endif %}
+    </article>
+  </section>
+
+  <section class="home-contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>For recruiting, collaboration, or security research conversation, use the direct channels below.</p>
+    <ul class="home-contact__links">
+      {% for link in site.author.links %}
+        {% if link.url %}
+          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </div>
-
-<br>
-
-<!-- This is a code snippet for showing recent posts.
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
-</div>
-
-{% include paginator.html %}
--->
