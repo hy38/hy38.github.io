@@ -1,9 +1,13 @@
 # main links
 main:
+  - title: "Home"
+    url: /
   - title: "About"
     url: /about/
-  - title: "Posts"
-    url: /year-archive/
+  - title: "Research"
+    url: /research/
+  - title: "Blog"
+    url: /blog/
 #  - title: "Sitemap"
 #    url: /sitemap/
   #  - title: "Quick-Start Guide"
