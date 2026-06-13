@@ -1,6 +1,7 @@
 ---
-title: "Posts by Year"
-permalink: /year-archive/
+title: "Blog"
+permalink: /blog/
 layout: posts
-author_profile: true
 ---
+
+Publish a post by adding one Markdown file in `_posts/` with the filename pattern `_posts/YYYY-MM-DD-title.md` and minimal front matter.
