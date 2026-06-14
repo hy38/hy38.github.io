@@ -1,0 +1,50 @@
+---
+layout: archive
+title: "CVEs"
+permalink: /cves/
+author_profile: true
+---
+
+{% assign found_cves = site.cves | where_exp: "entry", "entry.found_by_me == true" | sort: "cve" %}
+{% assign public_cve_count = 0 %}
+{% for entry in found_cves %}
+  {% unless entry.published == false %}
+    {% assign public_cve_count = public_cve_count | plus: 1 %}
+  {% endunless %}
+{% endfor %}
+
+<p class="archive__item-excerpt">
+  This page is reserved for CVEs I found and can publicly document. Research-only CVE notes, including thesis reproduction or analysis work, stay in Research.
+</p>
+
+{% if public_cve_count > 0 %}
+  {% assign targets = found_cves | map: "target" | compact | uniq | sort %}
+  {% for target in targets %}
+    {% assign target_entries = found_cves | where: "target", target %}
+    {% assign target_public_count = 0 %}
+    {% for entry in target_entries %}
+      {% unless entry.published == false %}
+        {% assign target_public_count = target_public_count | plus: 1 %}
+      {% endunless %}
+    {% endfor %}
+    {% if target_public_count > 0 %}
+      <section class="cve-category" aria-labelledby="cve-target-{{ target | slugify }}">
+        <h2 id="cve-target-{{ target | slugify }}" class="cve-category__title">{{ target | escape }}</h2>
+        <ul class="cve-list">
+          {% for entry in target_entries %}
+            {% unless entry.published == false %}
+              <li>
+                <a href="{{ entry.url | relative_url }}">{{ entry.cve | default: entry.title | escape }}</a>
+                {% if entry.product %}<span class="cve-list__meta">{{ entry.product | escape }}</span>{% endif %}
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <p class="notice--info">
+    No public CVE writeups found by me are listed yet. I will add entries here after the identifiers and writeups are ready to publish.
+  </p>
+{% endif %}

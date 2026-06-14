@@ -181,6 +181,10 @@ a:focus {
   border-bottom: 1px solid rgba(215, 203, 189, 0.65);
 }
 
+.page__content .header-link {
+  display: none;
+}
+
 .page__content hr,
 .page__meta,
 .page__share,
@@ -445,6 +449,40 @@ figure.highlight pre.highlight,
 
 .archive__item-excerpt {
   color: var(--muted);
+}
+
+.cve-category {
+  margin-top: 2rem;
+}
+
+.cve-category__title {
+  margin-bottom: 0.6rem;
+}
+
+.cve-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.cve-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cve-list a {
+  font-family: var(--mono);
+  font-weight: 700;
+}
+
+.cve-list__meta {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .back-to-top {

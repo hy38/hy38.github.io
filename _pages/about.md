@@ -2,7 +2,7 @@
 permalink: /about/
 title: "About Sanghyun Park"
 excerpt: "Security engineer and researcher focused on fuzzing and software security"
-last_modified_at: 2026-06-13T00:00:00+09:00
+last_modified_at: 2026-06-14T00:00:00+09:00
 author_profile: true
 layout: single
 toc: false
@@ -11,7 +11,7 @@ classes: wide
 
 ## Summary
 
-I'm Sanghyun Park, a security engineer and researcher based in Daejeon, South Korea. My work centers on fuzzing, directed fuzzing, LLM-assisted bug reproduction, and practical software security research.
+I'm Sanghyun Park, a security engineer and researcher based in Seoul, South Korea. My work centers on fuzzing, directed fuzzing, LLM-assisted bug reproduction, and practical software security research.
 
 This page is the web CV source of truth for my background, selected research, skills, and public contact links.
 

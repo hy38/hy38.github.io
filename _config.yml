@@ -116,7 +116,7 @@ author:
   name             : "Sanghyun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Security engineer and researcher"
-  location         : "Daejeon, South Korea"
+  location         : "Seoul, South Korea"
   email            :
   links:
     - label: "Email"
@@ -233,6 +233,9 @@ collections:
   research:
     output: true
     permalink: /research/:path/
+  cves:
+    output: true
+    permalink: /cves/:path/
 
 
 # Pagination with jekyll-paginate
@@ -338,5 +341,16 @@ defaults:
       author_profile: true
       read_time: true
       comments: # true
+      share: true
+      related: true
+
+  - scope:
+      path: ""
+      type: cves
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments:
       share: true
       related: true
