@@ -26,13 +26,25 @@ tags:
 
 Write the public impact and affected component.
 
+## Root cause
+
+Add release-approved root cause and trigger details.
+
+## Evidence
+
+Add public sanitizer, crash, proof, or advisory evidence. Do not include private reproducer code unless it is approved for public release.
+
+## Fix
+
+Add the public fix strategy and upstream commit or patch reference.
+
+## Exploit
+
+Describe what exploit or validation path you tried, how far it got, and what made exploitation difficult or unreliable. Be explicit about failed attempts and avoid claiming exploitability beyond the evidence.
+
 ## Timeline
 
 Add public disclosure and patch dates.
-
-## Technical details
-
-Add release-approved root cause and trigger details.
 
 ## Mitigation
 
