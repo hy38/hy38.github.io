@@ -106,6 +106,15 @@ Spacing follows a 4px-derived rhythm, expressed in `rem` where possible.
 - **Accessibility**: preserve semantic article, headings, and table markup.
 - **Motion**: none.
 
+### External Links
+
+- **Structure**: normal anchors rendered by Markdown, Liquid, or theme includes.
+- **Variants**: external `http` and `https` destinations open in a new tab; same-site links, anchors, downloads, and non-web protocols keep their default behavior.
+- **Spacing**: no visual decoration changes.
+- **States**: preserve existing link hover and focus behavior.
+- **Accessibility**: keep link text meaningful and add `rel="noopener noreferrer"` for cross-origin new-tab links.
+- **Motion**: none.
+
 ### Article TOC
 
 - **Structure**: top-of-article navigation rendered from the existing Jekyll TOC include.

@@ -110,6 +110,9 @@ analytics:
     tracking_id          : G-K3FNCSHF3H
     anonymize_ip         : # true, false (default)
 
+after_footer_scripts:
+  - /assets/js/external-links.js
+
 
 # Site Author
 author:
