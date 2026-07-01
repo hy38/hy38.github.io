@@ -42,7 +42,7 @@ layout: default
       <section class="page__content" itemprop="text">
         {% if page.toc %}
           {% capture page_toc %}
-            {% include toc.html sanitize=true html=content h_min=2 h_max=4 class="page__toc-menu" skip_no_ids=true %}
+            {% include toc.html sanitize=true html=content h_min=2 h_max=3 class="page__toc-menu" ordered=true skip_no_ids=true %}
           {% endcapture %}
           {% assign page_toc = page_toc | strip %}
           {% if page_toc != "" %}

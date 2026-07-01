@@ -72,6 +72,7 @@ Spacing follows a 4px-derived rhythm, expressed in `rem` where possible.
 - Site max width: `--site-max`, currently 92rem for article and masthead surfaces.
 - Article max width: `--article-max`, wide enough for research tables and code.
 - Prose max width: `--article-copy`, narrower than the article canvas to keep paragraphs readable.
+- TOC max width: `--toc-max`, currently 38rem for compact outline scanning.
 - Breakpoints follow the Minimal Mistakes theme and existing `48em` custom breakpoint.
 
 ### Rules
@@ -103,8 +104,8 @@ Spacing follows a 4px-derived rhythm, expressed in `rem` where possible.
 ### Article TOC
 
 - **Structure**: top-of-article navigation rendered from the existing Jekyll TOC include.
-- **Variants**: one-level or nested heading lists depending on article headings.
-- **Spacing**: compact header, wrapped link list, soft paper background.
+- **Variants**: compact ordered outline, nested only to the first useful subsection level.
+- **Spacing**: constrained to prose width, compact header, soft paper background.
 - **States**: link hover/focus uses accent color and underline.
 - **Accessibility**: `aria-labelledby` points to the TOC title.
 - **Motion**: none.
@@ -135,7 +136,8 @@ The blog uses mixed but subtle depth: warm paper surfaces, thin borders, and ver
 | Border/default | `1px solid var(--line)` | Tables, masthead, footer, TOC |
 | Border/code | `1px solid var(--code-line)` | Code blocks |
 | Shadow/subtle | `var(--shadow)` | Images and media |
-| Radius/default | `var(--radius)` | Images, tables, TOC, code blocks |
+| Radius/default | `var(--radius)` | Images, tables, code blocks |
+| Radius/compact | `var(--radius-compact)` | Compact TOC and small framed controls |
 
 ### Rules
 
