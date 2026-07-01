@@ -18,6 +18,11 @@ The blog should read like a quiet research notebook: warm paper, restrained divi
 | Border/strong | `--line-strong` | `#c7b7a6` | n/a | Table header dividers |
 | Accent/primary | `--accent` | `#9a5a2d` | n/a | Links, active states, TOC affordances |
 | Accent/soft | `--accent-soft` | `rgba(154, 90, 45, 0.1)` | n/a | Inline code backgrounds and subtle highlights |
+| Severity/none | `--severity-none`, `--severity-none-soft` | `#5f6a5f`, `rgba(95, 106, 95, 0.12)` | n/a | CVSS severity badge |
+| Severity/low | `--severity-low`, `--severity-low-soft` | `#4d6258`, `rgba(77, 98, 88, 0.12)` | n/a | CVSS severity badge |
+| Severity/medium | `--severity-medium`, `--severity-medium-soft` | `#765128`, `rgba(118, 81, 40, 0.13)` | n/a | CVSS severity badge |
+| Severity/high | `--severity-high`, `--severity-high-soft` | `#8a3831`, `rgba(138, 56, 49, 0.13)` | n/a | CVSS severity badge |
+| Severity/critical | `--severity-critical`, `--severity-critical-soft` | `#6f2735`, `rgba(111, 39, 53, 0.13)` | n/a | CVSS severity badge |
 | Code/background | `--code-bg` | `#f8f4ee` | n/a | Code blocks |
 | Code/border | `--code-line` | `#ddd1c1` | n/a | Code block borders |
 
@@ -147,6 +152,7 @@ The blog uses mixed but subtle depth: warm paper surfaces, thin borders, and ver
 | Shadow/subtle | `var(--shadow)` | Images and media |
 | Radius/default | `var(--radius)` | Images, tables, code blocks |
 | Radius/compact | `var(--radius-compact)` | Compact TOC and small framed controls |
+| Radius/label | `var(--radius-label)` | Inline metadata badges and chips |
 
 ### Rules
 

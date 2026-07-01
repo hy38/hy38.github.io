@@ -51,9 +51,15 @@ author_profile: true
                   <span class="cve-list__details">
                     {% if entry.product %}<span class="cve-list__meta">{{ entry.product | escape }}</span>{% endif %}
                     {% if has_cvss %}
-                      <span class="cve-list__score">CVSS {{ entry.cvss_version | escape }} {{ entry.cvss_score | escape }} {{ entry.cvss_severity | escape }}</span>
+                      {% assign cvss_source = entry.cvss_source | default: "public CVE record" %}
+                      {% assign cvss_severity_class = entry.cvss_severity | downcase | slugify %}
+                      <span class="cve-list__cvss" aria-label="CVSS {{ entry.cvss_version | escape }} score {{ entry.cvss_score | escape }} {{ entry.cvss_severity | escape }} severity" title="{{ cvss_source | escape }}">
+                        <span class="cve-list__cvss-label">CVSS {{ entry.cvss_version | escape }}</span>
+                        <span class="cve-list__cvss-score">{{ entry.cvss_score | escape }}</span>
+                        <span class="cve-list__cvss-severity cve-list__cvss-severity--{{ cvss_severity_class }}">{{ entry.cvss_severity | escape }}</span>
+                      </span>
                     {% elsif has_severity %}
-                      <span class="cve-list__score">{{ entry.severity | escape }}</span>
+                      <span class="cve-list__severity">{{ entry.severity | escape }}</span>
                     {% endif %}
                   </span>
                 {% endif %}
