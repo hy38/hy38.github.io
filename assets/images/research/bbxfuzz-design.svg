@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="660" viewBox="0 0 1120 660" role="img" aria-labelledby="title desc">
-  <title id="title">bbxfuzz source-aware stall-breaking loop</title>
+  <title id="title">BBXFuzz source-aware stall-breaking loop</title>
   <desc id="desc">A diagram showing AFL++ running a fast local grammar mutation loop, then escalating coverage stalls to Codex through a source-backed review task.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
@@ -25,7 +25,7 @@
   </defs>
 
   <rect class="bg" x="0" y="0" width="1120" height="660"/>
-  <text class="text title" x="56" y="56">bbxfuzz: keep the fast loop local, escalate only with source context</text>
+  <text class="text title" x="56" y="56">BBXFuzz: keep the fast loop local, escalate only with source context</text>
   <text class="text muted" x="56" y="86">The LLM is not the fuzzer. It is a stall-breaker that writes new seeds and grammar updates for AFL++ to test.</text>
 
   <rect class="lane" x="44" y="122" width="1032" height="190" rx="10"/>

@@ -1,5 +1,5 @@
 ---
-title: "bbxfuzz: Source-Aware Stall Breaking for BusyBox Fuzzing"
+title: "BBXFuzz: Source-Aware Stall Breaking for BusyBox Fuzzing"
 description: "How I built an AFL++ BusyBox fuzzing workflow that detects coverage stalls, analyzes blocked branch conditions and code flow, and uses Codex only when source-aware seed generation can help."
 date: 2026-07-01
 status: "published"
@@ -19,7 +19,7 @@ tags:
 
 ## Summary
 
-I built `bbxfuzz` because mutation-based fuzzing can get stuck in front of complex branch conditions. AFL++ is excellent at executing inputs and measuring coverage, but simple input mutation often cannot infer the exact string, numeric, parser-state, or code-flow condition needed to enter a deeper path. The result is a long coverage stall at a specific edge or branch.
+I built BBXFuzz because mutation-based fuzzing can get stuck in front of complex branch conditions. AFL++ is excellent at executing inputs and measuring coverage, but simple input mutation often cannot infer the exact string, numeric, parser-state, or code-flow condition needed to enter a deeper path. The result is a long coverage stall at a specific edge or branch.
 
 BusyBox applets were a good target for testing this idea. They include small languages and structured formats: awk scripts, shell scripts, ed commands, vi commands, dpkg archives, HTTP requests, and more. That variety creates many places where raw mutation can run for a long time without producing the one input shape or branch predicate that unlocks the next path.
 
@@ -37,10 +37,10 @@ That made the LLM a source-aware stall breaker instead of a blind generator.
   <a href="{{ '/assets/images/research/bbxfuzz-design.svg' | relative_url }}">
     <picture>
       <source media="(max-width: 640px)" srcset="{{ '/assets/images/research/bbxfuzz-design-mobile.svg' | relative_url }}">
-      <img src="{{ '/assets/images/research/bbxfuzz-design.svg' | relative_url }}" alt="bbxfuzz design: AFL++ runs local grammar mutation first, then coverage stalls are escalated to Codex through a local solver and source-backed review tasks.">
+      <img src="{{ '/assets/images/research/bbxfuzz-design.svg' | relative_url }}" alt="BBXFuzz design: AFL++ runs local grammar mutation first, then coverage stalls are escalated to Codex through a local solver and source-backed review tasks.">
     </picture>
   </a>
-  <figcaption>bbxfuzz keeps the fast path local and escalates only when the fuzzer has concrete coverage evidence that it is stuck.</figcaption>
+  <figcaption>BBXFuzz keeps the fast path local and escalates only when the fuzzer has concrete coverage evidence that it is stuck.</figcaption>
 </figure>
 
 ## The Problem I Faced
@@ -61,7 +61,7 @@ That framing matters because the fuzzer, not the model, decides whether the answ
 
 ## How I Solved It
 
-bbxfuzz has three practical phases.
+BBXFuzz has three practical phases.
 
 ### Phase 0: Initialize the Applet
 
@@ -75,7 +75,7 @@ This is the speed layer. It is cheap, repeatable, and does not need a model in t
 
 ### Phase 2: Solve or Escalate Stalls With Source Context
 
-When edge growth stays below the configured threshold across the stall window, bbxfuzz takes a coverage snapshot, finds stuck branches, and extracts nearby C context. A local regex-based constraint solver tries first. If it can patch a seed for a simple branch condition, the fuzzer can keep moving without Codex.
+When edge growth stays below the configured threshold across the stall window, BBXFuzz takes a coverage snapshot, finds stuck branches, and extracts nearby C context. A local regex-based constraint solver tries first. If it can patch a seed for a simple branch condition, the fuzzer can keep moving without Codex.
 
 When the solver produces no seeds, or after repeated solver-only rounds, the stalled branch is escalated into a reviewable task in my private workflow. The work item is intentionally narrow: use the supplied evidence to generate bypass seeds and update the grammar.
 
@@ -102,7 +102,7 @@ For validation, the local reports use a RED/GREEN gate: reproduce on the unpatch
 The result I care about is not just "LLM found bugs." The result is a loop:
 
 1. AFL++ discovers coverage reality.
-2. bbxfuzz extracts the stuck source context.
+2. BBXFuzz extracts the stuck source context.
 3. The local solver tries cheap seed patches first.
 4. Codex proposes small seed and grammar changes when local solving is not enough.
 5. AFL++ tests those changes.
