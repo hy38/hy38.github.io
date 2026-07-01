@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="940" viewBox="0 0 640 940" role="img" aria-labelledby="title desc">
+  <title id="title">bbxfuzz mobile workflow diagram</title>
+  <desc id="desc">A vertical diagram of bbxfuzz showing AFL++ local mutation, stall detection, local solver, a Codex review task, then seed and grammar reload.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2f3a4a"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #d8dee8; stroke-width: 2; rx: 10; }
+      .box { fill: #ffffff; stroke-width: 2; rx: 8; }
+      .blue { stroke: #2563eb; }
+      .green { stroke: #15803d; }
+      .amber { stroke: #b45309; }
+      .red { stroke: #b91c1c; }
+      .violet { stroke: #7c3aed; }
+      .text { font-family: Inter, Segoe UI, Arial, sans-serif; fill: #111827; }
+      .title { font-size: 30px; font-weight: 750; }
+      .section { font-size: 24px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 700; }
+      .muted { fill: #4b5563; font-size: 16px; }
+      .line { stroke: #2f3a4a; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="bg" width="640" height="940"/>
+  <text class="text title" x="40" y="52">bbxfuzz stall-breaking loop</text>
+  <text class="text muted" x="40" y="84">AFL++ stays the oracle; Codex only writes artifacts to test.</text>
+
+  <rect class="panel" x="32" y="118" width="576" height="300"/>
+  <text class="text section" x="60" y="158">Tier 1: local mutation</text>
+  <text class="text muted" x="60" y="184">Every campaign cycle, no LLM call</text>
+
+  <rect class="box blue" x="70" y="220" width="220" height="68"/>
+  <text class="text label" x="103" y="252">Grammar rules</text>
+  <text class="text muted" x="108" y="274">syntax-aware seeds</text>
+
+  <rect class="box green" x="350" y="220" width="220" height="68"/>
+  <text class="text label" x="383" y="252">Corpus mutation</text>
+  <text class="text muted" x="403" y="274">reuse close inputs</text>
+
+  <rect class="box amber" x="70" y="328" width="220" height="68"/>
+  <text class="text label" x="118" y="360">Strategies</text>
+  <text class="text muted" x="112" y="382">bounds and patterns</text>
+
+  <rect class="box blue" x="350" y="328" width="220" height="68"/>
+  <text class="text label" x="421" y="360">AFL++</text>
+  <text class="text muted" x="402" y="382">coverage oracle</text>
+
+  <path class="line" d="M290 254 H350"/>
+  <path class="line" d="M180 288 V328"/>
+  <path class="line" d="M290 362 H350"/>
+
+  <rect class="panel" x="32" y="462" width="576" height="360"/>
+  <text class="text section" x="60" y="502">Tier 2: source-aware stall</text>
+  <text class="text muted" x="60" y="528">Triggered by low edge growth across the stall window</text>
+
+  <rect class="box red" x="70" y="565" width="220" height="68"/>
+  <text class="text label" x="103" y="597">Coverage stall</text>
+  <text class="text muted" x="108" y="619">stuck branches found</text>
+
+  <rect class="box violet" x="350" y="565" width="220" height="68"/>
+  <text class="text label" x="425" y="597">Solver</text>
+  <text class="text muted" x="403" y="619">try cheap patches</text>
+
+  <rect class="box blue" x="70" y="705" width="220" height="68"/>
+  <text class="text label" x="98" y="737">Prompt with C</text>
+  <text class="text muted" x="102" y="759">branch and logs</text>
+
+  <rect class="box amber" x="350" y="705" width="220" height="68"/>
+  <text class="text label" x="420" y="737">Codex</text>
+  <text class="text muted" x="399" y="759">source review task</text>
+
+  <path class="line" d="M290 599 H350"/>
+  <path class="line" d="M460 633 V682 C460 695 448 705 432 705 H290"/>
+  <path class="line" d="M290 739 H350"/>
+
+  <rect class="panel" x="32" y="858" width="576" height="48"/>
+  <text class="text muted" x="60" y="888">Reload generated seeds and grammar; AFL++ decides what works.</text>
+  <path class="line" d="M460 773 V858"/>
+</svg>
