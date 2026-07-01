@@ -13,6 +13,9 @@ references:
   - "https://arxiv.org/abs/2412.15931"
   - "https://theori-io.github.io/aixcc-public/afc/Branch%20Flipper.pdf"
   - "https://www.usenix.org/system/files/usenixsecurity25-yang-yupeng.pdf"
+  - "https://www.ndss-symposium.org/ndss-paper/large-language-model-guided-protocol-fuzzing/"
+  - "https://arxiv.org/abs/2308.04748"
+  - "https://arxiv.org/abs/2212.14834"
 redaction: "public"
 tags:
   - fuzzing
@@ -64,56 +67,31 @@ That is where I wanted to use an LLM. Not as a replacement fuzzer, and not as a 
 
 That framing matters because the fuzzer, not the model, decides whether the answer was useful.
 
-## Motivating Example: A Stalled Shell Path
+## Motivating Example: A Provenance Chain, Not Causal Proof
 
-One historical `ash` stall shows the workflow better than an abstract diagram. In that run, BBXFuzz detected a coverage stall, found 3,783 stuck branches, and escalated the top 5 to Codex after the local solver produced 0 seeds and 0 new edges across 5 runs. The orchestrator log for the escalation cycle reported 2,184 of 4,321 edges, 713,580 executions, and a corpus of 1,965 entries.
+The historical `ash` stall is useful for explaining the workflow, but I could not source-link that stall to a later ASAN-confirmed bug. The cleaner real example is a `dpkg` stall artifact from issue #3743 and PR #3748. I am intentionally presenting it as provenance evidence, not as proof that LLM assistance caused a bug discovery.
 
-The closest corpus input was not a clean shell program. It was a malformed byte-level shell input that happened to reach the relevant area:
+In that run, BBXFuzz detected a coverage stall in the `dpkg` applet after 171,777 executions. The campaign had 690 of 5,411 edges, 492 corpus entries, and 709 stuck branches. The local solver had produced 0 seeds and 0 new edges across 2 runs, so the workflow escalated the top blocked branches into a Codex stall task.
+
+The merged PR added five `.deb` seeds and updated the `dpkg` grammar:
 
 ```text
-0000: 23 21 2f 62 68 30 23 69 6e cd 24 7b 0a 2f 62 68  #!/bh0#in.${./bh
-0010: 0a 22 ff 4d 26 00 26 0a 87 4b 24 6e 24 6e 46 24  .".M&.&..K$n$nF$
-...
-0070: 18 2d 0a 21 2f e0 00 00 7c 69 6e 24 74 69 6d 0a  .-.!/...|in$tim.
+commit 4e03c954 seeds+grammar: stall #3743 bypass for dpkg (#3748)
+  grammars/dpkg_grammar.json
+  seeds/dpkg/stall_3743/seed_001.dpkg
+  seeds/dpkg/stall_3743/seed_002.dpkg
+  seeds/dpkg/stall_3743/seed_003.dpkg
+  seeds/dpkg/stall_3743/seed_004.dpkg
+  seeds/dpkg/stall_3743/seed_005.dpkg
 ```
 
-One blocked source context involved `isdigit_str()` through a here-document and redirection call chain. Another reached `var_end()` through shell variable assignment flow:
+One of those seeds was not a random byte blob. It had the outer shape of a Debian archive: an `ar` container, a `debian-binary` member, and compressed metadata members. That matters because the artifact was structurally plausible enough for AFL++ to accept and mutate in the normal queue.
 
-```c
-static int
-isdigit_str(const char *str)
-{
-	while (isdigit(*str))
-		str++;
-	return (*str == '\0');
-}
+The local artifact chain is direct: a checked-in seed from PR #3748 is byte-identical to an AFL++ queue entry tagged as coming from a Codex PR, and a later crashing input records that queue entry as its mutation parent. I am deliberately omitting the seed hash, queue filename, crash filename, sink function, source line, stack trace, and vulnerable code because the disclosure is still pending.
 
-static const char *
-var_end(const char *var)
-{
-	while (*var)
-		if (*var++ == '=')
-			break;
-	return var;
-}
-```
+This is the best concrete example I found for the claim "LLM-assisted stall breaking produced test artifacts that AFL++ could validate." It does not prove that vanilla AFL++ or grammar-only BBXFuzz would have failed to find the same crash under the same budget. Tier 1 also injected grammar seeds during the surrounding campaign, and the historical logs do not isolate every later edge or crash to a single intervention. Without the ablation study below, the dpkg chain should be read as an artifact-provenance example, not a causal performance result.
 
-Neither condition is hard in isolation. The hard part is that a mutation-only fuzzer has to synthesize the shell construct that reaches the right parser and variable-flow state. The generated stall PR added five small shell seeds and updated the grammar. One seed targeted readonly assignment and unset behavior:
-
-```sh
-#!/bin/sh
-f() {
-  local v=alpha
-  readonly v
-  v=beta 2>/dev/null || echo READONLY_HIT
-  unset v 2>/dev/null || echo UNSET_RO
-}
-f
-```
-
-Another seed exercised `read -r` with an `IFS=:` heredoc. The grammar update added `trap`, `read` with `IFS=:`, readonly/shift patterns, and constants such as `READONLY_HIT`, `UNSET_RO`, `SHIFT_UNDERFLOW`, `MISSING:`, and `UNKNOWN:`.
-
-The next cycle auto-merged the stall PR with 5 seed files and bumped the grammar to `0.6-stall-3667`. I am intentionally not using the following coverage movement as proof because Tier 1 also injected seeds in that cycle, and the logs I found do not attribute new edges to specific artifacts. The correct claim is narrower: the LLM-assisted stall task produced concrete seeds and grammar changes that AFL++ could execute and judge. That is an example of the workflow, not proof of standalone LLM effectiveness.
+The model still did not "find the bug." The model produced a structured test artifact. AFL++ accepted and mutated it. The crash was then reproduced, minimized, and triaged through the normal ASAN and root-cause workflow.
 
 ## How I Solved It
 
@@ -158,14 +136,17 @@ The related work matters because "LLM plus fuzzing" is no longer a novel claim b
 | [HyLLfuzz](https://arxiv.org/abs/2412.15931) | arXiv preprint, 2024 with 2026 revision | Greybox roadblocks | Modified inputs from LLM-assisted concolic reasoning | Coverage-guided loop validates reachability | BBXFuzz is similar in stall timing but uses practical seed/grammar PRs instead of a concolic-execution framing. |
 | [HLPFUZZ](https://www.usenix.org/system/files/usenixsecurity25-yang-yupeng.pdf) | USENIX Security 2025 | Complex constraints in language processors | Constraint-solving inputs | Hybrid fuzzing validates deeper states | BBXFuzz targets BusyBox applets and command/file/network formats, not language processors as a class. |
 | [Branch Flipper](https://theori-io.github.io/aixcc-public/afc/Branch%20Flipper.pdf) | AIxCC public technical report | Fuzz blockers | Blocker-unlocking seeds, including binary formats via Kaitai | Coverage feedback grounds retries | BBXFuzz has weaker binary-format support, but integrates applet grammars and reviewable GitHub seed PRs into a live AFL++ campaign. |
+| [ChatAFL](https://www.ndss-symposium.org/ndss-paper/large-language-model-guided-protocol-fuzzing/) | NDSS 2024 | Protocol structure and state guidance | Protocol grammars and next-message predictions | Stateful protocol fuzzing validates coverage | BBXFuzz is not protocol-state specific; it escalates BusyBox applet stalls after AFL++ coverage evidence and persists seed/grammar changes. |
+| [Fuzz4All](https://arxiv.org/abs/2308.04748) | ICSE 2024 | General LLM-powered fuzzing loop | Generated or mutated language inputs | Target feedback guides prompt evolution | BBXFuzz is narrower and more auditable: applet-specific stalls become concrete seed and grammar diffs tied to AFL++ queue behavior. |
+| [TitanFuzz](https://arxiv.org/abs/2212.14834) | ISSTA 2023 | DL-library API fuzzing | Generated or mutated Python programs | DL-library execution and coverage validate programs | BBXFuzz targets BusyBox parsers and command/file/network inputs, not deep-learning API programs. |
 
-The honest positioning is not "BBXFuzz is better than all of these systems." The claim is more specific: BBXFuzz is designed for source-aware stall breaking in a live AFL++ BusyBox campaign, with a strict boundary between model-suggested artifacts and fuzzer-validated outcomes. On binary-input blocker work, Branch Flipper is a stronger reference point. On systematic constraint solving for language processors, HLPFUZZ is stronger. BBXFuzz is better aligned with my BusyBox workflow because its artifacts are simple: seed files, grammar rules, and campaign logs.
+The honest positioning is not "BBXFuzz is better than all of these systems." The claim is more specific: BBXFuzz is designed for source-aware stall breaking in a live AFL++ BusyBox campaign, with a strict boundary between model-suggested artifacts and fuzzer-validated outcomes. On binary-input blocker work, Branch Flipper is a stronger reference point. On systematic constraint solving for language processors, HLPFUZZ is stronger. ChatAFL and Fuzz4All are broader LLM-fuzzing systems. BBXFuzz is better aligned with my BusyBox workflow because its artifacts are simple, auditable, and reusable inside the campaign: seed files, grammar rules, and campaign logs.
 
 ## Evidence Boundary
 
 The project currently registers 24 BusyBox applet targets, with four blacklisted because they reached coverage plateaus. The live applet set spans editors, shells, coreutils-like tools, archive parsers, and network-facing inputs.
 
-For the vulnerability-reporting side of the work, I keep the public details out of this post. I do not have enough public-safe attribution here to say which reports came from plain AFL++ mutations, grammar mutations, solver seeds, or Codex-generated artifacts. Publishing a disclosure paragraph without that attribution would imply more than the current evidence proves.
+For most vulnerability reports from this campaign, I still do not have enough public-safe attribution to say whether plain AFL++ mutations, grammar mutations, solver seeds, or Codex-generated artifacts were decisive. The dpkg chain above is the exception I found for artifact provenance, not for causal improvement. I am still not publishing minimized PoCs, exact sink locations, crash hashes, queue filenames, or exploit-oriented details here.
 
 The workflow result I can describe is the loop:
 
@@ -210,17 +191,17 @@ Current GitHub-mode BBXFuzz logs preserve prompt files, issue counts, seed PRs, 
 
 What I can measure is prompt size. I ran an offline tokenizer over 2,111 archived `stall_*.md` prompt files from the `work-20260406_224550` session using the `cl100k_base` tokenizer, which is an OpenAI GPT-3.5/GPT-4-era tokenizer. It may not match the exact Codex model tokenizer used by the historical workflow, and it will not match Anthropic tokenization or newer OpenAI tokenizers exactly. This is a prompt-size proxy, not billing data.
 
-| Prompt token proxy | Tokens |
-| --- | ---: |
-| Minimum | 661 |
-| 25th percentile | 5,615 |
-| Median | 6,906 |
-| 75th percentile | 10,059 |
-| 90th percentile | 12,179 |
-| Maximum | 14,006 |
-| Mean | 7,998 |
+| Prompt-size proxy | Bytes | Words | `cl100k_base` tokens |
+| --- | ---: | ---: | ---: |
+| Minimum | 2,778 | 427 | 661 |
+| 25th percentile | 18,190 | 1,989 | 5,615 |
+| Median | 20,449 | 2,448 | 6,906 |
+| 75th percentile | 26,104 | 3,978 | 10,059 |
+| 90th percentile | 29,408 | 4,799 | 12,179 |
+| Maximum | 29,430 | 5,243 | 14,006 |
+| Mean | 21,998 | 3,015 | 7,998 |
 
-The `ash` stall example above was 12,700 bytes, 1,498 words, and 3,702 prompt-token-proxy tokens, which is below the 25th percentile of this archive. The later `vi` #3811 prompt was 19,384 bytes, 2,407 words, and 6,623 prompt-token-proxy tokens, close to the median. A submit-ready evaluation should log prompt tokens, completion tokens, model identity, wall time, retries, and whether the resulting seeds were accepted by AFL++.
+The dpkg stall prompt used in the example above was 28,751 bytes, 4,785 words, and 11,718 `cl100k_base` proxy tokens, near the 90th percentile of that archive. A submit-ready evaluation should log prompt tokens, completion tokens, model identity, wall time, retries, and whether the resulting seeds were accepted by AFL++.
 
 ## What Worked Well
 
@@ -240,7 +221,7 @@ I would also keep the public disclosure path separate from the fuzzing path. Pen
 
 ## Accuracy Boundary
 
-This post only states details I checked against the local repository and run logs on 2026-07-01. It intentionally does not include pending PoCs, exploit details, unassigned CVE identifiers, or report-to-applet mapping. It also does not claim a completed vanilla-AFL++ ablation or exact end-to-end cost result, because I did not find that evidence in the local logs.
+This post only states details I checked against the local repository and run logs on 2026-07-01. It intentionally does not include pending PoCs, exploit details, or unassigned CVE identifiers. It also does not claim a completed vanilla-AFL++ ablation or exact end-to-end cost result, because I did not find that evidence in the local logs.
 
 ## References
 
@@ -249,3 +230,6 @@ This post only states details I checked against the local repository and run log
 - [Large Language Model assisted Hybrid Fuzzing](https://arxiv.org/abs/2412.15931), arXiv 2024/2026 revision.
 - [Branch Flipper: Unlocking Fuzz Blockers with Coverage-Grounded Seed Generation](https://theori-io.github.io/aixcc-public/afc/Branch%20Flipper.pdf), AIxCC public technical report.
 - [Hybrid Language Processor Fuzzing via LLM-Based Constraint Solving](https://www.usenix.org/system/files/usenixsecurity25-yang-yupeng.pdf), USENIX Security 2025.
+- [Large Language Model guided Protocol Fuzzing](https://www.ndss-symposium.org/ndss-paper/large-language-model-guided-protocol-fuzzing/), NDSS 2024.
+- [Fuzz4All: Universal Fuzzing with Large Language Models](https://arxiv.org/abs/2308.04748), ICSE 2024.
+- [Large Language Models are Zero-Shot Fuzzers: Fuzzing Deep-Learning Libraries via Large Language Models](https://arxiv.org/abs/2212.14834), ISSTA 2023.
