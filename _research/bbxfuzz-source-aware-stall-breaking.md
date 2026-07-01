@@ -1,6 +1,6 @@
 ---
 title: "bbxfuzz: Source-Aware Stall Breaking for BusyBox Fuzzing"
-description: "How I built an AFL++ BusyBox fuzzing workflow that keeps mutation local, asks Codex for help only at coverage stalls, and turns source-backed analysis into seeds, grammar updates, and validation artifacts."
+description: "How I built an AFL++ BusyBox fuzzing workflow that detects coverage stalls, analyzes blocked branch conditions and code flow, and uses Codex only when source-aware seed generation can help."
 date: 2026-07-01
 status: "published"
 published: true
@@ -19,14 +19,16 @@ tags:
 
 ## Summary
 
-I built `bbxfuzz` because ordinary byte mutation was not enough for BusyBox applets. Many applets expect small languages or structured formats: awk scripts, shell scripts, ed commands, vi commands, dpkg archives, HTTP requests, and more. AFL++ is excellent once it has a useful input shape, but it can spend too much time rediscovering syntax before it reaches the branch I care about.
+I built `bbxfuzz` because mutation-based fuzzing can get stuck in front of complex branch conditions. AFL++ is excellent at executing inputs and measuring coverage, but simple input mutation often cannot infer the exact string, numeric, parser-state, or code-flow condition needed to enter a deeper path. The result is a long coverage stall at a specific edge or branch.
+
+BusyBox applets were a good target for testing this idea. They include small languages and structured formats: awk scripts, shell scripts, ed commands, vi commands, dpkg archives, HTTP requests, and more. That variety creates many places where raw mutation can run for a long time without producing the one input shape or branch predicate that unlocks the next path.
 
 The design insight was to split the work by what each component is good at:
 
 - AFL++ stays in charge of execution, coverage, crashes, and truth.
 - A local grammar mutator keeps feeding syntactically useful inputs without network calls.
 - A local solver gets the first chance at simple stalled branches.
-- Codex is used when the campaign stalls need deeper source-aware reasoning, with branch conditions, solver diagnostics, and the closest corpus input.
+- Codex is used only when a coverage stall needs source-aware reasoning, with the blocked branch condition, code flow, solver diagnostics, and the closest corpus input.
 - Any Codex output goes back into the fuzzer as seed files and grammar changes, not as a trusted conclusion.
 
 That made the LLM a source-aware stall breaker instead of a blind generator.
@@ -43,14 +45,17 @@ That made the LLM a source-aware stall breaker instead of a blind generator.
 
 ## The Problem I Faced
 
-BusyBox is a multi-call binary, but each applet has a different input contract. Some applets read scripts from files, some read commands from stdin, some parse binary archive formats, and some are better tested through small harnesses. Treating them all as raw bytes made the fuzzer waste work on invalid inputs.
+The core problem was not just invalid syntax. The core problem was that mutation-only fuzzing often cannot explain why a near-miss input failed a branch condition.
 
-The second problem was LLM control. If I simply asked an LLM for random test cases, the output could be expensive, repetitive, or unrelated to the exact path AFL++ was failing to reach. I needed a workflow where the model only saw a small, evidence-backed task:
+BusyBox is a multi-call binary, and each applet has a different input contract. Some applets read scripts from files, some read commands from stdin, some parse binary archive formats, and some are better tested through small harnesses. Treating them all as raw bytes made the fuzzer waste work on invalid inputs, but even syntactically valid inputs could still stop before a hard branch.
+
+That is where I wanted to use an LLM. Not as a replacement fuzzer, and not as a random test-case generator, but as a source-aware assistant for the exact moment where AFL++ had coverage evidence that it was stuck. I needed a workflow where the model only saw a small, evidence-backed task:
 
 1. Here is the blocked branch.
 2. Here is the enclosing C source.
 3. Here is the closest input that already reaches the area.
-4. Generate a few minimal bypass seeds and update the grammar if the source reveals a missing token, constant, or production.
+4. Explain why the current input fails the condition.
+5. Generate a few minimal bypass seeds and update the grammar if the source reveals a missing token, constant, or production.
 
 That framing matters because the fuzzer, not the model, decides whether the answer was useful.
 
@@ -74,7 +79,7 @@ When edge growth stays below the configured threshold across the stall window, b
 
 When the solver produces no seeds, or after repeated solver-only rounds, the stalled branch is escalated into a reviewable task in my private workflow. The work item is intentionally narrow: use the supplied evidence to generate bypass seeds and update the grammar.
 
-The important detail is that the prompt is not just "make more inputs." It carries the branch condition, function body, call chain, covered siblings, closest corpus input, and solver diagnostics when available. That is what lets the model reason about the actual path constraint instead of guessing.
+The important detail is that the prompt is not just "make more inputs." It carries the branch condition, function body, call chain, covered siblings, closest corpus input, and solver diagnostics when available. That is what lets the model reason about the actual path constraint and code flow instead of guessing.
 
 ## The Design Insight
 
