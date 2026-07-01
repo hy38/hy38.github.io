@@ -10,6 +10,11 @@ found_by_me: true
 status: "draft"
 published: false
 severity: "TBD"
+cvss_version: "TBD"
+cvss_score: "TBD"
+cvss_severity: "TBD"
+cvss_source: "TBD"
+cvss_vector: "TBD"
 toc: true
 references:
   - "https://example.com/advisory"

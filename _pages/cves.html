@@ -33,9 +33,30 @@ author_profile: true
         <ul class="cve-list">
           {% for entry in target_entries %}
             {% unless entry.published == false %}
-              <li>
-                <a href="{{ entry.url | relative_url }}">{{ entry.cve | default: entry.title | escape }}</a>
-                {% if entry.product %}<span class="cve-list__meta">{{ entry.product | escape }}</span>{% endif %}
+              {% assign has_cvss = false %}
+              {% if entry.cvss_version and entry.cvss_score and entry.cvss_severity %}
+                {% unless entry.cvss_score == "TBD" %}
+                  {% assign has_cvss = true %}
+                {% endunless %}
+              {% endif %}
+              {% assign has_severity = false %}
+              {% if entry.severity %}
+                {% unless entry.severity == "TBD" %}
+                  {% assign has_severity = true %}
+                {% endunless %}
+              {% endif %}
+              <li class="cve-list__item">
+                <a class="cve-list__id" href="{{ entry.url | relative_url }}">{{ entry.cve | default: entry.title | escape }}</a>
+                {% if entry.product or has_cvss or has_severity %}
+                  <span class="cve-list__details">
+                    {% if entry.product %}<span class="cve-list__meta">{{ entry.product | escape }}</span>{% endif %}
+                    {% if has_cvss %}
+                      <span class="cve-list__score">CVSS {{ entry.cvss_version | escape }} {{ entry.cvss_score | escape }} {{ entry.cvss_severity | escape }}</span>
+                    {% elsif has_severity %}
+                      <span class="cve-list__score">{{ entry.severity | escape }}</span>
+                    {% endif %}
+                  </span>
+                {% endif %}
               </li>
             {% endunless %}
           {% endfor %}

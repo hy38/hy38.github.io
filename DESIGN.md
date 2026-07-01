@@ -110,6 +110,15 @@ Spacing follows a 4px-derived rhythm, expressed in `rem` where possible.
 - **Accessibility**: `aria-labelledby` points to the TOC title.
 - **Motion**: none.
 
+### CVE Archive Row
+
+- **Structure**: linked CVE identifier, affected product or subsystem, and a compact CVSS label.
+- **Variants**: structured CVSS fields render as `CVSS <version> <score> <severity>`; entries without structured fields fall back to `severity`.
+- **Spacing**: rows use divider lines and inline wrapping instead of cards.
+- **States**: the CVE identifier keeps standard link hover and focus behavior.
+- **Accessibility**: keep the CVE identifier as the primary link target and expose severity as readable text.
+- **Motion**: none.
+
 ## 6. Motion & Interaction
 
 ### Timing

@@ -693,7 +693,8 @@ figure.highlight code,
   border-top: 1px solid var(--line);
 }
 
-.cve-list li {
+.cve-list li,
+.cve-list__item {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.75rem;
@@ -702,14 +703,29 @@ figure.highlight code,
   border-bottom: 1px solid var(--line);
 }
 
-.cve-list a {
+.cve-list a,
+.cve-list__id {
   font-family: var(--mono);
   font-weight: 700;
+}
+
+.cve-list__details {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  align-items: baseline;
 }
 
 .cve-list__meta {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.cve-list__score {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 .back-to-top {
