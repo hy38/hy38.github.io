@@ -65,7 +65,7 @@ All sections live in `_pages/about.md` under `layout: single`,
    - SECAI 2024 (Systematic Bug Reproduction with Large Language Model);
      CUI 2024 (ChatFive); IEEE SAS 2022 (Shot Group / LoRa / YOLO v5).
 
-6. **Education & Certifications** (`.about-edu`)
+6. **Education & Certifications** (`.about-cols`)
    - Two short lists side by side on desktop, stacked on mobile.
    - Education: KAIST M.S. Computer Science (2023–2025, advisor Sang Kil Cha);
      CNU B.S. Computer Science and Engineering (2017–2023, GPA 4.21/4.5).
