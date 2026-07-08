@@ -118,7 +118,7 @@ after_footer_scripts:
 author:
   name             : "Sanghyun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Security engineer and researcher"
+  bio              : "Security Researcher · AI-driven Pentester"
   location         : "Seoul, South Korea"
   email            :
   links:
