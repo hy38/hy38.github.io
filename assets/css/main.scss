@@ -1078,6 +1078,10 @@ a.about-stat:focus .about-stat__value {
   border-top: 1px solid var(--line);
 }
 
+.about-work > li:first-child {
+  border-top: none;
+}
+
 .page__content .about-work__head {
   display: flex;
   flex-wrap: wrap;
