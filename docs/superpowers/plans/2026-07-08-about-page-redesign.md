@@ -265,7 +265,7 @@ git commit -m "feat: restructure about page around researcher highlights"
   margin-bottom: var(--space-8);
 }
 
-.about-tagline {
+.page__content .about-tagline {
   margin: 0 0 var(--space-3);
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -275,7 +275,7 @@ git commit -m "feat: restructure about page around researcher highlights"
   color: var(--muted);
 }
 
-.about-lead {
+.page__content .about-lead {
   max-width: var(--article-copy);
   margin: 0;
   font-size: 1.12rem;
@@ -331,6 +331,11 @@ a.about-stat:focus .about-stat__value {
   color: var(--accent);
 }
 
+.page__content a.about-stat:hover,
+.page__content a.about-stat:focus {
+  text-decoration: none;
+}
+
 @media (min-width: 48em) {
   .about-stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -374,7 +379,7 @@ a.about-stat:focus .about-stat__value {
   background: var(--paper);
 }
 
-.about-entry__meta {
+.page__content .about-entry__meta {
   margin: 0 0 var(--space-1);
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -386,6 +391,7 @@ a.about-stat:focus .about-stat__value {
   margin: 0 0 var(--space-2);
   font-size: 1.05rem;
   letter-spacing: -0.01em;
+  padding-bottom: 0;
   border-bottom: none;
 }
 
@@ -410,7 +416,7 @@ a.about-stat:focus .about-stat__value {
   border-bottom: 1px solid var(--line);
 }
 
-.about-work__head {
+.page__content .about-work__head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -457,6 +463,7 @@ a.about-stat:focus .about-stat__value {
 .about-cols h3 {
   margin-top: 0;
   font-size: 1rem;
+  padding-bottom: 0;
   border-bottom: none;
 }
 
