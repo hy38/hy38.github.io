@@ -386,6 +386,7 @@ a.about-stat:focus .about-stat__value {
   margin: 0 0 var(--space-2);
   font-size: 1.05rem;
   letter-spacing: -0.01em;
+  border-bottom: none;
 }
 
 .about-timeline > li > p:last-child {
@@ -456,6 +457,7 @@ a.about-stat:focus .about-stat__value {
 .about-cols h3 {
   margin-top: 0;
   font-size: 1rem;
+  border-bottom: none;
 }
 
 .about-cols ul {
