@@ -11,7 +11,7 @@ classes: wide
 
 <div class="about-hero">
   <p class="about-tagline">Security Researcher · AI-driven Pentester</p>
-  <p class="about-lead">I do offensive security research at <strong>Autocrypt</strong>'s Vehicle Threat Research Lab, testing real vehicles and ECUs across in-vehicle networks, communication protocols, and wireless attack surfaces. My background is AI-driven fuzzing: at <strong>KAIST</strong>'s Software Security Lab I built LLM1dFuzz, an LLM-guided framework that reproduces real-world 1-day vulnerabilities and feeds directed fuzzing. Outside work I hunt memory-safety and concurrency bugs in the Linux kernel and widely used open-source software — and get them fixed upstream.</p>
+  <p class="about-lead">I break cars by day — offensive security testing against real vehicles and ECUs at <strong>Autocrypt</strong> — and hunt Linux kernel 0-days by night. My edge is AI-driven offensive security: pairing LLMs with fuzzing to find, reproduce, and fix real-world vulnerabilities, a craft I honed at <strong>KAIST</strong>'s Software Security Lab.</p>
 </div>
 
 <div class="about-stats">
@@ -101,70 +101,18 @@ classes: wide
   </li>
 </ul>
 
-## Education & Certifications
+## Education
 
-<div class="about-cols">
-  <div>
-    <h3>Education</h3>
-    <ul>
-      <li>
-        <strong>KAIST</strong> — M.S., Computer Science (School of Computing)
-        <span class="about-item__meta">2023 – 2025 · Advisor: Prof. Sang Kil Cha</span>
-      </li>
-      <li>
-        <strong>Chungnam National University</strong> — B.S., Computer Science and Engineering
-        <span class="about-item__meta">2017 – 2023 · GPA 4.21/4.5 · Advisor: Prof. Hoon Choi</span>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h3>Certifications</h3>
-    <ul>
-      <li>
-        <strong>Engineer Information Processing</strong>
-        <span class="about-item__meta">HRD Service of Korea · 2025</span>
-      </li>
-      <li>
-        <strong>Cryptography I</strong>
-        <span class="about-item__meta">Stanford University · 2025</span>
-      </li>
-      <li>
-        <strong>SQLD (SQL Developer)</strong>
-        <span class="about-item__meta">Korea Data Agency · 2021</span>
-      </li>
-    </ul>
-  </div>
-</div>
-
-## Skills
-
-<div class="about-skills">
-  <div class="about-skill-group">
-    <span class="about-skill-group__label">Offensive Security</span>
-    <span class="about-chip">Penetration testing</span>
-    <span class="about-chip">Fuzzing</span>
-    <span class="about-chip">Directed fuzzing</span>
-    <span class="about-chip">Vulnerability analysis</span>
-    <span class="about-chip">Crash triage</span>
-    <span class="about-chip">Root-cause analysis</span>
-    <span class="about-chip">Exploitability assessment</span>
-  </div>
-  <div class="about-skill-group">
-    <span class="about-skill-group__label">Languages &amp; Tooling</span>
-    <span class="about-chip">C</span>
-    <span class="about-chip">C++</span>
-    <span class="about-chip">Python</span>
-    <span class="about-chip">Bash</span>
-    <span class="about-chip">SQL</span>
-    <span class="about-chip">Docker</span>
-    <span class="about-chip">Git</span>
-  </div>
-  <div class="about-skill-group">
-    <span class="about-skill-group__label">Human Languages</span>
-    <span class="about-chip">Korean</span>
-    <span class="about-chip">English</span>
-  </div>
-</div>
+<ul class="about-edu">
+  <li>
+    <strong>KAIST</strong> — M.S., Computer Science (School of Computing)
+    <span class="about-item__meta">2023 – 2025 · Advisor: Prof. Sang Kil Cha</span>
+  </li>
+  <li>
+    <strong>Chungnam National University</strong> — B.S., Computer Science and Engineering
+    <span class="about-item__meta">2017 – 2023 · GPA 4.21/4.5 · Advisor: Prof. Hoon Choi</span>
+  </li>
+</ul>
 
 ## Contact
 
