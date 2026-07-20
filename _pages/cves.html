@@ -19,6 +19,9 @@ author_profile: true
 
 {% if public_cve_count > 0 %}
   {% assign targets = found_cves | map: "target" | compact | uniq | sort %}
+  {% assign kernel_targets = targets | where_exp: "target", "target == 'Linux kernel'" %}
+  {% assign other_targets = targets | where_exp: "target", "target != 'Linux kernel'" %}
+  {% assign targets = kernel_targets | concat: other_targets %}
   {% for target in targets %}
     {% assign target_entries = found_cves | where: "target", target %}
     {% assign target_public_count = 0 %}
